@@ -36,7 +36,7 @@ sub_set %>%
   ptd_spc(value_field = breaches, date_field = period, improvement_direction = "decrease")
 ```
 
-<img src="_assets/figures/README-example-1.png" width="100%" />
+[![Figure 1.](../_assets/figures/README-example-1.png)]
 
 To view the vignette (worked example), use:
 
