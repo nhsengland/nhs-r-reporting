@@ -58,6 +58,10 @@ website:
               file: r-programming.qmd
             - text: "Data Visualisation"
               file: r-visualisation.qmd
+        - section: "Quarto"
+          contents:
+            - text: "Publish to GitHub pages"
+              file: quarto-publish-to-github.qmd
 
 format:
   html:
