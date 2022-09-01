@@ -36,4 +36,4 @@ sub_set %>%
   ptd_spc(value_field = breaches, date_field = period, improvement_direction = "decrease")
 ```
 
-![Figure 1. Example SPC Chart](assets/figures/README-example-1.png)
+![Figure 1. Example SPC Chart](/figures/README-example-1.png)
