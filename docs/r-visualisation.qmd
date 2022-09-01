@@ -8,9 +8,7 @@ The [NHSR Plot the Dots](https://github.com/nhs-r-community/NHSRplotthedots) pac
 
 ### Installation
 
-```{r}
-#| eval: false
-
+```r
 # install from CRAN
 install.packages("NHSRplotthedots")
 install.packages("rmarkdown")
@@ -26,9 +24,7 @@ The help-files, and vignette within this package tell you more about the possibl
 
 Below is an example of the type of chart the package produces. The plot uses the `ae_attendances` dataset from the `{NHSRdatasets}` package and a bit of `{dplyr}` code to select some organisations.
 
-```{r}
-#| eval: false
-
+```r
 library(NHSRplotthedots)
 library(NHSRdatasets)
 library(tidyverse)
