@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/nhsengland/prevention-reporting">
-    <img src="_assets/logos/nhs-england.jpg" alt="Logo" height="120">
+    <img src="assets/logos/nhs-england.jpg" alt="Logo" height="120">
   </a>
 
   <h3 align="center">R Reporting</h3>
@@ -52,7 +52,7 @@ _**Note:** No data, public or private are shared in this repository._
 | Name | Link | Description |
 | ---- | ---- | ----------- |
 | .github/workflows/ | [[Link](https://github.com/nhsengland/nhs-r-reporting/tree/main/.github/workflows)]  | GitHub Actions that build the documentation site on commit to /docs |
-| _assets/ | [[Link](https://github.com/nhsengland/nhs-r-reporting)]  | Style assets for reports and documentation site |
+| assets/ | [[Link](https://github.com/nhsengland/nhs-r-reporting/assets)]  | Style assets for reports and documentation site |
 | docs/ | [[Link](https://github.com/nhsengland/nhs-r-reporting)]  | Documentation site files |
 | references/ | [[Link](https://github.com/nhsengland/nhs-r-reporting)]  | Central bibliographical reference library |
 | reports/ | [[Link](https://github.com/nhsengland/nhs-r-reporting)]  | Published q-markdown reports and source files |
