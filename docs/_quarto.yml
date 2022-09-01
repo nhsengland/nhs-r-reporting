@@ -8,7 +8,7 @@ website:
   page-navigation: true
   title: "NHS R Reporting"
   description: "R Reporting"
-  date: now
+  # date: now
   favicon: _assets/favicon/favicon.ico
   repo-url: https://github.com/nhs-england/nhs-r-reporting
   repo-actions: [edit, issue]
