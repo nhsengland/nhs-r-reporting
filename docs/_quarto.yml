@@ -9,7 +9,7 @@ website:
   title: "NHS R Reporting"
   description: "R Reporting"
   # date: now
-  favicon: _assets/favicon/favicon.ico
+  favicon: assets/favicon/favicon.ico
   repo-url: https://github.com/nhs-england/nhs-r-reporting
   repo-actions: [edit, issue]
 
@@ -29,7 +29,7 @@ website:
 
   navbar:
     background: "#005eb8"
-    # logo: _assets/logos/logo-nhs-300.png
+    # logo: assets/logos/logo-nhs-300.png
     # align: center
     title: "NHS England R Reporting"
     collapse-below: lg
@@ -71,7 +71,7 @@ format:
     code-copy: true
     code-overflow: wrap
     # mainfont: "Atkinson Hyperlegible"
-    include-in-header: "_assets/style/fontawesome.html"
+    include-in-header: "assets/style/fontawesome.html"
 
 freeze: auto
 

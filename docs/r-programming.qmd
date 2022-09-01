@@ -1,5 +1,6 @@
 ---
 title: R Programming Language
+subtitle: "NHS specific resources from the NHS-R Community"
 ---
 
 ## Resource List

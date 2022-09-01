@@ -1,8 +1,7 @@
 ---
 title: Publish to GitHub pages
+subtitle: "Publish a Quarto website project to your GitHub pages using GitHub actions."
 ---
-
-Publish a Quarto website project to your GitHub pages using GitHub actions.
 
 ## GitHub Pages
 
@@ -10,7 +9,9 @@ Publish a Quarto website project to your GitHub pages using GitHub actions.
 
 Copy [quarto-publish.yml](https://github.com/craig-shenton/nhs-r-reporting/blob/main/_assets/actions/quarto-publish-example.yml) to the folder `.github/workflows/quarto-publish.yml`.
 
-```yaml
+```{yml}
+#| eval: false
+
 on:
   push:
     branches: main
@@ -37,10 +38,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-::: {.note}
+::: {.callout-note}
 If your Quarto project is not in the top level folder of your repository (in this case in `/docs`), then add the following path to the 'Publish to GitHub Pages (and render)' action
-:::
-```yml
+```{yml}
+#| eval: false
+
 - name: Publish to GitHub Pages (and render)
   uses: quarto-dev/quarto-actions/publish@v2
   with:
@@ -49,14 +51,15 @@ If your Quarto project is not in the top level folder of your repository (in thi
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+:::
 
-::: {.warning}
+::: {.callout-warning}
 Do *not* edit the `GITHUB_TOKEN` to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.
 :::
    
 ### Run `quarto publish gh-pages` locally, once
 
-   Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once.
+> Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once.
 
 Now, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.
 

@@ -8,7 +8,9 @@ The [NHSR Plot the Dots](https://github.com/nhs-r-community/NHSRplotthedots) pac
 
 ### Installation
 
-```r
+```{r}
+#| eval: false
+
 # install from CRAN
 install.packages("NHSRplotthedots")
 install.packages("rmarkdown")
@@ -24,7 +26,9 @@ The help-files, and vignette within this package tell you more about the possibl
 
 Below is an example of the type of chart the package produces. The plot uses the `ae_attendances` dataset from the `{NHSRdatasets}` package and a bit of `{dplyr}` code to select some organisations.
 
-```r
+```{r}
+#| eval: false
+
 library(NHSRplotthedots)
 library(NHSRdatasets)
 library(tidyverse)
@@ -36,12 +40,4 @@ sub_set %>%
   ptd_spc(value_field = breaches, date_field = period, improvement_direction = "decrease")
 ```
 
-![Figure 1.](_assets/figures/README-example-1.png)
-
-To view the vignette (worked example), use:
-
-```r
-#| eval: false
-vignette("intro", package = "NHSRplotthedots")
-vignette(package = "NHSRplotthedots")
-```
+![Figure 1. Example SPC Chart](assets/figures/README-example-1.png)
