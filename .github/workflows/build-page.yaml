@@ -1,12 +1,18 @@
 on:
   push:
     branches: main
-    paths:
-    - docs
   pull_request:
     branches: main
-    paths:
-    - docs
+
+# on:
+#   push:
+#     branches: main
+#     paths:
+#     - docs
+#   pull_request:
+#     branches: main
+#     paths:
+#     - docs
 
 name: Render and deploy
 
