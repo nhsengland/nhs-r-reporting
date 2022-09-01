@@ -10,7 +10,7 @@ website:
   description: "R Reporting"
   # date: now
   favicon: assets/favicon/favicon.ico
-  repo-url: https://github.com/nhs-england/nhs-r-reporting
+  repo-url: https://github.com/nhsengland/nhs-r-reporting
   repo-actions: [issue]
 
   # opengraph: true
@@ -36,7 +36,7 @@ website:
  
     right:
       - icon: github
-        href: https://github.com/nhs-england/nhs-r-reporting
+        href: https://github.com/nhsengland/nhs-r-reporting
         aria-label: GitHub
       - icon: cloud-fill
         href: https://future.nhs.uk/NationalRCommunity/groupHome
