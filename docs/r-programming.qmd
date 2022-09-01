@@ -1,0 +1,14 @@
+---
+title: R Programming Language
+---
+
+## Resource List
+
+### NHS Themes
+
+- [NHS-R Theme](https://nhs-r-community.github.io/NHSRtheme/) [[code](https://github.com/nhs-r-community/NHSRtheme)]
+
+### NHS code
+
+- [NHS-R how-tos](https://github.com/nhs-r-community/demos-and-how-tos)
+- [NHS-R R-Markdown functions](https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals)

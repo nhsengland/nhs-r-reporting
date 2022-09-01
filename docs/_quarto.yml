@@ -23,7 +23,7 @@ website:
     background: "#005eb8"
     right:
     - text: "License"
-      href: ../LICENSE.md
+      href: ../LICENSE
     - text: "Code of Conduct"
       href: ../CODE_OF_CONDUCT.md
 
@@ -31,7 +31,7 @@ website:
     background: "#005eb8"
     # logo: _assets/logos/logo-nhs-300.png
     # align: center
-    title: true
+    title: "NHS England R Reporting"
     collapse-below: lg
  
     right:
@@ -47,6 +47,17 @@ website:
       style: "floating"
       collapse-level: 3
       align: left
+      contents:
+        - section: "Getting Started"
+          contents:
+            - text: "Introduction" 
+              file: index.qmd
+        - section: "R"
+          contents:
+            - text: "R-Language"
+              file: r-programming.qmd
+            - text: "Data Visualisation"
+              file: r-visualisation.qmd
 
 format:
   html:
