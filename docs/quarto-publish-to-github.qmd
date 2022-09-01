@@ -1,12 +1,14 @@
 ---
-title: Publish a Quarto website project to your GitHub pages using GitHub actions
+title: Publish to GitHub pages
 ---
+
+Publish a Quarto website project to your GitHub pages using GitHub actions.
 
 ## GitHub Pages
 
-### 1. Add the GitHub Actions workflow to your project
+### Add the GitHub Actions workflow to your project
 
-Copy [quarto-publish.yml](../docs/quarto-publish-example.yml) to the folder `.github/workflows/quarto-publish.yml`.
+Copy [quarto-publish.yml](https://github.com/craig-shenton/nhs-r-reporting/blob/main/_assets/actions/quarto-publish-example.yml) to the folder `.github/workflows/quarto-publish.yml`.
 
 ```yaml
 on:
@@ -26,23 +28,18 @@ jobs:
         
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          # To install LaTeX to build PDF book 
-          tinytex: false
-          # uncomment below and fill to pin a version
-          # version: 0.9.600
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ::: {.note}
-If your Quarto project is not in the top level folder of your repository (in this case `/docs`), then add the following path to the 'Publish to GitHub Pages (and render)' action:
-
+If your Quarto project is not in the top level folder of your repository (in this case in `/docs`), then add the following path to the 'Publish to GitHub Pages (and render)' action
+:::
 ```yml
 - name: Publish to GitHub Pages (and render)
   uses: quarto-dev/quarto-actions/publish@v2
@@ -50,15 +47,14 @@ If your Quarto project is not in the top level folder of your repository (in thi
     target: gh-pages
     path: docs
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-:::
 
 ::: {.warning}
 Do *not* edit the `GITHUB_TOKEN` to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.
 :::
    
-### 2. run `quarto publish gh-pages` locally, once
+### Run `quarto publish gh-pages` locally, once
 
    Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once.
 
