@@ -11,7 +11,7 @@ website:
   # date: now
   favicon: assets/favicon/favicon.ico
   repo-url: https://github.com/nhs-england/nhs-r-reporting
-  repo-actions: [edit, issue]
+  repo-actions: [issue]
 
   # opengraph: true
   # twitter-card:
@@ -36,7 +36,7 @@ website:
  
     right:
       - icon: github
-        href: https://github.com/craig-shenton/quarto-nhs-theme
+        href: https://github.com/nhs-england/nhs-r-reporting
         aria-label: GitHub
       - icon: cloud-fill
         href: https://future.nhs.uk/NationalRCommunity/groupHome
