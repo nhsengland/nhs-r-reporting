@@ -9,9 +9,7 @@ subtitle: "Publish a Quarto website project to your GitHub pages using GitHub ac
 
 Copy [quarto-publish.yml](https://github.com/craig-shenton/nhs-r-reporting/blob/main/_assets/actions/quarto-publish-example.yml) to the folder `.github/workflows/quarto-publish.yml`.
 
-```{yaml}
-#| eval: false
-
+```yaml
 on:
   push:
     branches: main
@@ -41,9 +39,7 @@ jobs:
 ::: {.callout-note}
 If your Quarto project is not in the top level folder of your repository (in this case in `/docs`), then add the following path to the 'Publish to GitHub Pages (and render)' action: 
 
-```{yaml}
-#| eval: false
-
+```yaml
 - name: Publish to GitHub Pages (and render)
   uses: quarto-dev/quarto-actions/publish@v2
   with:
