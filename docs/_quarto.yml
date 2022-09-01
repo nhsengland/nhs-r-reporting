@@ -1,0 +1,78 @@
+project:
+  type: website
+  # resources:
+  #   - "images/twitter-card.png"
+  #   - "course-materials/_slides/"
+    
+website:
+  page-navigation: true
+  title: "NHS R Reporting"
+  description: "R Reporting"
+  # date: now
+  favicon: assets/favicon/favicon.ico
+  repo-url: https://github.com/nhs-england/nhs-r-reporting
+  repo-actions: [edit, issue]
+
+  # opengraph: true
+  # twitter-card:
+  #   creator: "@minebocek"
+  #   image: "/images/twitter-card.png"
+
+  page-footer:
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    background: "#005eb8"
+    right:
+    - text: "License"
+      href: ../LICENSE
+    - text: "Code of Conduct"
+      href: ../CODE_OF_CONDUCT.md
+
+  navbar:
+    background: "#005eb8"
+    # logo: assets/logos/logo-nhs-300.png
+    # align: center
+    title: "NHS England R Reporting"
+    collapse-below: lg
+ 
+    right:
+      - icon: github
+        href: https://github.com/craig-shenton/quarto-nhs-theme
+        aria-label: GitHub
+      - icon: cloud-fill
+        href: https://future.nhs.uk/NationalRCommunity/groupHome
+        aria-label: NHS England R Community
+
+  sidebar:
+    - id: nav
+      style: "floating"
+      collapse-level: 3
+      align: left
+      contents:
+        - section: "Getting Started"
+          contents:
+            - text: "Introduction" 
+              file: index.qmd
+        - section: "R"
+          contents:
+            - text: "R-Language"
+              file: r-programming.qmd
+            - text: "Data Visualisation"
+              file: r-visualisation.qmd
+        - section: "Quarto"
+          contents:
+            - text: "Publish to GitHub pages"
+              file: quarto-publish-to-github.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo]
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    # mainfont: "Atkinson Hyperlegible"
+    include-in-header: "assets/style/fontawesome.html"
+
+freeze: auto
+
+editor: visual
