@@ -1,0 +1,44 @@
+on:
+  push:
+    branches: main
+    paths:
+    - docs
+  pull_request:
+    branches: main
+    paths:
+    - docs
+
+name: Render and deploy
+
+jobs:
+  quarto-render-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2 
+
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v1
+    
+    - name: Install packages
+      run: |
+        install.packages(c("rmarkdown", "remotes", "tufte", "ggplot2"))
+      shell: Rscript {0}
+    # remotes::install_github(c("nhs-r-community/NHSRtheme"))
+
+    - name: Render page
+      run: |
+        quarto render docs
+
+    - name: Publish to GitHub Pages (and render)
+      uses: quarto-dev/quarto-actions/publish@v2
+      with:
+        target: gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
