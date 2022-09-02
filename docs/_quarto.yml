@@ -60,6 +60,8 @@ website:
               file: r-visualisation.qmd
         - section: "Quarto"
           contents:
+            - text: "Contribute to this site"
+              file: quarto-add-new-page.qmd
             - text: "Publish to GitHub pages"
               file: quarto-publish-to-github.qmd
         - section: "RAP"

@@ -1,0 +1,37 @@
+---
+title: Contribute to the docs
+subtitle: "How to add a new page to the documentations site using Quarto?"
+---
+
+## How to contribute?
+
+### Make a new `.qmd` (q-markdown) file in the `/docs` folder
+
+To the `.qmd` file add a YAML header with a title and subtitle.
+```yaml
+---
+title: Contribute to the docs
+subtitle: "How to add a new page to the documentations site using Quarto?"
+---
+```
+
+### Add a link to your file to the `_quarto.yml` config file in `/docs`
+
+Open the `_quarto.yml` configuration file and find the `sidebar` config code.
+```yaml
+
+sidebar:
+  - id: nav
+    style: "floating"
+    collapse-level: 3
+    align: left
+    contents:
+```
+Under the `contents:` object add a new section (if required), a string lable for your page, and a link to the `.qmd` file itself.
+
+```yaml
+- section: "RAP"
+  contents:
+    - text: "Reproducible Analytical Pipelines"
+      file: intro-to-rap.qmd
+```
