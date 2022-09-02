@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/r-programming.html</loc>
-    <lastmod>2022-09-01T16:41:25.052Z</lastmod>
+    <lastmod>2022-09-02T08:43:23.043Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/quarto-publish-to-github.html</loc>
-    <lastmod>2022-09-01T16:41:25.924Z</lastmod>
+    <lastmod>2022-09-02T08:43:23.855Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/r-visualisation.html</loc>
-    <lastmod>2022-09-01T16:41:26.596Z</lastmod>
+    <lastmod>2022-09-02T08:43:24.503Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/index.html</loc>
-    <lastmod>2022-09-01T16:41:27.028Z</lastmod>
+    <lastmod>2022-09-02T08:43:24.899Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/intro-to-rap.html</loc>
+    <lastmod>2022-09-02T08:43:25.267Z</lastmod>
   </url>
 </urlset>

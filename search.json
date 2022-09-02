@@ -40,5 +40,19 @@
     "title": "Quarto NHS Theme",
     "section": "Example Quarto sites",
     "text": "Example Quarto sites\nA few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.\n\nChampions Lessons Series\nOpenscapes Approach Guide\n\n2021 NASA Cloud Hackathon\nFaylab Lab Manual\nA Quarto tip a day, by Mine Çetinkaya-Rundel"
+  },
+  {
+    "objectID": "intro-to-rap.html",
+    "href": "intro-to-rap.html",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "",
+    "text": "https://ukgovdatascience.github.io/rap_companion/"
+  },
+  {
+    "objectID": "intro-to-rap.html#gov.datascience-rap-companion",
+    "href": "intro-to-rap.html#gov.datascience-rap-companion",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "GOV.datascience RAP Companion",
+    "text": "GOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/"
   }
 ]
