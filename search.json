@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "quarto-add-new-page.html",
+    "href": "quarto-add-new-page.html",
+    "title": "Contribute to the docs",
+    "section": "",
+    "text": "To the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\n\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd"
+  },
+  {
     "objectID": "r-programming.html",
     "href": "r-programming.html",
     "title": "R Programming Language",
