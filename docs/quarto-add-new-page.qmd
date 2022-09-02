@@ -5,6 +5,12 @@ subtitle: "How to add a new page to the documentations site using Quarto?"
 
 ## How to contribute?
 
+### Make a new branch of the repository
+
+```bash
+git checkout -b <branch-name>
+```
+
 ### Make a new `.qmd` (q-markdown) file in the `/docs` folder
 
 To the `.qmd` file add a YAML header with a title and subtitle.
@@ -19,7 +25,6 @@ subtitle: "How to add a new page to the documentations site using Quarto?"
 
 Open the `_quarto.yml` configuration file and find the `sidebar` config code.
 ```yaml
-
 sidebar:
   - id: nav
     style: "floating"
@@ -35,3 +40,18 @@ Under the `contents:` object add a new section (if required), a string lable for
     - text: "Reproducible Analytical Pipelines"
       file: intro-to-rap.qmd
 ```
+
+### Publish your changes to GitHub
+Commit your changes locally
+
+```bash
+git commit -m 'Added new page to docs'
+```
+
+Then push your changes to the remote branch
+
+```bash
+git push origin <branch-name>
+```
+
+Finally, open a Pull Request (PR) [https://github.com/nhsengland/nhs-r-reporting/pulls](https://github.com/nhsengland/nhs-r-reporting/pulls)
