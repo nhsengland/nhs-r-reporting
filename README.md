@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/nhsengland/prevention-reporting">
+  <a href="https://github.com/nhsengland/nhs-r-reporting/">
     <img src="assets/logos/nhs-england.jpg" alt="Logo" height="120">
   </a>
 
