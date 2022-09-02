@@ -1,5 +1,5 @@
 ---
-title: "Quarto NHS Theme"
+title: "Quarto"
 subtitle: "Create open-source reports, documentation, and much more"
 ---
 
