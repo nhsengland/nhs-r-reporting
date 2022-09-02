@@ -1,12 +1,25 @@
 ---
 title: Reproducible Analytical Pipelines (RAP)
-subtitle: " RAP brings together a number of good practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
+subtitle: " RAP brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
 ---
 
-## NHS Digital RAP Community
+## Resources
+
+### NHS Digital RAP Community of Practice
+
+[https://github.com/NHSDigital/rap-community-of-practice](https://github.com/NHSDigital/rap-community-of-practice)
+
+|  |  |  |  |  |
+|---|---|---|---|---|
+| [what is RAP](https://github.com/NHSDigital/rap-community-of-practice/blob/main/what-is-RAP.md) | [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach/08_how-to-publish-your-code-in-the-open.md) | [python](https://github.com/NHSDigital/rap-community-of-practice/blob/main/python) | [R](https://github.com/NHSDigital/rap-community-of-practice/blob/main/R) | [Coding Best Practice](https://github.com/NHSDigital/rap-community-of-practice/blob/main/coding-best-practice) |
+| [Examples](https://github.com/NHSDigital/data-analytics-services#rap-repositories) | [Training](https://github.com/NHSDigital/rap-community-of-practice/blob/main/training) | [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach) | [Testing](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach) | [NHSD Analytics Function](https://github.com/NHSDigital/data-analytics-services) |
+
+### GOV.datascience RAP Companion
 
 [https://ukgovdatascience.github.io/rap_companion/](https://ukgovdatascience.github.io/rap_companion/)
 
-## GOV.datascience RAP Companion
-
-[https://ukgovdatascience.github.io/rap_companion/](https://ukgovdatascience.github.io/rap_companion/)
+### Further reading
+* [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
+* [Be open and use open source](https://www.gov.uk/guidance/be-open-and-use-open-source)
+* [The benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/)
+* [Open source repositories by the Government Digital Service](https://github.com/alphagov)
