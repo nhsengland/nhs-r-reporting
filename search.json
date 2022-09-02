@@ -46,13 +46,6 @@
     "href": "intro-to-rap.html",
     "title": "Reproducible Analytical Pipelines (RAP)",
     "section": "",
-    "text": "https://ukgovdatascience.github.io/rap_companion/"
-  },
-  {
-    "objectID": "intro-to-rap.html#gov.datascience-rap-companion",
-    "href": "intro-to-rap.html#gov.datascience-rap-companion",
-    "title": "Reproducible Analytical Pipelines (RAP)",
-    "section": "GOV.datascience RAP Companion",
-    "text": "GOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/"
+    "text": "https://github.com/NHSDigital/rap-community-of-practice\n\n\n\nwhat is RAP\nPublishing Code\npython\nR\nCoding Best Practice\n\n\nExamples\nTraining\nGit\nTesting\nNHSD Analytics Function\n\n\n\n\n\n\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\n\n\nSharing Code in the Open by NHSX\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service"
   }
 ]
