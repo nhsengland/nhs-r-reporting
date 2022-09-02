@@ -9,10 +9,15 @@ subtitle: " RAP brings together a number of best practices to ensure published N
 
 [https://github.com/NHSDigital/rap-community-of-practice](https://github.com/NHSDigital/rap-community-of-practice)
 
-|  |  |  |  |  |
-|---|---|---|---|---|
-| [what is RAP](https://github.com/NHSDigital/rap-community-of-practice/blob/main/what-is-RAP.md) | [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach/08_how-to-publish-your-code-in-the-open.md) | [python](https://github.com/NHSDigital/rap-community-of-practice/blob/main/python) | [R](https://github.com/NHSDigital/rap-community-of-practice/blob/main/R) | [Coding Best Practice](https://github.com/NHSDigital/rap-community-of-practice/blob/main/coding-best-practice) |
-| [Examples](https://github.com/NHSDigital/data-analytics-services#rap-repositories) | [Training](https://github.com/NHSDigital/rap-community-of-practice/blob/main/training) | [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach) | [Testing](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach) | [NHSD Analytics Function](https://github.com/NHSDigital/data-analytics-services) |
+- [What is RAP](https://github.com/NHSDigital/rap-community-of-practice/blob/main/what-is-RAP.md)
+- [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach/08_how-to-publish-your-code-in-the-open.md)
+- [Python](https://github.com/NHSDigital/rap-community-of-practice/blob/main/python)
+- [R](https://github.com/NHSDigital/rap-community-of-practice/blob/main/R)
+- [Coding Best Practice](https://github.com/NHSDigital/rap-community-of-practice/blob/main/coding-best-practice)
+- [Examples](https://github.com/NHSDigital/data-analytics-services#rap-repositories)
+- [Training](https://github.com/NHSDigital/rap-community-of-practice/blob/main/training)
+- [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach)
+- [Testing](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach)
 
 ### GOV.datascience RAP Companion
 
