@@ -30,21 +30,21 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto NHS Theme",
+    "title": "Quarto",
     "section": "",
     "text": "It’s possible to create beautiful documentation to share online with Quarto that auto-updates with GitHub Actions. This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme — it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.\nQuarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community."
   },
   {
     "objectID": "index.html#what-is-quarto",
     "href": "index.html#what-is-quarto",
-    "title": "Quarto NHS Theme",
+    "title": "Quarto",
     "section": "What is Quarto?",
     "text": "What is Quarto?\nQuarto helps you have your ideas and your code in one place, and present it in a beautiful way.\nQuarto unifies and extends the RMarkdown ecosystem - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it’s for people who have never used RMarkdown.\nQuarto.org is the go-to place for full documentation and more tutorials!"
   },
   {
     "objectID": "index.html#example-quarto-sites",
     "href": "index.html#example-quarto-sites",
-    "title": "Quarto NHS Theme",
+    "title": "Quarto",
     "section": "Example Quarto sites",
     "text": "Example Quarto sites\nA few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.\n\nChampions Lessons Series\nOpenscapes Approach Guide\n\n2021 NASA Cloud Hackathon\nFaylab Lab Manual\nA Quarto tip a day, by Mine Çetinkaya-Rundel"
   },
