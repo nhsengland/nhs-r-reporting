@@ -62,7 +62,10 @@ website:
           contents:
             - text: "Publish to GitHub pages"
               file: quarto-publish-to-github.qmd
-
+        - section: "RAP"
+          contents:
+            - text: "Reproducible Analytical Pipelines"
+              file: intro-to-rap.qmd
 format:
   html:
     theme:

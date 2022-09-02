@@ -1,0 +1,12 @@
+---
+title: Reproducible Analytical Pipelines (RAP)
+subtitle: " RAP brings together a number of good practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
+---
+
+## NHS Digital RAP Community
+
+[https://ukgovdatascience.github.io/rap_companion/](https://ukgovdatascience.github.io/rap_companion/)
+
+## GOV.datascience RAP Companion
+
+[https://ukgovdatascience.github.io/rap_companion/](https://ukgovdatascience.github.io/rap_companion/)

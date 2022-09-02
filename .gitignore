@@ -40,3 +40,26 @@ vignettes/*.pdf
 
 # Mac files
 .DS_Store
+
+# Data files
+*.xlsx
+~$*.xls*
+*.xlk
+*.xlsm
+*.xlsb
+*.xltx
+*.xltm
+*.xlt
+*.xls
+*.xml
+*.xlam
+*.xla
+*.xlw
+*.xlr
+*.tmp
+*.doc*
+~$*.doc*
+*.doc*
+*.csv
+*.dif
+*.ods
