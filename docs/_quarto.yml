@@ -23,9 +23,9 @@ website:
     background: "#005eb8"
     right:
     - text: "License"
-      href: LICENSE
+      href: https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE
     - text: "Code of Conduct"
-      href: CODE_OF_CONDUCT.md
+      href: https://github.com/nhsengland/nhs-r-reporting/blob/main/CODE_OF_CONDUCT.md
 
   navbar:
     background: "#005eb8"
