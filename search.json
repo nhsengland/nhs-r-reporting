@@ -4,7 +4,7 @@
     "href": "quarto-add-new-page.html",
     "title": "Contribute to the docs",
     "section": "",
-    "text": "To the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\n\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd"
+    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
   },
   {
     "objectID": "r-programming.html",
