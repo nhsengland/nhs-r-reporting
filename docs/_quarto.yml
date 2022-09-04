@@ -52,6 +52,8 @@ website:
           contents:
             - text: "Introduction" 
               file: index.qmd
+            - text: "NHS Colours" 
+              file: nhs-colours.qmd
         - section: "R"
           contents:
             - text: "R-Language"
