@@ -1,0 +1,9 @@
+---
+title: NHS Colours Guidlines
+subtitle: "Colour is a key element of any organisation’s identity."
+---
+
+| Item         | Price     | # In stock |
+|--------------|-----------|------------|
+| <div class="color-block" style="background-color: #005eb8;"></div> | 1.99      | *7*        |
+| Bananas      | **1.89**  | 5234       |
