@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NHS R Reporting - Quarto</title>
+<title>NHS R Reporting - NHS Colour Guidlines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./nhs-colours.html" rel="next">
+<link href="./r-programming.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./assets/favicon/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Quarto</h1>
+      <h1 class="quarto-secondary-nav-title">NHS Colour Guidlines</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,12 +121,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colours</a>
+  <a href="./nhs-colours.html" class="sidebar-item-text sidebar-link active">NHS Colours</a>
   </div>
 </li>
       </ul>
@@ -194,9 +195,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
-  <li><a href="#example-quarto-sites" id="toc-example-quarto-sites" class="nav-link" data-scroll-target="#example-quarto-sites">Example Quarto sites</a></li>
+  <li><a href="#core-nhs-colours" id="toc-core-nhs-colours" class="nav-link active" data-scroll-target="#core-nhs-colours">Core NHS colours</a></li>
+  <li><a href="#level-1-nhs-blues" id="toc-level-1-nhs-blues" class="nav-link" data-scroll-target="#level-1-nhs-blues">Level 1: NHS blues</a></li>
+  <li><a href="#level-2-nhs-neutrals" id="toc-level-2-nhs-neutrals" class="nav-link" data-scroll-target="#level-2-nhs-neutrals">Level 2: NHS neutrals</a></li>
+  <li><a href="#level-3-nhs-support-greens" id="toc-level-3-nhs-support-greens" class="nav-link" data-scroll-target="#level-3-nhs-support-greens">Level 3: NHS support greens</a></li>
+  <li><a href="#level-4-nhs-highlights" id="toc-level-4-nhs-highlights" class="nav-link" data-scroll-target="#level-4-nhs-highlights">Level 4: NHS highlights</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -205,8 +208,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Quarto</h1>
-<p class="subtitle lead">Create open-source reports, documentation, and much more</p>
+<h1 class="title d-none d-lg-block">NHS Colour Guidlines</h1>
+<p class="subtitle lead">Colour is a key element of any organisation’s identity.</p>
 </div>
 
 
@@ -220,28 +223,189 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>It’s possible to create beautiful documentation to share online with <a href="https://quarto.org">Quarto</a> that auto-updates with <a href="http://github.com">GitHub Actions</a>. This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme — it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.</p>
-<p>Quarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.</p>
+<style>
+    .colourCore {
+        text-align: left;
+    }
+    .colourCore tr:nth-child(1) { background: #005EB8; color: #FFFFFF;}
+    .colourCore tr:nth-child(2) { background: #FFFFFF; color: #231f20;}
+
+    .colourBlue {
+        text-align: left;
+    }
+    .colourBlue tr:nth-child(1) { background: #003087; color: #FFFFFF;}
+    .colourBlue tr:nth-child(2) { background: #0072CE; color: #FFFFFF;}
+    .colourBlue tr:nth-child(3) { background: #41B6E6; color: #FFFFFF;}
+    .colourBlue tr:nth-child(4) { background: #00A9CE; color: #FFFFFF;}
+
+    .colourNeutral {
+        text-align: left;
+    }
+    .colourNeutral tr:nth-child(1) { background: #231f20; color: #FFFFFF;}
+    .colourNeutral tr:nth-child(2) { background: #425563; color: #FFFFFF;}
+    .colourNeutral tr:nth-child(3) { background: #768692; color: #FFFFFF;}
+    .colourNeutral tr:nth-child(4) { background: #E8EDEE; color: #231f20;}
+
+    .colourGreen {
+        text-align: left;
+    }
+    .colourGreen tr:nth-child(1) { background: #006747; color: #FFFFFF;}
+    .colourGreen tr:nth-child(2) { background: #009639; color: #FFFFFF;}
+    .colourGreen tr:nth-child(3) { background: #78BE20; color: #FFFFFF;}
+    .colourGreen tr:nth-child(4) { background: #00A499; color: #FFFFFF;}
+
+    .colourHighlight {
+        text-align: left;
+    }
+    .colourHighlight tr:nth-child(1) { background: #003087; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(2) { background: #7C2855; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(3) { background: #AE2573; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(4) { background: #8A1538; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(5) { background: #DA291C; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(6) { background: #ED8B00; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(7) { background: #FFB81C; color: #231f20;}
+    .colourHighlight tr:nth-child(8) { background: #FAE100; color: #231f20;}
+</style>
+<p>The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.</p>
+<p><a href="https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/">&gt; Read the Official NHS Guidance</a></p>
+<section id="core-nhs-colours" class="level3">
+<h3 class="anchored" data-anchor-id="core-nhs-colours">Core NHS colours</h3>
+<div class="colourCore">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Blue</td>
+<td>#005EB8</td>
+</tr>
+<tr class="even">
+<td>White</td>
+<td>#FFFFFF</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The core NHS Blue and white are supported by four other groups of colours in the NHS colour palette, to provide NHS organisations with the flexibility to differentiate their communications from each other, but not from the NHS.</p>
 </section>
-<section id="what-is-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
-<p>Quarto helps you have your ideas and your code in one place, and present it in a beautiful way.</p>
-<p><strong>Quarto unifies and extends the RMarkdown ecosystem</strong> - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it’s for people who have never used RMarkdown.</p>
-<p><a href="https://quarto.org">Quarto.org</a> is the go-to place for full documentation and more tutorials!</p>
+<section id="level-1-nhs-blues" class="level3">
+<h3 class="anchored" data-anchor-id="level-1-nhs-blues">Level 1: NHS blues</h3>
+<div class="colourBlue">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Dark Blue</td>
+<td>#003087</td>
+</tr>
+<tr class="even">
+<td>NHS Bright Blue</td>
+<td>#0072CE</td>
+</tr>
+<tr class="odd">
+<td>NHS Light Blue</td>
+<td>#41B6E6</td>
+</tr>
+<tr class="even">
+<td>NHS Aqua Blue</td>
+<td>#00A9CE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is the top level palette that reinforces people’s association with blue and white. There are a number of hues to support the main NHS Blue colour to give lighter and darker alternatives to add tonal variety.</p>
 </section>
-<section id="example-quarto-sites" class="level2">
-<h2 class="anchored" data-anchor-id="example-quarto-sites">Example Quarto sites</h2>
-<p>A few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.</p>
-<ul>
-<li><a href="https://openscapes.github.io/series">Champions Lessons Series</a></li>
-<li><a href="https://openscapes.github.io/approach-guide/">Openscapes Approach Guide</a><br>
-</li>
-<li><a href="https://nasa-openscapes.github.io/2021-Cloud-Hackathon/">2021 NASA Cloud Hackathon</a></li>
-<li><a href="https://thefaylab.github.io/lab-manual/">Faylab Lab Manual</a></li>
-<li><a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/">A Quarto tip a day</a>, by Mine Çetinkaya-Rundel</li>
-</ul>
+<section id="level-2-nhs-neutrals" class="level3">
+<h3 class="anchored" data-anchor-id="level-2-nhs-neutrals">Level 2: NHS neutrals</h3>
+<div class="colourNeutral">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Black</td>
+<td>#231f20</td>
+</tr>
+<tr class="even">
+<td>NHS Dark Grey</td>
+<td>#425563</td>
+</tr>
+<tr class="odd">
+<td>NHS Mid Grey</td>
+<td>#768692</td>
+</tr>
+<tr class="even">
+<td>NHS Pale grey</td>
+<td>#E8EDEE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These colours help to support the top level blues. Black and dark grey can be used for type, depending on the background and application. The lighter greys can be used as backgrounds when they are appropriate and are useful online colours. White is, of course, the most important neutral base. These colours will support the overall blue and white look if they are used with the proper emphasis.</p>
+</section>
+<section id="level-3-nhs-support-greens" class="level3">
+<h3 class="anchored" data-anchor-id="level-3-nhs-support-greens">Level 3: NHS support greens</h3>
+<div class="colourGreen">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Dark Green</td>
+<td>#006747</td>
+</tr>
+<tr class="even">
+<td>NHS Green</td>
+<td>#009639</td>
+</tr>
+<tr class="odd">
+<td>NHS Light Green</td>
+<td>#78BE20</td>
+</tr>
+<tr class="even">
+<td>NHS Aqua Green</td>
+<td>#00A499</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Green is close to blue in the colour spectrum and gives a feel of being in the same colour family. Therefore, when they are used moderately and in a secondary support role, they will not compromise the strong associations people have with blue and white. However, if it becomes too dominant it will impact on people’s ability to instantly recognise the NHS as being the source of the information.</p>
+</section>
+<section id="level-4-nhs-highlights" class="level3">
+<h3 class="anchored" data-anchor-id="level-4-nhs-highlights">Level 4: NHS highlights</h3>
+<div class="colourHighlight">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Purple</td>
+<td>#003087</td>
+</tr>
+<tr class="even">
+<td>Dark Pink</td>
+<td>#7C2855</td>
+</tr>
+<tr class="odd">
+<td>NHS Pink</td>
+<td>#AE2573</td>
+</tr>
+<tr class="even">
+<td>NHS Dark Red</td>
+<td>#8A1538</td>
+</tr>
+<tr class="odd">
+<td>Emergency Services Red</td>
+<td>#DA291C</td>
+</tr>
+<tr class="even">
+<td>NHS Orange</td>
+<td>#ED8B00</td>
+</tr>
+<tr class="odd">
+<td>NHS Warm Yellow</td>
+<td>#FFB81C</td>
+</tr>
+<tr class="even">
+<td>NHS Yellow</td>
+<td>#FAE100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Highlights are very useful for drawing attention to details, helping to warm up the blue look and providing accent colours to enable NHS organisations, partnerships and services to differentiate themselves from each other. However, they should not be used too heavily otherwise they change the overall look dramatically and people will not associate your communication with the NHS. Therefore, use minimally and do not use large blocks of these highlight colours.</p>
+<p>The highlight colour ‘Emergency Services Red’ is not exclusively for use in relation to emergency and urgent care services. However, because of its strong association and use in this area, you should carefully consider how you use it for other purposes.</p>
 
 
 </section>
@@ -347,10 +511,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./nhs-colours.html" class="pagination-link">
-        <span class="nav-page-text">NHS Colours</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-programming.html" class="pagination-link">
+        <span class="nav-page-text">R-Language</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
