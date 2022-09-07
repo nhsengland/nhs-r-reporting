@@ -28,3 +28,13 @@ subtitle: " RAP brings together a number of best practices to ensure published N
 * [Be open and use open source](https://www.gov.uk/guidance/be-open-and-use-open-source)
 * [The benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/)
 * [Open source repositories by the Government Digital Service](https://github.com/alphagov)
+
+### NHS BSA RAP
+
+[RAP Presentation](https://github.com/nhsbsa-data-analytics/coffee-and-coding/blob/master/2021-10-20%20R%20Markdown%20and%20Official%20Statistics/rap-presentation.Rmd)
+
+### Examples
+
+- [Prescription Cost Analysis (PCA)](https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/pca/pca_summary_narrative_2020_21_v001.html)
+- [Medicines Used in Mental Health](https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/mumh/mumh_annual_2020_21_v001.html)
+- [Prescribing for Diabetes](https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/pfd/pfd_annual_2020_21_v001.html)
