@@ -1,0 +1,191 @@
+---
+title: "Reference file for NHSplots development"
+subtitle: "Standard Visualisations in Q-Markdown"
+author: "NHSE-R"
+date: "`r Sys.Date()`"
+format:
+  html:
+    mainfont: "Helvetica Neue"
+    # Table of Contents options
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    toc-title: Contents
+    number-sections: true
+    number-depth: 3
+    # Render options
+    theme: cosmo
+    anchor-sections: true
+    html-math-method: katex
+    # Code options
+    code-tools:
+      source: false
+      toggle: false
+      caption: none
+    code-fold: true
+    code-summary: "Show code"
+    self-contained: true
+    self-contained-math: true
+    # URL options
+    link-external-icon: true
+    link-external-newwindow: true
+    # References
+    citations-hover: true
+    footnotes-hover: true
+    bibliography: references/library.bib
+---
+
+## Chapter Title
+
+### Chapter Sub-Title
+
+## Visualisations
+
+```r
+#load packages
+library(tidyverse)
+library(dplyr)
+library(bbplot)
+library(gapminder)
+```
+
+```{r load library}
+#| include: False
+
+#load packages
+library(tidyverse)
+library(dplyr)
+library(bbplot)
+library(gapminder)
+```
+
+### Bar Charts
+
+Reference (see @fig-barchart).
+
+```{r fig-barchart}
+#| label: fig-barchart
+#| fig-cap: Life Expectancy in Africa, 2007. Data source [@gapminder]
+#| warning: false
+
+#Prepare data
+bar_df <- gapminder %>%
+  filter(year == 2007 & continent == "Africa") %>%
+  arrange(desc(lifeExp)) %>%
+  head(5)
+
+#Make plot
+ggplot(bar_df, aes(x = country, y = lifeExp)) +
+  geom_bar(stat="identity", 
+           position="identity", 
+           fill="#1380A1") +
+  # theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1)) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  bbc_style() +
+  labs(title="Bar Chart Title",
+       subtitle = "Bar Chart Sub-Title")
+```
+
+### Line Charts
+
+```{r fig-linechart}
+#| label: fig-linechart
+#| fig-cap: Life expectancy in Malawi 1952-2007. Data source [@gapminder]
+#| warning: false
+
+#Prepare data
+line_df <- gapminder %>%
+  filter(country == "Malawi") 
+
+#Make plot
+ggplot(line_df, aes(x = year, y = lifeExp)) +
+  geom_line(colour = "#1380A1", size = 1) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  bbc_style() +
+  labs(title="Line Chart Title",
+       subtitle = "Line Chart Sub-Title")
+```
+
+#### With Target
+```{r fig-linechart-kpi}
+#| label: fig-linechart-kpi
+#| fig-cap: Life expectancy in Malawi 1952-2007. Data source [@gapminder]
+#| warning: false
+
+#Prepare data
+line_df <- gapminder %>%
+  filter(country == "Malawi")
+
+# get latest metric value for KPI
+latestDate <- max(line_df$year)
+latestDate_value <- line_df %>% 
+      filter(year == latestDate)
+
+#Make plot
+ggplot(line_df, aes(x = year, y = lifeExp)) +
+  geom_line(colour = "#1380A1", size = 1) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  bbc_style() +
+  labs(title="Malawi",
+       subtitle = paste(
+            "Life expectancy is",
+            latestDate_value$lifeExp,
+            "Years as of",
+            format(latestDate, format="%Y")
+       )
+  )
+```
+
+**todo:** 
+
+1. Function to create KPI sub-titels
+
+#### With Target
+```{r fig-linechart-target}
+#| label: fig-linechart-target
+#| fig-cap: Life expectancy in Malawi 1952-2007. Data source [@gapminder]
+#| warning: false
+
+#Prepare data
+line_df <- gapminder %>%
+  filter(country == "Malawi")
+
+# get latest metric value for KPI
+latestDate <- max(line_df$year)
+latestDate_value <- line_df %>% 
+      filter(year == latestDate)
+
+#Make plot
+ggplot(line_df, aes(x = year, y = lifeExp)) +
+  geom_line(colour = "#1380A1", size = 1) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  geom_hline(yintercept=45,  # taget line options
+      linetype='dashed',
+      size = 1.5,
+      colour='#425563') +
+  geom_label(                # taget lable options
+      aes(
+            x = 1952,
+            y = 45, label = "Target (45 Years)"
+      ),
+      hjust = 0.15, 
+      vjust = -.3, 
+      colour = "#425563", 
+      fill = "white", 
+      label.size = NA, 
+      family="Helvetica", 
+      size = 6) +
+  bbc_style() +
+  labs(title="Malawi",
+       subtitle = "Life expectancy"
+       )
+```
+
+**todo:** 
+
+1. Function to add target as variable with adjustments
+
+## References
+
+::: {#refs}
+:::
