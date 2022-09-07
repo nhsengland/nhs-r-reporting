@@ -35,11 +35,7 @@ format:
     bibliography: references/library.bib
 ---
 
-## Chapter Title
-
-### Chapter Sub-Title
-
-## Visualisations
+# Visualisations
 
 ```r
 #load packages
@@ -59,7 +55,7 @@ library(bbplot)
 library(gapminder)
 ```
 
-### Bar Charts
+## Bar Charts
 
 Reference (see @fig-barchart).
 
@@ -75,7 +71,7 @@ bar_df <- gapminder %>%
   head(5)
 
 #Make plot
-ggplot(bar_df, aes(x = country, y = lifeExp)) +
+ggplot(bar_df, aes(x = reorder(country, desc(lifeExp)), y = lifeExp)) +
   geom_bar(stat="identity", 
            position="identity", 
            fill="#1380A1") +
@@ -86,7 +82,67 @@ ggplot(bar_df, aes(x = country, y = lifeExp)) +
        subtitle = "Bar Chart Sub-Title")
 ```
 
-### Line Charts
+### Bar chart with highligted value
+
+```{r fig-barchart-highlight}
+#| label: fig-barchart-highlight
+#| fig-cap: Life Expectancy in Africa, 2007. Data source [@gapminder]
+#| warning: false
+
+#Prepare data
+bar_df <- gapminder %>%
+  filter(year == 2007 & continent == "Africa") %>%
+  arrange(desc(lifeExp)) %>%
+  head(5)
+
+# Find max life expectancy
+maxLife <- bar_df[which.max(bar_df$lifeExp), ]
+
+#Make plot
+ggplot(bar_df, aes(x = reorder(country, desc(lifeExp)), y = lifeExp)) +
+  geom_bar(stat="identity", 
+           position="identity", 
+           fill="#1380A1") +
+  geom_bar(stat="identity", position="identity", fill=ifelse(bar_df$country == maxLife$country, "#1380A1", "#dddddd")) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  bbc_style() +
+  labs(subtitle = paste(
+            "Life expectancy in",
+            maxLife$country,
+            "is",
+            format(round(maxLife$lifeExp, 0), nsmall = 0),
+            "Years"
+            )
+       )
+```
+
+### Horizontal Bar Chart
+
+```{r fig-barchart-horizontal}
+#| label: fig-barchart-horizontal
+#| fig-cap: Life Expectancy in Africa, 2007. Data source [@gapminder]
+#| warning: false
+
+#Prepare data
+bar_df <- gapminder %>%
+  filter(year == 2007 & continent == "Africa") %>%
+  arrange(desc(lifeExp)) %>%
+  head(5)
+
+#Make plot
+ggplot(bar_df, aes(x = reorder(country, lifeExp), y = lifeExp)) +
+  geom_bar(stat="identity", 
+           position="identity", 
+           fill="#1380A1") +
+  # theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1)) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  bbc_style() +
+  coord_flip() +
+  theme(panel.grid.major.x = element_line(color="#cbcbcb"), 
+        panel.grid.major.y=element_blank()) 
+```
+
+## Line Charts
 
 ```{r fig-linechart}
 #| label: fig-linechart
@@ -102,11 +158,13 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
   geom_line(colour = "#1380A1", size = 1) +
   geom_hline(yintercept = 0, size = 1, colour="#333333") +
   bbc_style() +
+  ylim(c(0, max(line_df$lifeExp)+10)) + # add space above line
   labs(title="Line Chart Title",
        subtitle = "Line Chart Sub-Title")
 ```
 
-#### With Target
+### Line chart with latest value KPI
+
 ```{r fig-linechart-kpi}
 #| label: fig-linechart-kpi
 #| fig-cap: Life expectancy in Malawi 1952-2007. Data source [@gapminder]
@@ -126,11 +184,11 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
   geom_line(colour = "#1380A1", size = 1) +
   geom_hline(yintercept = 0, size = 1, colour="#333333") +
   bbc_style() +
-  labs(title="Malawi",
-       subtitle = paste(
-            "Life expectancy is",
-            latestDate_value$lifeExp,
-            "Years as of",
+  ylim(c(0, max(line_df$lifeExp)+10)) + # add space above line
+  labs(subtitle = paste(
+            "Life expectancy in Malawi is",
+            format(round(latestDate_value$lifeExp, 0), nsmall = 0),
+            "as of",
             format(latestDate, format="%Y")
        )
   )
@@ -138,9 +196,10 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
 
 **todo:** 
 
-1. Function to create KPI sub-titels
+1. Function to create KPI sub-titles
 
-#### With Target
+### Line chart with target line and lable
+
 ```{r fig-linechart-target}
 #| label: fig-linechart-target
 #| fig-cap: Life expectancy in Malawi 1952-2007. Data source [@gapminder]
@@ -176,9 +235,7 @@ ggplot(line_df, aes(x = year, y = lifeExp)) +
       family="Helvetica", 
       size = 6) +
   bbc_style() +
-  labs(title="Malawi",
-       subtitle = "Life expectancy"
-       )
+  ylim(c(0, max(line_df$lifeExp)+10)) # add space above line
 ```
 
 **todo:** 
