@@ -5,29 +5,35 @@ subtitle: " RAP brings together a number of best practices to ensure published N
 
 ## Resources
 
+### NHS England
+
+- [NHS Open-source policy (Draft)](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md)
+- [Open code checklist](https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md)
+- [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
+
 ### NHS Digital RAP Community of Practice
 
 [https://github.com/NHSDigital/rap-community-of-practice](https://github.com/NHSDigital/rap-community-of-practice)
 
-- [What is RAP](https://github.com/NHSDigital/rap-community-of-practice/blob/main/what-is-RAP.md)
-- [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach/08_how-to-publish-your-code-in-the-open.md)
-- [Python](https://github.com/NHSDigital/rap-community-of-practice/blob/main/python)
-- [R](https://github.com/NHSDigital/rap-community-of-practice/blob/main/R)
-- [Coding Best Practice](https://github.com/NHSDigital/rap-community-of-practice/blob/main/coding-best-practice)
+- [What is RAP](https://github.com/NHSDigital/rap-community-of-practice/blob/main/what_is_RAP/README.md)
+- [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/how-to-publish-your-code-in-the-open.md)
+- [Python](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/README.md#python)
+- [R](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/README.md#r)
+- [Coding Best Practice](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/coding-best-practice.md)
 - [Examples](https://github.com/NHSDigital/data-analytics-services#rap-repositories)
-- [Training](https://github.com/NHSDigital/rap-community-of-practice/blob/main/training)
-- [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach)
-- [Testing](https://github.com/NHSDigital/rap-community-of-practice/blob/main/development-approach)
+- [Training](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/training-your-team.md)
+- [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/README.md#git)
+- [Unit Testing](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/python/unit-testing.md)
 
 ### GOV.datascience RAP Companion
 
 [https://ukgovdatascience.github.io/rap_companion/](https://ukgovdatascience.github.io/rap_companion/)
 
 ### Further reading
-* [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
-* [Be open and use open source](https://www.gov.uk/guidance/be-open-and-use-open-source)
-* [The benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/)
-* [Open source repositories by the Government Digital Service](https://github.com/alphagov)
+
+- [Be open and use open source](https://www.gov.uk/guidance/be-open-and-use-open-source)
+- [The benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/)
+- [Open source repositories by the Government Digital Service](https://github.com/alphagov)
 
 ### NHS BSA RAP
 
