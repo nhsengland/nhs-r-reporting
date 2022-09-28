@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "quarto-add-new-page.html",
-    "href": "quarto-add-new-page.html",
-    "title": "Contribute to the docs",
+    "objectID": "intro-to-rap.html",
+    "href": "intro-to-rap.html",
+    "title": "Reproducible Analytical Pipelines (RAP)",
     "section": "",
-    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
+    "text": "NHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\n\nhttps://github.com/NHSDigital/rap-community-of-practice\n\nWhat is RAP\nPublishing Code\nPython\nR\nCoding Best Practice\nExamples\nTraining\nGit\nUnit Testing\n\n\n\n\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\n\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\n\n\n\n\nRAP Presentation\n\n\n\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
   },
   {
     "objectID": "r-programming.html",
@@ -14,18 +14,18 @@
     "text": "NHS-R Theme [code]\n\n\n\n\n\nNHS-R how-tos\nNHS-R R-Markdown functions"
   },
   {
-    "objectID": "quarto-publish-to-github.html",
-    "href": "quarto-publish-to-github.html",
-    "title": "Publish to GitHub pages",
-    "section": "",
-    "text": "Copy quarto-publish.yml to the folder .github/workflows/quarto-publish.yml.\non:\n  push:\n    branches: main\n  pull_request:\n    branches: main\n\nname: Render and Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Publish to GitHub Pages (and render)\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\nNote\n\n\n\nIf your Quarto project is not in the top level folder of your repository (in this case in /docs), then add the following path to the ‘Publish to GitHub Pages (and render)’ action:\n- name: Publish to GitHub Pages (and render)\n  uses: quarto-dev/quarto-actions/publish@v2\n  with:\n    target: gh-pages\n    path: docs\n  env:\n    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not edit the GITHUB_TOKEN to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.\n\n\n\n\n\n\nQuarto needs to configure the repository for publishing through GitHub Actions. To do this, run quarto publish gh-pages locally once.\n\nNow, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.\nNote that GitHub Pages uses a gh-pages branch in your repository, which will be automatically created if one doesn’t exist."
-  },
-  {
     "objectID": "nhs-colours.html",
     "href": "nhs-colours.html",
     "title": "NHS Colour Guidlines",
     "section": "",
-    "text": "> Read the Official NHS Guidance\n\nCore NHS colours\n\n\n\n\nNHS Blue\n#005EB8\n\n\nWhite\n#FFFFFF\n\n\n\n\nThe core NHS Blue and white are supported by four other groups of colours in the NHS colour palette, to provide NHS organisations with the flexibility to differentiate their communications from each other, but not from the NHS.\n\n\nLevel 1: NHS blues\n\n\n\n\nNHS Dark Blue\n#003087\n\n\nNHS Bright Blue\n#0072CE\n\n\nNHS Light Blue\n#41B6E6\n\n\nNHS Aqua Blue\n#00A9CE\n\n\n\n\nThis is the top level palette that reinforces people’s association with blue and white. There are a number of hues to support the main NHS Blue colour to give lighter and darker alternatives to add tonal variety.\n\n\nLevel 2: NHS neutrals\n\n\n\n\nNHS Black\n#231f20\n\n\nNHS Dark Grey\n#425563\n\n\nNHS Mid Grey\n#768692\n\n\nNHS Pale grey\n#E8EDEE\n\n\n\n\nThese colours help to support the top level blues. Black and dark grey can be used for type, depending on the background and application. The lighter greys can be used as backgrounds when they are appropriate and are useful online colours. White is, of course, the most important neutral base. These colours will support the overall blue and white look if they are used with the proper emphasis.\n\n\nLevel 3: NHS support greens\n\n\n\n\nNHS Dark Green\n#006747\n\n\nNHS Green\n#009639\n\n\nNHS Light Green\n#78BE20\n\n\nNHS Aqua Green\n#00A499\n\n\n\n\nGreen is close to blue in the colour spectrum and gives a feel of being in the same colour family. Therefore, when they are used moderately and in a secondary support role, they will not compromise the strong associations people have with blue and white. However, if it becomes too dominant it will impact on people’s ability to instantly recognise the NHS as being the source of the information.\n\n\nLevel 4: NHS highlights\n\n\n\n\nNHS Purple\n#003087\n\n\nDark Pink\n#7C2855\n\n\nNHS Pink\n#AE2573\n\n\nNHS Dark Red\n#8A1538\n\n\nEmergency Services Red\n#DA291C\n\n\nNHS Orange\n#ED8B00\n\n\nNHS Warm Yellow\n#FFB81C\n\n\nNHS Yellow\n#FAE100\n\n\n\n\nHighlights are very useful for drawing attention to details, helping to warm up the blue look and providing accent colours to enable NHS organisations, partnerships and services to differentiate themselves from each other. However, they should not be used too heavily otherwise they change the overall look dramatically and people will not associate your communication with the NHS. Therefore, use minimally and do not use large blocks of these highlight colours.\nThe highlight colour ‘Emergency Services Red’ is not exclusively for use in relation to emergency and urgent care services. However, because of its strong association and use in this area, you should carefully consider how you use it for other purposes."
+    "text": "The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.\n> Read the Official NHS Guidance"
+  },
+  {
+    "objectID": "nhs-colours.html#nhs-region-colours",
+    "href": "nhs-colours.html#nhs-region-colours",
+    "title": "NHS Colour Guidlines",
+    "section": "NHS Region Colours",
+    "text": "NHS Region Colours\n\n\n\n\nODS Code\nNHS Code\nRegion\nHex\n\n\n\n\nE40000003\nY56\nLondon\n#3DB4F5\n\n\nE40000006\nY58\nSouth West\n#820F25\n\n\nE40000005\nY59\nSouth East\n#087558\n\n\nE40000011\nY60\nMidlands\n#E69F00\n\n\nE40000007\nY61\nEast of England\n#EADC17\n\n\nE40000010\nY62\nNorth West\n#6F00D5\n\n\nE40000012\nY63\nNorth East & Yorkshire\n#6F7D86"
   },
   {
     "objectID": "r-visualisation.html",
@@ -33,6 +33,13 @@
     "title": "Visualising Data in R",
     "section": "",
     "text": "The NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present.\n\n\n# install from CRAN\ninstall.packages(\"NHSRplotthedots\")\ninstall.packages(\"rmarkdown\")\n\n# Or install the development version from GitHub using {remotes} package:\n# install.packages(\"remotes\")\nremotes::install_github(\"https://github.com/nhs-r-community/NHSRplotthedots\", build_vignettes = TRUE)\nThe help-files, and vignette within this package tell you more about the possible options for controlling the charts\n\n\n\nBelow is an example of the type of chart the package produces. The plot uses the ae_attendances dataset from the {NHSRdatasets} package and a bit of {dplyr} code to select some organisations.\nlibrary(NHSRplotthedots)\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\nsub_set <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1, period < as.Date(\"2018-04-01\"))\n\nsub_set %>%\n  ptd_spc(value_field = breaches, date_field = period, improvement_direction = \"decrease\")\n\n\n\nFigure 1. Example SPC Chart"
+  },
+  {
+    "objectID": "quarto-publish-to-github.html",
+    "href": "quarto-publish-to-github.html",
+    "title": "Publish to GitHub pages",
+    "section": "",
+    "text": "Copy quarto-publish.yml to the folder .github/workflows/quarto-publish.yml.\non:\n  push:\n    branches: main\n  pull_request:\n    branches: main\n\nname: Render and Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Publish to GitHub Pages (and render)\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\nNote\n\n\n\nIf your Quarto project is not in the top level folder of your repository (in this case in /docs), then add the following path to the ‘Publish to GitHub Pages (and render)’ action:\n- name: Publish to GitHub Pages (and render)\n  uses: quarto-dev/quarto-actions/publish@v2\n  with:\n    target: gh-pages\n    path: docs\n  env:\n    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not edit the GITHUB_TOKEN to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.\n\n\n\n\n\n\nQuarto needs to configure the repository for publishing through GitHub Actions. To do this, run quarto publish gh-pages locally once.\n\nNow, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.\nNote that GitHub Pages uses a gh-pages branch in your repository, which will be automatically created if one doesn’t exist."
   },
   {
     "objectID": "index.html",
@@ -56,10 +63,10 @@
     "text": "Example Quarto sites\nA few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.\n\nChampions Lessons Series\nOpenscapes Approach Guide\n\n2021 NASA Cloud Hackathon\nFaylab Lab Manual\nA Quarto tip a day, by Mine Çetinkaya-Rundel"
   },
   {
-    "objectID": "intro-to-rap.html",
-    "href": "intro-to-rap.html",
-    "title": "Reproducible Analytical Pipelines (RAP)",
+    "objectID": "quarto-add-new-page.html",
+    "href": "quarto-add-new-page.html",
+    "title": "Contribute to the docs",
     "section": "",
-    "text": "NHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\n\nhttps://github.com/NHSDigital/rap-community-of-practice\n\nWhat is RAP\nPublishing Code\nPython\nR\nCoding Best Practice\nExamples\nTraining\nGit\nUnit Testing\n\n\n\n\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\n\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\n\n\n\n\nRAP Presentation\n\n\n\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
+    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
   }
 ]
