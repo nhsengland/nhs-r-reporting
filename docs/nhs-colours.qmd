@@ -45,6 +45,17 @@ subtitle: "Colour is a key element of any organisation’s identity."
     .colourHighlight tr:nth-child(6) { background: #ED8B00; color: #FFFFFF;}
     .colourHighlight tr:nth-child(7) { background: #FFB81C; color: #231f20;}
     .colourHighlight tr:nth-child(8) { background: #FAE100; color: #231f20;}
+
+    .colourRegion {
+        text-align: left;
+    }
+    .colourRegion tr:nth-child(1) { background: #E69F00; color: #FFFFFF;}
+    .colourRegion tr:nth-child(2) { background: #3DB4F5; color: #FFFFFF;}
+    .colourRegion tr:nth-child(3) { background: #087558; color: #FFFFFF;}
+    .colourRegion tr:nth-child(4) { background: #EADC17; color: #FFFFFF;}
+    .colourRegion tr:nth-child(5) { background: #6F7D86; color: #FFFFFF;}
+    .colourRegion tr:nth-child(6) { background: #6F00D5; color: #FFFFFF;}
+    .colourRegion tr:nth-child(7) { background: #820F25; color: #FFFFFF;}
 </style>
 
 The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.
@@ -114,3 +125,16 @@ Green is close to blue in the colour spectrum and gives a feel of being in the s
 Highlights are very useful for drawing attention to details, helping to warm up the blue look and providing accent colours to enable NHS organisations, partnerships and services to differentiate themselves from each other. However, they should not be used too heavily otherwise they change the overall look dramatically and people will not associate your communication with the NHS. Therefore, use minimally and do not use large blocks of these highlight colours.
 
 The highlight colour ‘Emergency Services Red’ is not exclusively for use in relation to emergency and urgent care services. However, because of its strong association and use in this area, you should carefully consider how you use it for other purposes.
+
+## NHS Region Colours
+<div class="colourRegion">
+ODS Code | NHS Code | Region | Hex |
+-- | -- |-- | -- |
+E40000003 | Y56 | London | #3DB4F5 |
+E40000006 | Y58 | South West | #820F25 |
+E40000005 | Y59 | South East | #087558 |
+E40000011 | Y60 | Midlands | #E69F00 |
+E40000007 | Y61 | East of England | #EADC17 |
+E40000010 | Y62 | North West | #6F00D5 |
+E40000012 | Y63 | North East & Yorkshire | #6F7D86 |
+</div>
