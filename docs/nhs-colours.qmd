@@ -49,14 +49,17 @@ subtitle: "Colour is a key element of any organisation’s identity."
     .colourRegion {
         text-align: left;
     }
-    .colourRegion tr:nth-child(0) { background: #FFFFFF; color: #231f20;}
-    .colourRegion tr:nth-child(1) { background: #E69F00; color: #FFFFFF;}
-    .colourRegion tr:nth-child(2) { background: #3DB4F5; color: #FFFFFF;}
+    .colourRegion th {
+                        background-color: #FFFFFF !important;
+                        color: #231f20;
+                    }
+    .colourRegion tr:nth-child(1) { background: #3DB4F5; color: #FFFFFF;}
+    .colourRegion tr:nth-child(2) { background: #820F25; color: #FFFFFF;}
     .colourRegion tr:nth-child(3) { background: #087558; color: #FFFFFF;}
-    .colourRegion tr:nth-child(4) { background: #EADC17; color: #231f20;}
-    .colourRegion tr:nth-child(5) { background: #6F7D86; color: #FFFFFF;}
+    .colourRegion tr:nth-child(4) { background: #E69F00; color: #231f20;}
+    .colourRegion tr:nth-child(5) { background: #EADC17; color: #FFFFFF;}
     .colourRegion tr:nth-child(6) { background: #6F00D5; color: #FFFFFF;}
-    .colourRegion tr:nth-child(7) { background: #820F25; color: #FFFFFF;}
+    .colourRegion tr:nth-child(7) { background: #6F7D86; color: #FFFFFF;}
 </style>
 
 The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.
