@@ -142,3 +142,5 @@ E40000007 | Y61 | East of England | #EADC17 |
 E40000010 | Y62 | North West | #6F00D5 |
 E40000012 | Y63 | North East & Yorkshire | #6F7D86 |
 </div>
+
+There are seven NHSE regions who support local systems to provide more joined up and sustainable care for patients.
