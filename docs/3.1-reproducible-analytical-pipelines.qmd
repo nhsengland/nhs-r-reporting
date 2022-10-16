@@ -1,7 +1,9 @@
 ---
 title: Reproducible Analytical Pipelines (RAP)
-subtitle: " RAP brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
+subtitle: Under development"
 ---
+
+Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility.
 
 ## Resources
 

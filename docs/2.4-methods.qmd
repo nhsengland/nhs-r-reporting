@@ -1,4 +1,13 @@
 ---
 title: NHS England Methods in R
-subtitle: "Coming soon"
+subtitle: "Under development"
 ---
+
+- [Quantiles](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Quantiles.R)
+- Statistical Neighbours
+- Pareto Chart
+- Z-Scores
+- Disclosure Control
+- [Standardised Mortality Ratios](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/ISRatio.R)
+- [Life Expectancy](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/LifeExpectancy.R)
+- [Slope Index of Inequality](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/SII_function.R)

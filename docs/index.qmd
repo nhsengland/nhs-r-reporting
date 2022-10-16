@@ -1,28 +1,26 @@
 ---
-title: "Quarto"
-subtitle: "Create open-source reports, documentation, and much more"
+title: "NHSE R Reporting Documentation"
 ---
 
 ## Welcome {#welcome}
 
-It's possible to create beautiful documentation to share online with [Quarto](https://quarto.org) that auto-updates with [GitHub Actions](http://github.com). This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme --- it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.
+A repository to share code, good practice, resources, and knowledge about using R across NHS England. 
 
-Quarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.
+::: {.callout-note}
+No data, public or private are shared in this repository.
+:::
 
-## What is Quarto?
+## Contributing
 
-Quarto helps you have your ideas and your code in one place, and present it in a beautiful way. 
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-**Quarto unifies and extends the RMarkdown ecosystem** - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it's for people who have never used RMarkdown. 
+See [CONTRIBUTING.md](/1.5-contribute.html) for detailed guidance.
 
-[Quarto.org](https://quarto.org) is the go-to place for full documentation and more tutorials! 
+## License
 
-## Example Quarto sites
+Distributed under the MIT License. See [LICENSE.md](https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE) for more information.
 
-A few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.
+## About
 
--   [Champions Lessons Series](https://openscapes.github.io/series)
--   [Openscapes Approach Guide](https://openscapes.github.io/approach-guide/)\
--   [2021 NASA Cloud Hackathon](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/)
--   [Faylab Lab Manual](https://thefaylab.github.io/lab-manual/)
--   [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/), by Mine Çetinkaya-Rundel
+To find out more about the [NHS England R Community](https://future.nhs.uk/NationalRCommunity/groupHome) visit our [project website](https://future.nhs.uk/NationalRCommunity/groupHome).
+

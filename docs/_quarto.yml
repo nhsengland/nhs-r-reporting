@@ -62,12 +62,10 @@ website:
           contents:
             - text: "R-Language"
               file: 1.2-r-language.qmd
-            - text: "UDAL / NDP"
+            - text: "National Data Platform (UDAL)"
               file: 1.3-udal.qmd
-            - text: "GitHub"
+            - text: "NHS England GitHub"
               file: 1.4-github.qmd
-            - text: "Publish to GitHub pages"
-              file: 1.4.1-quarto-publish-to-github.qmd
         - section: "Analysis"
           contents:
             - text: "Visualisations"
@@ -75,13 +73,15 @@ website:
             - text: "Tables"
               file: 2.2-tables.qmd
             - text: "Statistics"
-              file: 2.3-statictis.qmd
+              file: 2.3-statistics.qmd
             - text: "Methods"
               file: 2.4-methods.qmd
         - section: "Data & Code"
           contents:
             - text: "Reproducible Analytical Pipelines"
-              file: 3.0-reproducible-analytical-pipelines.qmd
+              file: 3.1-reproducible-analytical-pipelines.qmd
+            - text: "Coding Best Practices"
+              file: 3.2-best-practice.qmd
 format:
   html:
     theme:
