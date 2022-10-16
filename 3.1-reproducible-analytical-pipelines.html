@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NHS R Reporting - NHSE R Reporting Documentation</title>
+<title>NHS R Reporting - Reproducible Analytical Pipelines (RAP)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1.0-nhs-style-guide.html" rel="next">
+<link href="./3.2-best-practice.html" rel="next">
+<link href="./2.4-methods.html" rel="prev">
 <link href="./assets/favicon/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">NHSE R Reporting Documentation</h1>
+      <h1 class="quarto-secondary-nav-title">Reproducible Analytical Pipelines (RAP)</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -121,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -206,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3.1-reproducible-analytical-pipelines.html" class="sidebar-item-text sidebar-link">Reproducible Analytical Pipelines</a>
+  <a href="./3.1-reproducible-analytical-pipelines.html" class="sidebar-item-text sidebar-link active">Reproducible Analytical Pipelines</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,10 +226,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#nhs-england" id="toc-nhs-england" class="nav-link" data-scroll-target="#nhs-england">NHS England</a></li>
+  <li><a href="#nhs-digital-rap-community-of-practice" id="toc-nhs-digital-rap-community-of-practice" class="nav-link" data-scroll-target="#nhs-digital-rap-community-of-practice">NHS Digital RAP Community of Practice</a></li>
+  <li><a href="#gov.datascience-rap-companion" id="toc-gov.datascience-rap-companion" class="nav-link" data-scroll-target="#gov.datascience-rap-companion">GOV.datascience RAP Companion</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#nhs-bsa-rap" id="toc-nhs-bsa-rap" class="nav-link" data-scroll-target="#nhs-bsa-rap">NHS BSA RAP</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -237,7 +243,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">NHSE R Reporting Documentation</h1>
+<h1 class="title d-none d-lg-block">Reproducible Analytical Pipelines (RAP)</h1>
+<p class="subtitle lead">Under development”</p>
 </div>
 
 
@@ -251,37 +258,59 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>A repository to share code, good practice, resources, and knowledge about using R across NHS England.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>No data, public or private are shared in this repository.</p>
-</div>
-</div>
+<p>Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility.</p>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="nhs-england" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-england">NHS England</h3>
+<ul>
+<li><a href="https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md">NHS Open-source policy (Draft)</a></li>
+<li><a href="https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md">Open code checklist</a></li>
+<li><a href="https://nhsx.github.io/AnalyticsUnit/codeintheopen.html">Sharing Code in the Open by NHSX</a></li>
+</ul>
 </section>
-<section id="contributing" class="level2">
-<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
-<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
-<p>See <a href="./1.5-contribute.html">CONTRIBUTING.md</a> for detailed guidance.</p>
+<section id="nhs-digital-rap-community-of-practice" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-digital-rap-community-of-practice">NHS Digital RAP Community of Practice</h3>
+<p><a href="https://github.com/NHSDigital/rap-community-of-practice">https://github.com/NHSDigital/rap-community-of-practice</a></p>
+<ul>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/what_is_RAP/README.md">What is RAP</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/how-to-publish-your-code-in-the-open.md">Publishing Code</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/README.md#python">Python</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/README.md#r">R</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/coding-best-practice.md">Coding Best Practice</a></li>
+<li><a href="https://github.com/NHSDigital/data-analytics-services#rap-repositories">Examples</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/training-your-team.md">Training</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/README.md#git">Git</a></li>
+<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/python/unit-testing.md">Unit Testing</a></li>
+</ul>
 </section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>Distributed under the MIT License. See <a href="https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE">LICENSE.md</a> for more information.</p>
+<section id="gov.datascience-rap-companion" class="level3">
+<h3 class="anchored" data-anchor-id="gov.datascience-rap-companion">GOV.datascience RAP Companion</h3>
+<p><a href="https://ukgovdatascience.github.io/rap_companion/">https://ukgovdatascience.github.io/rap_companion/</a></p>
 </section>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>To find out more about the <a href="https://future.nhs.uk/NationalRCommunity/groupHome">NHS England R Community</a> visit our <a href="https://future.nhs.uk/NationalRCommunity/groupHome">project website</a>.</p>
+<section id="further-reading" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
+<ul>
+<li><a href="https://www.gov.uk/guidance/be-open-and-use-open-source">Be open and use open source</a></li>
+<li><a href="https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/">The benefits of coding in the open</a></li>
+<li><a href="https://github.com/alphagov">Open source repositories by the Government Digital Service</a></li>
+<li><a href="https://docs.opensafely.org/open-data-manifesto/">Bennett Institute Open Manifesto: Better Data for the NHS</a></li>
+</ul>
+</section>
+<section id="nhs-bsa-rap" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-bsa-rap">NHS BSA RAP</h3>
+<p><a href="https://github.com/nhsbsa-data-analytics/coffee-and-coding/blob/master/2021-10-20%20R%20Markdown%20and%20Official%20Statistics/rap-presentation.Rmd">RAP Presentation</a></p>
+</section>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<ul>
+<li><a href="https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/pca/pca_summary_narrative_2020_21_v001.html">Prescription Cost Analysis (PCA)</a></li>
+<li><a href="https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/mumh/mumh_annual_2020_21_v001.html">Medicines Used in Mental Health</a></li>
+<li><a href="https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/pfd/pfd_annual_2020_21_v001.html">Prescribing for Diabetes</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -385,10 +414,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./2.4-methods.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Methods</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1.0-nhs-style-guide.html" class="pagination-link">
-        <span class="nav-page-text">NHS Style Guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./3.2-best-practice.html" class="pagination-link">
+        <span class="nav-page-text">Coding Best Practices</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

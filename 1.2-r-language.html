@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NHS R Reporting - NHSE R Reporting Documentation</title>
+<title>NHS R Reporting - R Programming Language</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1.0-nhs-style-guide.html" rel="next">
+<link href="./1.3-udal.html" rel="next">
+<link href="./1.5-contribute.html" rel="prev">
 <link href="./assets/favicon/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">NHSE R Reporting Documentation</h1>
+      <h1 class="quarto-secondary-nav-title">R Programming Language</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -121,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -151,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1.2-r-language.html" class="sidebar-item-text sidebar-link">R-Language</a>
+  <a href="./1.2-r-language.html" class="sidebar-item-text sidebar-link active">R-Language</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,10 +226,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a>
+  <ul class="collapse">
+  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
+  <li><a href="#example-quarto-sites" id="toc-example-quarto-sites" class="nav-link" data-scroll-target="#example-quarto-sites">Example Quarto sites</a></li>
+  </ul></li>
+  <li><a href="#resource-list" id="toc-resource-list" class="nav-link" data-scroll-target="#resource-list">Resource List</a>
+  <ul class="collapse">
+  <li><a href="#nhs-themes" id="toc-nhs-themes" class="nav-link" data-scroll-target="#nhs-themes">NHS Themes</a></li>
+  <li><a href="#nhs-code" id="toc-nhs-code" class="nav-link" data-scroll-target="#nhs-code">NHS code</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -237,7 +244,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">NHSE R Reporting Documentation</h1>
+<h1 class="title d-none d-lg-block">R Programming Language</h1>
+<p class="subtitle lead">Under development</p>
 </div>
 
 
@@ -251,37 +259,54 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>A repository to share code, good practice, resources, and knowledge about using R across NHS England.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>No data, public or private are shared in this repository.</p>
-</div>
-</div>
+<ul>
+<li><a href="https://github.com/nhs-r-community/intro_r">Learning R</a></li>
+<li><a href="https://ukgovdatascience.github.io/rap_companion/pub.html">Reports</a></li>
+<li><a href="https://ukgovdatascience.github.io/rap_companion/pub.html#r-markdown-basics">Markdown</a></li>
+<li>Dashboards (Shiny)</li>
+<li><a href="https://ukgovdatascience.github.io/rap_companion/package.html">Packages</a></li>
+</ul>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>It’s possible to create beautiful documentation to share online with <a href="https://quarto.org">Quarto</a> that auto-updates with <a href="http://github.com">GitHub Actions</a>. This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme — it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.</p>
+<p>Quarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.</p>
+<section id="what-is-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h3>
+<p>Quarto helps you have your ideas and your code in one place, and present it in a beautiful way.</p>
+<p><strong>Quarto unifies and extends the RMarkdown ecosystem</strong> - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it’s for people who have never used RMarkdown.</p>
+<p><a href="https://quarto.org">Quarto.org</a> is the go-to place for full documentation and more tutorials!</p>
 </section>
-<section id="contributing" class="level2">
-<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
-<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
-<p>See <a href="./1.5-contribute.html">CONTRIBUTING.md</a> for detailed guidance.</p>
+<section id="example-quarto-sites" class="level3">
+<h3 class="anchored" data-anchor-id="example-quarto-sites">Example Quarto sites</h3>
+<p>A few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.</p>
+<ul>
+<li><a href="https://openscapes.github.io/series">Champions Lessons Series</a></li>
+<li><a href="https://openscapes.github.io/approach-guide/">Openscapes Approach Guide</a><br>
+</li>
+<li><a href="https://nasa-openscapes.github.io/2021-Cloud-Hackathon/">2021 NASA Cloud Hackathon</a></li>
+<li><a href="https://thefaylab.github.io/lab-manual/">Faylab Lab Manual</a></li>
+<li><a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/">A Quarto tip a day</a>, by Mine Çetinkaya-Rundel</li>
+</ul>
 </section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>Distributed under the MIT License. See <a href="https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE">LICENSE.md</a> for more information.</p>
 </section>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>To find out more about the <a href="https://future.nhs.uk/NationalRCommunity/groupHome">NHS England R Community</a> visit our <a href="https://future.nhs.uk/NationalRCommunity/groupHome">project website</a>.</p>
+<section id="resource-list" class="level2">
+<h2 class="anchored" data-anchor-id="resource-list">Resource List</h2>
+<p>NHS specific resources from the NHS-R Community</p>
+<section id="nhs-themes" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-themes">NHS Themes</h3>
+<ul>
+<li><a href="https://nhs-r-community.github.io/NHSRtheme/">NHS-R Theme</a> [<a href="https://github.com/nhs-r-community/NHSRtheme">code</a>]</li>
+</ul>
+</section>
+<section id="nhs-code" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-code">NHS code</h3>
+<ul>
+<li><a href="https://github.com/nhs-r-community/demos-and-how-tos">NHS-R how-tos</a></li>
+<li><a href="https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals">NHS-R R-Markdown functions</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -385,10 +410,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./1.5-contribute.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Contribute to this site</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1.0-nhs-style-guide.html" class="pagination-link">
-        <span class="nav-page-text">NHS Style Guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./1.3-udal.html" class="pagination-link">
+        <span class="nav-page-text">National Data Platform (UDAL)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

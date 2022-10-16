@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NHS R Reporting - NHSE R Reporting Documentation</title>
+<title>NHS R Reporting - Statistics in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1.0-nhs-style-guide.html" rel="next">
+<link href="./2.4-methods.html" rel="next">
+<link href="./2.2-tables.html" rel="prev">
 <link href="./assets/favicon/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">NHSE R Reporting Documentation</h1>
+      <h1 class="quarto-secondary-nav-title">Statistics in R</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -121,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -186,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2.3-statistics.html" class="sidebar-item-text sidebar-link">Statistics</a>
+  <a href="./2.3-statistics.html" class="sidebar-item-text sidebar-link active">Statistics</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -221,23 +222,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">NHSE R Reporting Documentation</h1>
+<h1 class="title d-none d-lg-block">Statistics in R</h1>
+<p class="subtitle lead">Under development</p>
 </div>
 
 
@@ -251,38 +244,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>A repository to share code, good practice, resources, and knowledge about using R across NHS England.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>No data, public or private are shared in this repository.</p>
-</div>
-</div>
-</section>
-<section id="contributing" class="level2">
-<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
-<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
-<p>See <a href="./1.5-contribute.html">CONTRIBUTING.md</a> for detailed guidance.</p>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>Distributed under the MIT License. See <a href="https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE">LICENSE.md</a> for more information.</p>
-</section>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>To find out more about the <a href="https://future.nhs.uk/NationalRCommunity/groupHome">NHS England R Community</a> visit our <a href="https://future.nhs.uk/NationalRCommunity/groupHome">project website</a>.</p>
+<ul>
+<li><a href="https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Means.R">Means</a></li>
+<li><a href="https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Proportions.R">Proportions</a></li>
+<li><a href="https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/utils.R">Confidence Intervals</a></li>
+<li>Correlation</li>
+<li>Regression</li>
+<li>Funnel Plots</li>
+<li><a href="https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Rates.R">Rates</a></li>
+<li><a href="https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/DSR.R">Directly Standardised Rates</a></li>
+<li><a href="https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/ISRate.R">Indirectly Standardised Rates</a></li>
+</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -383,12 +357,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./2.2-tables.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tables</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1.0-nhs-style-guide.html" class="pagination-link">
-        <span class="nav-page-text">NHS Style Guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2.4-methods.html" class="pagination-link">
+        <span class="nav-page-text">Methods</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
