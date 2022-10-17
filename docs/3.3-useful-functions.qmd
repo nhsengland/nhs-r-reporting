@@ -1,0 +1,15 @@
+---
+title: Useful Functions
+subtitle: "Under development"
+---
+
+## Issues
+
+- [Notts Methods](https://github.com/CDU-data-science-team/nottshcMethods/tree/main/R)
+- [Deduplication keeping latest ingest value](https://github.com/nhsengland/nhs-r-reporting/issues/15)
+- [Dataset schema best practice](https://github.com/nhsengland/nhs-r-reporting/issues/13)
+- [Shortening provider names into a readable format](https://github.com/nhsengland/nhs-r-reporting/issues/12)
+- [Identify and convert with poorly formatted dates](https://github.com/nhsengland/nhs-r-reporting/issues/11)
+- [Apply statistical disclosure control](https://www.nhsbsa.nhs.uk/sites/default/files/2020-10/nhsbsa-sdc-protocol.pdf)
+- [Loop though all geographies and render a custom report]()
+- [Import parquet file from Azure datalake into R dataframe](https://github.com/nhsengland/nhs-r-reporting/issues/3)
