@@ -3,7 +3,7 @@ title: Useful Functions
 subtitle: "Under development"
 ---
 
-## Issues
+## Open Issues
 
 - [Notts Methods](https://github.com/CDU-data-science-team/nottshcMethods/tree/main/R)
 - [Deduplication keeping latest ingest value](https://github.com/nhsengland/nhs-r-reporting/issues/15)
