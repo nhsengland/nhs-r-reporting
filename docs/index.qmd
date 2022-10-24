@@ -22,5 +22,5 @@ Distributed under the MIT License. See [LICENSE.md](https://github.com/nhsenglan
 
 ## About
 
-To find out more about the [NHS England R Community](https://future.nhs.uk/NationalRCommunity/groupHome) visit our [project website](https://future.nhs.uk/NationalRCommunity/groupHome).
+To find out more about the [NHS England R Community](https://future.nhs.uk/NHSERcommunity) visit our [project website](https://future.nhs.uk/NHSERcommunity).
 

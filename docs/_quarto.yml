@@ -39,7 +39,7 @@ website:
         href: https://github.com/nhsengland/nhs-r-reporting
         aria-label: GitHub
       - icon: cloud-fill
-        href: https://future.nhs.uk/NationalRCommunity/groupHome
+        href: https://future.nhs.uk/NHSERcommunity
         aria-label: NHS England R Community
 
   sidebar:
