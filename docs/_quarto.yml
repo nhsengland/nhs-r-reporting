@@ -39,7 +39,7 @@ website:
         href: https://github.com/nhsengland/nhs-r-reporting
         aria-label: GitHub
       - icon: cloud-fill
-        href: https://future.nhs.uk/NationalRCommunity/groupHome
+        href: https://future.nhs.uk/NHSERcommunity
         aria-label: NHS England R Community
 
   sidebar:
@@ -52,24 +52,36 @@ website:
           contents:
             - text: "Introduction" 
               file: index.qmd
+            - text: "NHS Style Guide" 
+              file: 1.0-nhs-style-guide.qmd
             - text: "NHS Colours" 
-              file: nhs-colours.qmd
-        - section: "R"
+              file: 1.1-nhs-colours.qmd
+            - text: "Contribute to this site"
+              file: 1.5-contribute.qmd
+        - section: "Tools"
           contents:
             - text: "R-Language"
-              file: r-programming.qmd
-            - text: "Data Visualisation"
-              file: r-visualisation.qmd
-        - section: "Quarto"
+              file: 1.2-r-language.qmd
+            - text: "National Data Platform (UDAL)"
+              file: 1.3-udal.qmd
+            - text: "NHS England GitHub"
+              file: 1.4-github.qmd
+        - section: "Analysis"
           contents:
-            - text: "Contribute to this site"
-              file: quarto-add-new-page.qmd
-            - text: "Publish to GitHub pages"
-              file: quarto-publish-to-github.qmd
-        - section: "RAP"
+            - text: "Visualisations"
+              file: 2.1-visualisation.qmd
+            - text: "Tables"
+              file: 2.2-tables.qmd
+            - text: "Statistics"
+              file: 2.3-statistics.qmd
+            - text: "Methods"
+              file: 2.4-methods.qmd
+        - section: "Data & Code"
           contents:
             - text: "Reproducible Analytical Pipelines"
-              file: intro-to-rap.qmd
+              file: 3.1-reproducible-analytical-pipelines.qmd
+            - text: "Coding Best Practices"
+              file: 3.2-best-practice.qmd
 format:
   html:
     theme:

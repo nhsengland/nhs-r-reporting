@@ -1,9 +1,17 @@
 ---
-title: Publish to GitHub pages
-subtitle: "Publish a Quarto website project to your GitHub pages using GitHub actions."
+title: NHS England GitHub
+subtitle: "Under development"
 ---
 
+- [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/git/intro-to-git.md)
+- [Getting access](https://github.com/nhsengland/github-WoW)
+- [Version Control](https://ukgovdatascience.github.io/rap_companion/vs.html)
+- [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/how-to-publish-your-code-in-the-open.md)
+- [Social Coding](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/git/using-git-collaboratively.md)
+
 ## GitHub Pages
+
+Publish a Quarto website project to your GitHub pages using GitHub actions.
 
 ### Add the GitHub Actions workflow to your project
 
@@ -54,10 +62,14 @@ If your Quarto project is not in the top level folder of your repository (in thi
 Do *not* edit the `GITHUB_TOKEN` to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.
 :::
    
-### Run `quarto publish gh-pages` locally, once
+### Configure the repository before publishing
 
-> Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once.
+Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once.
+
+### Commit and push the workflow
 
 Now, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.
 
+::: {.callout-note}
 Note that GitHub Pages uses a `gh-pages` branch in your repository, which will be automatically created if one doesn't exist.
+:::
