@@ -9,7 +9,8 @@ install.packages("tidyverse",
                  "rmarkdown",
                  "NHSRplotthedots",
                  "rmarkdown",
-                 "here")
+                 "here",
+                 "jsonlite")
 ```
 
 ## Line Chart
