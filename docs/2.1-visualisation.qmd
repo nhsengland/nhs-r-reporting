@@ -3,15 +3,7 @@ title: Visualising Data in R
 subtitle: Common Charts and Plots using in the NHS
 ---
 
-```{r install packages}
-#| include: False
-install.packages("tidyverse",
-                 "rmarkdown",
-                 "NHSRplotthedots",
-                 "rmarkdown",
-                 "here",
-                 "jsonlite")
-```
+
 
 ## Line Chart
 

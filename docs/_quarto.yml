@@ -93,6 +93,7 @@ format:
     # mainfont: "Atkinson Hyperlegible"
     include-in-header: "assets/style/fontawesome.html"
 
-freeze: auto
+execute:
+  freeze: auto
 
 editor: visual
