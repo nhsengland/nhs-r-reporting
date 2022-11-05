@@ -44,7 +44,8 @@ website:
 
   sidebar:
     - id: nav
-      style: "floating"
+      style: "docked"
+      search: true
       collapse-level: 3
       align: left
       contents:
