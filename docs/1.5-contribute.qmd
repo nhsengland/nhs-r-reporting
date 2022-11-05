@@ -42,6 +42,13 @@ Under the `contents:` object add a new section (if required), a string lable for
 ```
 
 ### Publish your changes to GitHub
+
+::: {.callout-warning appearance="simple" collapse="false"}
+### Render Quarto before publishing
+
+Remember to [render your changes locally using R-Studio](https://quarto.org/docs/tools/rstudio.html#render-and-preview) before publishing
+:::
+
 Commit your changes locally
 
 ```bash

@@ -9,13 +9,25 @@ subtitle: Common Charts and Plots using in the NHS
 
 ### ggplot (non-interactive)
 
-```{r fig-linechart}
-#| label: Example Line Chart
-
+#### Packages used:
+```r
 library(here)
 source(here("utility", "nhs_style.R"))           # load nhsplot style
 library(NHSRdatasets)
 library(tidyverse)
+```
+
+```{r fig-linechart-packages}
+#| include: False
+library(here)
+source(here("utility", "nhs_style.R"))           # load nhsplot style
+library(NHSRdatasets)
+library(tidyverse)
+```
+
+```{r fig-linechart}
+#| label: Example Line Chart
+#| warning: False
 
 # filter dataset
 df <- ae_attendances %>% 
@@ -57,12 +69,23 @@ The help-files, and vignette within this package tell you more about the possibl
 
 Below is an example of the type of chart the package produces. The plot uses the `ae_attendances` dataset from the `{NHSRdatasets}` package and a bit of `{dplyr}` code to select some organisations.
 
-```{r fig-NHSRplotthedots}
-#| label: Example SPC Chart
-
+#### Packages used:
+```r
 library(NHSRplotthedots)
 library(NHSRdatasets)
 library(tidyverse)
+```
+
+```{r fig-NHSRplotthedots-pakages}
+#| include: False
+library(NHSRplotthedots)
+library(NHSRdatasets)
+library(tidyverse)
+```
+
+```{r fig-NHSRplotthedots}
+#| label: Example SPC Chart
+#| warning: False
 
 df <- ae_attendances %>% 
   filter(org_code == "RQM", type == 1, period < as.Date("2018-04-01"))
@@ -72,7 +95,7 @@ df %>%
 ```
 
 ## Help Complete this page:
-We are always looking for examples and best practice to complete this documentation. See [`Contribute to this site`](https://nhsengland.github.io/nhs-r-reporting/1.5-contribute.html) for details on how to add or ammend a page on this site.
+We are always looking for examples and best practice to complete this documentation. See [`Contribute to this site`](https://nhsengland.github.io/nhs-r-reporting/1.5-contribute.html) for details on how to add or amend a page on this site.
 
 ### Proposed Content:
 - Bar Chart
