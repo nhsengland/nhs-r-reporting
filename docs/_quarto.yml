@@ -92,6 +92,13 @@ format:
     code-overflow: wrap
     # mainfont: "Atkinson Hyperlegible"
     include-in-header: "assets/style/fontawesome.html"
+    # Code options
+    code-tools:
+      source: false
+      toggle: false
+      caption: none
+    code-fold: true
+    code-summary: "Show code"
 
 execute:
   freeze: auto
