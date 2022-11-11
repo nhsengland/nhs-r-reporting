@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "1.6-statement-on-tools.html",
+    "href": "1.6-statement-on-tools.html",
+    "title": "NHSE-R Statement on Tools",
+    "section": "",
+    "text": "A key aim of the NHS England R group is to support the use of R and R-Mardown reporting across the NHS England analyst community. To support this aim, we are developing guides, examples, and code– everything an analyst needs to get started using R.\nThis document describes the why of using R/R-Markdown, as a reference for managers and end-users of these products.\nPlease file issues, make pull requests, and get involved, we’re happy to take contributions to this document."
+  },
+  {
+    "objectID": "1.6-statement-on-tools.html#reporting-tools",
+    "href": "1.6-statement-on-tools.html#reporting-tools",
+    "title": "NHSE-R Statement on Tools",
+    "section": "Reporting Tools",
+    "text": "Reporting Tools\nThe NHSE-R group endorses the use of the following tools:\n\nR\nR-Mardown\nQuarto\nHTML format reports (over PowerPoint)\nPlotly interactive charts\n\nThese tools are now available on NHSE UDAL virtual machines and modern desktop laptops for all analysts."
+  },
+  {
     "objectID": "1.4-github.html",
     "href": "1.4-github.html",
     "title": "NHS England GitHub",

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NHS R Reporting - Visualising Data in R</title>
+<title>NHS R Reporting - NHSE-R Statement on Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -93,8 +30,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2.2-tables.html" rel="next">
-<link href="./1.4-github.html" rel="prev">
+<link href="./1.5-contribute.html" rel="next">
+<link href="./1.1-nhs-colours.html" rel="prev">
 <link href="./assets/favicon/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -162,7 +99,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Visualising Data in R</h1>
+      <h1 class="quarto-secondary-nav-title">NHSE-R Statement on Tools</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -205,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1.6-statement-on-tools.html" class="sidebar-item-text sidebar-link">Statement on Tools</a>
+  <a href="./1.6-statement-on-tools.html" class="sidebar-item-text sidebar-link active">Statement on Tools</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -250,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2.1-visualisation.html" class="sidebar-item-text sidebar-link active">Visualisations</a>
+  <a href="./2.1-visualisation.html" class="sidebar-item-text sidebar-link">Visualisations</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -299,19 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#line-chart" id="toc-line-chart" class="nav-link active" data-scroll-target="#line-chart">Line Chart</a>
-  <ul class="collapse">
-  <li><a href="#ggplot-non-interactive" id="toc-ggplot-non-interactive" class="nav-link" data-scroll-target="#ggplot-non-interactive">ggplot (non-interactive)</a></li>
-  </ul></li>
-  <li><a href="#statistical-process-control-spc" id="toc-statistical-process-control-spc" class="nav-link" data-scroll-target="#statistical-process-control-spc">Statistical Process Control (SPC)</a>
-  <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#example-chart" id="toc-example-chart" class="nav-link" data-scroll-target="#example-chart">Example Chart</a></li>
-  </ul></li>
-  <li><a href="#help-complete-this-page" id="toc-help-complete-this-page" class="nav-link" data-scroll-target="#help-complete-this-page">Help Complete this page:</a>
-  <ul class="collapse">
-  <li><a href="#proposed-content" id="toc-proposed-content" class="nav-link" data-scroll-target="#proposed-content">Proposed Content:</a></li>
-  </ul></li>
+  <li><a href="#reporting-tools" id="toc-reporting-tools" class="nav-link active" data-scroll-target="#reporting-tools">Reporting Tools</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -320,8 +245,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Visualising Data in R</h1>
-<p class="subtitle lead">Common Charts and Plots using in the NHS</p>
+<h1 class="title d-none d-lg-block">NHSE-R Statement on Tools</h1>
+<p class="subtitle lead">Under development</p>
 </div>
 
 
@@ -335,99 +260,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="line-chart" class="level2">
-<h2 class="anchored" data-anchor-id="line-chart">Line Chart</h2>
-<section id="ggplot-non-interactive" class="level3">
-<h3 class="anchored" data-anchor-id="ggplot-non-interactive">ggplot (non-interactive)</h3>
-<section id="packages-used" class="level4">
-<h4 class="anchored" data-anchor-id="packages-used">Packages used:</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"utility"</span>, <span class="st">"nhs_style.R"</span>))           <span class="co"># load nhsplot style</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(NHSRdatasets)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<details>
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> ae_attendances <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(org_code <span class="sc">==</span> <span class="st">"RQM"</span>, type <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># make plot</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> period, <span class="at">y =</span> attendances)) <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#005EB8"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">1</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour=</span><span class="st">"#333333"</span>) <span class="sc">+</span>                 <span class="co"># bold line at x-axis</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nhs_style</span>() <span class="sc">+</span>                                  <span class="co"># apply nhsplot style</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(df<span class="sc">$</span>attendances)<span class="sc">+</span><span class="dv">1000</span>)) <span class="sc">+</span>         <span class="co"># add space above line</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma) <span class="sc">+</span>   <span class="co"># add 1000s comma format</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Chelsea &amp; Westminster Hospital"</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"A&amp;E Attendances"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="2.1-visualisation_files/figure-html/Example%20Line%20Chart-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="statistical-process-control-spc" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-process-control-spc">Statistical Process Control (SPC)</h2>
-<p>The <a href="https://github.com/nhs-r-community/NHSRplotthedots">NHSR Plot the Dots</a> package is built by the <a href="https://nhsrcommunity.com">NHS-R community</a> to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme <a href="https://www.england.nhs.uk/publication/making-data-count/">‘Making Data Count’</a>. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present.</p>
-<section id="installation" class="level3">
-<h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install from CRAN</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"NHSRplotthedots"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Or install the development version from GitHub using {remotes} package:</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"https://github.com/nhs-r-community/NHSRplotthedots"</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The help-files, and vignette within this package tell you more about the possible options for controlling the charts</p>
-</section>
-<section id="example-chart" class="level3">
-<h3 class="anchored" data-anchor-id="example-chart">Example Chart</h3>
-<p>Below is an example of the type of chart the package produces. The plot uses the <code>ae_attendances</code> dataset from the <code>{NHSRdatasets}</code> package and a bit of <code>{dplyr}</code> code to select some organisations.</p>
-<section id="packages-used-1" class="level4">
-<h4 class="anchored" data-anchor-id="packages-used-1">Packages used:</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(NHSRplotthedots)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(NHSRdatasets)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<details>
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> ae_attendances <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(org_code <span class="sc">==</span> <span class="st">"RQM"</span>, type <span class="sc">==</span> <span class="dv">1</span>, period <span class="sc">&lt;</span> <span class="fu">as.Date</span>(<span class="st">"2018-04-01"</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ptd_spc</span>(<span class="at">value_field =</span> breaches, <span class="at">date_field =</span> period, <span class="at">improvement_direction =</span> <span class="st">"decrease"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="2.1-visualisation_files/figure-html/Example%20SPC%20Chart-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="help-complete-this-page" class="level2">
-<h2 class="anchored" data-anchor-id="help-complete-this-page">Help Complete this page:</h2>
-<p>We are always looking for examples and best practice to complete this documentation. See <a href="https://nhsengland.github.io/nhs-r-reporting/1.5-contribute.html"><code>Contribute to this site</code></a> for details on how to add or amend a page on this site.</p>
-<section id="proposed-content" class="level3">
-<h3 class="anchored" data-anchor-id="proposed-content">Proposed Content:</h3>
+<p>A key aim of the NHS England R group is to support the use of <a href="https://www.r-project.org/about.html">R</a> and <a href="https://rmarkdown.rstudio.com/">R-Mardown</a> reporting across the NHS England analyst community. To support this aim, we are developing guides, examples, and code– everything an analyst needs to get started using R.</p>
+<p>This document describes the <em>why</em> of using R/R-Markdown, as a reference for managers and end-users of these products.</p>
+<p>Please <a href="https://github.com/nhsengland/nhs-r-reporting/issues">file issues</a>, <a href="https://nhsengland.github.io/nhs-r-reporting/1.5-contribute.html">make pull requests</a>, and get involved, we’re happy to take contributions to this document.</p>
+<section id="reporting-tools" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-tools">Reporting Tools</h2>
+<p>The NHSE-R group endorses the use of the following tools:</p>
 <ul>
-<li>Bar Chart</li>
-<li>Pyramid Chart</li>
-<li>Multi-line Chart</li>
-<li>Targets &amp; Benchmarks</li>
-<li>KPIs</li>
-<li>Scatter Plot</li>
-<li>Box Plot</li>
-<li>Maps</li>
+<li><a href="https://www.r-project.org/about.html">R</a></li>
+<li><a href="https://rmarkdown.rstudio.com/">R-Mardown</a></li>
+<li><a href="https://quarto.org/">Quarto</a></li>
+<li><a href="https://quarto.org/docs/output-formats/html-publishing.html#standalone-html">HTML format reports</a> (over PowerPoint)</li>
+<li><a href="https://plotly.com/r/">Plotly</a> interactive charts</li>
 </ul>
+<p>These tools are now available on NHSE UDAL virtual machines and modern desktop laptops for all analysts.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -580,16 +428,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./1.4-github.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHS England GitHub</span>
+      <a href="./1.1-nhs-colours.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHS Colours</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2.2-tables.html" class="pagination-link">
-        <span class="nav-page-text">Tables</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./1.5-contribute.html" class="pagination-link">
+        <span class="nav-page-text">Contribute to this site</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
