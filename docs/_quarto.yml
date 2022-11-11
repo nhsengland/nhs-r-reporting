@@ -57,6 +57,8 @@ website:
               file: 1.0-nhs-style-guide.qmd
             - text: "NHS Colours" 
               file: 1.1-nhs-colours.qmd
+            - text: "Statement on Tools"
+              file: 1.6-statement-on-tools.qmd
             - text: "Contribute to this site"
               file: 1.5-contribute.qmd
         - section: "Tools"
