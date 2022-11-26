@@ -69,6 +69,8 @@ website:
               file: 1.3-udal.qmd
             - text: "NHS England GitHub"
               file: 1.4-github.qmd
+            - text: "Quarto"
+              file: 1.7-quarto.qmd
         - section: "Analysis"
           contents:
             - text: "Visualisations"

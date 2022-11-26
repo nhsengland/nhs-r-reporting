@@ -1,0 +1,122 @@
+---
+title: Quarto for Reporting
+subtitle: "Under development"
+---
+
+## What is Quarto?
+
+**Quarto unifies and extends the RMarkdown ecosystem** - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system, it also extends R Markdown to include Python and Javascript.
+
+[Quarto.org](https://quarto.org) is the go-to place for full documentation and more tutorials.
+
+## Quarto for Reporting
+
+Make file that will create parameterised reports.
+
+```r
+# -------------------------------------------------------------------------
+# Copyright (c) 2022 NHS England. All rights reserved.
+# Licensed under the MIT License. See license.txt in the project root for
+# license information.
+# -------------------------------------------------------------------------
+
+# FILE:           makeFile.R
+# DESCRIPTION:    runs quarto script to make markdown reports
+# CONTRIBUTORS:   Craig R. Shenton
+# CONTACT:        craig.shenton@nhs.net
+# CREATED:        20 Nov 2022
+# VERSION:        0.0.1
+
+# Load libs and global vars
+# -------------------------------------------------------------------------
+required_packages <- c("here", "quarto")
+for (x in required_packages) {
+  if (!requireNamespace(x, quietly = TRUE)) install.packages(x)
+}
+library(here)
+library(quarto)
+
+# Read ODS data from .csv
+# -------------------------------------------------------------------------
+file_path = ".../"
+df_ods <- read_csv(file_path, col_types = cols(.default = 'c')) %>%
+  filter(is.na(end_date))
+
+# Render parameterised quarto docs.
+# -------------------------------------------------------------------------
+
+template_path <- here(".../reports", "report_template.qmd")
+render_output <- here(".../reports", "report_template.html")
+
+# select which organisational level to render (National, Region, ICB, Sub-ICB)
+report_level_pram = "Region"
+Region_list <- as.list(unique(df_ods$Region_code))
+
+for(org in Region_list) {
+  filter_df <- df_ods %>%
+    filter(Region_code == org)
+  quarto::quarto_render(input = template_path,
+                        execute_params = list(
+                          ods_codes = filter_df,
+                          report_level = report_level_pram,
+                          org_level_code = org,
+                          org_level_name = filter_df$Region_name[1]
+                        )
+  )
+  report_name <- paste(org, "_report.html", sep="")
+  writePath <- here("reports/AMR/AMR Reporting Packs", report_level_pram, report_name)
+  if (!isTRUE(file.info(dirname(writePath))$isdir)) dir.create(dirname(writePath), recursive=TRUE)
+  file.rename(from = render_output,  to = writePath)
+}
+```
+
+Parameters passed from the `quarto_render`: `execute_params` list will be accessable in the .qmd template file as follows
+
+```r
+params$report_level     # org level (i.e., "Region")
+params$org_level_code   # org level code (i.e., "Y63")
+params$org_level_name   # org level name (i.e., "NORTH EAST AND YORKSHIRE")
+params$ods_codes        # list of ODS codes in org_level_name hierarchy
+```
+
+From these parameters it is possable to filter a dataset
+
+### `report_template.qmd`
+```r
+---
+title: "NHS Report"
+subtitle: "`r paste(params$org_level_name, params$report_level)`"
+format:
+  html:
+# default parameters (only used if rendered locally)
+params:
+  report_level: "Region"
+  ods_codes: "Dataframe"
+  org_level_code: "Y63"
+  org_level_name: "NA"
+---
+```
+
+```r
+#read ODS data
+ods_df <- params$ods_codes
+
+Region_list <- as.list(unique(ods_df$Region_code))
+ICB_list <- as.list(unique(ods_df$ICB_code))
+SICB_list <- as.list(unique(ods_df$SICB_code))
+
+if(params$report_level == "National"){
+  filter_list <-as.list(unique(ods_df$Region_code))
+  report_name <- "England" 
+}else{
+  if(params$report_level == "Region"){
+    filter_list <- as.list(unique(ods_df$ICB_code))
+    report_name <- ods_df$Region_name[ods_df$Region_code == params$org_level_code]
+  }else{
+    if(params$report_level == "ICB"){
+      filter_list <- as.list(unique(ods_df$SICB_code))
+      report_name <- ods_df$ICB_name[ods_df$ICB_code == params$org_level_code]
+    }
+  }
+}
+```

@@ -9,30 +9,6 @@ subtitle: "Under development"
 - Dashboards (Shiny)
 - [Packages](https://ukgovdatascience.github.io/rap_companion/package.html)
 
-## Quarto
-
-It's possible to create beautiful documentation to share online with [Quarto](https://quarto.org) that auto-updates with [GitHub Actions](http://github.com). This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme --- it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.
-
-Quarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.
-
-### What is Quarto?
-
-Quarto helps you have your ideas and your code in one place, and present it in a beautiful way. 
-
-**Quarto unifies and extends the RMarkdown ecosystem** - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it's for people who have never used RMarkdown. 
-
-[Quarto.org](https://quarto.org) is the go-to place for full documentation and more tutorials! 
-
-### Example Quarto sites
-
-A few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.
-
--   [Champions Lessons Series](https://openscapes.github.io/series)
--   [Openscapes Approach Guide](https://openscapes.github.io/approach-guide/)\
--   [2021 NASA Cloud Hackathon](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/)
--   [Faylab Lab Manual](https://thefaylab.github.io/lab-manual/)
--   [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/), by Mine Çetinkaya-Rundel
-
 ## Resource List
 
 NHS specific resources from the NHS-R Community
