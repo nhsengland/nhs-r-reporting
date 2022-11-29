@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.6-statement-on-tools.html</loc>
-    <lastmod>2022-11-11T11:47:42.125Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.4-github.html</loc>
-    <lastmod>2022-11-11T11:47:42.877Z</lastmod>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/3.2-best-practice.html</loc>
+    <lastmod>2022-11-29T12:41:25.656Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/2.3-statistics.html</loc>
-    <lastmod>2022-11-11T11:47:43.257Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/index.html</loc>
-    <lastmod>2022-11-11T11:47:43.617Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.3-udal.html</loc>
-    <lastmod>2022-11-11T11:47:43.949Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/3.1-reproducible-analytical-pipelines.html</loc>
-    <lastmod>2022-11-11T11:47:44.361Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.5-contribute.html</loc>
-    <lastmod>2022-11-11T11:47:44.713Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/2.2-tables.html</loc>
-    <lastmod>2022-11-11T11:47:45.025Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.2-r-language.html</loc>
-    <lastmod>2022-11-11T11:47:45.385Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/3.3-useful-functions.html</loc>
-    <lastmod>2022-11-11T11:47:45.761Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.1-nhs-colours.html</loc>
-    <lastmod>2022-11-11T11:47:46.149Z</lastmod>
+    <lastmod>2022-11-29T12:41:26.344Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/2.1-visualisation.html</loc>
-    <lastmod>2022-11-11T11:47:46.733Z</lastmod>
+    <lastmod>2022-11-29T12:41:26.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/3.3-useful-functions.html</loc>
+    <lastmod>2022-11-29T12:41:27.312Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/2.4-methods.html</loc>
-    <lastmod>2022-11-11T11:47:47.073Z</lastmod>
+    <lastmod>2022-11-29T12:41:27.632Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/3.2-best-practice.html</loc>
-    <lastmod>2022-11-11T11:47:47.381Z</lastmod>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/1.3-udal.html</loc>
+    <lastmod>2022-11-29T12:41:27.976Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/index.html</loc>
+    <lastmod>2022-11-29T12:41:28.328Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/1.6-statement-on-tools.html</loc>
+    <lastmod>2022-11-29T12:41:28.680Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/1.4-github.html</loc>
+    <lastmod>2022-11-29T12:41:29.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/1.1-nhs-colours.html</loc>
+    <lastmod>2022-11-29T12:41:29.492Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/1.2-r-language.html</loc>
+    <lastmod>2022-11-29T12:41:29.864Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nhsengland/nhs-r-reporting/1.0-nhs-style-guide.html</loc>
-    <lastmod>2022-11-11T11:47:47.713Z</lastmod>
+    <lastmod>2022-11-29T12:41:30.208Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/3.1-reproducible-analytical-pipelines.html</loc>
+    <lastmod>2022-11-29T12:41:30.588Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/1.5-contribute.html</loc>
+    <lastmod>2022-11-29T12:41:30.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nhsengland/nhs-r-reporting/2.2-tables.html</loc>
+    <lastmod>2022-11-29T12:41:31.328Z</lastmod>
   </url>
 </urlset>

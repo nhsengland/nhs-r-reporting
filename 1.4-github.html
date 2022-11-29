@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -148,12 +148,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity"><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -299,7 +299,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#github-pages" id="toc-github-pages" class="nav-link active" data-scroll-target="#github-pages">GitHub Pages</a>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a>
   <ul class="collapse">
   <li><a href="#add-the-github-actions-workflow-to-your-project" id="toc-add-the-github-actions-workflow-to-your-project" class="nav-link" data-scroll-target="#add-the-github-actions-workflow-to-your-project">Add the GitHub Actions workflow to your project</a></li>
   <li><a href="#configure-the-repository-before-publishing" id="toc-configure-the-repository-before-publishing" class="nav-link" data-scroll-target="#configure-the-repository-before-publishing">Configure the repository before publishing</a></li>
@@ -322,19 +323,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
-<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/git/intro-to-git.md">Git</a></li>
-<li><a href="https://github.com/nhsengland/github-WoW">Getting access</a></li>
-<li><a href="https://ukgovdatascience.github.io/rap_companion/vs.html">Version Control</a></li>
-<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/how-to-publish-your-code-in-the-open.md">Publishing Code</a></li>
-<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/git/using-git-collaboratively.md">Social Coding</a></li>
+<li><a href="https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/intro-to-git/">Intro to Git</a> (NHS Digital RAP)</li>
+<li><a href="https://github.com/nhsengland/github-WoW">Getting access</a> (NHS England)</li>
+<li><a href="https://ukgovdatascience.github.io/rap_companion/vs.html">Version Control</a> (GOV.Data Sci)</li>
+<li><a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/how-to-publish-your-code-in-the-open/">Publishing Code</a> (NHS Digital RAP)</li>
+<li><a href="https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/">Social Coding</a> (NHS Digital RAP)</li>
 </ul>
+</section>
 <section id="github-pages" class="level2">
 <h2 class="anchored" data-anchor-id="github-pages">GitHub Pages</h2>
 <p>Publish a Quarto website project to your GitHub pages using GitHub actions.</p>
@@ -466,7 +471,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -553,24 +575,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
