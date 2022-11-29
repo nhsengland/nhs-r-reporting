@@ -3,11 +3,13 @@ title: NHS England GitHub
 subtitle: "Under development"
 ---
 
-- [Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/git/intro-to-git.md)
-- [Getting access](https://github.com/nhsengland/github-WoW)
-- [Version Control](https://ukgovdatascience.github.io/rap_companion/vs.html)
-- [Publishing Code](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/general_guidance/how-to-publish-your-code-in-the-open.md)
-- [Social Coding](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/git/using-git-collaboratively.md)
+## Resources
+
+- [Intro to Git](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/intro-to-git/) (NHS Digital RAP)
+- [Getting access](https://github.com/nhsengland/github-WoW) (NHS England)
+- [Version Control](https://ukgovdatascience.github.io/rap_companion/vs.html) (GOV.Data Sci)
+- [Publishing Code](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/how-to-publish-your-code-in-the-open/) (NHS Digital RAP)
+- [Social Coding](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/) (NHS Digital RAP)
 
 ## GitHub Pages
 
