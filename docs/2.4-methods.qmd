@@ -1,6 +1,6 @@
 ---
 title: NHS England Methods in R
-subtitle: "Under development"
+subtitle: Under development
 ---
 
 - [Quantiles](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Quantiles.R)
