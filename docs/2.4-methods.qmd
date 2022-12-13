@@ -3,6 +3,7 @@ title: NHS England Methods in R
 subtitle: Under development
 ---
 
+# Links
 - [Quantiles](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Quantiles.R)
 - Statistical Neighbours
 - Pareto Chart
