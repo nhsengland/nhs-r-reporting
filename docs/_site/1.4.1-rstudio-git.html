@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NHS R Reporting - NHSE R Reporting Documentation</title>
+<title>NHS R Reporting – rstudio-git</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1.0-nhs-style-guide.html" rel="next">
+<link href="./2.1-visualisation.html" rel="next">
+<link href="./1.4-github.html" rel="prev">
 <link href="./assets/favicon/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">NHSE R Reporting Documentation</h1>
+      <h1 class="quarto-secondary-nav-title">Using Git Version Control in R-Studio</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -126,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -172,6 +173,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1.4-github.html" class="sidebar-item-text sidebar-link">NHS England GitHub</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1.4.1-rstudio-git.html" class="sidebar-item-text sidebar-link active">R-Stuido &amp; Git</a>
   </div>
 </li>
       </ul>
@@ -235,10 +241,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
+  <li><a href="#create-a-new-github-repo" id="toc-create-a-new-github-repo" class="nav-link active" data-scroll-target="#create-a-new-github-repo">Create a New GitHub Repo</a></li>
+  <li><a href="#clone-repository-into-r-studio" id="toc-clone-repository-into-r-studio" class="nav-link" data-scroll-target="#clone-repository-into-r-studio">Clone Repository into R-Studio</a></li>
+  <li><a href="#the-r-studio-git-menu" id="toc-the-r-studio-git-menu" class="nav-link" data-scroll-target="#the-r-studio-git-menu">The R-Studio Git Menu</a></li>
+  <li><a href="#generate-an-github-access-token" id="toc-generate-an-github-access-token" class="nav-link" data-scroll-target="#generate-an-github-access-token">Generate an GitHub Access Token</a></li>
+  <li><a href="#published-to-github" id="toc-published-to-github" class="nav-link" data-scroll-target="#published-to-github">Published to GitHub</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -247,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">NHSE R Reporting Documentation</h1>
+<h1 class="title d-none d-lg-block">Using Git Version Control in R-Studio</h1>
 </div>
 
 
@@ -262,9 +270,22 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>A repository to share code, good practice, resources, and knowledge about using R across NHS England.</p>
+<p>By: <strong><a href="https://github.com/Pablo-source">Pablo Leon-Rodenas</a></strong> <a href="mailto:pablo.leonrodenas@nhs.net">&lt;pablo.leonrodenas@nhs.net&gt;</a></p>
+<p>This guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.</p>
+<p>This will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio.</p>
+<section id="create-a-new-github-repo" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-github-repo">Create a New GitHub Repo</h2>
+<p>For this guide, we are going to create a new GitHub repository. Clicking the <code>New</code> green button on <a href="https://github.com/">GitHub</a> (top left) presents you with the following options:</p>
+<p><img src="figures/intro-to-r-git/github-create-repo.png" class="img-fluid"></p>
+<ul>
+<li>Do not use a template unless required</li>
+<li>Give your repository a name, typically lower-case with a dash <code>-</code> separating each word.</li>
+<li>Set the visibility to <code>Public</code> (see note below)</li>
+<li>Select, add a <code>README</code> file</li>
+<li>Add a <code>.gitignore</code> template for <code>R</code></li>
+<li>Give it the MIT License</li>
+<li>Click the <code>Create Repository</code> button</li>
+</ul>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -275,22 +296,123 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No data, public or private are shared in this repository.</p>
+<p>While we encourage the sharing of code in PUBLIC repositories, please take note of NHS England’s policies on open-source work relating the official NHSE projects:</p>
+<ul>
+<li><a href="https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md">NHS Open-source policy (Draft)</a></li>
+<li><a href="https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md">Open code checklist</a></li>
+<li><a href="https://nhsx.github.io/AnalyticsUnit/codeintheopen.html">Sharing Code in the Open by NHSX</a></li>
+</ul>
 </div>
 </div>
+<p>Following the steps above, I created a new public repo: <a href="https://github.com/Pablo-source/climate_viz">https://github.com/Pablo-source/climate_viz</a></p>
 </section>
-<section id="contributing" class="level2">
-<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
-<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
-<p>See <a href="./1.5-contribute.html">CONTRIBUTING.md</a> for detailed guidance.</p>
+<section id="clone-repository-into-r-studio" class="level2">
+<h2 class="anchored" data-anchor-id="clone-repository-into-r-studio">Clone Repository into R-Studio</h2>
+<p>In this section we are going to clone our GitHub project into a new project we will create in R-Studio.</p>
+<ol type="1">
+<li>From <a href="https://github.com/">GitHub</a>, select the <code>&lt;&gt; Code</code> button on the repo page to display the different cloning options for this project.</li>
+<li>Choose <code>HTTPS</code> and click on the copy icon (overlapped squares) on the right side of the URL.</li>
+</ol>
+<p><img src="figures/intro-to-r-git/github-clone.png" class="img-fluid"></p>
+<p>This is the URL I just copied from the example repo:</p>
+<ul>
+<li><a href="https://github.com/Pablo-source/climate_viz.git">https://github.com/Pablo-source/climate_viz.git</a></li>
+</ul>
+<p>Now in R-Studio, we start by creating a new project:</p>
+<ol type="1">
+<li>Choose the third option <code>&gt; Version Control</code>.</li>
+<li>Then select the <code>&gt; Git</code> option.</li>
+<li>Paste the HTTPS address in the Repository URL.</li>
+<li>Remember to tick (Open in new session) option and press Create Project.</li>
+</ol>
+<p><img src="figures/intro-to-r-git/rstudio-git.png" class="img-fluid"></p>
+<p>This will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project.</p>
 </section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>Distributed under the MIT License. See <a href="https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE">LICENSE.md</a> for more information.</p>
+<section id="the-r-studio-git-menu" class="level2">
+<h2 class="anchored" data-anchor-id="the-r-studio-git-menu">The R-Studio Git Menu</h2>
+<p>A new Git options menu is now available in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on <strong>files</strong> , not folders.</p>
+<p>Once we start adding content to your project in R-Studio the changes will show up here.</p>
+<p><img src="figures/intro-to-r-git/rstudio-git-menu.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>To select files to be saved to a Git commit, click the <code>Staged</code> option on Git tab</li>
+<li>To make a commit locally from R Studio we press the <code>Commit</code> button. Make sure to name your commits in a descriptive way.</li>
+<li>To sync your local commits to GitHub (online), we then press <code>Push</code>.</li>
+</ol>
+<p>It will now ask us for our GitHub username and password.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+IMPORTANT
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will get this error message: <code>Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</code></p>
+</div>
+</div>
+<p>Therefore, we can’t use our GitHub password, but instead a personal access token. This is a security feature for using HTTPS to connect your repo to R-Studio.</p>
 </section>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>To find out more about the <a href="https://future.nhs.uk/NHSERcommunity">NHS England R Community</a> visit our <a href="https://future.nhs.uk/NHSERcommunity">project website</a>.</p>
+<section id="generate-an-github-access-token" class="level2">
+<h2 class="anchored" data-anchor-id="generate-an-github-access-token">Generate an GitHub Access Token</h2>
+<p>This is required to authenticate users from R-Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository:</p>
+<ol type="1">
+<li>Log into <a href="https://github.com/">GitHub</a>, navigate to your profile icon, top righ and click on <code>&gt; Settings</code>.</li>
+<li>At the bottom of the next menu, click on <code>&gt; Developer settings</code>.</li>
+<li>Select <code>&gt; Personal access tokens</code> and then the <code>&gt; Tokens (classic)</code>.</li>
+<li>Finally, click <code>&gt; Generate new token (classic)</code> from the top right button.</li>
+</ol>
+<p><img src="figures/intro-to-r-git/github-token.png" class="img-fluid"></p>
+<ul>
+<li>Give your token a name (“R-studio git” for example).</li>
+<li>Set expiration date for 90 days.</li>
+<li>Set the scope to cover <code>repo</code> and its sub-sections.</li>
+<li>Unless specifically required, do not grant access to other sections.</li>
+</ul>
+<p><img src="figures/intro-to-r-git/access-token-scope.png" class="img-fluid"></p>
+<ul>
+<li>Click on <code>&gt; Generate token</code> button at the bottom of the page.</li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+TIP
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure to copy your personal access token now. You won’t be able to see it again!</p>
+</div>
+</div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+IMPORTANT
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Never share your token with anybody. That will allow other users to control any action in scope on your GitHub account.</p>
+</div>
+</div>
+<p>You can now, paste the token into R-Studio in lieu of a password.</p>
+</section>
+<section id="published-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="published-to-github">Published to GitHub</h2>
+<p>After all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:</p>
+<p><img src="figures/intro-to-r-git/github-check.png" class="img-fluid"></p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><p>Tutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. <a href="https://www.youtube.com/watch?v=d5dUkO5lXds" class="uri">https://www.youtube.com/watch?v=d5dUkO5lXds</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=5-3XeD7vQ3s">Support for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel.</a></p></li>
+</ul>
 
 
 </section>
@@ -482,10 +604,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./1.4-github.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHS England GitHub</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1.0-nhs-style-guide.html" class="pagination-link">
-        <span class="nav-page-text">NHS Style Guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2.1-visualisation.html" class="pagination-link">
+        <span class="nav-page-text">Visualisations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
