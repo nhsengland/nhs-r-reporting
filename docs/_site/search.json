@@ -88,7 +88,7 @@
     "href": "1.4-github.html",
     "title": "NHS England GitHub",
     "section": "",
-    "text": "Git\nGetting access\nVersion Control\nPublishing Code\nSocial Coding"
+    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work."
   },
   {
     "objectID": "1.4-github.html#github-pages",
@@ -250,5 +250,19 @@
     "title": "Using Git Version Control in R-Studio",
     "section": "Resources",
     "text": "Resources\n\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel."
+  },
+  {
+    "objectID": "1.4-github.html#resources",
+    "href": "1.4-github.html#resources",
+    "title": "NHS England GitHub",
+    "section": "Resources",
+    "text": "Resources\n\nGitHub Features (GitHub)\nIntro to Git (NHS Digital RAP)\nWays of Working (NHS England - Draft)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
+  },
+  {
+    "objectID": "1.4-github.html#github-desktop",
+    "href": "1.4-github.html#github-desktop",
+    "title": "NHS England GitHub",
+    "section": "GitHub Desktop",
+    "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
   }
 ]

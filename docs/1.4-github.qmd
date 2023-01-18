@@ -1,12 +1,36 @@
 ---
 title: NHS England GitHub
-subtitle: "Under development"
+subtitle: "Version Control and Deployment"
 ---
+
+- Official NHS England GitHub Organisation: [github.com/nhsengland](https://github.com/nhsengland)
+- To request membership email: [github@england.nhs.uk](mailto:github@england.nhs.uk)
+- You can also request to join a team or set one up for your department.
+- You can use your personal GitHub account if you also do open-source work.
+
+::: {.callout-note}
+## Note
+Two Factor Authorisation must be switched on for all members.
+
+:::
+
+::: {.callout-warning}
+## Warning
+Currently private repos are set to viable for all members. This org level setting is under review.
+
+:::
+
+## GitHub Desktop
+
+Note that the [GitHub desktop app](https://desktop.github.com/) is available on Modern Desktop (see `Company Portal > Apps`) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier.
+
+![](figures/github-desktop.png)
 
 ## Resources
 
+- [GitHub Features](https://github.com/features) (GitHub)
 - [Intro to Git](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/intro-to-git/) (NHS Digital RAP)
-- [Getting access](https://github.com/nhsengland/github-WoW) (NHS England)
+- [Ways of Working](https://github.com/nhsengland/github-WoW) (NHS England - Draft)
 - [Version Control](https://ukgovdatascience.github.io/rap_companion/vs.html) (GOV.Data Sci)
 - [Publishing Code](https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/how-to-publish-your-code-in-the-open/) (NHS Digital RAP)
 - [Social Coding](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/) (NHS Digital RAP)
