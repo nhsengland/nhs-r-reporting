@@ -123,7 +123,21 @@
     "href": "1.4-github.html",
     "title": "NHS England GitHub",
     "section": "",
-    "text": "Intro to Git (NHS Digital RAP)\nGetting access (NHS England)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
+    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work."
+  },
+  {
+    "objectID": "1.4-github.html#github-desktop",
+    "href": "1.4-github.html#github-desktop",
+    "title": "NHS England GitHub",
+    "section": "GitHub Desktop",
+    "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
+  },
+  {
+    "objectID": "1.4-github.html#resources",
+    "href": "1.4-github.html#resources",
+    "title": "NHS England GitHub",
+    "section": "Resources",
+    "text": "Resources\n\nGitHub Features (GitHub)\nIntro to Git (NHS Digital RAP)\nWays of Working (NHS England - Draft)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
   },
   {
     "objectID": "1.4-github.html#github-pages",
