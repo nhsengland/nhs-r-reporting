@@ -53,10 +53,8 @@ website:
           contents:
             - text: "Introduction" 
               file: index.qmd
-            - text: "NHS Style Guide" 
-              file: 1.0-nhs-style-guide.qmd
-            - text: "NHS Colours" 
-              file: 1.1-nhs-colours.qmd
+            #- text: "NHS Style Guide" 
+            #  file: 1.0-nhs-style-guide.qmd
             - text: "Statement on Tools"
               file: 1.6-statement-on-tools.qmd
             - text: "Contribute to this site"
@@ -81,6 +79,8 @@ website:
               file: 2.3-statistics.qmd
             - text: "Methods"
               file: 2.4-methods.qmd
+            - text: "NHS Colours" 
+              file: 1.1-nhs-colours.qmd
         - section: "Data & Code"
           contents:
             - text: "Reproducible Analytical Pipelines"

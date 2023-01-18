@@ -102,7 +102,7 @@
     "href": "1.2-r-language.html",
     "title": "R Programming Language",
     "section": "",
-    "text": "Learning R\nReports\nMarkdown\nDashboards (Shiny)\nPackages"
+    "text": "R and R-Studio are available on Modern Desktop (see Company Portal > Apps) and on UDAL VMs."
   },
   {
     "objectID": "1.2-r-language.html#quarto",
@@ -264,5 +264,12 @@
     "title": "NHS England GitHub",
     "section": "GitHub Desktop",
     "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
+  },
+  {
+    "objectID": "1.2-r-language.html#resources",
+    "href": "1.2-r-language.html#resources",
+    "title": "R Programming Language",
+    "section": "Resources",
+    "text": "Resources\n\nLearning R\nReports\nMarkdown\nDashboards (Shiny)\nPackages"
   }
 ]

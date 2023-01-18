@@ -3,6 +3,10 @@ title: R Programming Language
 subtitle: "Under development"
 ---
 
+- R and R-Studio are available on Modern Desktop (see `Company Portal > Apps`) and on UDAL VMs.
+
+## Resources
+
 - [Learning R](https://github.com/nhs-r-community/intro_r)
 - [Reports](https://ukgovdatascience.github.io/rap_companion/pub.html)
 - [Markdown](https://ukgovdatascience.github.io/rap_companion/pub.html#r-markdown-basics)
