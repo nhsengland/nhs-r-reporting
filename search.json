@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "NHS England R Community",
     "section": "",
-    "text": "A repository to share code, good practice, and resources about using R across NHS England."
+    "text": "Welcome to the NHS England R community documentation site\nThis site is open to all to share good practice, basic knowledge around access and using R across NHS England platforms, and creating a place for us to share our collective knowledge, code, resources and content.\nThe NHS England R Community is not intended to replace any other R user groups - there’s a fantastic national NHS-R Community and lots of local sharing of R work, we want to use this site to signpost to other resources for those specifically using R within NHS England.\nIt is a community - and we need your help"
   },
   {
-    "objectID": "index.html#what-is-r-and-what-is-it-used-for-at-nhse",
-    "href": "index.html#what-is-r-and-what-is-it-used-for-at-nhse",
+    "objectID": "index.html#what-is-r-and-why-is-it-used-at-nhse",
+    "href": "index.html#what-is-r-and-why-is-it-used-at-nhse",
     "title": "NHS England R Community",
-    "section": "What is R and what is it used for at NHSE?",
-    "text": "What is R and what is it used for at NHSE?\nR is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python1, R can be used to develop so-called reproducible analytical pipelines (RAP).\nReproducible analytical pipelines are the gold standard for creating analytical outputs in government2. It is a set of standards that promote best practice across the sector3. By following RAP we can be much more transparent with how we work, increasing trust and confidence in our publications, and make it easier for others to verify and replicate our analysis."
+    "section": "What is R and why is it used at NHSE?",
+    "text": "What is R and why is it used at NHSE?\nR is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python1, R can be used to develop so-called reproducible analytical pipelines (RAP).\nReproducible analytical pipelines are the gold standard for creating analytical outputs in government2. It is a set of standards that promote best practice across the sector3. By following RAP we can be much more transparent with how we work, increasing trust and confidence in our publications, and make it easier for others to verify and replicate our analysis."
   },
   {
     "objectID": "index.html#example-analytical-reports",
@@ -32,14 +32,7 @@
     "href": "index.html#license",
     "title": "NHS England R Community",
     "section": "License",
-    "text": "License\nDistributed under the MIT License. See LICENSE.md for more information."
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "NHS England R Community",
-    "section": "About",
-    "text": "About\nTo find out more about the NHS England R Community visit our project website.\nDon’t forget to vist the NHS-R Community (NHS-R GitHub) as they have lots of useful NHS-wide resources.\n\n\n\n\n\n\nNote\n\n\n\nNo private or patient data are shared in this repository."
+    "text": "License\nDistributed under the MIT License. See LICENSE.md for more information.\n\n\n\n\n\n\nPlease Note:\n\n\n\nNo private or patient data are shared in this repository."
   },
   {
     "objectID": "documentation/index.html",
