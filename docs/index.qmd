@@ -2,9 +2,19 @@
 title: "NHS England R Community"
 ---
 
-A repository to share code, good practice, and resources about using R across NHS England.
+Welcome to the NHS England R community documentation site
 
-## What is R and what is it used for at NHSE?
+This site is open to all to share good practice, basic knowledge around access and using R across NHS England platforms, and creating a place for us to share our collective knowledge, code, resources and content. 
+
+The [NHS England R Community](https://future.nhs.uk/NHSERcommunity) is not intended to replace any other R user groups - there's a fantastic national [NHS-R Community](https://nhsrcommunity.com/) and lots of local sharing of R work, we want to use this site to signpost to other resources for those specifically using R within NHS England.
+
+It is a community - and we need your help
+
+- Please share and invite other R users to our [FutureNHS page](https://future.nhs.uk/NHSERcommunity)
+- Please use [the forum](https://future.nhs.uk/NHSERcommunity/view?objectId=1090202), ask questions and engage!
+- Please share code, your good practice examples, and your learning journey in our [GitHub repository](https://github.com/nhsengland/nhs-r-reporting)
+
+## What is R and why is it used at NHSE?
 
 [R](https://www.r-project.org/) is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python[^nhspycom], R can be used to develop so-called reproducible analytical pipelines (RAP).
 
@@ -37,13 +47,8 @@ See [CONTRIBUTING.md](contribute.qmd) for detailed guidance.
 
 Distributed under the MIT License. See [LICENSE.md](https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE) for more information.
 
-## About
-
-To find out more about the [NHS England R Community](https://future.nhs.uk/NHSERcommunity) visit our [project website](https://future.nhs.uk/NHSERcommunity).
-
-Don't forget to vist the [NHS-R Community](https://nhsrcommunity.com/) ([NHS-R GitHub](https://github.com/nhs-r-community)) as they have lots of useful NHS-wide resources.
-
 ::: {.callout-note}
+## Please Note:
 No private or patient data are shared in this repository.
 :::
 
