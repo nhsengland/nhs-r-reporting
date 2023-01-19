@@ -1,275 +1,352 @@
 [
   {
-    "objectID": "2.1-visualisation.html",
-    "href": "2.1-visualisation.html",
-    "title": "Visualising Data in R",
-    "section": "",
-    "text": "library(here)\nsource(here(\"utility\", \"nhs_style.R\"))           # load nhsplot style\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\n\nShow code\n# filter dataset\ndf <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1)\n\n# make plot\nggplot(df, aes(x = period, y = attendances)) +\n  geom_line(colour = \"#005EB8\", size = 1) +\n  geom_hline(yintercept = 0,\n             size = 1,\n             colour=\"#333333\") +                 # bold line at x-axis\n  nhs_style() +                                  # apply nhsplot style\n  ylim(c(0, max(df$attendances)+1000)) +         # add space above line\n  scale_y_continuous(labels = scales::comma) +   # add 1000s comma format\n  labs(title = \"Chelsea & Westminster Hospital\",\n       x = \"Year\",\n       y = \"A&E Attendances\")"
-  },
-  {
-    "objectID": "2.1-visualisation.html#statistical-process-control-spc",
-    "href": "2.1-visualisation.html#statistical-process-control-spc",
-    "title": "Visualising Data in R",
-    "section": "Statistical Process Control (SPC)",
-    "text": "Statistical Process Control (SPC)\nThe NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present.\n\nInstallation\n# install from CRAN\ninstall.packages(\"NHSRplotthedots\")\ninstall.packages(\"rmarkdown\")\n\n# Or install the development version from GitHub using {remotes} package:\n# install.packages(\"remotes\")\nremotes::install_github(\"https://github.com/nhs-r-community/NHSRplotthedots\", build_vignettes = TRUE)\nThe help-files, and vignette within this package tell you more about the possible options for controlling the charts\n\n\nExample Chart\nBelow is an example of the type of chart the package produces. The plot uses the ae_attendances dataset from the {NHSRdatasets} package and a bit of {dplyr} code to select some organisations.\n\nPackages used:\nlibrary(NHSRplotthedots)\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\n\nShow code\ndf <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1, period < as.Date(\"2018-04-01\"))\n\ndf %>%\n  ptd_spc(value_field = breaches, date_field = period, improvement_direction = \"decrease\")"
-  },
-  {
-    "objectID": "2.1-visualisation.html#help-complete-this-page",
-    "href": "2.1-visualisation.html#help-complete-this-page",
-    "title": "Visualising Data in R",
-    "section": "Help Complete this page:",
-    "text": "Help Complete this page:\nWe are always looking for examples and best practice to complete this documentation. See Contribute to this site for details on how to add or amend a page on this site.\n\nProposed Content:\n\nBar Chart\nPyramid Chart\nMulti-line Chart\nTargets & Benchmarks\nKPIs\nScatter Plot\nBox Plot\nMaps"
-  },
-  {
-    "objectID": "2.3-statistics.html",
-    "href": "2.3-statistics.html",
-    "title": "Statistics in R",
-    "section": "",
-    "text": "Means\nProportions\nConfidence Intervals\nCorrelation\nRegression\nFunnel Plots\nRates\nDirectly Standardised Rates\nIndirectly Standardised Rates"
-  },
-  {
-    "objectID": "3.1-reproducible-analytical-pipelines.html",
-    "href": "3.1-reproducible-analytical-pipelines.html",
-    "title": "Reproducible Analytical Pipelines (RAP)",
-    "section": "",
-    "text": "Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
-  },
-  {
-    "objectID": "3.1-reproducible-analytical-pipelines.html#resources",
-    "href": "3.1-reproducible-analytical-pipelines.html#resources",
-    "title": "Reproducible Analytical Pipelines (RAP)",
-    "section": "Resources",
-    "text": "Resources\n\nNHS England\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nNHS Digital RAP Community of Practice\nhttps://github.com/NHSDigital/rap-community-of-practice\n\nWhat is RAP\nPublishing Code\nPython\nR\nCoding Best Practice\nExamples\nTraining\nGit\nUnit Testing\n\n\n\nGOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\nFurther reading\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\nBennett Institute Open Manifesto: Better Data for the NHS\n\n\n\nNHS BSA RAP\nRAP Presentation\n\n\nExamples\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
-  },
-  {
-    "objectID": "3.3-useful-functions.html",
-    "href": "3.3-useful-functions.html",
-    "title": "Useful Functions",
-    "section": "",
-    "text": "Notts Methods\nDeduplication keeping latest ingest value\nDataset schema best practice\nShortening provider names into a readable format\nIdentify and convert with poorly formatted dates\nApply statistical disclosure control\nLoop though all geographies and render a custom report\nImport parquet file from Azure datalake into R dataframe"
-  },
-  {
-    "objectID": "1.5-contribute.html",
-    "href": "1.5-contribute.html",
-    "title": "Contribute to the docs",
-    "section": "",
-    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\n\n\n\n\n\n\nRender Quarto before publishing\n\n\n\n\n\nRemember to render your changes locally using R-Studio before publishing\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
-  },
-  {
-    "objectID": "1.1-nhs-colours.html",
-    "href": "1.1-nhs-colours.html",
-    "title": "NHS Colour Guidlines",
-    "section": "",
-    "text": "The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.\n> Read the Official NHS Guidance"
-  },
-  {
-    "objectID": "1.1-nhs-colours.html#nhs-region-colours",
-    "href": "1.1-nhs-colours.html#nhs-region-colours",
-    "title": "NHS Colour Guidlines",
-    "section": "NHS Region Colours",
-    "text": "NHS Region Colours\n\n\n\n\nODS Code\nNHS Code\nRegion\nHex\n\n\n\n\nE40000003\nY56\nLondon\n#3DB4F5\n\n\nE40000006\nY58\nSouth West\n#820F25\n\n\nE40000005\nY59\nSouth East\n#087558\n\n\nE40000011\nY60\nMidlands\n#E69F00\n\n\nE40000007\nY61\nEast of England\n#EADC17\n\n\nE40000010\nY62\nNorth West\n#6F00D5\n\n\nE40000012\nY63\nNorth East & Yorkshire\n#6F7D86\n\n\n\n\nThere are seven NHSE regions who support local systems to provide more joined up and sustainable care for patients."
-  },
-  {
-    "objectID": "3.2-best-practice.html",
-    "href": "3.2-best-practice.html",
-    "title": "Coding Best Practices",
-    "section": "",
-    "text": "Cleaning\nTransformations\nTidy Data\nUnit Tests\nQuality Assurance\nDependency Management"
-  },
-  {
-    "objectID": "1.3-udal.html",
-    "href": "1.3-udal.html",
-    "title": "National Data Platform (UDAL)",
-    "section": "",
-    "text": "Getting access\nVirtual Machines\nR Studio\n\nUsing Git\n\nLoading data into R"
-  },
-  {
-    "objectID": "1.4-github.html",
-    "href": "1.4-github.html",
-    "title": "NHS England GitHub",
-    "section": "",
-    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work."
-  },
-  {
-    "objectID": "1.4-github.html#github-pages",
-    "href": "1.4-github.html#github-pages",
-    "title": "NHS England GitHub",
-    "section": "GitHub Pages",
-    "text": "GitHub Pages\nPublish a Quarto website project to your GitHub pages using GitHub actions.\n\nAdd the GitHub Actions workflow to your project\nCopy quarto-publish.yml to the folder .github/workflows/quarto-publish.yml.\non:\n  push:\n    branches: main\n  pull_request:\n    branches: main\n\nname: Render and Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Publish to GitHub Pages (and render)\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\nNote\n\n\n\nIf your Quarto project is not in the top level folder of your repository (in this case in /docs), then add the following path to the ‘Publish to GitHub Pages (and render)’ action:\n- name: Publish to GitHub Pages (and render)\n  uses: quarto-dev/quarto-actions/publish@v2\n  with:\n    target: gh-pages\n    path: docs\n  env:\n    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not edit the GITHUB_TOKEN to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.\n\n\n\n\nConfigure the repository before publishing\nQuarto needs to configure the repository for publishing through GitHub Actions. To do this, run quarto publish gh-pages locally once.\n\n\nCommit and push the workflow\nNow, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.\n\n\n\n\n\n\nNote\n\n\n\nNote that GitHub Pages uses a gh-pages branch in your repository, which will be automatically created if one doesn’t exist."
-  },
-  {
-    "objectID": "1.2-r-language.html",
-    "href": "1.2-r-language.html",
-    "title": "R Programming Language",
-    "section": "",
-    "text": "R and R-Studio are available on Modern Desktop (see Company Portal > Apps) and on UDAL VMs."
-  },
-  {
-    "objectID": "1.2-r-language.html#quarto",
-    "href": "1.2-r-language.html#quarto",
-    "title": "R Programming Language",
-    "section": "Quarto",
-    "text": "Quarto\nIt’s possible to create beautiful documentation to share online with Quarto that auto-updates with GitHub Actions. This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme — it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.\nQuarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.\n\nWhat is Quarto?\nQuarto helps you have your ideas and your code in one place, and present it in a beautiful way.\nQuarto unifies and extends the RMarkdown ecosystem - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it’s for people who have never used RMarkdown.\nQuarto.org is the go-to place for full documentation and more tutorials!\n\n\nExample Quarto sites\nA few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.\n\nChampions Lessons Series\nOpenscapes Approach Guide\n\n2021 NASA Cloud Hackathon\nFaylab Lab Manual\nA Quarto tip a day, by Mine Çetinkaya-Rundel"
-  },
-  {
-    "objectID": "1.2-r-language.html#resource-list",
-    "href": "1.2-r-language.html#resource-list",
-    "title": "R Programming Language",
-    "section": "Resource List",
-    "text": "Resource List\nNHS specific resources from the NHS-R Community\n\nNHS Themes\n\nNHS-R Theme [code]\n\n\n\nNHS code\n\nNHS-R how-tos\nNHS-R R-Markdown functions"
-  },
-  {
-    "objectID": "2.4-methods.html",
-    "href": "2.4-methods.html",
-    "title": "NHS England Methods in R",
-    "section": "",
-    "text": "Quantiles\nStatistical Neighbours\nPareto Chart\nZ-Scores\nDisclosure Control\nStandardised Mortality Ratios\nLife Expectancy\nSlope Index of Inequality"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "NHSE R Reporting Documentation",
+    "title": "NHS England R Community",
     "section": "",
-    "text": "A repository to share code, good practice, resources, and knowledge about using R across NHS England.\n\n\n\n\n\n\nNote\n\n\n\nNo data, public or private are shared in this repository."
+    "text": "A repository to share code, good practice, and resources about using R across NHS England."
   },
   {
     "objectID": "index.html#contributing",
     "href": "index.html#contributing",
-    "title": "NHSE R Reporting Documentation",
+    "title": "NHS England R Community",
     "section": "Contributing",
     "text": "Contributing\nContributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.\nSee CONTRIBUTING.md for detailed guidance."
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "NHSE R Reporting Documentation",
+    "title": "NHS England R Community",
     "section": "License",
     "text": "License\nDistributed under the MIT License. See LICENSE.md for more information."
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
-    "title": "NHSE R Reporting Documentation",
+    "title": "NHS England R Community",
     "section": "About",
-    "text": "About\nTo find out more about the NHS England R Community visit our project website."
+    "text": "About\nTo find out more about the NHS England R Community visit our project website.\nDon’t forget to vist the NHS-R Community (NHS-R GitHub) as they have lots of useful NHS-wide resources.\n\n\n\n\n\n\nNote\n\n\n\nNo private or patient data are shared in this repository."
   },
   {
-    "objectID": "1.6-statement-on-tools.html",
-    "href": "1.6-statement-on-tools.html",
+    "objectID": "documentation/visualisation.html",
+    "href": "documentation/visualisation.html",
+    "title": "Visualising Data in R",
+    "section": "",
+    "text": "library(here)\nsource(here(\"utility\", \"nhs_style.R\"))           # load nhsplot style\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\n# filter dataset\ndf <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1)\n\n# make plot\nggplot(df, aes(x = period, y = attendances)) +\n  geom_line(colour = \"#005EB8\", size = 1) +\n  geom_hline(yintercept = 0,\n             size = 1,\n             colour=\"#333333\") +                 # bold line at x-axis\n  nhs_style() +                                  # apply nhsplot style\n  ylim(c(0, max(df$attendances)+1000)) +         # add space above line\n  scale_y_continuous(labels = scales::comma) +   # add 1000s comma format\n  labs(title = \"Chelsea & Westminster Hospital\",\n       x = \"Year\",\n       y = \"A&E Attendances\")"
+  },
+  {
+    "objectID": "documentation/visualisation.html#statistical-process-control-spc",
+    "href": "documentation/visualisation.html#statistical-process-control-spc",
+    "title": "Visualising Data in R",
+    "section": "Statistical Process Control (SPC)",
+    "text": "Statistical Process Control (SPC)\nThe NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present.\n\nInstallation\n# install from CRAN\ninstall.packages(\"NHSRplotthedots\")\ninstall.packages(\"rmarkdown\")\n\n# Or install the development version from GitHub using {remotes} package:\n# install.packages(\"remotes\")\nremotes::install_github(\"https://github.com/nhs-r-community/NHSRplotthedots\", build_vignettes = TRUE)\nThe help-files, and vignette within this package tell you more about the possible options for controlling the charts\n\n\nExample Chart\nBelow is an example of the type of chart the package produces. The plot uses the ae_attendances dataset from the {NHSRdatasets} package and a bit of {dplyr} code to select some organisations.\n\nPackages used:\nlibrary(NHSRplotthedots)\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\ndf <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1, period < as.Date(\"2018-04-01\"))\n\ndf %>%\n  ptd_spc(value_field = breaches, date_field = period, improvement_direction = \"decrease\")"
+  },
+  {
+    "objectID": "documentation/visualisation.html#help-complete-this-page",
+    "href": "documentation/visualisation.html#help-complete-this-page",
+    "title": "Visualising Data in R",
+    "section": "Help Complete this page:",
+    "text": "Help Complete this page:\nWe are always looking for examples and best practice to complete this documentation. See Contribute to this site for details on how to add or amend a page on this site.\n\nProposed Content:\n\nBar Chart\nPyramid Chart\nMulti-line Chart\nTargets & Benchmarks\nKPIs\nScatter Plot\nBox Plot\nMaps"
+  },
+  {
+    "objectID": "documentation/nhs-colours.html",
+    "href": "documentation/nhs-colours.html",
+    "title": "NHS Colour Guidlines",
+    "section": "",
+    "text": "The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.\n> Read the Official NHS Guidance"
+  },
+  {
+    "objectID": "documentation/nhs-colours.html#nhs-region-colours",
+    "href": "documentation/nhs-colours.html#nhs-region-colours",
+    "title": "NHS Colour Guidlines",
+    "section": "NHS Region Colours",
+    "text": "NHS Region Colours\n\n\n\n\nODS Code\nNHS Code\nRegion\nHex\n\n\n\n\nE40000003\nY56\nLondon\n#3DB4F5\n\n\nE40000006\nY58\nSouth West\n#820F25\n\n\nE40000005\nY59\nSouth East\n#087558\n\n\nE40000011\nY60\nMidlands\n#E69F00\n\n\nE40000007\nY61\nEast of England\n#EADC17\n\n\nE40000010\nY62\nNorth West\n#6F00D5\n\n\nE40000012\nY63\nNorth East & Yorkshire\n#6F7D86\n\n\n\n\nThere are seven NHSE regions who support local systems to provide more joined up and sustainable care for patients."
+  },
+  {
+    "objectID": "documentation/index.html",
+    "href": "documentation/index.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Format Dates\nNHS Colours"
+  },
+  {
+    "objectID": "documentation/dplyr-functions.html",
+    "href": "documentation/dplyr-functions.html",
+    "title": "Format Dates",
+    "section": "",
+    "text": "Source: utilites/dplyr_format_date.R\ndplyr_format_date() is function that takes a dataframe and a list of column names as input and applies date formatting options to the specified columns.\ndplyr_format_date <- function(data, cols, date_format) {\n  data %>%\n    dplyr::mutate_at(dplyr::vars(cols), function(x) {\n      as.character(format(as.Date(x), date_format))\n    })\n}\n\n\ndplyr_format_date(data, cols, date_format)\n\n\n\ndata: A dataframe, or dataframe extension (e.g. a tibble)\ncols: A column name (or list of column names) in the dataframe that will be formatted.\ndate_format: A date format string (e.g., \"%b-%y\"), see table Table 1.\n\n\nTable 1: Date format strings\n\n\nSymbol\nDefinition\nExample\n\n\n\n\n%d\nDay as a number\n19\n\n\n%a\nAbbreviated weekday\nSun\n\n\n%A\nUnabbreviated weekday\nSunday\n\n\n%m\nMonth as a number\n04\n\n\n%b\nAbbreviated month\nFeb\n\n\n%B\nUnabbreviated month\nFebruary\n\n\n%y\n2-digit year\n14\n\n\n%Y\n4-digit year\n2014\n\n\n\n\nSource: www.statology.org\n\n\n\nOther dplyr functions: utilites/dplyr_format_num.R, utilites/dplyr_filter_cols.R\n\n\n\n# Format date column as abbreviated month (%b) - 2-digit year (%y)\nlibrary(dplyr)\nsource(\"utilities/dplyr_format_date.R\")\n\ndf <- data.frame(date = c(\"2022-01-01\",\n                          \"2022-02-01\",\n                          \"2022-03-01\"))\n\nformatted_df <- dplyr_format_date(df, \"date\", \"%b-%y\")\n\nprint(formatted_df)\n#>     date\n#> 1 Jan-22\n#> 2 Feb-22\n#> 3 Mar-22"
+  },
+  {
+    "objectID": "documentation/methods.html",
+    "href": "documentation/methods.html",
+    "title": "NHS England Methods in R",
+    "section": "",
+    "text": "Links\n\nQuantiles\nStatistical Neighbours\nPareto Chart\nZ-Scores\nDisclosure Control\nStandardised Mortality Ratios\nLife Expectancy\nSlope Index of Inequality"
+  },
+  {
+    "objectID": "documentation/statistics.html",
+    "href": "documentation/statistics.html",
+    "title": "Statistical Functions",
+    "section": "",
+    "text": "Means\nProportions\nConfidence Intervals\nCorrelation\nRegression\nFunnel Plots\nRates\nDirectly Standardised Rates\nIndirectly Standardised Rates\nQuantiles\nStatistical Neighbours\nPareto Chart\nZ-Scores\nDisclosure Control\nStandardised Mortality Ratios\nLife Expectancy\nSlope Index of Inequality"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Welcome to my new blog! I’m excited to share my thoughts, ideas, and experiences with you on this platform. This blog will be a place where I can share my passions and interests, as well as provide helpful information and insights on topics that I’m knowledgeable about.\nI’m passionate about many things, but some of the main topics that I’ll be writing about on this blog include technology, data science, and personal development. I’ll be sharing tips and tricks for using new technologies, discussing the latest trends and developments in the field of data science, and offering advice on how to improve your personal and professional skills.\nI hope that you’ll find my blog interesting and informative, and that you’ll come back often to read my latest posts. I welcome your feedback and suggestions, and I’m looking forward to connecting with you and engaging in meaningful discussions on this platform.\nThank you for visiting my blog, and I hope that you’ll enjoy what you read here. Happy reading!\nWritten by ChatGPT."
+  },
+  {
+    "objectID": "posts/rap-maturity/index.html",
+    "href": "posts/rap-maturity/index.html",
+    "title": "RAP Maturity Framework",
+    "section": "",
+    "text": "Developed by NHS Digital RAP community.\nThere are three levels:\n\nBaseline - RAP fundamentals offering resilience against future change.\nSilver - Implementing best practice by following good analytical and software engineering standards.\nGold - Analysis as a product to further elevate your analytical work and enhance its reusability to the public."
+  },
+  {
+    "objectID": "posts/rap-maturity/index.html#baseline-rap---getting-the-fundamentals-right",
+    "href": "posts/rap-maturity/index.html#baseline-rap---getting-the-fundamentals-right",
+    "title": "RAP Maturity Framework",
+    "section": "Baseline RAP - getting the fundamentals right",
+    "text": "Baseline RAP - getting the fundamentals right\nIn order for a publication to be considered a reproducible analytical pipeline, it must at least meet all of the requirements of Baseline RAP:\n\nData produced by code in an open-source language (e.g., Python, R, SQL).\nCode is version controlled (i.e., Git & GitHub).\nRepository includes a README.md file (or equivalent) that clearly details steps a user must follow to reproduce the code.\nCode has been peer reviewed (i.e., use PRs and code reviews)\nCode is published in the open and linked to & from accompanying publication (if relevant)."
+  },
+  {
+    "objectID": "posts/rap-maturity/index.html#silver-rap---implementing-best-practice",
+    "href": "posts/rap-maturity/index.html#silver-rap---implementing-best-practice",
+    "title": "RAP Maturity Framework",
+    "section": "Silver RAP - implementing best practice",
+    "text": "Silver RAP - implementing best practice\nMeeting all of the above requirements, plus:\n\nOutputs are produced by code with minimal manual intervention.\nCode is well-documented including user guidance, explanation of code structure & methodology and docstrings for functions.\nCode is well-organised following standard directory format.\nReusable functions and/or classes are used where appropriate.\nCode adheres to agreed coding standards (e.g., PEP8).\nPipeline includes a testing framework (unit tests, back tests).\nRepository includes package dependency information.\nLogs are automatically recorded by the pipeline to ensure outputs are as expected.\nData is handled and output in a Tidy data format."
+  },
+  {
+    "objectID": "posts/rap-maturity/index.html#gold-rap---analysis-as-a-product",
+    "href": "posts/rap-maturity/index.html#gold-rap---analysis-as-a-product",
+    "title": "RAP Maturity Framework",
+    "section": "Gold RAP - analysis as a product",
+    "text": "Gold RAP - analysis as a product\nMeeting all of the above requirements, plus:\n\nCode is fully packaged.\nRepository automatically runs tests etc. via CI/CD or a different integration/deployment tool e.g. GitHub Actions.\nProcess runs based on event-based triggers (e.g., new data in database) or on a schedule.\nChanges to the RAP are clearly signposted. E.g. a changelog in the package, releases etc. (See gov.uk info on Semantic Versioning)"
+  },
+  {
+    "objectID": "contribute.html",
+    "href": "contribute.html",
+    "title": "Contribute to the docs",
+    "section": "",
+    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\n\n\n\n\n\n\nRender Quarto before publishing\n\n\n\n\n\nRemember to render your changes locally using R-Studio before publishing\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
+  },
+  {
+    "objectID": "updates.html",
+    "href": "updates.html",
+    "title": "Updates",
+    "section": "",
+    "text": "Git in R-Studio Tutorial\n\n\n\n\n\n\n\nTutorial\n\n\nGit\n\n\nGitHub\n\n\nR-Studio\n\n\n\n\nNew tutorial on using version control (Git) in R-Studio\n\n\n\n\n\n\nJan 19, 2023\n\n\nChatGPT\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "tutorials/github.html",
+    "href": "tutorials/github.html",
+    "title": "NHSE GitHub",
+    "section": "",
+    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work."
+  },
+  {
+    "objectID": "tutorials/github.html#github-desktop",
+    "href": "tutorials/github.html#github-desktop",
+    "title": "NHSE GitHub",
+    "section": "GitHub Desktop",
+    "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
+  },
+  {
+    "objectID": "tutorials/github.html#resources",
+    "href": "tutorials/github.html#resources",
+    "title": "NHSE GitHub",
+    "section": "Resources",
+    "text": "Resources\n\nGitHub Features (GitHub)\nIntro to Git (NHS Digital RAP)\nWays of Working (NHS England - Draft)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
+  },
+  {
+    "objectID": "tutorials/github.html#github-pages",
+    "href": "tutorials/github.html#github-pages",
+    "title": "NHSE GitHub",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\nPublish a Quarto website project to your GitHub pages using GitHub actions.\n\nAdd the GitHub Actions workflow to your project\nCopy quarto-publish.yml to the folder .github/workflows/quarto-publish.yml.\non:\n  push:\n    branches: main\n  pull_request:\n    branches: main\n\nname: Render and Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Publish to GitHub Pages (and render)\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\nNote\n\n\n\nIf your Quarto project is not in the top level folder of your repository (in this case in /docs), then add the following path to the ‘Publish to GitHub Pages (and render)’ action:\n- name: Publish to GitHub Pages (and render)\n  uses: quarto-dev/quarto-actions/publish@v2\n  with:\n    target: gh-pages\n    path: docs\n  env:\n    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not edit the GITHUB_TOKEN to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.\n\n\n\n\nConfigure the repository before publishing\nQuarto needs to configure the repository for publishing through GitHub Actions. To do this, run quarto publish gh-pages locally once.\n\n\nCommit and push the workflow\nNow, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.\n\n\n\n\n\n\nNote\n\n\n\nNote that GitHub Pages uses a gh-pages branch in your repository, which will be automatically created if one doesn’t exist."
+  },
+  {
+    "objectID": "tutorials/reproducible-analytical-pipelines.html",
+    "href": "tutorials/reproducible-analytical-pipelines.html",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "",
+    "text": "Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
+  },
+  {
+    "objectID": "tutorials/reproducible-analytical-pipelines.html#resources",
+    "href": "tutorials/reproducible-analytical-pipelines.html#resources",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "Resources",
+    "text": "Resources\n\nNHS England\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nNHS Digital RAP Community of Practice\nhttps://github.com/NHSDigital/rap-community-of-practice\n\nWhat is RAP\nPublishing Code\nPython\nR\nCoding Best Practice\nExamples\nTraining\nGit\nUnit Testing\n\n\n\nGOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\nFurther reading\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\nBennett Institute Open Manifesto: Better Data for the NHS\n\n\n\nNHS BSA RAP\nRAP Presentation\n\n\nExamples\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
+  },
+  {
+    "objectID": "tutorials/udal.html",
+    "href": "tutorials/udal.html",
+    "title": "National Data Platform (UDAL)",
+    "section": "",
+    "text": "Getting access\nVirtual Machines\nR Studio\n\nUsing Git\n\nLoading data into R"
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html",
+    "href": "tutorials/rstudio-git.html",
+    "title": "Git in R-Studio",
+    "section": "",
+    "text": "By: Pablo Leon-Rodenas <pablo.leonrodenas@nhs.net>\nThis guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.\nThis will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio."
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html#create-a-new-github-repo",
+    "href": "tutorials/rstudio-git.html#create-a-new-github-repo",
+    "title": "Git in R-Studio",
+    "section": "Create a New GitHub Repo",
+    "text": "Create a New GitHub Repo\nFor this guide, we are going to create a new GitHub repository. Clicking the New green button on GitHub (top left) presents you with the following options:\n\n\nDo not use a template unless required\nGive your repository a name, typically lower-case with a dash - separating each word.\nSet the visibility to Public (see note below)\nSelect, add a README file\nAdd a .gitignore template for R\nGive it the MIT License\nClick the Create Repository button\n\n\n\n\n\n\n\nNote\n\n\n\nWhile we encourage the sharing of code in PUBLIC repositories, please take note of NHS England’s policies on open-source work relating the official NHSE projects:\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nFollowing the steps above, I created a new public repo: https://github.com/Pablo-source/climate_viz"
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html#clone-repository-into-r-studio",
+    "href": "tutorials/rstudio-git.html#clone-repository-into-r-studio",
+    "title": "Git in R-Studio",
+    "section": "Clone Repository into R-Studio",
+    "text": "Clone Repository into R-Studio\nIn this section we are going to clone our GitHub project into a new project we will create in R-Studio.\n\nFrom GitHub, select the <> Code button on the repo page to display the different cloning options for this project.\nChoose HTTPS and click on the copy icon (overlapped squares) on the right side of the URL.\n\n\nThis is the URL I just copied from the example repo:\n\nhttps://github.com/Pablo-source/climate_viz.git\n\nNow in R-Studio, we start by creating a new project:\n\nChoose the third option > Version Control.\nThen select the > Git option.\nPaste the HTTPS address in the Repository URL.\nRemember to tick (Open in new session) option and press Create Project.\n\n\nThis will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project."
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html#the-r-studio-git-menu",
+    "href": "tutorials/rstudio-git.html#the-r-studio-git-menu",
+    "title": "Git in R-Studio",
+    "section": "The R-Studio Git Menu",
+    "text": "The R-Studio Git Menu\nA new Git options menu is now available in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on files , not folders.\nOnce we start adding content to your project in R-Studio the changes will show up here.\n\n\nTo select files to be saved to a Git commit, click the Staged option on Git tab\nTo make a commit locally from R Studio we press the Commit button. Make sure to name your commits in a descriptive way.\nTo sync your local commits to GitHub (online), we then press Push.\n\nIt will now ask us for our GitHub username and password.\n\n\n\n\n\n\nIMPORTANT\n\n\n\nYou will get this error message: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.\n\n\nTherefore, we can’t use our GitHub password, but instead a personal access token. This is a security feature for using HTTPS to connect your repo to R-Studio."
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html#generate-an-github-access-token",
+    "href": "tutorials/rstudio-git.html#generate-an-github-access-token",
+    "title": "Git in R-Studio",
+    "section": "Generate an GitHub Access Token",
+    "text": "Generate an GitHub Access Token\nThis is required to authenticate users from R-Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository:\n\nLog into GitHub, navigate to your profile icon, top righ and click on > Settings.\nAt the bottom of the next menu, click on > Developer settings.\nSelect > Personal access tokens and then the > Tokens (classic).\nFinally, click > Generate new token (classic) from the top right button.\n\n\n\nGive your token a name (“R-studio git” for example).\nSet expiration date for 90 days.\nSet the scope to cover repo and its sub-sections.\nUnless specifically required, do not grant access to other sections.\n\n\n\nClick on > Generate token button at the bottom of the page.\n\n\n\n\n\n\n\nTIP\n\n\n\nMake sure to copy your personal access token now. You won’t be able to see it again!\n\n\n\n\n\n\n\n\nIMPORTANT\n\n\n\nNever share your token with anybody. That will allow other users to control any action in scope on your GitHub account.\n\n\nYou can now, paste the token into R-Studio in lieu of a password."
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html#published-to-github",
+    "href": "tutorials/rstudio-git.html#published-to-github",
+    "title": "Git in R-Studio",
+    "section": "Published to GitHub",
+    "text": "Published to GitHub\nAfter all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:"
+  },
+  {
+    "objectID": "tutorials/rstudio-git.html#resources",
+    "href": "tutorials/rstudio-git.html#resources",
+    "title": "Git in R-Studio",
+    "section": "Resources",
+    "text": "Resources\n\nNHS-D RAP Community - R-Studio/Git tutorial\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel."
+  },
+  {
+    "objectID": "tutorials/r-language.html",
+    "href": "tutorials/r-language.html",
+    "title": "R Programming Language",
+    "section": "",
+    "text": "R and R-Studio are available on Modern Desktop (see Company Portal > Apps) and on UDAL VMs."
+  },
+  {
+    "objectID": "tutorials/r-language.html#resources",
+    "href": "tutorials/r-language.html#resources",
+    "title": "R Programming Language",
+    "section": "Resources",
+    "text": "Resources\n\nLearning R\nReports\nMarkdown\nDashboards (Shiny)\nPackages"
+  },
+  {
+    "objectID": "tutorials/r-language.html#quarto",
+    "href": "tutorials/r-language.html#quarto",
+    "title": "R Programming Language",
+    "section": "Quarto",
+    "text": "Quarto\nIt’s possible to create beautiful documentation to share online with Quarto that auto-updates with GitHub Actions. This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme — it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.\nQuarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.\n\nWhat is Quarto?\nQuarto helps you have your ideas and your code in one place, and present it in a beautiful way.\nQuarto unifies and extends the RMarkdown ecosystem - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it’s for people who have never used RMarkdown.\nQuarto.org is the go-to place for full documentation and more tutorials!\n\n\nExample Quarto sites\nA few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.\n\nChampions Lessons Series\nOpenscapes Approach Guide\n\n2021 NASA Cloud Hackathon\nFaylab Lab Manual\nA Quarto tip a day, by Mine Çetinkaya-Rundel"
+  },
+  {
+    "objectID": "tutorials/r-language.html#resource-list",
+    "href": "tutorials/r-language.html#resource-list",
+    "title": "R Programming Language",
+    "section": "Resource List",
+    "text": "Resource List\nNHS specific resources from the NHS-R Community\n\nNHS Themes\n\nNHS-R Theme [code]\n\n\n\nNHS code\n\nNHS-R how-tos\nNHS-R R-Markdown functions"
+  },
+  {
+    "objectID": "statement-on-tools.html",
+    "href": "statement-on-tools.html",
     "title": "NHSE-R Statement on Tools",
     "section": "",
-    "text": "A key aim of the NHS England R group is to support the use of R and R-Markdown reporting across the NHS England analyst community. To support this aim, we are developing guides, examples, and code– everything an analyst needs to get started using R.\nThis document describes the why of using R/R-Markdown, as a reference for managers and end-users of these products.\nPlease file issues, make pull requests, and get involved, we’re happy to take contributions to this document."
+    "text": "A key aim of the NHS England R group is to support the use of R and R-Markdown analytics across the NHS England analyst community. To support this aim, we are developing guides, examples, and code– everything an analyst needs to get started using R.\nThis document describes the why of using R/R-Markdown, as a reference for managers and end-users of these products.\nPlease file issues, make pull requests, and get involved, we’re happy to take contributions to this document."
   },
   {
-    "objectID": "1.6-statement-on-tools.html#reporting-tools",
-    "href": "1.6-statement-on-tools.html#reporting-tools",
+    "objectID": "statement-on-tools.html#reporting-tools",
+    "href": "statement-on-tools.html#reporting-tools",
     "title": "NHSE-R Statement on Tools",
     "section": "Reporting Tools",
     "text": "Reporting Tools\nThe NHSE-R group endorses the use of the following tools:\n\nR\nR-Markdown\nQuarto\nHTML format reports (over PowerPoint)\nPlotly interactive charts\n\nThese tools are now available on NHSE UDAL virtual machines and modern desktop laptops for all analysts."
   },
   {
-    "objectID": "1.4.1-rstudio-git.html",
-    "href": "1.4.1-rstudio-git.html",
-    "title": "Using Git Version Control in R-Studio",
+    "objectID": "documentation/dplyr-functions.html#unit-test",
+    "href": "documentation/dplyr-functions.html#unit-test",
+    "title": "Format Dates",
+    "section": "Unit-test",
+    "text": "Unit-test\nSource: tests/testthat/test_dplyr_format_date.R\ntest_that(\"dplyr_format_date formats dates correctly\", {\n  data <- data.frame(decimal = c(0.5, 0.6, 0.7),\n                     number = c(10000, 20000, 30000),\n                     date = c(\"2022-01-01\", \"2022-02-01\", \"2022-03-01\"))\n\n  # Test formatting as dates\n  expected_output <- data.frame(decimal = c(0.5, 0.6, 0.7),\n                                number = c(10000, 20000, 30000),\n                                date = c(\"Jan-22\", \"Feb-22\", \"Mar-22\"))\n  actual_output <- dplyr_format_date(data, \"date\", \"%b-%y\")\n  expect_equal(actual_output, expected_output)\n})"
+  },
+  {
+    "objectID": "posts/rstudio-git/index.html",
+    "href": "posts/rstudio-git/index.html",
+    "title": "Git in R-Studio Tutorial",
     "section": "",
-    "text": "By: Pablo Leon-Rodenas <pablo.leonrodenas@nhs.net>\nThis guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.\nThis will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio."
+    "text": "Link to the Git in R-Studio tutorial\nAttention all R-Studio users! We are excited to announce a new tutorial created by Pablo Leon-Rodenas. This guide will take you through the process of creating new R-Studio projects with version control features using Git and GitHub, and linking R-Studio with a GitHub repository.\nBy following this tutorial, you will be able to work entirely from R-Studio, applying version control to your scripts, creating new projects on GitHub, and doing all standard version control actions such as commits, pushes, and merges directly from R-Studio. This will make it easy for you to keep track of changes made to your projects and collaborate with others.\nPablo Leon-Rodenas is a Data analyst working in the NHS England and has created this tutorial to help R-Studio users take advantage of the powerful features offered by Git and GitHub. If you have any questions or need further assistance, you can reach out to Pablo at <pablo.leonrodenas@nhs.net>.\nDon’t miss out on this valuable resource, check out the tutorial today and start taking control of your R-Studio projects today!"
   },
   {
-    "objectID": "1.4.1-rstudio-git.html#pre-requisites",
-    "href": "1.4.1-rstudio-git.html#pre-requisites",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Pre-requisites",
-    "text": "Pre-requisites\nThis tutorial covers how to connect RStudio to GitHub cloning a project via HTTPS. The security features for using HTTPS to connect your repo to R studio requires you to create a personal access token.\n\nGitHub developer settings\nThis is required to authenticate users from R Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository:\n\nLog into GitHub\nNavigate to your profile icon, top right.\nclick on > Settings.\nAt the bottom of the next menu, click on > Developer settings.\nSelect > Personal access tokens and then the > Tokens (classic).\nFinally, click > Generate new token (classic) from the top right button.\n\n\n\n\nGenerate a new access token\n\nGive your token a name (“R-studio git” for example).\nSet expiration date for 90 days.\nSet the scope to cover repo and its sub-sections.\nUnless specifically required, do not grant access to other sections.\n\n\n\nClick on > Generate token button at the bottom of the page.\n\n\n\n\n\n\n\nTIP\n\n\n\nMake sure to copy your personal access token now. You won’t be able to see it again!\n\n\n\n\n\n\n\n\nIMPORTANT\n\n\n\nNever share your token with anybody. That will allow other users to control any action in scope on your GitHub account.\n\n\n\n\nCreate a new GitHub Repo\nAs a demo, we are going to create a new GitHub repository.\n\nCreate a new repository on GitHub\n\nDo not use a template unless required\nGive your repository a name, typically lower-case with a dash - seperating each word.\nSet the visability to Public (see note below)\nSelect, add a README file\nAdd a .gitignore template for R\nGive it the MIT License\nClick the Create Reporitory button\n\n\n\n\n\n\n\nNote\n\n\n\nWhile we encurage the sharing of code in PUBLIC repositories, please take note of NHS England’s policies on open-source work relating the official NHSE projects:\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\n\nFollowing the steps above, I created a new public repo: https://github.com/Pablo-source/climate_viz\n\n\n\nClone repository into R-Studio\nSelect the <> Code button on the repo page to display different cloning options for this project. Choose HTTPS and click on the copy icon (overlapped squares) on the right side of the URL.\n\nThis is the URL I just copied from that HTTPS tab:\n\nhttps://github.com/Pablo-source/climate_viz.git"
+    "objectID": "tutorials/rap.html",
+    "href": "tutorials/rap.html",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "",
+    "text": "Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
   },
   {
-    "objectID": "1.4.1-rstudio-git.html#go-over-rstudio-to-start-working-on-a-new-project",
-    "href": "1.4.1-rstudio-git.html#go-over-rstudio-to-start-working-on-a-new-project",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Go over RStudio to start working on a new project",
-    "text": "Go over RStudio to start working on a new project\nIn this section we are going to use the URL we just copied from our GitHub project alongside a new project we will create in RStudio.\n\nStart by creating a new project in R Studio\n\nWe start by creating a new project and we choose this time the third option “creating a project from Version Control”. Then we select the Git option\n\nAnd paste the HTTPS address in the following menu\n\nRemember to tick (Open in new session) option And press Create Project.\n\n\nThis action will have created a new folder on you local machine:\n\nIf you navigate to it, you will see it contains all components of a Github Project. Alongside standard elements of an R Project.\n\nOn the R Studio project you just created, you can find all the standard features from R Studio.\n\n\n\nNew options menu displayed on Rstudio due to version control mode.\nAs we have chosen to create project from version control, we can see new features displayed on RStudio, such as a new GIT tab.\n\n\nThis means that now R Studio can keep track of our project and files.\nIt is important to remember that Git and GitHub keep track of changes on files , not folders.\n\n\nStart adding content to your GitHub repo from R Studio\nIn R studio, click on “New Folder” icon and create two brand new folders named “Code” and “data”\n\n\nCreate a new R script called project Start adding “Project folder setup.R”** And we will save it under “Code” folder we just created\n\n\nWe can see it has been saved in the Code folder:\n\n\n\n\nEnable version control for that script by clicking on “Staged” option on Git tab\n\n\n\nCommit this new file to GitHub from R Studio** So we press the Commit button on the Git tab bar:\n\n\n\n\nAnd we press commit\nSo we add that new commit and file to our GitHub Repo\n\nThen we close that menu\n\n\nAnd we press commit\nWe commit the changes by pressing the Push arrow on the top right corner\n\nIt will ask us for our Username and password\n\n\nIMPORTANT:\nWhen it asks you for the PASSWORD, you DON’T have to enter the password !!! You have to enter at this step your PERSONAL ACCESS TOKEN YOU DEFINED EARLIER\n(remember for security reasons, never share your personal access token !)\n\n\nFile has been published to GitHub Repo\n\nAfter all these steps, we have finally uploaded our modified file from RStudio\n\n\nCheck that the file is available now on GitHub\n\nWhen we move over to GitHub, we can see the new file we uploaded\n\nThis has been successfully , the file is on my GitHub repo now under the Code sub- folder !!\nOnline resources used to write this guide\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel.\nhttps://www.youtube.com/watch?\nTroubleshooting: The above video shows how to solve this error message when working on RStudio with GitHub:\nSupport for password authentication was removed on August 13, 2021. Please use a personal access token instead."
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#github-setup",
-    "href": "1.4.1-rstudio-git.html#github-setup",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "GitHub Setup",
-    "text": "GitHub Setup\nThis tutorial covers how to connect RStudio to GitHub cloning a project via HTTPS.\n\nCreate a new GitHub Repo\nAs a demo, we are going to create a new GitHub repository.\n\nCreate a new repository on GitHub\nClicking the New green button on GitHub (top left) presents you with the following options:\n\n\nDo not use a template unless required\nGive your repository a name, typically lower-case with a dash - seperating each word.\nSet the visability to Public (see note below)\nSelect, add a README file\nAdd a .gitignore template for R\nGive it the MIT License\nClick the Create Reporitory button\n\n\n\n\n\n\n\nNote\n\n\n\nWhile we encurage the sharing of code in PUBLIC repositories, please take note of NHS England’s policies on open-source work relating the official NHSE projects:\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nFollowing the steps above, I created a new public repo: https://github.com/Pablo-source/climate_viz"
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#r-studio-setup",
-    "href": "1.4.1-rstudio-git.html#r-studio-setup",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "R-Studio Setup",
-    "text": "R-Studio Setup\n\nClone repository into R-Studio\nIn this section we are going to clone our GitHub project into a new project we will create in RStudio.\n\nFrom GitHub, select the <> Code button on the repo page to display the different cloning options for this project.\nChoose HTTPS and click on the copy icon (overlapped squares) on the right side of the URL.\n\n\nThis is the URL I just copied from the example repo:\n\nhttps://github.com/Pablo-source/climate_viz.git\n\n\n\nCreate a new project in R Studio\nWe start by creating a new project in R-Studio:\n\nChoose the third option > Version Control.\nThen select the > Git option.\nPaste the HTTPS address in the Repository URL.\nRemember to tick (Open in new session) option and press Create Project.\n\n\nThis will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project.\n\n\nR-Studio Git Menu\nA new Git options menu is now avaiable in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on files , not folders.\nOnce we start adding content to your project in R-Studio the changes will show up here.\n\nTo select files to be saved to a Git commit, click the Staged option on Git tab\nTo make a commit localy from R Studio we press the Commit button. Make sure to name your commits in a descriptive way.\nTo sync your local commits to GitHub (online), we then press Push.\n\nIt will now ask us for our GitHub username and password.\n\n\n\n\n\n\nIMPORTANT\n\n\n\nYou will get this error message: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.\n\n\nTherefore, we can’t use our GitHub password, but instead a personal access token. This is a security feature for using HTTPS to connect your repo to R studio.\n\n\nGenerate a new access token\nThis is required to authenticate users from R Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository:\n\nLog into GitHub, navigate to your profile icon, top righ and click on > Settings.\nAt the bottom of the next menu, click on > Developer settings.\nSelect > Personal access tokens and then the > Tokens (classic).\nFinally, click > Generate new token (classic) from the top right button.\n\n\n\nGive your token a name (“R-studio git” for example).\nSet expiration date for 90 days.\nSet the scope to cover repo and its sub-sections.\nUnless specifically required, do not grant access to other sections.\n\n\n\nClick on > Generate token button at the bottom of the page.\n\n\n\n\n\n\n\nTIP\n\n\n\nMake sure to copy your personal access token now. You won’t be able to see it again!\n\n\n\n\n\n\n\n\nIMPORTANT\n\n\n\nNever share your token with anybody. That will allow other users to control any action in scope on your GitHub account.\n\n\nYou can now, paste the token into R-Studio in lieu of a password."
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#online-resources-used-to-write-this-guide",
-    "href": "1.4.1-rstudio-git.html#online-resources-used-to-write-this-guide",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Online resources used to write this guide",
-    "text": "Online resources used to write this guide\n\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel."
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#published-to-github",
-    "href": "1.4.1-rstudio-git.html#published-to-github",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Published to GitHub",
-    "text": "Published to GitHub\nAfter all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:"
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#create-a-new-github-repo",
-    "href": "1.4.1-rstudio-git.html#create-a-new-github-repo",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Create a New GitHub Repo",
-    "text": "Create a New GitHub Repo\nFor this guide, we are going to create a new GitHub repository. Clicking the New green button on GitHub (top left) presents you with the following options:\n\n\nDo not use a template unless required\nGive your repository a name, typically lower-case with a dash - separating each word.\nSet the visibility to Public (see note below)\nSelect, add a README file\nAdd a .gitignore template for R\nGive it the MIT License\nClick the Create Repository button\n\n\n\n\n\n\n\nNote\n\n\n\nWhile we encourage the sharing of code in PUBLIC repositories, please take note of NHS England’s policies on open-source work relating the official NHSE projects:\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nFollowing the steps above, I created a new public repo: https://github.com/Pablo-source/climate_viz"
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#clone-repository-into-r-studio",
-    "href": "1.4.1-rstudio-git.html#clone-repository-into-r-studio",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Clone Repository into R-Studio",
-    "text": "Clone Repository into R-Studio\nIn this section we are going to clone our GitHub project into a new project we will create in R-Studio.\n\nFrom GitHub, select the <> Code button on the repo page to display the different cloning options for this project.\nChoose HTTPS and click on the copy icon (overlapped squares) on the right side of the URL.\n\n\nThis is the URL I just copied from the example repo:\n\nhttps://github.com/Pablo-source/climate_viz.git\n\nNow in R-Studio, we start by creating a new project:\n\nChoose the third option > Version Control.\nThen select the > Git option.\nPaste the HTTPS address in the Repository URL.\nRemember to tick (Open in new session) option and press Create Project.\n\n\nThis will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project."
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#the-r-studio-git-menu",
-    "href": "1.4.1-rstudio-git.html#the-r-studio-git-menu",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "The R-Studio Git Menu",
-    "text": "The R-Studio Git Menu\nA new Git options menu is now available in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on files , not folders.\nOnce we start adding content to your project in R-Studio the changes will show up here.\n\n\nTo select files to be saved to a Git commit, click the Staged option on Git tab\nTo make a commit locally from R Studio we press the Commit button. Make sure to name your commits in a descriptive way.\nTo sync your local commits to GitHub (online), we then press Push.\n\nIt will now ask us for our GitHub username and password.\n\n\n\n\n\n\nIMPORTANT\n\n\n\nYou will get this error message: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.\n\n\nTherefore, we can’t use our GitHub password, but instead a personal access token. This is a security feature for using HTTPS to connect your repo to R-Studio."
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#generate-an-github-access-token",
-    "href": "1.4.1-rstudio-git.html#generate-an-github-access-token",
-    "title": "Using Git Version Control in R-Studio",
-    "section": "Generate an GitHub Access Token",
-    "text": "Generate an GitHub Access Token\nThis is required to authenticate users from R-Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository:\n\nLog into GitHub, navigate to your profile icon, top righ and click on > Settings.\nAt the bottom of the next menu, click on > Developer settings.\nSelect > Personal access tokens and then the > Tokens (classic).\nFinally, click > Generate new token (classic) from the top right button.\n\n\n\nGive your token a name (“R-studio git” for example).\nSet expiration date for 90 days.\nSet the scope to cover repo and its sub-sections.\nUnless specifically required, do not grant access to other sections.\n\n\n\nClick on > Generate token button at the bottom of the page.\n\n\n\n\n\n\n\nTIP\n\n\n\nMake sure to copy your personal access token now. You won’t be able to see it again!\n\n\n\n\n\n\n\n\nIMPORTANT\n\n\n\nNever share your token with anybody. That will allow other users to control any action in scope on your GitHub account.\n\n\nYou can now, paste the token into R-Studio in lieu of a password."
-  },
-  {
-    "objectID": "1.4.1-rstudio-git.html#resources",
-    "href": "1.4.1-rstudio-git.html#resources",
-    "title": "Using Git Version Control in R-Studio",
+    "objectID": "tutorials/rap.html#resources",
+    "href": "tutorials/rap.html#resources",
+    "title": "Reproducible Analytical Pipelines (RAP)",
     "section": "Resources",
-    "text": "Resources\n\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel."
+    "text": "Resources\n\nNHS England\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nNHS Digital RAP Community of Practice\nNew Website!\n\nWhat is RAP\nLevels of RAP\n\n\n\nGOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\nFurther reading\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\nBennett Institute Open Manifesto: Better Data for the NHS\n\n\n\nNHS BSA RAP\nRAP Presentation\n\n\nExamples\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
   },
   {
-    "objectID": "1.4-github.html#resources",
-    "href": "1.4-github.html#resources",
-    "title": "NHS England GitHub",
-    "section": "Resources",
-    "text": "Resources\n\nGitHub Features (GitHub)\nIntro to Git (NHS Digital RAP)\nWays of Working (NHS England - Draft)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
+    "objectID": "tutorials/spc.html",
+    "href": "tutorials/spc.html",
+    "title": "Statistical Process Control",
+    "section": "",
+    "text": "The NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present."
   },
   {
-    "objectID": "1.4-github.html#github-desktop",
-    "href": "1.4-github.html#github-desktop",
-    "title": "NHS England GitHub",
-    "section": "GitHub Desktop",
-    "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
+    "objectID": "tutorials/spc.html#help-complete-this-page",
+    "href": "tutorials/spc.html#help-complete-this-page",
+    "title": "Statistical Process Control",
+    "section": "Help Complete this page:",
+    "text": "Help Complete this page:\nWe are always looking for examples and best practice to complete this documentation. See Contribute to this site for details on how to add or amend a page on this site."
   },
   {
-    "objectID": "1.2-r-language.html#resources",
-    "href": "1.2-r-language.html#resources",
-    "title": "R Programming Language",
-    "section": "Resources",
-    "text": "Resources\n\nLearning R\nReports\nMarkdown\nDashboards (Shiny)\nPackages"
+    "objectID": "index.html#what-is-r-and-what-is-it-used-for-at-nhse",
+    "href": "index.html#what-is-r-and-what-is-it-used-for-at-nhse",
+    "title": "NHS England R Community",
+    "section": "What is R and what is it used for at NHSE?",
+    "text": "What is R and what is it used for at NHSE?\nR is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python1, R can be used to develop so-called reproducible analytical pipelines (RAP).\nReproducible analytical pipelines are the gold standard for creating analytical outputs in government2. It is a set of standards that promote best practice across the sector3. By following RAP we can be much more transparent with how we work, increasing trust and confidence in our publications, and make it easier for others to verify and replicate our analysis."
+  },
+  {
+    "objectID": "index.html#examples",
+    "href": "index.html#examples",
+    "title": "NHS England R Community",
+    "section": "Examples",
+    "text": "Examples\nBelow is a selection of analytical reports that are fully open-source and RAP compliant developed using R, Quarto, {targets}, plotly, and open data from the NHS-R Community.\n\nThese interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations (Regions, ICB, SICBL, PCN, GP, Trust etc..). Using {targets} we can define dependencies in the data processing stages and automatically render and rebuild these reports automatically when new data is avaiable.\nWe aim to develop a standard set of reporting charts and tables that are pre-configured, adjusting the colors, fonts, annotations, and labels to match the NHS style. As well as a shared library of unit-tested functions allows complex analysis to be run with every step in a metric calculation fully validated and documented. Quality assurance will also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format."
+  },
+  {
+    "objectID": "index.html#example-r-analysis",
+    "href": "index.html#example-r-analysis",
+    "title": "NHS England R Community",
+    "section": "Example R-Analysis",
+    "text": "Example R-Analysis\nBelow is a selection of analytical reports that are fully open-source and RAP compliant developed using R, Quarto, {targets}, plotly, and open data from the NHS-R Community.\n\nThese interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations (Regions, ICB, SICBL, PCN, GP, Trust etc..). Using {targets} we can define dependencies in the data processing stages and automatically render and rebuild these reports automatically when new data is avaiable.\nWe aim to develop a standard set of reporting charts and tables that are pre-configured, adjusting the colors, fonts, annotations, and labels to match the NHS style. As well as a shared library of unit-tested functions allows complex analysis to be run with every step in a metric calculation fully validated and documented. Quality assurance will also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format."
+  },
+  {
+    "objectID": "index.html#example-analytical-reports",
+    "href": "index.html#example-analytical-reports",
+    "title": "NHS England R Community",
+    "section": "Example analytical reports",
+    "text": "Example analytical reports\nBelow is a selection of analytical reports that are fully open-source and RAP compliant developed using R, Quarto, {targets}, plotly, and open data from the NHS-R Community.\n\n\nIn development:\n\nThese interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations\n\nRegions\nICB / SICBL\nPCN / GP\nTrust / Ward etc\n\nUsing {targets} we can define dependencies in the data processing stages and process these reports automatically when new data is available.\nA standard set of reporting charts and tables can be pre-configured using plotly, adjusting the colors, fonts, annotations, and labels to match the NHS style.\nA shared library of unit-tested functions allows complex analysis to be run with every calculation fully validated and documented.\nQuality assurance can also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format."
   }
 ]

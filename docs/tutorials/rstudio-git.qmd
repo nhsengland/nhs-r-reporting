@@ -1,0 +1,130 @@
+﻿---
+title: Git in R-Studio
+---
+
+By: **[Pablo Leon-Rodenas](https://github.com/Pablo-source)** [<pablo.leonrodenas@nhs.net>](mailto:pablo.leonrodenas@nhs.net)
+
+This guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.
+
+This will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio.
+
+## Create a New GitHub Repo
+
+For this guide, we are going to create a new GitHub repository. Clicking the `New` green button on [GitHub](https://github.com/) (top left) presents you with the following options:
+
+![](../assets/figures/intro-to-r-git/github-create-repo.png)
+
+- Do not use a template unless required
+- Give your repository a name, typically lower-case with a dash `-` separating each word.
+- Set the visibility to `Public` (see note below)
+- Select, add a `README` file
+- Add a `.gitignore` template for `R`
+- Give it the MIT License
+- Click the `Create Repository` button
+
+::: {.callout-note}
+## Note
+While we encourage the sharing of code in PUBLIC repositories, please take note of NHS England's policies on open-source work relating the official NHSE projects:
+
+- [NHS Open-source policy (Draft)](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md)
+- [Open code checklist](https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md)
+- [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
+
+:::
+
+Following the steps above, I created a new public repo: [https://github.com/Pablo-source/climate_viz](https://github.com/Pablo-source/climate_viz)
+
+## Clone Repository into R-Studio
+
+In this section we are going to clone our GitHub project into a new project we will create in R-Studio.
+
+1. From [GitHub](https://github.com/), select the `<> Code` button on the repo page to display the different cloning options for this project.
+2. Choose `HTTPS` and click on the copy icon (overlapped squares) on the right side of the URL.
+
+![](../assets/figures/intro-to-r-git/github-clone.png)
+
+This is the URL I just copied from the example repo:
+
+- [https://github.com/Pablo-source/climate_viz.git](https://github.com/Pablo-source/climate_viz.git)
+
+Now in R-Studio, we start by creating a new project:
+
+1. Choose the third option `> Version Control`.
+2. Then select the `> Git` option.
+3. Paste the HTTPS address in the Repository URL.
+4. Remember to tick (Open in new session) option and press Create Project.
+
+![](../assets/figures/intro-to-r-git/rstudio-git.png)
+
+This will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project.
+
+## The R-Studio Git Menu
+
+A new Git options menu is now available in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on **files** , not folders.
+
+Once we start adding content to your project in R-Studio the changes will show up here.
+
+![](../assets/figures/intro-to-r-git/rstudio-git-menu.png)
+
+5. To select files to be saved to a Git commit, click the `Staged` option on Git tab
+6. To make a commit locally from R Studio we press the `Commit` button. Make sure to name your commits in a descriptive way.
+7. To sync your local commits to GitHub (online), we then press `Push`.
+
+It will now ask us for our GitHub username and password.
+
+::: {.callout-caution}
+## IMPORTANT
+
+You will get this error message: `Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.`
+
+:::
+
+Therefore, we can't use our GitHub password, but instead a personal access token. This is a security feature for using HTTPS to connect your repo to R-Studio.
+
+## Generate an GitHub Access Token
+
+This is required to authenticate users from R-Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository: 
+
+1. Log into [GitHub](https://github.com/), navigate to your profile icon, top righ and click on `> Settings`.
+2. At the bottom of the next menu, click on `> Developer settings`.
+3. Select `> Personal access tokens` and then the `> Tokens (classic)`.
+4. Finally, click `> Generate new token (classic)` from the top right button.
+
+![](../assets/figures/intro-to-r-git/github-token.png)
+
+- Give your token a name ("R-studio git" for example).
+- Set expiration date for 90 days.
+- Set the scope to cover `repo` and its sub-sections.
+- Unless specifically required, do not grant access to other sections.
+
+![](../assets/figures/intro-to-r-git/access-token-scope.png)
+
+- Click on `> Generate token` button at the bottom of the page.
+
+::: {.callout-tip}
+## TIP
+
+Make sure to copy your personal access token now. You won’t be able to see it again! 
+:::
+
+::: {.callout-caution}
+## IMPORTANT
+
+Never share your token with anybody. That will allow other users to control any action in scope on your GitHub account.
+:::
+
+You can now, paste the token into R-Studio in lieu of a password.
+
+## Published to GitHub
+
+After all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:
+
+![](../assets/figures/intro-to-r-git/github-check.png)
+
+## Resources
+
+- [NHS-D RAP Community - R-Studio/Git tutorial](https://nhsdigital.github.io/rap-community-of-practice/training_resources/R/git_with_RStudio/)
+
+- Tutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. <https://www.youtube.com/watch?v=d5dUkO5lXds>
+
+- [Support for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel.](https://www.youtube.com/watch?v=5-3XeD7vQ3s)

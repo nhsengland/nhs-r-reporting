@@ -1,0 +1,10 @@
+---
+title: National Data Platform (UDAL)
+subtitle: "Under development"
+---
+
+- Getting access
+- Virtual Machines
+- R Studio
+    - [Using Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/R/git_with_RStudio.md)
+- Loading data into R

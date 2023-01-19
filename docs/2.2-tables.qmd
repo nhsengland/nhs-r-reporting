@@ -1,4 +1,0 @@
----
-title: R-Markdown Tables
-subtitle: "Coming soon"
----

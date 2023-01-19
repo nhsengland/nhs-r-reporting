@@ -1,20 +1,37 @@
 ---
-title: "NHSE R Reporting Documentation"
+title: "NHS England R Community"
 ---
 
-## Welcome {#welcome}
+A repository to share code, good practice, and resources about using R across NHS England.
 
-A repository to share code, good practice, resources, and knowledge about using R across NHS England. 
+## What is R and what is it used for at NHSE?
 
-::: {.callout-note}
-No data, public or private are shared in this repository.
-:::
+[R](https://www.r-project.org/) is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python[^nhspycom], R can be used to develop so-called reproducible analytical pipelines (RAP).
+
+Reproducible analytical pipelines are the gold standard for creating analytical outputs in government[^goldacre]. It is a set of standards that promote best practice across the sector[^NHSD-RAP]. By following RAP we can be much more transparent with how we work, increasing trust and confidence in our publications, and make it easier for others to verify and replicate our analysis.
+
+## Example analytical reports
+
+Below is a selection of analytical reports that are fully open-source and RAP compliant developed using [R](https://www.r-project.org/), [Quarto](https://quarto.org/), [{targets}](https://books.ropensci.org/targets/), [plotly](https://plotly.com/r/), and open data from the [NHS-R Community](https://nhsrcommunity.com/nhs-r-community-datasets-package-released/).
+
+<a href="examples/ae_attendance.html"><img src="assets/figures/ae_attendance_img.png" width="350" /></a>
+
+#### In development:
+- These interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations
+  - Regions
+  - ICB / SICBL
+  - PCN / GP
+  - Trust / Ward etc
+- Using [{targets}](https://books.ropensci.org/targets/) we can define dependencies in the data processing stages and process these reports automatically when new data is available. 
+- A standard set of reporting charts and tables can be pre-configured using [plotly](https://plotly.com/r/), adjusting the colors, fonts, annotations, and labels to match [the NHS style](documentation/nhs-colours.qmd).
+- A shared library of unit-tested functions allows complex analysis to be run with every calculation fully validated and documented.
+- Quality assurance can also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format.
 
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-See [CONTRIBUTING.md](/1.5-contribute.html) for detailed guidance.
+See [CONTRIBUTING.md](contribute.qmd) for detailed guidance.
 
 ## License
 
@@ -24,3 +41,15 @@ Distributed under the MIT License. See [LICENSE.md](https://github.com/nhsenglan
 
 To find out more about the [NHS England R Community](https://future.nhs.uk/NHSERcommunity) visit our [project website](https://future.nhs.uk/NHSERcommunity).
 
+Don't forget to vist the [NHS-R Community](https://nhsrcommunity.com/) ([NHS-R GitHub](https://github.com/nhs-r-community)) as they have lots of useful NHS-wide resources.
+
+::: {.callout-note}
+No private or patient data are shared in this repository.
+:::
+
+
+[^nhspycom]: See the [NHS Python Community](https://nhs-pycom.net/)
+
+[^goldacre]: See Professor Ben Goldacre’s [Better, Broader, Safer](https://www.gov.uk/government/publications/better-broader-safer-using-health-data-for-research-and-analysis) review into how the efficient and safe use of health data for research and analysis can benefit patients and the healthcare sector.
+
+[^NHSD-RAP]: See NHS Digital's RAP Community of Practice guide on the [levels of RAP](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/).

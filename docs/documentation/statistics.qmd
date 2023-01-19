@@ -1,0 +1,22 @@
+---
+title: Statistical Functions
+subtitle: "Under development"
+---
+
+- [Means](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Means.R)
+- [Proportions](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Proportions.R)
+- [Confidence Intervals](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/utils.R)
+- Correlation
+- Regression
+- Funnel Plots
+- [Rates](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Rates.R)
+- [Directly Standardised Rates](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/DSR.R)
+- [Indirectly Standardised Rates](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/ISRate.R)
+- [Quantiles](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/Quantiles.R)
+- Statistical Neighbours
+- Pareto Chart
+- Z-Scores
+- Disclosure Control
+- [Standardised Mortality Ratios](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/ISRatio.R)
+- [Life Expectancy](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/LifeExpectancy.R)
+- [Slope Index of Inequality](https://github.com/publichealthengland/PHEindicatormethods/blob/master/R/SII_function.R)

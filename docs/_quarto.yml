@@ -1,26 +1,20 @@
 project:
   type: website
-  # resources:
-  #   - "images/twitter-card.png"
-  #   - "course-materials/_slides/"
-    
-website:
-  page-navigation: true
-  title: "NHS R Reporting"
-  description: "R Reporting"
-  # date: now
-  favicon: assets/favicon/favicon.ico
-  repo-url: https://github.com/nhsengland/nhs-r-reporting
-  repo-actions: [issue]
 
-  # opengraph: true
-  # twitter-card:
-  #   creator: "@minebocek"
-  #   image: "/images/twitter-card.png"
+website:
+  open-graph: true
+  page-navigation: true
+  title: "NHSE-R"
+  description: "NHSE-R"
+  # date: now
+  favicon: assets/favicons/favicon.ico
+  repo-url: https://github.com/nhsengland/nhs-r-reporting
+  repo-actions: [edit, issue]
+  site-url: https://nhsengland.github.io/nhs-r-reporting
 
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    background: "#005eb8"
+    # background: "#005eb8"
     right:
     - text: "License"
       href: https://github.com/nhsengland/nhs-r-reporting/blob/main/LICENSE
@@ -28,13 +22,34 @@ website:
       href: https://github.com/nhsengland/nhs-r-reporting/blob/main/CODE_OF_CONDUCT.md
 
   navbar:
-    background: "#005eb8"
-    # logo: assets/logos/logo-nhs-300.png
-    # align: center
-    title: "NHS England R Reporting"
+    background: light
+    title: false
     collapse-below: lg
- 
+    left:
+      - text: "Homepage"
+        icon: "house-door"
+        href: index.qmd
+      - text: "Tutorials"
+        icon: "bookmark-check"
+        href: tutorials/index.qmd
+      - text: "Documentation"
+        icon: "file-earmark-text"
+        href: documentation/index.qmd
+      - text: "Updates"
+        icon: "rss"
+        href: updates.qmd
     right:
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/nhsengland/nhs-r-reporting/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/nhsengland/nhs-r-reporting/discussions"
+          - text: "FAQ"
+            icon: "question-circle"
+            href: faq.qmd
       - icon: github
         href: https://github.com/nhsengland/nhs-r-reporting
         aria-label: GitHub
@@ -43,68 +58,42 @@ website:
         aria-label: NHS England R Community
 
   sidebar:
-    - id: nav
-      style: "docked"
-      search: true
-      collapse-level: 3
-      align: left
-      contents:
-        - section: "Getting Started"
-          contents:
-            - text: "Introduction" 
-              file: index.qmd
-            #- text: "NHS Style Guide" 
-            #  file: 1.0-nhs-style-guide.qmd
-            - text: "Statement on Tools"
-              file: 1.6-statement-on-tools.qmd
-            - text: "Contribute to this site"
-              file: 1.5-contribute.qmd
-        - section: "Tools"
-          contents:
-            - text: "R-Language"
-              file: 1.2-r-language.qmd
-            - text: "National Data Platform (UDAL)"
-              file: 1.3-udal.qmd
-            - text: "NHS England GitHub"
-              file: 1.4-github.qmd
-            - text: "R-Stuido & Git"
-              file: 1.4.1-rstudio-git.qmd
-        - section: "Analysis"
-          contents:
-            - text: "Visualisations"
-              file: 2.1-visualisation.qmd
-            - text: "Tables"
-              file: 2.2-tables.qmd
-            - text: "Statistics"
-              file: 2.3-statistics.qmd
-            - text: "Methods"
-              file: 2.4-methods.qmd
-            - text: "NHS Colours" 
-              file: 1.1-nhs-colours.qmd
-        - section: "Data & Code"
-          contents:
-            - text: "Reproducible Analytical Pipelines"
-              file: 3.1-reproducible-analytical-pipelines.qmd
-            - text: "Coding Best Practices"
-              file: 3.2-best-practice.qmd
+    id: toc-side
+    style: "floating"
+    pinned: true
+    contents:
+      - section: "NHSE-R"
+        contents:
+          - text: "Homepage" 
+            file: index.qmd
+          - text: "Statement on Tools"
+            file: statement-on-tools.qmd
+          - text: "Contribute to this site"
+            file: contribute.qmd
+      - section: Tutorials
+        file: tutorials/index.qmd
+        contents: 
+          - auto: tutorials/*.qmd
+      - section: Documentation
+        file: documentation/index.qmd
+        contents: 
+          - auto: documentation/*.qmd
+      - section: Examples
+        contents: 
+          - text: "A&E Attendance Report"
+            file: examples/ae_attendance.html
+      - text: "FAQ"
+        file: faq.qmd
 format:
   html:
-    theme:
-      light: [cosmo]
     toc: true
+    toc-depth: 4
+    theme:
+      light: [cosmo, assets/style/theme.scss]
     code-copy: true
     code-overflow: wrap
-    # mainfont: "Atkinson Hyperlegible"
-    include-in-header: "assets/style/fontawesome.html"
-    # Code options
-    code-tools:
-      source: false
-      toggle: false
-      caption: none
-    code-fold: true
-    code-summary: "Show code"
+    css: assets/style/styles.css
+    include-after-body: assets/style/js.html
 
 execute:
   freeze: auto
-
-editor: visual
