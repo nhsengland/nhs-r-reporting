@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>NHSE-R</title>
+<link>https://nhsengland.github.io/nhs-r-reporting/updates.html</link>
+<atom:link href="https://nhsengland.github.io/nhs-r-reporting/updates.xml" rel="self" type="application/rss+xml"/>
+<description>NHSE-R</description>
+<generator>quarto-1.2.313</generator>
+<lastBuildDate>Thu, 19 Jan 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Git in R-Studio Tutorial</title>
+  <dc:creator>ChatGPT</dc:creator>
+  <link>https://nhsengland.github.io/nhs-r-reporting/posts/rstudio-git/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><a href="https://nhsengland.github.io/nhs-r-reporting/tutorials/rstudio-git.html">Link to the Git in R-Studio tutorial</a></p>
+<p>Attention all R-Studio users! We are excited to announce a new tutorial created by Pablo Leon-Rodenas. This guide will take you through the process of creating new R-Studio projects with version control features using Git and GitHub, and linking R-Studio with a GitHub repository.</p>
+<p>By following this tutorial, you will be able to work entirely from R-Studio, applying version control to your scripts, creating new projects on GitHub, and doing all standard version control actions such as commits, pushes, and merges directly from R-Studio. This will make it easy for you to keep track of changes made to your projects and collaborate with others.</p>
+<p>Pablo Leon-Rodenas is a Data analyst working in the NHS England and has created this tutorial to help R-Studio users take advantage of the powerful features offered by Git and GitHub. If you have any questions or need further assistance, you can reach out to Pablo at <a href="mailto:pablo.leonrodenas@nhs.net">&lt;pablo.leonrodenas@nhs.net&gt;</a>.</p>
+<p>Don’t miss out on this valuable resource, check out the tutorial today and start taking control of your R-Studio projects today!</p>
+
+
+
+ ]]></description>
+  <category>Tutorial</category>
+  <category>Git</category>
+  <category>GitHub</category>
+  <category>R-Studio</category>
+  <guid>https://nhsengland.github.io/nhs-r-reporting/posts/rstudio-git/index.html</guid>
+  <pubDate>Thu, 19 Jan 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://nhsengland.github.io/nhs-r-reporting/posts/rstudio-git/github-rstudio.png" medium="image" type="image/png" height="106" width="144"/>
+</item>
+</channel>
+</rss>

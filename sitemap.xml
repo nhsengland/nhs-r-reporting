@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/3.1-reproducible-analytical-pipelines.html</loc>
-    <lastmod>2023-01-18T12:32:40.975Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/index.html</loc>
+    <lastmod>2023-01-19T15:01:22.592Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/index.html</loc>
-    <lastmod>2023-01-18T12:32:41.771Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/documentation/index.html</loc>
+    <lastmod>2023-01-19T15:01:23.244Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/2.3-statistics.html</loc>
-    <lastmod>2023-01-18T12:32:42.147Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/documentation/nhs-colours.html</loc>
+    <lastmod>2023-01-19T15:01:23.628Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.2-r-language.html</loc>
-    <lastmod>2023-01-18T12:32:42.575Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/documentation/statistics.html</loc>
+    <lastmod>2023-01-19T15:01:23.956Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.0-nhs-style-guide.html</loc>
-    <lastmod>2023-01-18T12:32:42.943Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/documentation/dplyr-functions.html</loc>
+    <lastmod>2023-01-19T15:01:24.492Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/2.2-tables.html</loc>
-    <lastmod>2023-01-18T12:32:43.335Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/updates.html</loc>
+    <lastmod>2023-01-19T15:01:24.908Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/2.1-visualisation.html</loc>
-    <lastmod>2023-01-18T12:32:44.023Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/contribute.html</loc>
+    <lastmod>2023-01-19T15:01:25.280Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/3.2-best-practice.html</loc>
-    <lastmod>2023-01-18T12:32:44.423Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/posts/rstudio-git/index.html</loc>
+    <lastmod>2023-01-19T15:01:25.612Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.3-udal.html</loc>
-    <lastmod>2023-01-18T12:32:44.831Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/faq.html</loc>
+    <lastmod>2023-01-19T15:01:25.952Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.1-nhs-colours.html</loc>
-    <lastmod>2023-01-18T12:32:45.319Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/tutorials/udal.html</loc>
+    <lastmod>2023-01-19T15:01:26.624Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.4-github.html</loc>
-    <lastmod>2023-01-18T12:32:45.791Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/tutorials/r-language.html</loc>
+    <lastmod>2023-01-19T15:01:26.980Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.5-contribute.html</loc>
-    <lastmod>2023-01-18T12:32:46.251Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/tutorials/rstudio-git.html</loc>
+    <lastmod>2023-01-19T15:01:27.412Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/2.4-methods.html</loc>
-    <lastmod>2023-01-18T12:32:46.651Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/tutorials/github.html</loc>
+    <lastmod>2023-01-19T15:01:27.820Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.6-statement-on-tools.html</loc>
-    <lastmod>2023-01-18T12:32:47.023Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/tutorials/spc.html</loc>
+    <lastmod>2023-01-19T15:01:28.384Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/1.4.1-rstudio-git.html</loc>
-    <lastmod>2023-01-18T12:32:47.519Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/tutorials/rap.html</loc>
+    <lastmod>2023-01-19T15:01:28.752Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/nhsengland/nhs-r-reporting/3.3-useful-functions.html</loc>
-    <lastmod>2023-01-18T12:32:47.935Z</lastmod>
+    <loc>https://nhsengland.github.io/nhs-r-reporting/statement-on-tools.html</loc>
+    <lastmod>2023-01-19T15:01:29.112Z</lastmod>
   </url>
 </urlset>
