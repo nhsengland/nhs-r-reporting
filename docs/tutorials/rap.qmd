@@ -1,0 +1,42 @@
+---
+title: Reproducible Analytical Pipelines (RAP)
+subtitle: Under development
+---
+
+Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility.
+
+## Resources
+
+### NHS England
+
+- [NHS Open-source policy (Draft)](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md)
+- [Open code checklist](https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md)
+- [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
+
+### NHS Digital RAP Community of Practice
+
+[New Website!](https://nhsdigital.github.io/rap-community-of-practice/)
+
+- [What is RAP](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/why_RAP_is_important/)
+- [Levels of RAP](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/)
+
+### GOV.datascience RAP Companion
+
+[https://ukgovdatascience.github.io/rap_companion/](https://ukgovdatascience.github.io/rap_companion/)
+
+### Further reading
+
+- [Be open and use open source](https://www.gov.uk/guidance/be-open-and-use-open-source)
+- [The benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/)
+- [Open source repositories by the Government Digital Service](https://github.com/alphagov)
+ - [Bennett Institute Open Manifesto: Better Data for the NHS](https://docs.opensafely.org/open-data-manifesto/)
+
+### NHS BSA RAP
+
+[RAP Presentation](https://github.com/nhsbsa-data-analytics/coffee-and-coding/blob/master/2021-10-20%20R%20Markdown%20and%20Official%20Statistics/rap-presentation.Rmd)
+
+### Examples
+
+- [Prescription Cost Analysis (PCA)](https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/pca/pca_summary_narrative_2020_21_v001.html)
+- [Medicines Used in Mental Health](https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/mumh/mumh_annual_2020_21_v001.html)
+- [Prescribing for Diabetes](https://nhsbsa-opendata.s3.eu-west-2.amazonaws.com/pfd/pfd_annual_2020_21_v001.html)

@@ -1,0 +1,22 @@
+---
+title: NHSE-R Statement on Tools
+subtitle: "Under development"
+---
+
+A key aim of the NHS England R group is to support the use of [R](https://www.r-project.org/about.html) and [R-Markdown](https://rmarkdown.rstudio.com/) reporting across the NHS England analyst community. To support this aim, we are developing guides, examples, and code-- everything an analyst needs to get started using R.
+
+This document describes the *why* of using R/R-Markdown, as a reference for managers and end-users of these products.
+
+Please [file issues](https://github.com/nhsengland/nhs-r-reporting/issues), [make pull requests](https://nhsengland.github.io/nhs-r-reporting/1.5-contribute.html), and get involved, we're happy to take contributions to this document.
+
+## Reporting Tools
+
+The NHSE-R group endorses the use of the following tools:
+
+- [R](https://www.r-project.org/about.html)
+- [R-Markdown](https://rmarkdown.rstudio.com/)
+- [Quarto](https://quarto.org/)
+- [HTML format reports](https://quarto.org/docs/output-formats/html-publishing.html#standalone-html) (over PowerPoint)
+- [Plotly](https://plotly.com/r/) interactive charts
+
+These tools are now available on NHSE UDAL virtual machines and modern desktop laptops for all analysts.

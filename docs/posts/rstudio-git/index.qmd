@@ -1,0 +1,19 @@
+---
+title: "Git in R-Studio Tutorial"
+author: "ChatGPT"
+date: "2023-01-19"
+categories: [Tutorial, Git, GitHub, R-Studio]
+image: "github-rstudio.png"
+description: "New tutorial on using version control (Git) in R-Studio"
+title-block-banner: false
+---
+
+[Link to the Git in R-Studio tutorial](https://nhsengland.github.io/nhs-r-reporting/tutorials/rstudio-git.html)
+
+Attention all R-Studio users! We are excited to announce a new tutorial created by Pablo Leon-Rodenas. This guide will take you through the process of creating new R-Studio projects with version control features using Git and GitHub, and linking R-Studio with a GitHub repository.
+
+By following this tutorial, you will be able to work entirely from R-Studio, applying version control to your scripts, creating new projects on GitHub, and doing all standard version control actions such as commits, pushes, and merges directly from R-Studio. This will make it easy for you to keep track of changes made to your projects and collaborate with others.
+
+Pablo Leon-Rodenas is a Data analyst working in the NHS England and has created this tutorial to help R-Studio users take advantage of the powerful features offered by Git and GitHub. If you have any questions or need further assistance, you can reach out to Pablo at [<pablo.leonrodenas@nhs.net>](mailto:pablo.leonrodenas@nhs.net).
+
+Don't miss out on this valuable resource, check out the tutorial today and start taking control of your R-Studio projects today!

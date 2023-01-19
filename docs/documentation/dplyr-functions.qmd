@@ -1,0 +1,92 @@
+---
+title: "Format Dates"
+comments: false
+---
+
+## `dplyr_format_date()` 
+
+Source: [`utilites/dplyr_format_date.R`]()
+
+`dplyr_format_date()` is function that takes a dataframe and a list of column names as input and applies date formatting options to the specified columns.
+
+```r
+dplyr_format_date <- function(data, cols, date_format) {
+  data %>%
+    dplyr::mutate_at(dplyr::vars(cols), function(x) {
+      as.character(format(as.Date(x), date_format))
+    })
+}
+```
+
+### Usage
+
+```r
+dplyr_format_date(data, cols, date_format)
+```
+
+### Arguments
+
+__data:__ A dataframe, or dataframe extension (e.g. a tibble)
+
+__cols:__ A column name (or list of column names) in the dataframe that will be formatted.
+
+__date_format:__ A date format string (e.g., `"%b-%y"`), see table @tbl-date-format.
+
+Symbol | Definition | Example
+-------|------------|--------
+%d | Day as a number | 19
+%a | Abbreviated weekday | Sun
+%A | Unabbreviated weekday | Sunday
+%m | Month as a number | 04
+%b | Abbreviated month | Feb
+%B | Unabbreviated month | February
+%y | 2-digit year | 14
+%Y | 4-digit year | 2014
+
+: Date format strings {#tbl-date-format}
+
+Source: [www.statology.org](https://www.statology.org/r-date-format/)
+
+
+### See also
+
+Other dplyr functions: [`utilites/dplyr_format_num.R`](), [`utilites/dplyr_filter_cols.R`]()
+
+### Examples
+
+```r
+# Format date column as abbreviated month (%b) - 2-digit year (%y)
+library(dplyr)
+source("utilities/dplyr_format_date.R")
+
+df <- data.frame(date = c("2022-01-01",
+                          "2022-02-01",
+                          "2022-03-01"))
+
+formatted_df <- dplyr_format_date(df, "date", "%b-%y")
+
+print(formatted_df)
+#>     date
+#> 1 Jan-22
+#> 2 Feb-22
+#> 3 Mar-22
+```
+
+## Unit-test
+
+Source: [`tests/testthat/test_dplyr_format_date.R`]()
+
+```r
+test_that("dplyr_format_date formats dates correctly", {
+  data <- data.frame(decimal = c(0.5, 0.6, 0.7),
+                     number = c(10000, 20000, 30000),
+                     date = c("2022-01-01", "2022-02-01", "2022-03-01"))
+
+  # Test formatting as dates
+  expected_output <- data.frame(decimal = c(0.5, 0.6, 0.7),
+                                number = c(10000, 20000, 30000),
+                                date = c("Jan-22", "Feb-22", "Mar-22"))
+  actual_output <- dplyr_format_date(data, "date", "%b-%y")
+  expect_equal(actual_output, expected_output)
+})
+```

@@ -1,4 +1,0 @@
----
-title: NHS R-Markdown Style Guide
-subtitle: "Coming soon"
----

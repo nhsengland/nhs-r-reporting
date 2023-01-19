@@ -1,0 +1,64 @@
+---
+title: Contribute to the docs
+subtitle: "How to add a new page to the documentations site using Quarto?"
+---
+
+## How to contribute?
+
+### Make a new branch of the repository
+
+```bash
+git checkout -b <branch-name>
+```
+
+### Make a new `.qmd` (q-markdown) file in the `/docs` folder
+
+To the `.qmd` file add a YAML header with a title and subtitle.
+```yaml
+---
+title: Contribute to the docs
+subtitle: "How to add a new page to the documentations site using Quarto?"
+---
+```
+
+### Add a link to your file to the `_quarto.yml` config file in `/docs`
+
+Open the `_quarto.yml` configuration file and find the `sidebar` config code.
+```yaml
+sidebar:
+  - id: nav
+    style: "floating"
+    collapse-level: 3
+    align: left
+    contents:
+```
+Under the `contents:` object add a new section (if required), a string lable for your page, and a link to the `.qmd` file itself.
+
+```yaml
+- section: "RAP"
+  contents:
+    - text: "Reproducible Analytical Pipelines"
+      file: intro-to-rap.qmd
+```
+
+### Publish your changes to GitHub
+
+::: {.callout-warning appearance="simple" collapse="false"}
+### Render Quarto before publishing
+
+Remember to [render your changes locally using R-Studio](https://quarto.org/docs/tools/rstudio.html#render-and-preview) before publishing
+:::
+
+Commit your changes locally
+
+```bash
+git commit -m 'Added new page to docs'
+```
+
+Then push your changes to the remote branch
+
+```bash
+git push origin <branch-name>
+```
+
+Finally, open a Pull Request (PR) [https://github.com/nhsengland/nhs-r-reporting/pulls](https://github.com/nhsengland/nhs-r-reporting/pulls)
