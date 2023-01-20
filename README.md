@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/nhsengland/nhs-r-reporting/">
-    <img src="assets/logos/nhs-england.jpg" alt="Logo" height="120">
+    <img src="docs/assets/logos/nhs-england.jpg" alt="Logo" height="120">
   </a>
 
   <h3 align="center">R Reporting</h3>
