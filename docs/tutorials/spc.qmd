@@ -47,6 +47,3 @@ df <- ae_attendances %>%
 df %>%
   ptd_spc(value_field = breaches, date_field = period, improvement_direction = "decrease")
 ```
-
-## Help Complete this page:
-We are always looking for examples and best practice to complete this documentation. See [`Contribute to this site`](contribute.qmd) for details on how to add or amend a page on this site.
