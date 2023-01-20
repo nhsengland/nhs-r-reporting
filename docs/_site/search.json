@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "NHS England R Community",
     "section": "",
-    "text": "A repository to share code, good practice, and resources about using R across NHS England."
+    "text": "Welcome to the NHS England R community documentation site\nThis site is open to all to share good practice, basic knowledge around access and using R across NHS England platforms, and creating a place for us to share our collective knowledge, code, resources and content.\nThe NHS England R Community is not intended to replace any other R user groups - there’s a fantastic national NHS-R Community and lots of local sharing of R work, we want to use this site to signpost to other resources for those specifically using R within NHS England.\nIt is a community - and we need your help"
   },
   {
     "objectID": "index.html#contributing",
@@ -18,7 +18,7 @@
     "href": "index.html#license",
     "title": "NHS England R Community",
     "section": "License",
-    "text": "License\nDistributed under the MIT License. See LICENSE.md for more information."
+    "text": "License\nDistributed under the MIT License. See LICENSE.md for more information.\n\n\n\n\n\n\nPlease Note:\n\n\n\nNo private or patient data are shared in this repository."
   },
   {
     "objectID": "index.html#about",
@@ -312,7 +312,7 @@
     "href": "tutorials/spc.html",
     "title": "Statistical Process Control",
     "section": "",
-    "text": "The NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present."
+    "text": "The NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present.\n\nInstallation\n# install from CRAN\ninstall.packages(\"NHSRplotthedots\")\ninstall.packages(\"rmarkdown\")\n\n# Or install the development version from GitHub using {remotes} package:\n# install.packages(\"remotes\")\nremotes::install_github(\"https://github.com/nhs-r-community/NHSRplotthedots\", build_vignettes = TRUE)\nThe help-files, and vignette within this package tell you more about the possible options for controlling the charts\n\n\nExample Chart\nBelow is an example of the type of chart the package produces. The plot uses the ae_attendances dataset from the {NHSRdatasets} package and a bit of {dplyr} code to select some organisations.\n\nPackages used:\nlibrary(NHSRplotthedots)\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\ndf <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1, period < as.Date(\"2018-04-01\"))\n\ndf %>%\n  ptd_spc(value_field = breaches, date_field = period, improvement_direction = \"decrease\")"
   },
   {
     "objectID": "tutorials/spc.html#help-complete-this-page",
@@ -348,5 +348,12 @@
     "title": "NHS England R Community",
     "section": "Example analytical reports",
     "text": "Example analytical reports\nBelow is a selection of analytical reports that are fully open-source and RAP compliant developed using R, Quarto, {targets}, plotly, and open data from the NHS-R Community.\n\n\nIn development:\n\nThese interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations\n\nRegions\nICB / SICBL\nPCN / GP\nTrust / Ward etc\n\nUsing {targets} we can define dependencies in the data processing stages and process these reports automatically when new data is available.\nA standard set of reporting charts and tables can be pre-configured using plotly, adjusting the colors, fonts, annotations, and labels to match the NHS style.\nA shared library of unit-tested functions allows complex analysis to be run with every calculation fully validated and documented.\nQuality assurance can also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format."
+  },
+  {
+    "objectID": "index.html#what-is-r-and-why-is-it-used-at-nhse",
+    "href": "index.html#what-is-r-and-why-is-it-used-at-nhse",
+    "title": "NHS England R Community",
+    "section": "What is R and why is it used at NHSE?",
+    "text": "What is R and why is it used at NHSE?\nR is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python1, R can be used to develop so-called reproducible analytical pipelines (RAP).\nReproducible analytical pipelines are the gold standard for creating analytical outputs in government2. It is a set of standards that promote best practice across the sector3. By following RAP we can be much more transparent with how we work, increasing trust and confidence in our publications, and make it easier for others to verify and replicate our analysis."
   }
 ]
