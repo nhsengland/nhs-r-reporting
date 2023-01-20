@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "statement-on-tools.html",
+    "href": "statement-on-tools.html",
+    "title": "NHSE-R Statement on Tools",
+    "section": "",
+    "text": "A key aim of the NHS England R group is to support the use of R and R-Markdown analytics across the NHS England analyst community. To support this aim, we are developing guides, examples, and code– everything an analyst needs to get started using R.\nThis document describes the why of using R/R-Markdown, as a reference for managers and end-users of these products.\nPlease file issues, make pull requests, and get involved, we’re happy to take contributions to this document."
+  },
+  {
+    "objectID": "statement-on-tools.html#reporting-tools",
+    "href": "statement-on-tools.html#reporting-tools",
+    "title": "NHSE-R Statement on Tools",
+    "section": "Reporting Tools",
+    "text": "Reporting Tools\nThe NHSE-R group endorses the use of the following tools:\n\nR\nR-Markdown\nQuarto\nHTML format reports (over PowerPoint)\nPlotly interactive charts\n\nThese tools are now available on NHSE UDAL virtual machines and modern desktop laptops for all analysts."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "NHS England R Community",
@@ -35,74 +49,32 @@
     "text": "License\nDistributed under the MIT License. See LICENSE.md for more information.\n\n\n\n\n\n\nPlease Note:\n\n\n\nNo private or patient data are shared in this repository."
   },
   {
-    "objectID": "documentation/index.html",
-    "href": "documentation/index.html",
-    "title": "Documentation",
-    "section": "",
-    "text": "Format Dates\nNHS Colours"
-  },
-  {
-    "objectID": "documentation/nhs-colours.html",
-    "href": "documentation/nhs-colours.html",
-    "title": "NHS Colour Guidlines",
-    "section": "",
-    "text": "The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.\n> Read the Official NHS Guidance"
-  },
-  {
-    "objectID": "documentation/nhs-colours.html#nhs-region-colours",
-    "href": "documentation/nhs-colours.html#nhs-region-colours",
-    "title": "NHS Colour Guidlines",
-    "section": "NHS Region Colours",
-    "text": "NHS Region Colours\n\n\n\n\nODS Code\nNHS Code\nRegion\nHex\n\n\n\n\nE40000003\nY56\nLondon\n#3DB4F5\n\n\nE40000006\nY58\nSouth West\n#820F25\n\n\nE40000005\nY59\nSouth East\n#087558\n\n\nE40000011\nY60\nMidlands\n#E69F00\n\n\nE40000007\nY61\nEast of England\n#EADC17\n\n\nE40000010\nY62\nNorth West\n#6F00D5\n\n\nE40000012\nY63\nNorth East & Yorkshire\n#6F7D86\n\n\n\n\nThere are seven NHSE regions who support local systems to provide more joined up and sustainable care for patients."
-  },
-  {
-    "objectID": "documentation/statistics.html",
-    "href": "documentation/statistics.html",
-    "title": "Statistical Functions",
-    "section": "",
-    "text": "Means\nProportions\nConfidence Intervals\nCorrelation\nRegression\nFunnel Plots\nRates\nDirectly Standardised Rates\nIndirectly Standardised Rates\nQuantiles\nStatistical Neighbours\nPareto Chart\nZ-Scores\nDisclosure Control\nStandardised Mortality Ratios\nLife Expectancy\nSlope Index of Inequality"
-  },
-  {
-    "objectID": "documentation/dplyr-functions.html",
-    "href": "documentation/dplyr-functions.html",
-    "title": "Format Dates",
-    "section": "",
-    "text": "Source: utilites/dplyr_format_date.R\ndplyr_format_date() is function that takes a dataframe and a list of column names as input and applies date formatting options to the specified columns.\ndplyr_format_date <- function(data, cols, date_format) {\n  data %>%\n    dplyr::mutate_at(dplyr::vars(cols), function(x) {\n      as.character(format(as.Date(x), date_format))\n    })\n}\n\n\ndplyr_format_date(data, cols, date_format)\n\n\n\ndata: A dataframe, or dataframe extension (e.g. a tibble)\ncols: A column name (or list of column names) in the dataframe that will be formatted.\ndate_format: A date format string (e.g., \"%b-%y\"), see table Table 1.\n\n\nTable 1: Date format strings\n\n\nSymbol\nDefinition\nExample\n\n\n\n\n%d\nDay as a number\n19\n\n\n%a\nAbbreviated weekday\nSun\n\n\n%A\nUnabbreviated weekday\nSunday\n\n\n%m\nMonth as a number\n04\n\n\n%b\nAbbreviated month\nFeb\n\n\n%B\nUnabbreviated month\nFebruary\n\n\n%y\n2-digit year\n14\n\n\n%Y\n4-digit year\n2014\n\n\n\n\nSource: www.statology.org\n\n\n\nOther dplyr functions: utilites/dplyr_format_num.R, utilites/dplyr_filter_cols.R\n\n\n\n# Format date column as abbreviated month (%b) - 2-digit year (%y)\nlibrary(dplyr)\nsource(\"utilities/dplyr_format_date.R\")\n\ndf <- data.frame(date = c(\"2022-01-01\",\n                          \"2022-02-01\",\n                          \"2022-03-01\"))\n\nformatted_df <- dplyr_format_date(df, \"date\", \"%b-%y\")\n\nprint(formatted_df)\n#>     date\n#> 1 Jan-22\n#> 2 Feb-22\n#> 3 Mar-22"
-  },
-  {
-    "objectID": "documentation/dplyr-functions.html#unit-test",
-    "href": "documentation/dplyr-functions.html#unit-test",
-    "title": "Format Dates",
-    "section": "Unit-test",
-    "text": "Unit-test\nSource: tests/testthat/test_dplyr_format_date.R\ntest_that(\"dplyr_format_date formats dates correctly\", {\n  data <- data.frame(decimal = c(0.5, 0.6, 0.7),\n                     number = c(10000, 20000, 30000),\n                     date = c(\"2022-01-01\", \"2022-02-01\", \"2022-03-01\"))\n\n  # Test formatting as dates\n  expected_output <- data.frame(decimal = c(0.5, 0.6, 0.7),\n                                number = c(10000, 20000, 30000),\n                                date = c(\"Jan-22\", \"Feb-22\", \"Mar-22\"))\n  actual_output <- dplyr_format_date(data, \"date\", \"%b-%y\")\n  expect_equal(actual_output, expected_output)\n})"
-  },
-  {
-    "objectID": "updates.html",
-    "href": "updates.html",
-    "title": "Updates",
-    "section": "",
-    "text": "Git in R-Studio Tutorial\n\n\n\n\n\n\n\nTutorial\n\n\nGit\n\n\nGitHub\n\n\nR-Studio\n\n\n\n\nNew tutorial on using version control (Git) in R-Studio\n\n\n\n\n\n\nJan 19, 2023\n\n\nChatGPT\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "contribute.html",
-    "href": "contribute.html",
-    "title": "Contribute to the docs",
-    "section": "",
-    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\n\n\n\n\n\n\nRender Quarto before publishing\n\n\n\n\n\nRemember to render your changes locally using R-Studio before publishing\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
-  },
-  {
-    "objectID": "posts/rstudio-git/index.html",
-    "href": "posts/rstudio-git/index.html",
-    "title": "Git in R-Studio Tutorial",
-    "section": "",
-    "text": "Link to the Git in R-Studio tutorial\nAttention all R-Studio users! We are excited to announce a new tutorial created by Pablo Leon-Rodenas. This guide will take you through the process of creating new R-Studio projects with version control features using Git and GitHub, and linking R-Studio with a GitHub repository.\nBy following this tutorial, you will be able to work entirely from R-Studio, applying version control to your scripts, creating new projects on GitHub, and doing all standard version control actions such as commits, pushes, and merges directly from R-Studio. This will make it easy for you to keep track of changes made to your projects and collaborate with others.\nPablo Leon-Rodenas is a Data analyst working in the NHS England and has created this tutorial to help R-Studio users take advantage of the powerful features offered by Git and GitHub. If you have any questions or need further assistance, you can reach out to Pablo at <pablo.leonrodenas@nhs.net>.\nDon’t miss out on this valuable resource, check out the tutorial today and start taking control of your R-Studio projects today!"
-  },
-  {
     "objectID": "tutorials/udal.html",
     "href": "tutorials/udal.html",
     "title": "National Data Platform (UDAL)",
     "section": "",
     "text": "Getting access\nVirtual Machines\nR Studio\n\nUsing Git\n\nLoading data into R"
+  },
+  {
+    "objectID": "tutorials/spc.html",
+    "href": "tutorials/spc.html",
+    "title": "Statistical Process Control",
+    "section": "",
+    "text": "The NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present.\n\nInstallation\n# install from CRAN\ninstall.packages(\"NHSRplotthedots\")\ninstall.packages(\"rmarkdown\")\n\n# Or install the development version from GitHub using {remotes} package:\n# install.packages(\"remotes\")\nremotes::install_github(\"https://github.com/nhs-r-community/NHSRplotthedots\", build_vignettes = TRUE)\nThe help-files, and vignette within this package tell you more about the possible options for controlling the charts\n\n\nExample Chart\nBelow is an example of the type of chart the package produces. The plot uses the ae_attendances dataset from the {NHSRdatasets} package and a bit of {dplyr} code to select some organisations.\n\nPackages used:\nlibrary(NHSRplotthedots)\nlibrary(NHSRdatasets)\nlibrary(tidyverse)\n\ndf <- ae_attendances %>% \n  filter(org_code == \"RQM\", type == 1, period < as.Date(\"2018-04-01\"))\n\ndf %>%\n  ptd_spc(value_field = breaches, date_field = period, improvement_direction = \"decrease\")"
+  },
+  {
+    "objectID": "tutorials/rap.html",
+    "href": "tutorials/rap.html",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "",
+    "text": "Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
+  },
+  {
+    "objectID": "tutorials/rap.html#resources",
+    "href": "tutorials/rap.html#resources",
+    "title": "Reproducible Analytical Pipelines (RAP)",
+    "section": "Resources",
+    "text": "Resources\n\nNHS England\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nNHS Digital RAP Community of Practice\nNew Website!\n\nWhat is RAP\nLevels of RAP\n\n\n\nGOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\nFurther reading\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\nBennett Institute Open Manifesto: Better Data for the NHS\n\n\n\nNHS BSA RAP\nRAP Presentation\n\n\nExamples\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
   },
   {
     "objectID": "tutorials/r-language.html",
@@ -131,6 +103,34 @@
     "title": "R Programming Language",
     "section": "Resource List",
     "text": "Resource List\nNHS specific resources from the NHS-R Community\n\nNHS Themes\n\nNHS-R Theme [code]\n\n\n\nNHS code\n\nNHS-R how-tos\nNHS-R R-Markdown functions"
+  },
+  {
+    "objectID": "tutorials/github.html",
+    "href": "tutorials/github.html",
+    "title": "NHSE GitHub",
+    "section": "",
+    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work."
+  },
+  {
+    "objectID": "tutorials/github.html#github-desktop",
+    "href": "tutorials/github.html#github-desktop",
+    "title": "NHSE GitHub",
+    "section": "GitHub Desktop",
+    "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
+  },
+  {
+    "objectID": "tutorials/github.html#resources",
+    "href": "tutorials/github.html#resources",
+    "title": "NHSE GitHub",
+    "section": "Resources",
+    "text": "Resources\n\nGitHub Features (GitHub)\nIntro to Git (NHS Digital RAP)\nWays of Working (NHS England - Draft)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
+  },
+  {
+    "objectID": "tutorials/github.html#github-pages",
+    "href": "tutorials/github.html#github-pages",
+    "title": "NHSE GitHub",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\nPublish a Quarto website project to your GitHub pages using GitHub actions.\n\nAdd the GitHub Actions workflow to your project\nCopy quarto-publish.yml to the folder .github/workflows/quarto-publish.yml.\non:\n  push:\n    branches: main\n  pull_request:\n    branches: main\n\nname: Render and Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Publish to GitHub Pages (and render)\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\nNote\n\n\n\nIf your Quarto project is not in the top level folder of your repository (in this case in /docs), then add the following path to the ‘Publish to GitHub Pages (and render)’ action:\n- name: Publish to GitHub Pages (and render)\n  uses: quarto-dev/quarto-actions/publish@v2\n  with:\n    target: gh-pages\n    path: docs\n  env:\n    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not edit the GITHUB_TOKEN to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.\n\n\n\n\nConfigure the repository before publishing\nQuarto needs to configure the repository for publishing through GitHub Actions. To do this, run quarto publish gh-pages locally once.\n\n\nCommit and push the workflow\nNow, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.\n\n\n\n\n\n\nNote\n\n\n\nNote that GitHub Pages uses a gh-pages branch in your repository, which will be automatically created if one doesn’t exist."
   },
   {
     "objectID": "tutorials/rstudio-git.html",
@@ -182,73 +182,66 @@
     "text": "Resources\n\nNHS-D RAP Community - R-Studio/Git tutorial\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel."
   },
   {
-    "objectID": "tutorials/github.html",
-    "href": "tutorials/github.html",
-    "title": "NHSE GitHub",
+    "objectID": "documentation/index.html",
+    "href": "documentation/index.html",
+    "title": "Documentation",
     "section": "",
-    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work."
+    "text": "Format Dates\nNHS Colours"
   },
   {
-    "objectID": "tutorials/github.html#github-desktop",
-    "href": "tutorials/github.html#github-desktop",
-    "title": "NHSE GitHub",
-    "section": "GitHub Desktop",
-    "text": "GitHub Desktop\nNote that the GitHub desktop app is available on Modern Desktop (see Company Portal > Apps) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier."
-  },
-  {
-    "objectID": "tutorials/github.html#resources",
-    "href": "tutorials/github.html#resources",
-    "title": "NHSE GitHub",
-    "section": "Resources",
-    "text": "Resources\n\nGitHub Features (GitHub)\nIntro to Git (NHS Digital RAP)\nWays of Working (NHS England - Draft)\nVersion Control (GOV.Data Sci)\nPublishing Code (NHS Digital RAP)\nSocial Coding (NHS Digital RAP)"
-  },
-  {
-    "objectID": "tutorials/github.html#github-pages",
-    "href": "tutorials/github.html#github-pages",
-    "title": "NHSE GitHub",
-    "section": "GitHub Pages",
-    "text": "GitHub Pages\nPublish a Quarto website project to your GitHub pages using GitHub actions.\n\nAdd the GitHub Actions workflow to your project\nCopy quarto-publish.yml to the folder .github/workflows/quarto-publish.yml.\non:\n  push:\n    branches: main\n  pull_request:\n    branches: main\n\nname: Render and Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Publish to GitHub Pages (and render)\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\nNote\n\n\n\nIf your Quarto project is not in the top level folder of your repository (in this case in /docs), then add the following path to the ‘Publish to GitHub Pages (and render)’ action:\n- name: Publish to GitHub Pages (and render)\n  uses: quarto-dev/quarto-actions/publish@v2\n  with:\n    target: gh-pages\n    path: docs\n  env:\n    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not edit the GITHUB_TOKEN to add a personal secret to this file. This file has the same permissions as your repository, and might be publicly readable.\n\n\n\n\nConfigure the repository before publishing\nQuarto needs to configure the repository for publishing through GitHub Actions. To do this, run quarto publish gh-pages locally once.\n\n\nCommit and push the workflow\nNow, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.\n\n\n\n\n\n\nNote\n\n\n\nNote that GitHub Pages uses a gh-pages branch in your repository, which will be automatically created if one doesn’t exist."
-  },
-  {
-    "objectID": "tutorials/spc.html",
-    "href": "tutorials/spc.html",
-    "title": "Statistical Process Control",
+    "objectID": "documentation/statistics.html",
+    "href": "documentation/statistics.html",
+    "title": "Statistical Functions",
     "section": "",
-    "text": "The NHSR Plot the Dots package is built by the NHS-R community to provide tools for drawing statistical process control (SPC) charts. The package supports the NHS England programme ‘Making Data Count’. The programme encourages boards, managers, and analyst teams to present data in ways that show change over time, and drive better understanding of indicators than ‘RAG’ (red, amber, green) rated reports often present."
+    "text": "Means\nProportions\nConfidence Intervals\nCorrelation\nRegression\nFunnel Plots\nRates\nDirectly Standardised Rates\nIndirectly Standardised Rates\nQuantiles\nStatistical Neighbours\nPareto Chart\nZ-Scores\nDisclosure Control\nStandardised Mortality Ratios\nLife Expectancy\nSlope Index of Inequality"
   },
   {
-    "objectID": "tutorials/spc.html#help-complete-this-page",
-    "href": "tutorials/spc.html#help-complete-this-page",
-    "title": "Statistical Process Control",
-    "section": "Help Complete this page:",
-    "text": "Help Complete this page:\nWe are always looking for examples and best practice to complete this documentation. See Contribute to this site for details on how to add or amend a page on this site."
-  },
-  {
-    "objectID": "tutorials/rap.html",
-    "href": "tutorials/rap.html",
-    "title": "Reproducible Analytical Pipelines (RAP)",
+    "objectID": "documentation/dplyr-functions.html",
+    "href": "documentation/dplyr-functions.html",
+    "title": "Format Dates",
     "section": "",
-    "text": "Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility."
+    "text": "Source: utilites/dplyr_format_date.R\ndplyr_format_date() is function that takes a dataframe and a list of column names as input and applies date formatting options to the specified columns.\ndplyr_format_date <- function(data, cols, date_format) {\n  data %>%\n    dplyr::mutate_at(dplyr::vars(cols), function(x) {\n      as.character(format(as.Date(x), date_format))\n    })\n}\n\n\ndplyr_format_date(data, cols, date_format)\n\n\n\ndata: A dataframe, or dataframe extension (e.g. a tibble)\ncols: A column name (or list of column names) in the dataframe that will be formatted.\ndate_format: A date format string (e.g., \"%b-%y\"), see table Table 1.\n\n\nTable 1: Date format strings\n\n\nSymbol\nDefinition\nExample\n\n\n\n\n%d\nDay as a number\n19\n\n\n%a\nAbbreviated weekday\nSun\n\n\n%A\nUnabbreviated weekday\nSunday\n\n\n%m\nMonth as a number\n04\n\n\n%b\nAbbreviated month\nFeb\n\n\n%B\nUnabbreviated month\nFebruary\n\n\n%y\n2-digit year\n14\n\n\n%Y\n4-digit year\n2014\n\n\n\n\nSource: www.statology.org\n\n\n\nOther dplyr functions: utilites/dplyr_format_num.R, utilites/dplyr_filter_cols.R\n\n\n\n# Format date column as abbreviated month (%b) - 2-digit year (%y)\nlibrary(dplyr)\nsource(\"utilities/dplyr_format_date.R\")\n\ndf <- data.frame(date = c(\"2022-01-01\",\n                          \"2022-02-01\",\n                          \"2022-03-01\"))\n\nformatted_df <- dplyr_format_date(df, \"date\", \"%b-%y\")\n\nprint(formatted_df)\n#>     date\n#> 1 Jan-22\n#> 2 Feb-22\n#> 3 Mar-22"
   },
   {
-    "objectID": "tutorials/rap.html#resources",
-    "href": "tutorials/rap.html#resources",
-    "title": "Reproducible Analytical Pipelines (RAP)",
-    "section": "Resources",
-    "text": "Resources\n\nNHS England\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nNHS Digital RAP Community of Practice\nNew Website!\n\nWhat is RAP\nLevels of RAP\n\n\n\nGOV.datascience RAP Companion\nhttps://ukgovdatascience.github.io/rap_companion/\n\n\nFurther reading\n\nBe open and use open source\nThe benefits of coding in the open\nOpen source repositories by the Government Digital Service\nBennett Institute Open Manifesto: Better Data for the NHS\n\n\n\nNHS BSA RAP\nRAP Presentation\n\n\nExamples\n\nPrescription Cost Analysis (PCA)\nMedicines Used in Mental Health\nPrescribing for Diabetes"
+    "objectID": "documentation/dplyr-functions.html#unit-test",
+    "href": "documentation/dplyr-functions.html#unit-test",
+    "title": "Format Dates",
+    "section": "Unit-test",
+    "text": "Unit-test\nSource: tests/testthat/test_dplyr_format_date.R\ntest_that(\"dplyr_format_date formats dates correctly\", {\n  data <- data.frame(decimal = c(0.5, 0.6, 0.7),\n                     number = c(10000, 20000, 30000),\n                     date = c(\"2022-01-01\", \"2022-02-01\", \"2022-03-01\"))\n\n  # Test formatting as dates\n  expected_output <- data.frame(decimal = c(0.5, 0.6, 0.7),\n                                number = c(10000, 20000, 30000),\n                                date = c(\"Jan-22\", \"Feb-22\", \"Mar-22\"))\n  actual_output <- dplyr_format_date(data, \"date\", \"%b-%y\")\n  expect_equal(actual_output, expected_output)\n})"
   },
   {
-    "objectID": "statement-on-tools.html",
-    "href": "statement-on-tools.html",
-    "title": "NHSE-R Statement on Tools",
+    "objectID": "documentation/nhs-colours.html",
+    "href": "documentation/nhs-colours.html",
+    "title": "NHS Colour Guidlines",
     "section": "",
-    "text": "A key aim of the NHS England R group is to support the use of R and R-Markdown analytics across the NHS England analyst community. To support this aim, we are developing guides, examples, and code– everything an analyst needs to get started using R.\nThis document describes the why of using R/R-Markdown, as a reference for managers and end-users of these products.\nPlease file issues, make pull requests, and get involved, we’re happy to take contributions to this document."
+    "text": "The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.\n> Read the Official NHS Guidance"
   },
   {
-    "objectID": "statement-on-tools.html#reporting-tools",
-    "href": "statement-on-tools.html#reporting-tools",
-    "title": "NHSE-R Statement on Tools",
-    "section": "Reporting Tools",
-    "text": "Reporting Tools\nThe NHSE-R group endorses the use of the following tools:\n\nR\nR-Markdown\nQuarto\nHTML format reports (over PowerPoint)\nPlotly interactive charts\n\nThese tools are now available on NHSE UDAL virtual machines and modern desktop laptops for all analysts."
+    "objectID": "documentation/nhs-colours.html#nhs-region-colours",
+    "href": "documentation/nhs-colours.html#nhs-region-colours",
+    "title": "NHS Colour Guidlines",
+    "section": "NHS Region Colours",
+    "text": "NHS Region Colours\n\n\n\n\nODS Code\nNHS Code\nRegion\nHex\n\n\n\n\nE40000003\nY56\nLondon\n#3DB4F5\n\n\nE40000006\nY58\nSouth West\n#820F25\n\n\nE40000005\nY59\nSouth East\n#087558\n\n\nE40000011\nY60\nMidlands\n#E69F00\n\n\nE40000007\nY61\nEast of England\n#EADC17\n\n\nE40000010\nY62\nNorth West\n#6F00D5\n\n\nE40000012\nY63\nNorth East & Yorkshire\n#6F7D86\n\n\n\n\nThere are seven NHSE regions who support local systems to provide more joined up and sustainable care for patients."
+  },
+  {
+    "objectID": "updates.html",
+    "href": "updates.html",
+    "title": "Updates",
+    "section": "",
+    "text": "Git in R-Studio Tutorial\n\n\n\n\n\n\n\nTutorial\n\n\nGit\n\n\nGitHub\n\n\nR-Studio\n\n\n\n\nNew tutorial on using version control (Git) in R-Studio\n\n\n\n\n\n\nJan 19, 2023\n\n\nChatGPT\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contribute.html",
+    "href": "contribute.html",
+    "title": "Contribute to the docs",
+    "section": "",
+    "text": "git checkout -b <branch-name>\n\n\n\nTo the .qmd file add a YAML header with a title and subtitle.\n---\ntitle: Contribute to the docs\nsubtitle: \"How to add a new page to the documentations site using Quarto?\"\n---\n\n\n\nOpen the _quarto.yml configuration file and find the sidebar config code.\nsidebar:\n  - id: nav\n    style: \"floating\"\n    collapse-level: 3\n    align: left\n    contents:\nUnder the contents: object add a new section (if required), a string lable for your page, and a link to the .qmd file itself.\n- section: \"RAP\"\n  contents:\n    - text: \"Reproducible Analytical Pipelines\"\n      file: intro-to-rap.qmd\n\n\n\n\n\n\n\n\n\nRender Quarto before publishing\n\n\n\n\n\nRemember to render your changes locally using R-Studio before publishing\n\n\n\nCommit your changes locally\ngit commit -m 'Added new page to docs'\nThen push your changes to the remote branch\ngit push origin <branch-name>\nFinally, open a Pull Request (PR) https://github.com/nhsengland/nhs-r-reporting/pulls"
+  },
+  {
+    "objectID": "posts/rstudio-git/index.html",
+    "href": "posts/rstudio-git/index.html",
+    "title": "Git in R-Studio Tutorial",
+    "section": "",
+    "text": "Link to the Git in R-Studio tutorial\nAttention all R-Studio users! We are excited to announce a new tutorial created by Pablo Leon-Rodenas. This guide will take you through the process of creating new R-Studio projects with version control features using Git and GitHub, and linking R-Studio with a GitHub repository.\nBy following this tutorial, you will be able to work entirely from R-Studio, applying version control to your scripts, creating new projects on GitHub, and doing all standard version control actions such as commits, pushes, and merges directly from R-Studio. This will make it easy for you to keep track of changes made to your projects and collaborate with others.\nPablo Leon-Rodenas is a Data analyst working in the NHS England and has created this tutorial to help R-Studio users take advantage of the powerful features offered by Git and GitHub. If you have any questions or need further assistance, you can reach out to Pablo at <pablo.leonrodenas@nhs.net>.\nDon’t miss out on this valuable resource, check out the tutorial today and start taking control of your R-Studio projects today!"
   }
 ]
