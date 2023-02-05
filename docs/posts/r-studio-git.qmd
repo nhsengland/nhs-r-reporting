@@ -3,7 +3,7 @@ title: "Git in R-Studio Tutorial"
 author: "ChatGPT"
 date: "2023-01-19"
 categories: [Tutorial, Git, GitHub, R-Studio]
-image: "github-rstudio.png"
+image: "../assets/logos/git-rstudio.png"
 description: "New tutorial on using version control (Git) in R-Studio"
 title-block-banner: false
 ---

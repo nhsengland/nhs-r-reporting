@@ -1,17 +1,14 @@
 ---
 title: Reproducible Analytical Pipelines (RAP)
-subtitle: Under development
+subtitle: "Best practice for transparency and reproducibility"
+author: "Craig Robert Shenton"
+date: "2023-01-27"
+categories: [RAP, NHS England]
 ---
 
 Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility.
 
 ## Resources
-
-### NHS England
-
-- [NHS Open-source policy (Draft)](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md)
-- [Open code checklist](https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md)
-- [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
 
 ### NHS Digital RAP Community of Practice
 
@@ -19,6 +16,12 @@ Reproducible Analytical Pipelines (RAP) brings together a number of best practic
 
 - [What is RAP](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/why_RAP_is_important/)
 - [Levels of RAP](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/)
+
+### NHS England
+
+- [NHS Open-source policy (Draft)](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md)
+- [Open code checklist](https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md)
+- [Sharing Code in the Open by NHSX](https://nhsx.github.io/AnalyticsUnit/codeintheopen.html)
 
 ### GOV.datascience RAP Companion
 

@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../tutorials/rstudio-git.html" rel="next">
 <link href="../contribute.html" rel="prev">
 <link href="../assets/favicons/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,7 +62,37 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../assets/style/styles.css">
 <meta property="og:title" content="NHSE-R - Tutorials">
@@ -87,11 +119,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
@@ -197,6 +224,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
   </div>
 </li>
@@ -219,37 +251,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -268,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Git">Git <span class="quarto-category-count">(2)</span></div><div class="category" data-category="GitHub">GitHub <span class="quarto-category-count">(2)</span></div><div class="category" data-category="NHS England">NHS England <span class="quarto-category-count">(4)</span></div><div class="category" data-category="NHS-R">NHS-R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R-Studio">R-Studio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RAP">RAP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SPC">SPC <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SQL">SQL <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -292,7 +299,230 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="SQL,R,NHS England" data-listing-date-sort="1675555200000" data-listing-file-modified-sort="1675636598339" data-listing-reading-time-sort="3.205">
+<a href="../tutorials/udal.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/nhs-england-large.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+National Data Platform (UDAL)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('SQL'); return false;">
+SQL
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('NHS England'); return false;">
+NHS England
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Simon Wellesley-Miller
+</div>
+<div class="listing-date">
+Feb 5, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="RAP,NHS England" data-listing-date-sort="1674777600000" data-listing-file-modified-sort="1675635832650" data-listing-reading-time-sort="0.53">
+<a href="../tutorials/rap.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/nhs-england-large.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Reproducible Analytical Pipelines (RAP)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('RAP'); return false;">
+RAP
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('NHS England'); return false;">
+NHS England
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Craig Robert Shenton
+</div>
+<div class="listing-date">
+Jan 27, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Git,GitHub,NHS England" data-listing-date-sort="1674345600000" data-listing-file-modified-sort="1675635841628" data-listing-reading-time-sort="2.395">
+<a href="../tutorials/github.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/GitHub-logo.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NHSE GitHub
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Git'); return false;">
+Git
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('GitHub'); return false;">
+GitHub
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('NHS England'); return false;">
+NHS England
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Craig Robert Shenton
+</div>
+<div class="listing-date">
+Jan 22, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Git,GitHub,R-Studio" data-listing-date-sort="1674086400000" data-listing-file-modified-sort="1675635070983" data-listing-reading-time-sort="3.82">
+<a href="../tutorials/rstudio-git.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/git-rstudio.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Git in R-Studio
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Git'); return false;">
+Git
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('GitHub'); return false;">
+GitHub
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R-Studio'); return false;">
+R-Studio
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Pablo Leon-Rodenas
+</div>
+<div class="listing-date">
+Jan 19, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="NHS-R,SPC" data-listing-date-sort="1673222400000" data-listing-file-modified-sort="1675635026734" data-listing-reading-time-sort="0.845">
+<a href="../tutorials/spc.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/Making-data-count.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Statistical Process Control
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('NHS-R'); return false;">
+NHS-R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SPC'); return false;">
+SPC
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Craig Robert Shenton
+</div>
+<div class="listing-date">
+Jan 9, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="R,NHS-R" data-listing-date-sort="1672704000000" data-listing-file-modified-sort="1675633266529" data-listing-reading-time-sort="1.525">
+<a href="../tutorials/r-language.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/nhsr.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+R Programming Language
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('NHS-R'); return false;">
+NHS-R
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Craig Robert Shenton
+</div>
+<div class="listing-date">
+Jan 3, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="NHS England" data-listing-date-sort="1668988800000" data-listing-file-modified-sort="1675635733041" data-listing-reading-time-sort="5.48">
+<a href="../tutorials/nhs-colours.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../assets/logos/nhs-england-large.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NHS Colour Guidlines
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('NHS England'); return false;">
+NHS England
+</div>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Craig Robert Shenton
+</div>
+<div class="listing-date">
+Nov 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script type="text/javascript">
 
     // replace cmd keyboard shortcut w/ control on non-Mac platforms

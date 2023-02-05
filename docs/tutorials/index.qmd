@@ -1,3 +1,14 @@
 ---
 title: "Tutorials"
+listing:
+  contents:
+    - "*.qmd"
+  sort:
+    - "date desc"
+  type: grid
+  image-placeholder: "../assets/logos/nhs-england-large.png"
+  max-description-length: 100
+  categories: true
+  max-items: 12
+  fields: [image, date, title, author, categories]
 ---

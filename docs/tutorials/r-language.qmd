@@ -1,9 +1,17 @@
 ---
 title: R Programming Language
-subtitle: "Under development"
+subtitle: "Open-source Analytics"
+author: "Craig Robert Shenton"
+date: "2023-01-03"
+categories: [R, NHS-R]
+image: "../assets/logos/nhsr.png"
 ---
 
-- R and R-Studio are available on Modern Desktop (see `Company Portal > Apps`) and on UDAL VMs.
+::: {.callout-note}
+## Note
+R and R-Studio are available on Modern Desktop (see `Company Portal > Apps`) and on UDAL VMs.
+
+:::
 
 ## Resources
 
@@ -12,6 +20,15 @@ subtitle: "Under development"
 - [Markdown](https://ukgovdatascience.github.io/rap_companion/pub.html#r-markdown-basics)
 - Dashboards (Shiny)
 - [Packages](https://ukgovdatascience.github.io/rap_companion/package.html)
+
+### NHS Themes
+
+- [NHS-R Theme](https://nhs-r-community.github.io/NHSRtheme/) [[code](https://github.com/nhs-r-community/NHSRtheme)]
+
+### NHS code
+
+- [NHS-R how-tos](https://github.com/nhs-r-community/demos-and-how-tos)
+- [NHS-R R-Markdown functions](https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals)
 
 ## Quarto
 
@@ -36,16 +53,3 @@ A few Quarto websites from Openscapes - so far we have been using Quarto for doc
 -   [2021 NASA Cloud Hackathon](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/)
 -   [Faylab Lab Manual](https://thefaylab.github.io/lab-manual/)
 -   [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/), by Mine Çetinkaya-Rundel
-
-## Resource List
-
-NHS specific resources from the NHS-R Community
-
-### NHS Themes
-
-- [NHS-R Theme](https://nhs-r-community.github.io/NHSRtheme/) [[code](https://github.com/nhs-r-community/NHSRtheme)]
-
-### NHS code
-
-- [NHS-R how-tos](https://github.com/nhs-r-community/demos-and-how-tos)
-- [NHS-R R-Markdown functions](https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals)

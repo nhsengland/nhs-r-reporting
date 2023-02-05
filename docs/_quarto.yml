@@ -32,9 +32,6 @@ website:
       - text: "Tutorials"
         icon: "bookmark-check"
         href: tutorials/index.qmd
-      - text: "Documentation"
-        icon: "file-earmark-text"
-        href: documentation/index.qmd
       - text: "Updates"
         icon: "rss"
         href: updates.qmd
@@ -74,10 +71,6 @@ website:
         file: tutorials/index.qmd
         contents: 
           - auto: tutorials/*.qmd
-      - section: Documentation
-        file: documentation/index.qmd
-        contents: 
-          - auto: documentation/*.qmd
       - section: Examples
         contents: 
           - text: "A&E Attendance Report"

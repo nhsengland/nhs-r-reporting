@@ -2,7 +2,20 @@
   {
     "listing": "/updates.html",
     "items": [
-      "/posts/rstudio-git/index.html"
+      "/posts/r-udal.html",
+      "/posts/r-studio-git.html"
+    ]
+  },
+  {
+    "listing": "/tutorials/index.html",
+    "items": [
+      "/tutorials/udal.html",
+      "/tutorials/rap.html",
+      "/tutorials/github.html",
+      "/tutorials/rstudio-git.html",
+      "/tutorials/spc.html",
+      "/tutorials/r-language.html",
+      "/tutorials/nhs-colours.html"
     ]
   }
 ]

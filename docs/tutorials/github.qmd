@@ -1,6 +1,10 @@
 ---
 title: NHSE GitHub
-subtitle: "Version Control and Deployment"
+subtitle: "Version Control & Project Management"
+author: "Craig Robert Shenton"
+date: "2023-01-22"
+categories: [Git, GitHub, NHS England]
+image: "../assets/logos/GitHub-logo.png"
 ---
 
 - Official NHS England GitHub Organisation: [github.com/nhsengland](https://github.com/nhsengland)

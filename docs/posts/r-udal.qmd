@@ -1,0 +1,15 @@
+---
+title: "Query SQL data in UDAL using R"
+author: "Craig Robert Shenton"
+date: "2023-02-05"
+categories: [Tutorial, R, SQL, UDAL]
+image: "../assets/logos/nhs-england-large.png"
+description: "New tutorial on querying SQL data in UDAL using R"
+title-block-banner: false
+---
+
+Hi all, [a new guide on how to query data in UDAL using R](https://nhsengland.github.io/nhs-r-reporting/tutorials/udal.html) has been posted in the [tutorials section](https://nhsengland.github.io/nhs-r-reporting/tutorials/). 
+
+Written by Simon Wellesley-Miller from NHSE.
+
+There is also an accompanying video tutorial on our the [NHSE-R FutureNHS site](https://future.nhs.uk/NHSERcommunity/view?objectId=156575173).

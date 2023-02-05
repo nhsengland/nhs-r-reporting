@@ -1,9 +1,10 @@
 ﻿---
 title: Git in R-Studio
+author: "Pablo Leon-Rodenas"
+date: "2023-01-19"
+categories: [Git, GitHub, R-Studio]
+image: "../assets/logos/git-rstudio.png"
 ---
-
-By: **[Pablo Leon-Rodenas](https://github.com/Pablo-source)** [<pablo.leonrodenas@nhs.net>](mailto:pablo.leonrodenas@nhs.net)
-
 This guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.
 
 This will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio.
@@ -128,3 +129,5 @@ After all these steps, we have finally uploaded our modified file from R-Studio 
 - Tutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. <https://www.youtube.com/watch?v=d5dUkO5lXds>
 
 - [Support for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel.](https://www.youtube.com/watch?v=5-3XeD7vQ3s)
+
+By: **[Pablo Leon-Rodenas](https://github.com/Pablo-source)** [<pablo.leonrodenas@nhs.net>](mailto:pablo.leonrodenas@nhs.net)

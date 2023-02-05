@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Craig Robert Shenton">
-<meta name="dcterms.date" content="2023-01-03">
+<meta name="dcterms.date" content="2022-11-21">
 
-<title>NHSE-R - R Programming Language</title>
+<title>NHSE-R - NHS Colour Guidlines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/rap.html" rel="next">
-<link href="../tutorials/github.html" rel="prev">
+<link href="../tutorials/github.html" rel="next">
+<link href="../tutorials/udal.html" rel="prev">
 <link href="../assets/favicons/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -65,12 +65,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../assets/style/styles.css">
-<meta property="og:title" content="NHSE-R - R Programming Language">
-<meta property="og:description" content="Open-source Analytics">
-<meta property="og:image" content="https://nhsengland.github.io/nhs-r-reporting/assets/logos/nhsr.png">
+<meta property="og:title" content="NHSE-R - NHS Colour Guidlines">
+<meta property="og:description" content="Colour is a key element of any organisation’s identity.">
 <meta property="og:site-name" content="NHSE-R">
-<meta property="og:image:height" content="1883">
-<meta property="og:image:width" content="2996">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -93,11 +90,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
@@ -145,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">R Programming Language</h1>
+      <h1 class="quarto-secondary-nav-title">NHS Colour Guidlines</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -203,12 +195,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link active">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/r-language.html" class="sidebar-item-text sidebar-link active">R Programming Language</a>
+  <a href="../tutorials/r-language.html" class="sidebar-item-text sidebar-link">R Programming Language</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,37 +222,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -277,29 +249,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a>
-  <ul>
-  <li><a href="#nhs-themes" id="toc-nhs-themes" class="nav-link" data-scroll-target="#nhs-themes">NHS Themes</a></li>
-  <li><a href="#nhs-code" id="toc-nhs-code" class="nav-link" data-scroll-target="#nhs-code">NHS code</a></li>
-  </ul></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
-  <ul>
-  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
-  <li><a href="#example-quarto-sites" id="toc-example-quarto-sites" class="nav-link" data-scroll-target="#example-quarto-sites">Example Quarto sites</a></li>
-  </ul></li>
+  <li><a href="#core-nhs-colours" id="toc-core-nhs-colours" class="nav-link active" data-scroll-target="#core-nhs-colours">Core NHS colours</a></li>
+  <li><a href="#level-1-nhs-blues" id="toc-level-1-nhs-blues" class="nav-link" data-scroll-target="#level-1-nhs-blues">Level 1: NHS blues</a></li>
+  <li><a href="#level-2-nhs-neutrals" id="toc-level-2-nhs-neutrals" class="nav-link" data-scroll-target="#level-2-nhs-neutrals">Level 2: NHS neutrals</a></li>
+  <li><a href="#level-3-nhs-support-greens" id="toc-level-3-nhs-support-greens" class="nav-link" data-scroll-target="#level-3-nhs-support-greens">Level 3: NHS support greens</a></li>
+  <li><a href="#level-4-nhs-highlights" id="toc-level-4-nhs-highlights" class="nav-link" data-scroll-target="#level-4-nhs-highlights">Level 4: NHS highlights</a></li>
+  <li><a href="#nhs-region-colours" id="toc-nhs-region-colours" class="nav-link" data-scroll-target="#nhs-region-colours">NHS Region Colours</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/tutorials/r-language.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/tutorials/nhs-colours.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">R Programming Language</h1>
-<p class="subtitle lead">Open-source Analytics</p>
+<h1 class="title d-none d-lg-block">NHS Colour Guidlines</h1>
+<p class="subtitle lead">Colour is a key element of any organisation’s identity.</p>
   <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">NHS-R</div>
+    <div class="quarto-category">NHS England</div>
   </div>
   </div>
 
@@ -317,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 3, 2023</p>
+      <p class="date">November 21, 2022</p>
     </div>
   </div>
   
@@ -327,66 +294,266 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<style>
+    .colourCore {
+        text-align: left;
+    }
+    .colourCore tr:nth-child(1) { background: #005EB8; color: #FFFFFF;}
+    .colourCore tr:nth-child(2) { background: #FFFFFF; color: #231f20;}
+
+    .colourBlue {
+        text-align: left;
+    }
+    .colourBlue tr:nth-child(1) { background: #003087; color: #FFFFFF;}
+    .colourBlue tr:nth-child(2) { background: #0072CE; color: #FFFFFF;}
+    .colourBlue tr:nth-child(3) { background: #41B6E6; color: #FFFFFF;}
+    .colourBlue tr:nth-child(4) { background: #00A9CE; color: #FFFFFF;}
+
+    .colourNeutral {
+        text-align: left;
+    }
+    .colourNeutral tr:nth-child(1) { background: #231f20; color: #FFFFFF;}
+    .colourNeutral tr:nth-child(2) { background: #425563; color: #FFFFFF;}
+    .colourNeutral tr:nth-child(3) { background: #768692; color: #FFFFFF;}
+    .colourNeutral tr:nth-child(4) { background: #E8EDEE; color: #231f20;}
+
+    .colourGreen {
+        text-align: left;
+    }
+    .colourGreen tr:nth-child(1) { background: #006747; color: #FFFFFF;}
+    .colourGreen tr:nth-child(2) { background: #009639; color: #FFFFFF;}
+    .colourGreen tr:nth-child(3) { background: #78BE20; color: #FFFFFF;}
+    .colourGreen tr:nth-child(4) { background: #00A499; color: #FFFFFF;}
+
+    .colourHighlight {
+        text-align: left;
+    }
+    .colourHighlight tr:nth-child(1) { background: #003087; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(2) { background: #7C2855; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(3) { background: #AE2573; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(4) { background: #8A1538; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(5) { background: #DA291C; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(6) { background: #ED8B00; color: #FFFFFF;}
+    .colourHighlight tr:nth-child(7) { background: #FFB81C; color: #231f20;}
+    .colourHighlight tr:nth-child(8) { background: #FAE100; color: #231f20;}
+
+    .colourRegion {
+        text-align: left;
+    }
+    .colourRegion th {
+                        background-color: #FFFFFF !important;
+                        color: #231f20;
+                    }
+    .colourRegion tr:nth-child(1) { background: #3DB4F5; color: #231f20;}
+    .colourRegion tr:nth-child(2) { background: #820F25; color: #FFFFFF;}
+    .colourRegion tr:nth-child(3) { background: #087558; color: #FFFFFF;}
+    .colourRegion tr:nth-child(4) { background: #E69F00; color: #231f20;}
+    .colourRegion tr:nth-child(5) { background: #EADC17; color: #231f20;}
+    .colourRegion tr:nth-child(6) { background: #6F00D5; color: #FFFFFF;}
+    .colourRegion tr:nth-child(7) { background: #6F7D86; color: #FFFFFF;}
+</style>
+<p>The colours in the NHS colour palette all offer at least an AA accessibility rating, with many offering the maximum AAA rating when used with sufficient contrasts on appropriate backgrounds.</p>
+<p><a href="https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/">&gt; Read the Official NHS Guidance</a></p>
+<section id="core-nhs-colours" class="level3">
+<h3 class="anchored" data-anchor-id="core-nhs-colours">Core NHS colours</h3>
+<div class="colourCore">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Blue</td>
+<td>#005EB8</td>
+</tr>
+<tr class="even">
+<td>White</td>
+<td>#FFFFFF</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>R and R-Studio are available on Modern Desktop (see <code>Company Portal &gt; Apps</code>) and on UDAL VMs.</p>
-</div>
-</div>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<ul>
-<li><a href="https://github.com/nhs-r-community/intro_r">Learning R</a></li>
-<li><a href="https://ukgovdatascience.github.io/rap_companion/pub.html">Reports</a></li>
-<li><a href="https://ukgovdatascience.github.io/rap_companion/pub.html#r-markdown-basics">Markdown</a></li>
-<li>Dashboards (Shiny)</li>
-<li><a href="https://ukgovdatascience.github.io/rap_companion/package.html">Packages</a></li>
-</ul>
-<section id="nhs-themes" class="level3">
-<h3 class="anchored" data-anchor-id="nhs-themes">NHS Themes</h3>
-<ul>
-<li><a href="https://nhs-r-community.github.io/NHSRtheme/">NHS-R Theme</a> [<a href="https://github.com/nhs-r-community/NHSRtheme">code</a>]</li>
-</ul>
+<p>The core NHS Blue and white are supported by four other groups of colours in the NHS colour palette, to provide NHS organisations with the flexibility to differentiate their communications from each other, but not from the NHS.</p>
 </section>
-<section id="nhs-code" class="level3">
-<h3 class="anchored" data-anchor-id="nhs-code">NHS code</h3>
-<ul>
-<li><a href="https://github.com/nhs-r-community/demos-and-how-tos">NHS-R how-tos</a></li>
-<li><a href="https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals">NHS-R R-Markdown functions</a></li>
-</ul>
+<section id="level-1-nhs-blues" class="level3">
+<h3 class="anchored" data-anchor-id="level-1-nhs-blues">Level 1: NHS blues</h3>
+<div class="colourBlue">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Dark Blue</td>
+<td>#003087</td>
+</tr>
+<tr class="even">
+<td>NHS Bright Blue</td>
+<td>#0072CE</td>
+</tr>
+<tr class="odd">
+<td>NHS Light Blue</td>
+<td>#41B6E6</td>
+</tr>
+<tr class="even">
+<td>NHS Aqua Blue</td>
+<td>#00A9CE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is the top level palette that reinforces people’s association with blue and white. There are a number of hues to support the main NHS Blue colour to give lighter and darker alternatives to add tonal variety.</p>
 </section>
+<section id="level-2-nhs-neutrals" class="level3">
+<h3 class="anchored" data-anchor-id="level-2-nhs-neutrals">Level 2: NHS neutrals</h3>
+<div class="colourNeutral">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Black</td>
+<td>#231f20</td>
+</tr>
+<tr class="even">
+<td>NHS Dark Grey</td>
+<td>#425563</td>
+</tr>
+<tr class="odd">
+<td>NHS Mid Grey</td>
+<td>#768692</td>
+</tr>
+<tr class="even">
+<td>NHS Pale grey</td>
+<td>#E8EDEE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These colours help to support the top level blues. Black and dark grey can be used for type, depending on the background and application. The lighter greys can be used as backgrounds when they are appropriate and are useful online colours. White is, of course, the most important neutral base. These colours will support the overall blue and white look if they are used with the proper emphasis.</p>
 </section>
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>It’s possible to create beautiful documentation to share online with <a href="https://quarto.org">Quarto</a> that auto-updates with <a href="http://github.com">GitHub Actions</a>. This is very new and incredibly cool. This is an example of a quarto website with an NHS Theme — it is a really powerful way to create and share your work. You can communicate about science using the same reproducible workflow you and/or your colleagues use for analyses, whether or not you write code.</p>
-<p>Quarto integrates with R, Python or HTML, CSS so you can make your websites as complex and beautiful as you like as you see examples and reuse and remix from others in the open community.</p>
-<section id="what-is-quarto" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h3>
-<p>Quarto helps you have your ideas and your code in one place, and present it in a beautiful way.</p>
-<p><strong>Quarto unifies and extends the RMarkdown ecosystem</strong> - it unifies by combining the functionality of R Markdown, bookdown, distill, xaringian, etc into a single consistent system. And it extends in several ways: all features are possible beyond R too, including Python and Javascript. It also has more “guardrails”: accessibility and inclusion are centered in the design. Quarto is for people who love R-Markdown, and it’s for people who have never used RMarkdown.</p>
-<p><a href="https://quarto.org">Quarto.org</a> is the go-to place for full documentation and more tutorials!</p>
+<section id="level-3-nhs-support-greens" class="level3">
+<h3 class="anchored" data-anchor-id="level-3-nhs-support-greens">Level 3: NHS support greens</h3>
+<div class="colourGreen">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Dark Green</td>
+<td>#006747</td>
+</tr>
+<tr class="even">
+<td>NHS Green</td>
+<td>#009639</td>
+</tr>
+<tr class="odd">
+<td>NHS Light Green</td>
+<td>#78BE20</td>
+</tr>
+<tr class="even">
+<td>NHS Aqua Green</td>
+<td>#00A499</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Green is close to blue in the colour spectrum and gives a feel of being in the same colour family. Therefore, when they are used moderately and in a secondary support role, they will not compromise the strong associations people have with blue and white. However, if it becomes too dominant it will impact on people’s ability to instantly recognise the NHS as being the source of the information.</p>
 </section>
-<section id="example-quarto-sites" class="level3">
-<h3 class="anchored" data-anchor-id="example-quarto-sites">Example Quarto sites</h3>
-<p>A few Quarto websites from Openscapes - so far we have been using Quarto for documentation using Quarto and Markdown files and Jupyter Notebooks.</p>
-<ul>
-<li><a href="https://openscapes.github.io/series">Champions Lessons Series</a></li>
-<li><a href="https://openscapes.github.io/approach-guide/">Openscapes Approach Guide</a><br>
-</li>
-<li><a href="https://nasa-openscapes.github.io/2021-Cloud-Hackathon/">2021 NASA Cloud Hackathon</a></li>
-<li><a href="https://thefaylab.github.io/lab-manual/">Faylab Lab Manual</a></li>
-<li><a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/">A Quarto tip a day</a>, by Mine Çetinkaya-Rundel</li>
-</ul>
+<section id="level-4-nhs-highlights" class="level3">
+<h3 class="anchored" data-anchor-id="level-4-nhs-highlights">Level 4: NHS highlights</h3>
+<div class="colourHighlight">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>NHS Purple</td>
+<td>#003087</td>
+</tr>
+<tr class="even">
+<td>Dark Pink</td>
+<td>#7C2855</td>
+</tr>
+<tr class="odd">
+<td>NHS Pink</td>
+<td>#AE2573</td>
+</tr>
+<tr class="even">
+<td>NHS Dark Red</td>
+<td>#8A1538</td>
+</tr>
+<tr class="odd">
+<td>Emergency Services Red</td>
+<td>#DA291C</td>
+</tr>
+<tr class="even">
+<td>NHS Orange</td>
+<td>#ED8B00</td>
+</tr>
+<tr class="odd">
+<td>NHS Warm Yellow</td>
+<td>#FFB81C</td>
+</tr>
+<tr class="even">
+<td>NHS Yellow</td>
+<td>#FAE100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Highlights are very useful for drawing attention to details, helping to warm up the blue look and providing accent colours to enable NHS organisations, partnerships and services to differentiate themselves from each other. However, they should not be used too heavily otherwise they change the overall look dramatically and people will not associate your communication with the NHS. Therefore, use minimally and do not use large blocks of these highlight colours.</p>
+<p>The highlight colour ‘Emergency Services Red’ is not exclusively for use in relation to emergency and urgent care services. However, because of its strong association and use in this area, you should carefully consider how you use it for other purposes.</p>
+</section>
+<section id="nhs-region-colours" class="level2">
+<h2 class="anchored" data-anchor-id="nhs-region-colours">NHS Region Colours</h2>
+<div class="colourRegion">
+<table class="table">
+<thead>
+<tr class="header">
+<th>ODS Code</th>
+<th>NHS Code</th>
+<th>Region</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E40000003</td>
+<td>Y56</td>
+<td>London</td>
+<td>#3DB4F5</td>
+</tr>
+<tr class="even">
+<td>E40000006</td>
+<td>Y58</td>
+<td>South West</td>
+<td>#820F25</td>
+</tr>
+<tr class="odd">
+<td>E40000005</td>
+<td>Y59</td>
+<td>South East</td>
+<td>#087558</td>
+</tr>
+<tr class="even">
+<td>E40000011</td>
+<td>Y60</td>
+<td>Midlands</td>
+<td>#E69F00</td>
+</tr>
+<tr class="odd">
+<td>E40000007</td>
+<td>Y61</td>
+<td>East of England</td>
+<td>#EADC17</td>
+</tr>
+<tr class="even">
+<td>E40000010</td>
+<td>Y62</td>
+<td>North West</td>
+<td>#6F00D5</td>
+</tr>
+<tr class="odd">
+<td>E40000012</td>
+<td>Y63</td>
+<td>North East &amp; Yorkshire</td>
+<td>#6F7D86</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>There are seven NHSE regions who support local systems to provide more joined up and sustainable care for patients.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -537,13 +704,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/github.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHSE GitHub</span>
+      <a href="../tutorials/udal.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">National Data Platform (UDAL)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/rap.html" class="pagination-link">
-        <span class="nav-page-text">Reproducible Analytical Pipelines (RAP)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../tutorials/github.html" class="pagination-link">
+        <span class="nav-page-text">NHSE GitHub</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

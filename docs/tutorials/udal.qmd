@@ -1,10 +1,150 @@
 ---
 title: National Data Platform (UDAL)
-subtitle: "Under development"
+subtitle: "NHS England Datastore"
+author: "Simon Wellesley-Miller"
+date: "2023-02-05"
+categories: [SQL, R, NHS England]
 ---
 
-- Getting access
-- Virtual Machines
-- R Studio
-    - [Using Git](https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/R/git_with_RStudio.md)
-- Loading data into R
+Guide on how to query data in UDAL using R. A video tutorial is available on the [NHSE-R FutureNHS site](https://future.nhs.uk/NHSERcommunity/view?objectId=156575173).
+
+## Query UDAL in R
+
+First load in appropriate libraries; `DBI` is the main one for the connection to UDAL, and `tidyverse` allows you to to use `dbpylr` verbs.
+
+```r
+library (DBI)
+library (odbc)
+library (tidyverse)
+library (dbplyr)
+source ('personal_credentials.R')
+```
+
+::: {.callout-warning}
+## Important!
+It is good practice *not* to publish connection strings! See [R-Stuido's guide on managing credentials](https://solutions.posit.co/connections/db/best-practices/managing-credentials/).
+
+:::
+
+One option is to put your credentials into a separate file (not under version control) as follows:
+
+```r
+# personal_credentials.R
+serv  <-"<database-server-address>"
+db  <- "<database-name>"
+user  <- "<udal-account-username>"
+```
+
+See the [NHSE-R FutureNHS site](https://future.nhs.uk/NHSERcommunity/view?objectId=156575365) for specifics on UDAL credentials.
+
+### Open Connection
+
+This is the main connection command:
+
+```r
+con_udal <- dbConnect(
+  drv = odbc(),
+  driver = "ODBC Driver 17 for SQL Server",
+  server = serv,
+  database = db,
+  UID = user,
+  authentication = "ActiveDirectoryInteractive"
+)
+```
+
+::: {.callout-note}
+## Note
+When this is run a separate window will open where you will need to enter two part authentication 
+
+::: 
+
+Once that has been run you will see a connection appear in the connections tab - top right
+
+### Running SQL Query
+
+You can parse a standard sql query using a `dbGetQuery()` command, it requires the connection string (that you have already specified above) and the sql code.
+
+- Each query can return one dataframe of data, if you have multiple queries use separate queries (there is a way around this but it is quite complex)
+- The `dbGetQuery()` does not like temporary tables (they are bad practice anyway), but it will accept common table expressions (CTEs) or subqueries
+
+```r
+df_one <- dbGetQuery(
+  conn = con_udal,
+  statement = "
+
+  SELECT  appointment_date,
+          appointment_status,
+          HCP_Type,
+          Appointment_Mode,
+          Count_Of_Appointments
+
+  FROM  [UKHF_Appts_In_General_Practice].[Appts_GP_Daily1]
+
+  WHERE Appointment_Date >= '2022-11-25'
+
+  "
+  )
+```
+
+Alternatively we can keep our sql separate and read in a script:
+
+```r
+df_two <- dbGetQuery(con_udal, 
+                     read_file("test_query.sql"))
+```
+
+Where `test_query.sql` is given as:
+
+```sql
+  SELECT  appointment_date,
+          appointment_status,
+          HCP_Type,
+          Appointment_Mode,
+          Count_Of_Appointments
+
+  FROM  [UKHF_Appts_In_General_Practice].[Appts_GP_Daily1]
+
+  WHERE Appointment_Date >= '2022-11-25'
+```
+
+### Using `dbpylr`
+
+Finally we can skip sql entirely and query using dplyr like verbs. First we make a connection to the table we want - note that this does not actually create a table - more of a virtual one:
+
+```r
+dbpylr_table <- tbl(con_udal, 
+                    in_schema("UKHF_Appts_In_General_Practice", 
+                              "Appts_GP_Daily1"))
+```
+
+However we can then use our virtual table and query it using dplyr verbs.
+
+Ensure to add collect at the end to convert the final results into an actual dataframe:
+
+```r
+df_three <- dbpylr_table %>%
+  select (Appointment_Date,
+          Appointment_Status,
+          HCP_Type,
+          Appointment_Mode,
+          Count_Of_Appointments) %>%
+  filter (Appointment_Date >= '2022-11-25') %>%
+  collect()
+```
+
+::: {.callout-warning}
+## Important!
+When you are experimenting with R code, do not use `collect()`. Only when you have finalised the code for the information being extracted from the database, use `collect()` to read the complete output into the R session.
+
+:::
+
+### Close Connection 
+
+When you have finished with the connection it is good practice to close it:
+
+```r
+dbDisconnect(con_udal)
+```
+
+ta da!
+

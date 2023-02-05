@@ -1,6 +1,9 @@
 ---
 title: NHS Colour Guidlines
 subtitle: "Colour is a key element of any organisation’s identity."
+author: "Craig Robert Shenton"
+date: "2022-11-21"
+categories: [NHS England]
 ---
 
 <style>

@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Craig Robert Shenton">
+<meta name="dcterms.date" content="2023-01-22">
 
 <title>NHSE-R - NHSE GitHub</title>
 <style>
@@ -93,7 +95,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../tutorials/r-language.html" rel="next">
-<link href="../tutorials/udal.html" rel="prev">
+<link href="../tutorials/nhs-colours.html" rel="prev">
 <link href="../assets/favicons/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -127,8 +129,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <link rel="stylesheet" href="../assets/style/styles.css">
 <meta property="og:title" content="NHSE-R - NHSE GitHub">
-<meta property="og:description" content="Version Control and Deployment">
+<meta property="og:description" content="Version Control &amp; Project Management">
+<meta property="og:image" content="https://nhsengland.github.io/nhs-r-reporting/assets/logos/GitHub-logo.png">
 <meta property="og:site-name" content="NHSE-R">
+<meta property="og:image:height" content="2160">
+<meta property="og:image:width" content="3840">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -151,11 +156,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
@@ -261,6 +261,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link active">NHSE GitHub</a>
   </div>
 </li>
@@ -283,37 +288,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -352,14 +332,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">NHSE GitHub</h1>
-<p class="subtitle lead">Version Control and Deployment</p>
-</div>
+<p class="subtitle lead">Version Control &amp; Project Management</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Git</div>
+    <div class="quarto-category">GitHub</div>
+    <div class="quarto-category">NHS England</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Craig Robert Shenton </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 22, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -652,8 +649,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/udal.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">National Data Platform (UDAL)</span>
+      <a href="../tutorials/nhs-colours.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHS Colour Guidlines</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

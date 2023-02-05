@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Craig Robert Shenton">
+<meta name="dcterms.date" content="2023-01-27">
 
 <title>NHSE-R - Reproducible Analytical Pipelines (RAP)</title>
 <style>
@@ -64,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../assets/style/styles.css">
 <meta property="og:title" content="NHSE-R - Reproducible Analytical Pipelines (RAP)">
-<meta property="og:description" content="Under development">
+<meta property="og:description" content="Best practice for transparency and reproducibility">
 <meta property="og:site-name" content="NHSE-R">
 </head>
 
@@ -88,11 +90,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
@@ -198,6 +195,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
   </div>
 </li>
@@ -220,37 +222,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -274,8 +251,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a>
   <ul>
-  <li><a href="#nhs-england" id="toc-nhs-england" class="nav-link" data-scroll-target="#nhs-england">NHS England</a></li>
   <li><a href="#nhs-digital-rap-community-of-practice" id="toc-nhs-digital-rap-community-of-practice" class="nav-link" data-scroll-target="#nhs-digital-rap-community-of-practice">NHS Digital RAP Community of Practice</a></li>
+  <li><a href="#nhs-england" id="toc-nhs-england" class="nav-link" data-scroll-target="#nhs-england">NHS England</a></li>
   <li><a href="#gov.datascience-rap-companion" id="toc-gov.datascience-rap-companion" class="nav-link" data-scroll-target="#gov.datascience-rap-companion">GOV.datascience RAP Companion</a></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   <li><a href="#nhs-bsa-rap" id="toc-nhs-bsa-rap" class="nav-link" data-scroll-target="#nhs-bsa-rap">NHS BSA RAP</a></li>
@@ -290,14 +267,30 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">Reproducible Analytical Pipelines (RAP)</h1>
-<p class="subtitle lead">Under development</p>
-</div>
+<p class="subtitle lead">Best practice for transparency and reproducibility</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">RAP</div>
+    <div class="quarto-category">NHS England</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Craig Robert Shenton </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 27, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -308,20 +301,20 @@ ul.task-list li input[type="checkbox"] {
 <p>Reproducible Analytical Pipelines (RAP) brings together a number of best practices to ensure published NHS statistics meet the highest standards of transparency and reproducibility.</p>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<section id="nhs-england" class="level3">
-<h3 class="anchored" data-anchor-id="nhs-england">NHS England</h3>
-<ul>
-<li><a href="https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md">NHS Open-source policy (Draft)</a></li>
-<li><a href="https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md">Open code checklist</a></li>
-<li><a href="https://nhsx.github.io/AnalyticsUnit/codeintheopen.html">Sharing Code in the Open by NHSX</a></li>
-</ul>
-</section>
 <section id="nhs-digital-rap-community-of-practice" class="level3">
 <h3 class="anchored" data-anchor-id="nhs-digital-rap-community-of-practice">NHS Digital RAP Community of Practice</h3>
 <p><a href="https://nhsdigital.github.io/rap-community-of-practice/">New Website!</a></p>
 <ul>
 <li><a href="https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/why_RAP_is_important/">What is RAP</a></li>
 <li><a href="https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/">Levels of RAP</a></li>
+</ul>
+</section>
+<section id="nhs-england" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-england">NHS England</h3>
+<ul>
+<li><a href="https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md">NHS Open-source policy (Draft)</a></li>
+<li><a href="https://github.com/nhsx/analyticsunit-template/blob/main/OPEN_CODE_CHECKLIST.md">Open code checklist</a></li>
+<li><a href="https://nhsx.github.io/AnalyticsUnit/codeintheopen.html">Sharing Code in the Open by NHSX</a></li>
 </ul>
 </section>
 <section id="gov.datascience-rap-companion" class="level3">

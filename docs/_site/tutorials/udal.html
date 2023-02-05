@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Simon Wellesley-Miller">
+<meta name="dcterms.date" content="2023-02-05">
 
 <title>NHSE-R - National Data Platform (UDAL)</title>
 <style>
@@ -20,6 +22,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -29,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/github.html" rel="next">
+<link href="../tutorials/nhs-colours.html" rel="next">
 <link href="../tutorials/rstudio-git.html" rel="prev">
 <link href="../assets/favicons/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -64,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../assets/style/styles.css">
 <meta property="og:title" content="NHSE-R - National Data Platform (UDAL)">
-<meta property="og:description" content="Under development">
+<meta property="og:description" content="NHS England Datastore">
 <meta property="og:site-name" content="NHSE-R">
 </head>
 
@@ -88,11 +153,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
@@ -198,6 +258,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
   </div>
 </li>
@@ -220,37 +285,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -268,7 +308,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#query-udal-in-r" id="toc-query-udal-in-r" class="nav-link active" data-scroll-target="#query-udal-in-r">Query UDAL in R</a>
+  <ul>
+  <li><a href="#open-connection" id="toc-open-connection" class="nav-link" data-scroll-target="#open-connection">Open Connection</a></li>
+  <li><a href="#running-sql-query" id="toc-running-sql-query" class="nav-link" data-scroll-target="#running-sql-query">Running SQL Query</a></li>
+  <li><a href="#using-dbpylr" id="toc-using-dbpylr" class="nav-link" data-scroll-target="#using-dbpylr">Using <code>dbpylr</code></a></li>
+  <li><a href="#close-connection" id="toc-close-connection" class="nav-link" data-scroll-target="#close-connection">Close Connection</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/tutorials/udal.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -276,14 +328,31 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">National Data Platform (UDAL)</h1>
-<p class="subtitle lead">Under development</p>
-</div>
+<p class="subtitle lead">NHS England Datastore</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">SQL</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">NHS England</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Simon Wellesley-Miller </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 5, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -291,17 +360,136 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Guide on how to query data in UDAL using R. A video tutorial is available on the <a href="https://future.nhs.uk/NHSERcommunity/view?objectId=156575173">NHSE-R FutureNHS site</a>.</p>
+<section id="query-udal-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="query-udal-in-r">Query UDAL in R</h2>
+<p>First load in appropriate libraries; <code>DBI</code> is the main one for the connection to UDAL, and <code>tidyverse</code> allows you to to use <code>dbpylr</code> verbs.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (DBI)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (odbc)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (dbplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span> (<span class="st">'personal_credentials.R'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is good practice <em>not</em> to publish connection strings! See <a href="https://solutions.posit.co/connections/db/best-practices/managing-credentials/">R-Stuido’s guide on managing credentials</a>.</p>
+</div>
+</div>
+<p>One option is to put your credentials into a separate file (not under version control) as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># personal_credentials.R</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>serv  <span class="ot">&lt;-</span><span class="st">"&lt;database-server-address&gt;"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>db  <span class="ot">&lt;-</span> <span class="st">"&lt;database-name&gt;"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>user  <span class="ot">&lt;-</span> <span class="st">"&lt;udal-account-username&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See the <a href="https://future.nhs.uk/NHSERcommunity/view?objectId=156575365">NHSE-R FutureNHS site</a> for specifics on UDAL credentials.</p>
+<section id="open-connection" class="level3">
+<h3 class="anchored" data-anchor-id="open-connection">Open Connection</h3>
+<p>This is the main connection command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>con_udal <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">drv =</span> <span class="fu">odbc</span>(),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">driver =</span> <span class="st">"ODBC Driver 17 for SQL Server"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">server =</span> serv,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">database =</span> db,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">UID =</span> user,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">authentication =</span> <span class="st">"ActiveDirectoryInteractive"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When this is run a separate window will open where you will need to enter two part authentication</p>
+</div>
+</div>
+<p>Once that has been run you will see a connection appear in the connections tab - top right</p>
+</section>
+<section id="running-sql-query" class="level3">
+<h3 class="anchored" data-anchor-id="running-sql-query">Running SQL Query</h3>
+<p>You can parse a standard sql query using a <code>dbGetQuery()</code> command, it requires the connection string (that you have already specified above) and the sql code.</p>
 <ul>
-<li>Getting access</li>
-<li>Virtual Machines</li>
-<li>R Studio
-<ul>
-<li><a href="https://github.com/NHSDigital/rap-community-of-practice/blob/main/implementing_RAP/R/git_with_RStudio.md">Using Git</a></li>
-</ul></li>
-<li>Loading data into R</li>
+<li>Each query can return one dataframe of data, if you have multiple queries use separate queries (there is a way around this but it is quite complex)</li>
+<li>The <code>dbGetQuery()</code> does not like temporary tables (they are bad practice anyway), but it will accept common table expressions (CTEs) or subqueries</li>
 </ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_one <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">conn =</span> con_udal,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">statement =</span> <span class="st">"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT  appointment_date,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">          appointment_status,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">          HCP_Type,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">          Appointment_Mode,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">          Count_Of_Appointments</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM  [UKHF_Appts_In_General_Practice].[Appts_GP_Daily1]</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE Appointment_Date &gt;= '2022-11-25'</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively we can keep our sql separate and read in a script:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_two <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con_udal, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">read_file</span>(<span class="st">"test_query.sql"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where <code>test_query.sql</code> is given as:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span>  appointment_date,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>          appointment_status,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          HCP_Type,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>          Appointment_Mode,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>          Count_Of_Appointments</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span>  [UKHF_Appts_In_General_Practice].[Appts_GP_Daily1]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> Appointment_Date <span class="op">&gt;=</span> <span class="st">'2022-11-25'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-dbpylr" class="level3">
+<h3 class="anchored" data-anchor-id="using-dbpylr">Using <code>dbpylr</code></h3>
+<p>Finally we can skip sql entirely and query using dplyr like verbs. First we make a connection to the table we want - note that this does not actually create a table - more of a virtual one:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dbpylr_table <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con_udal, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">in_schema</span>(<span class="st">"UKHF_Appts_In_General_Practice"</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"Appts_GP_Daily1"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However we can then use our virtual table and query it using dplyr verbs.</p>
+<p>Ensure to add collect at the end to convert the final results into an actual dataframe:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_three <span class="ot">&lt;-</span> dbpylr_table <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span> (Appointment_Date,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>          Appointment_Status,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>          HCP_Type,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>          Appointment_Mode,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>          Count_Of_Appointments) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (Appointment_Date <span class="sc">&gt;=</span> <span class="st">'2022-11-25'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you are experimenting with R code, do not use <code>collect()</code>. Only when you have finalised the code for the information being extracted from the database, use <code>collect()</code> to read the complete output into the R session.</p>
+</div>
+</div>
+</section>
+<section id="close-connection" class="level3">
+<h3 class="anchored" data-anchor-id="close-connection">Close Connection</h3>
+<p>When you have finished with the connection it is good practice to close it:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con_udal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>ta da!</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script type="text/javascript">
@@ -456,8 +644,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/github.html" class="pagination-link">
-        <span class="nav-page-text">NHSE GitHub</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../tutorials/nhs-colours.html" class="pagination-link">
+        <span class="nav-page-text">NHS Colour Guidlines</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
