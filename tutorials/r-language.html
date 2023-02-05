@@ -2,10 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Craig Robert Shenton">
+<meta name="dcterms.date" content="2023-01-03">
 
 <title>NHSE-R - R Programming Language</title>
 <style>
@@ -64,8 +66,11 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../assets/style/styles.css">
 <meta property="og:title" content="NHSE-R - R Programming Language">
-<meta property="og:description" content="Under development">
+<meta property="og:description" content="Open-source Analytics">
+<meta property="og:image" content="https://nhsengland.github.io/nhs-r-reporting/assets/logos/nhsr.png">
 <meta property="og:site-name" content="NHSE-R">
+<meta property="og:image:height" content="1883">
+<meta property="og:image:width" content="2996">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -88,11 +93,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
@@ -198,6 +198,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
   </div>
 </li>
@@ -220,37 +225,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -272,16 +252,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a>
+  <ul>
+  <li><a href="#nhs-themes" id="toc-nhs-themes" class="nav-link" data-scroll-target="#nhs-themes">NHS Themes</a></li>
+  <li><a href="#nhs-code" id="toc-nhs-code" class="nav-link" data-scroll-target="#nhs-code">NHS code</a></li>
+  </ul></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a>
   <ul>
   <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
   <li><a href="#example-quarto-sites" id="toc-example-quarto-sites" class="nav-link" data-scroll-target="#example-quarto-sites">Example Quarto sites</a></li>
-  </ul></li>
-  <li><a href="#resource-list" id="toc-resource-list" class="nav-link" data-scroll-target="#resource-list">Resource List</a>
-  <ul>
-  <li><a href="#nhs-themes" id="toc-nhs-themes" class="nav-link" data-scroll-target="#nhs-themes">NHS Themes</a></li>
-  <li><a href="#nhs-code" id="toc-nhs-code" class="nav-link" data-scroll-target="#nhs-code">NHS code</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/tutorials/r-language.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -292,14 +271,30 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">R Programming Language</h1>
-<p class="subtitle lead">Under development</p>
-</div>
+<p class="subtitle lead">Open-source Analytics</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">NHS-R</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Craig Robert Shenton </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 3, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -307,9 +302,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ul>
-<li>R and R-Studio are available on Modern Desktop (see <code>Company Portal &gt; Apps</code>) and on UDAL VMs.</li>
-</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R and R-Studio are available on Modern Desktop (see <code>Company Portal &gt; Apps</code>) and on UDAL VMs.</p>
+</div>
+</div>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
@@ -319,6 +324,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Dashboards (Shiny)</li>
 <li><a href="https://ukgovdatascience.github.io/rap_companion/package.html">Packages</a></li>
 </ul>
+<section id="nhs-themes" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-themes">NHS Themes</h3>
+<ul>
+<li><a href="https://nhs-r-community.github.io/NHSRtheme/">NHS-R Theme</a> [<a href="https://github.com/nhs-r-community/NHSRtheme">code</a>]</li>
+</ul>
+</section>
+<section id="nhs-code" class="level3">
+<h3 class="anchored" data-anchor-id="nhs-code">NHS code</h3>
+<ul>
+<li><a href="https://github.com/nhs-r-community/demos-and-how-tos">NHS-R how-tos</a></li>
+<li><a href="https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals">NHS-R R-Markdown functions</a></li>
+</ul>
+</section>
 </section>
 <section id="quarto" class="level2">
 <h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
@@ -340,23 +358,6 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://nasa-openscapes.github.io/2021-Cloud-Hackathon/">2021 NASA Cloud Hackathon</a></li>
 <li><a href="https://thefaylab.github.io/lab-manual/">Faylab Lab Manual</a></li>
 <li><a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/">A Quarto tip a day</a>, by Mine Çetinkaya-Rundel</li>
-</ul>
-</section>
-</section>
-<section id="resource-list" class="level2">
-<h2 class="anchored" data-anchor-id="resource-list">Resource List</h2>
-<p>NHS specific resources from the NHS-R Community</p>
-<section id="nhs-themes" class="level3">
-<h3 class="anchored" data-anchor-id="nhs-themes">NHS Themes</h3>
-<ul>
-<li><a href="https://nhs-r-community.github.io/NHSRtheme/">NHS-R Theme</a> [<a href="https://github.com/nhs-r-community/NHSRtheme">code</a>]</li>
-</ul>
-</section>
-<section id="nhs-code" class="level3">
-<h3 class="anchored" data-anchor-id="nhs-code">NHS code</h3>
-<ul>
-<li><a href="https://github.com/nhs-r-community/demos-and-how-tos">NHS-R how-tos</a></li>
-<li><a href="https://github.com/nhs-r-community/demos-and-how-tos/tree/main/rmarkdown/rmarkdown_functions_and_functionals">NHS-R R-Markdown functions</a></li>
 </ul>
 
 
