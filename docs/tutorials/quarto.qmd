@@ -1,5 +1,5 @@
 ---
-title: Quarto Tutorial
+title: Quarto R/Markdown Tutorial
 subtitle: "R visualisations and Markdown tables in Quarto"
 author: "Simon Wellesley-Miller"
 date: "2023-02-27"
