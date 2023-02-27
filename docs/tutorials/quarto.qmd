@@ -4,6 +4,7 @@ subtitle: "R visualisations and Markdown tables in Quarto"
 author: "Simon Wellesley-Miller"
 date: "2023-02-27"
 categories: [Quarto, R, Markdown]
+image: "../assets/logos/nhsr.png"
 ---
 
 ## Quarto
