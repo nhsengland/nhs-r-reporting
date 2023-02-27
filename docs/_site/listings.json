@@ -9,6 +9,7 @@
   {
     "listing": "/tutorials/index.html",
     "items": [
+      "/tutorials/quarto.html",
       "/tutorials/udal.html",
       "/tutorials/rap.html",
       "/tutorials/github.html",
