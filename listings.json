@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/updates.html",
-    "items": [
-      "/posts/r-udal.html",
-      "/posts/r-studio-git.html"
-    ]
-  },
-  {
     "listing": "/tutorials/index.html",
     "items": [
       "/tutorials/quarto.html",
@@ -17,6 +10,13 @@
       "/tutorials/spc.html",
       "/tutorials/r-language.html",
       "/tutorials/nhs-colours.html"
+    ]
+  },
+  {
+    "listing": "/updates.html",
+    "items": [
+      "/posts/r-udal.html",
+      "/posts/r-studio-git.html"
     ]
   }
 ]
