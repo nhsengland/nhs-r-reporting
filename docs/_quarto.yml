@@ -9,6 +9,7 @@ website:
   # date: now
   favicon: assets/favicons/favicon.ico
   repo-url: https://github.com/nhsengland/nhs-r-reporting
+  repo-subdir: docs
   repo-actions: [edit, issue]
   site-url: https://nhsengland.github.io/nhs-r-reporting
 
