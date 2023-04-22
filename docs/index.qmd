@@ -2,7 +2,7 @@
 title: "NHS England R Community"
 ---
 
-Welcome to the NHS England R community documentation site
+Welcome to the NHS England R community documentation site
 
 This site is open to all to share good practice, basic knowledge around access and using R across NHS England platforms, and creating a place for us to share our collective knowledge, code, resources and content. 
 
@@ -33,7 +33,7 @@ Below is a selection of analytical reports that are fully open-source and RAP co
   - PCN / GP
   - Trust / Ward etc
 - Using [{targets}](https://books.ropensci.org/targets/) we can define dependencies in the data processing stages and process these reports automatically when new data is available. 
-- A standard set of reporting charts and tables can be pre-configured using [plotly](https://plotly.com/r/), adjusting the colors, fonts, annotations, and labels to match [the NHS style](documentation/nhs-colours.qmd).
+- A standard set of reporting charts and tables can be pre-configured using [plotly](https://plotly.com/r/), adjusting the colors, fonts, annotations, and labels to match [the NHS style](tutorials/nhs-colours.qmd).
 - A shared library of unit-tested functions allows complex analysis to be run with every calculation fully validated and documented.
 - Quality assurance can also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format.
 
