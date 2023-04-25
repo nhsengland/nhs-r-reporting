@@ -49,10 +49,10 @@ Under the `contents:` object add a new section (if required), a string lable for
 Remember to [render your changes locally using R-Studio](https://quarto.org/docs/tools/rstudio.html#render-and-preview) before publishing
 :::
 
-Commit your changes locally
+Add all changes and commit locally
 
 ```bash
-git commit -m 'Added new page to docs'
+git commit -a -m 'Added new page to docs'
 ```
 
 Then push your changes to the remote branch
