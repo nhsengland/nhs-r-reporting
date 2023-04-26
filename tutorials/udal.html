@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -94,8 +65,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/nhs-colours.html" rel="next">
-<link href="../tutorials/rstudio-git.html" rel="prev">
+<link href="../examples/ae_attendance.html" rel="next">
+<link href="../tutorials/spc.html" rel="prev">
 <link href="../assets/favicons/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -139,178 +110,199 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"><i class="bi bi-house-door" role="img">
+    <a class="nav-link active" href="../index.html" rel="" target="" aria-current="page"><i class="bi bi-house-door" role="img">
 </i> 
  <span class="menu-text">Homepage</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
+    <a class="nav-link" href="../tutorials/index.html" rel="" target=""><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../updates.html" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text">Updates</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Help</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/issues"><i class="bi bi-bug" role="img">
+    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/issues" rel="" target=""><i class="bi bi-bug" role="img">
 </i> 
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/discussions"><i class="bi bi-chat-right-text" role="img">
+    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/discussions" rel="" target=""><i class="bi bi-chat-right-text" role="img">
 </i> 
  <span class="dropdown-text">Ask a Question</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../faq.html"><i class="bi bi-question-circle" role="img">
+    <a class="dropdown-item" href="../faq.html" rel="" target=""><i class="bi bi-question-circle" role="img">
 </i> 
  <span class="dropdown-text">FAQ</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity"><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
+    <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">National Data Platform (UDAL)</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/udal.html">National Data Platform (UDAL)</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">NHSE-R</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">NHSE-R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Homepage</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homepage</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../statement-on-tools.html" class="sidebar-item-text sidebar-link">Statement on Tools</a>
+  <a href="../statement-on-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statement on Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contribute.html" class="sidebar-item-text sidebar-link">Contribute to this site</a>
+  <a href="../contribute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contribute to this site</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">Tutorials</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/rstudio-git.html" class="sidebar-item-text sidebar-link">Git in R-Studio</a>
+  <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NHSE GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/udal.html" class="sidebar-item-text sidebar-link active">National Data Platform (UDAL)</a>
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NHS Colour Guidlines</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  <a href="../tutorials/quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto R/Markdown Tutorial</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
+  <a href="../tutorials/r-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Programming Language</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/quarto.html" class="sidebar-item-text sidebar-link">Quarto R/Markdown Tutorial</a>
+  <a href="../tutorials/rap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/r-language.html" class="sidebar-item-text sidebar-link">R Programming Language</a>
+  <a href="../tutorials/rstudio-git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git in R-Studio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/rap.html" class="sidebar-item-text sidebar-link">Reproducible Analytical Pipelines (RAP)</a>
+  <a href="../tutorials/spc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Process Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/spc.html" class="sidebar-item-text sidebar-link">Statistical Process Control</a>
+  <a href="../tutorials/udal.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">National Data Platform (UDAL)</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
+  <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A&amp;E Attendance Report</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  <a href="../faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -332,7 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">National Data Platform (UDAL)</h1>
+<h1 class="title">National Data Platform (UDAL)</h1>
 <p class="subtitle lead">NHS England Datastore</p>
   <div class="quarto-categories">
     <div class="quarto-category">SQL</div>
@@ -374,12 +366,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (dbplyr)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span> (<span class="st">'personal_credentials.R'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important!
 </div>
 </div>
@@ -404,12 +396,12 @@ Important!
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">UID =</span> user,</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">authentication =</span> <span class="st">"ActiveDirectoryInteractive"</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -472,12 +464,12 @@ Note
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>          Count_Of_Appointments) <span class="sc">%&gt;%</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (Appointment_Date <span class="sc">&gt;=</span> <span class="st">'2022-11-25'</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important!
 </div>
 </div>
@@ -536,9 +528,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -603,6 +609,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -644,13 +736,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/rstudio-git.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Git in R-Studio</span>
+      <a href="../tutorials/spc.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Statistical Process Control</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/nhs-colours.html" class="pagination-link">
-        <span class="nav-page-text">NHS Colour Guidlines</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../examples/ae_attendance.html" class="pagination-link">
+        <span class="nav-page-text">A&amp;E Attendance Report</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -658,6 +750,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

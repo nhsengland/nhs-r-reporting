@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -137,191 +108,216 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"><i class="bi bi-house-door" role="img">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page"><i class="bi bi-house-door" role="img">
 </i> 
  <span class="menu-text">Homepage</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
+    <a class="nav-link" href="./tutorials/index.html" rel="" target=""><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./updates.html"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./updates.html" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text">Updates</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Help</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/issues"><i class="bi bi-bug" role="img">
+    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/issues" rel="" target=""><i class="bi bi-bug" role="img">
 </i> 
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/discussions"><i class="bi bi-chat-right-text" role="img">
+    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/discussions" rel="" target=""><i class="bi bi-chat-right-text" role="img">
 </i> 
  <span class="dropdown-text">Ask a Question</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./faq.html"><i class="bi bi-question-circle" role="img">
+    <a class="dropdown-item" href="./faq.html" rel="" target=""><i class="bi bi-question-circle" role="img">
 </i> 
  <span class="dropdown-text">FAQ</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity"><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
+    <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Contribute to the docs</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">NHSE-R</a></li><li class="breadcrumb-item"><a href="./contribute.html">Contribute to this site</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">NHSE-R</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">NHSE-R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Homepage</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homepage</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statement-on-tools.html" class="sidebar-item-text sidebar-link">Statement on Tools</a>
+  <a href="./statement-on-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statement on Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contribute.html" class="sidebar-item-text sidebar-link active">Contribute to this site</a>
+  <a href="./contribute.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Contribute to this site</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./tutorials/index.html" class="sidebar-item-text sidebar-link">Tutorials</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="./tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/rstudio-git.html" class="sidebar-item-text sidebar-link">Git in R-Studio</a>
+  <a href="./tutorials/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NHSE GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/udal.html" class="sidebar-item-text sidebar-link">National Data Platform (UDAL)</a>
+  <a href="./tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NHS Colour Guidlines</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  <a href="./tutorials/quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto R/Markdown Tutorial</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
+  <a href="./tutorials/r-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Programming Language</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/quarto.html" class="sidebar-item-text sidebar-link">Quarto R/Markdown Tutorial</a>
+  <a href="./tutorials/rap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/r-language.html" class="sidebar-item-text sidebar-link">R Programming Language</a>
+  <a href="./tutorials/rstudio-git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git in R-Studio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/rap.html" class="sidebar-item-text sidebar-link">Reproducible Analytical Pipelines (RAP)</a>
+  <a href="./tutorials/spc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Process Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/spc.html" class="sidebar-item-text sidebar-link">Statistical Process Control</a>
+  <a href="./tutorials/udal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">National Data Platform (UDAL)</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
+  <a href="./examples/ae_attendance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A&amp;E Attendance Report</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link active" data-scroll-target="#how-to-contribute">How to contribute?</a>
-  <ul>
+  <li><a href="#clone-the-repository" id="toc-clone-the-repository" class="nav-link active" data-scroll-target="#clone-the-repository">Clone the repository</a></li>
   <li><a href="#make-a-new-branch-of-the-repository" id="toc-make-a-new-branch-of-the-repository" class="nav-link" data-scroll-target="#make-a-new-branch-of-the-repository">Make a new branch of the repository</a></li>
   <li><a href="#make-a-new-.qmd-q-markdown-file-in-the-docs-folder" id="toc-make-a-new-.qmd-q-markdown-file-in-the-docs-folder" class="nav-link" data-scroll-target="#make-a-new-.qmd-q-markdown-file-in-the-docs-folder">Make a new <code>.qmd</code> (q-markdown) file in the <code>/docs</code> folder</a></li>
+  <li><a href="#think-about-accesability" id="toc-think-about-accesability" class="nav-link" data-scroll-target="#think-about-accesability">Think about accesability</a>
+  <ul>
+  <li><a href="#adding-alt-text" id="toc-adding-alt-text" class="nav-link" data-scroll-target="#adding-alt-text">1. Adding Alt Text</a></li>
+  <li><a href="#adding-captions" id="toc-adding-captions" class="nav-link" data-scroll-target="#adding-captions">2. Adding Captions</a></li>
+  <li><a href="#combining-alt-text-and-captions" id="toc-combining-alt-text-and-captions" class="nav-link" data-scroll-target="#combining-alt-text-and-captions">3. Combining Alt Text and Captions</a></li>
+  </ul></li>
   <li><a href="#add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" id="toc-add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" class="nav-link" data-scroll-target="#add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs">Add a link to your file to the <code>_quarto.yml</code> config file in <code>/docs</code></a></li>
   <li><a href="#publish-your-changes-to-github" id="toc-publish-your-changes-to-github" class="nav-link" data-scroll-target="#publish-your-changes-to-github">Publish your changes to GitHub</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/docs/contribute.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -330,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Contribute to the docs</h1>
+<h1 class="title">Contribute to the docs</h1>
 <p class="subtitle lead">How to add a new page to the documentations site using Quarto?</p>
 </div>
 
@@ -346,43 +342,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="how-to-contribute" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-contribute">How to contribute?</h2>
-<section id="make-a-new-branch-of-the-repository" class="level3">
-<h3 class="anchored" data-anchor-id="make-a-new-branch-of-the-repository">Make a new branch of the repository</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Welcome to our guide on adding a new page to this documentation site using Quarto. Quarto uses Markdown allowing you to create and maintain high-quality, reproducible documents with ease.</p>
+<p>In the following sections, we will cover the steps to create and deploy a new page into our NHS Quarto documentation site.</p>
+<section id="clone-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="clone-the-repository">Clone the repository</h2>
+<p>Open your command prompt or terminal, and navigate to the directory where you want to clone the repository.</p>
+<p>To clone the repository, use the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/nhsengland/nhs-r-reporting.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The URL can be found on the repository’s main page on GitHub.</p>
+<p>The cloning process will create a new folder named after the repository in your chosen directory. Once the cloning is complete, navigate to the newly created folder:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> nhs-r-reporting</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now you have a local copy of the repository on your computer. You can now start working on the project files and make changes.</p>
 </section>
-<section id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder" class="level3">
-<h3 class="anchored" data-anchor-id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder">Make a new <code>.qmd</code> (q-markdown) file in the <code>/docs</code> folder</h3>
-<p>To the <code>.qmd</code> file add a YAML header with a title and subtitle.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Contribute to the docs</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to add a new page to the documentations site using Quarto?"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="make-a-new-branch-of-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-new-branch-of-the-repository">Make a new branch of the repository</h2>
+<p>Creating a new branch in the repository allows you to safely work on new features or modifications without affecting the main project.</p>
+<p>Before creating a new branch, ensure that you have the latest version of the main branch by executing the following commands:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To create a new branch and switch to it immediately, run the command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>&lt;branch_name&gt;</code> with the desired name for your new branch.</p>
 </section>
-<section id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs">Add a link to your file to the <code>_quarto.yml</code> config file in <code>/docs</code></h3>
+<section id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder">Make a new <code>.qmd</code> (q-markdown) file in the <code>/docs</code> folder</h2>
+<p>Open the <code>.qmd</code> file add a YAML header with a title and subtitle.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Contribute to the docs</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to add a new page to the documentations site using Quarto?"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Below this line you can write your guide or contribution in markdown.</p>
+</section>
+<section id="think-about-accesability" class="level2">
+<h2 class="anchored" data-anchor-id="think-about-accesability">Think about accesability</h2>
+<p>If you are writing a guide, please add alt text or captions to any images for accesability. It helps people with visual impairments understand the content of the images. Here’s how you can add alt text and captions to images in a Quarto document:</p>
+<section id="adding-alt-text" class="level3">
+<h3 class="anchored" data-anchor-id="adding-alt-text">1. Adding Alt Text</h3>
+<p>Alt text is a short description of an image that assists people with visual impairments. It is displayed if the image cannot be loaded or when a screen reader is used. To add alt text to an image in Quarto, use the <code>alt</code> attribute in the image syntax:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](path/to/image.png)</span>{alt="A brief description of the image"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>path/to/image.png</code> with the path to your image file and provide a brief description of the image within the quotes following <code>alt=</code>.</p>
+</section>
+<section id="adding-captions" class="level3">
+<h3 class="anchored" data-anchor-id="adding-captions">2. Adding Captions</h3>
+<p>Captions are textual descriptions displayed below the image, providing additional context. To add a caption to an image in Quarto, use the <code>fig.cap</code> attribute in the image syntax:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](path/to/image.png)</span>{fig.cap="Caption text for the image"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>path/to/image.png</code> with the path to your image file and provide the caption text within the quotes following <code>fig.cap=</code>.</p>
+</section>
+<section id="combining-alt-text-and-captions" class="level3">
+<h3 class="anchored" data-anchor-id="combining-alt-text-and-captions">3. Combining Alt Text and Captions</h3>
+<p>You can add both alt text and captions to an image in Quarto by including both the <code>alt</code> and <code>fig.cap</code> attributes in the image syntax:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](path/to/image.png)</span>{alt="A brief description of the image" fig.cap="Caption text for the image"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>path/to/image.png</code> with the path to your image file, provide a brief description of the image within the quotes following <code>alt=</code>, and provide the caption text within the quotes following <code>fig.cap=</code>.</p>
+<p>By including alt text and captions in your Quarto documents, you’ll make your content more accessible to a wider range of users.</p>
+</section>
+</section>
+<section id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" class="level2">
+<h2 class="anchored" data-anchor-id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs">Add a link to your file to the <code>_quarto.yml</code> config file in <code>/docs</code></h2>
 <p>Open the <code>_quarto.yml</code> configuration file and find the <code>sidebar</code> config code.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> nav</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"floating"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">align</span><span class="kw">:</span><span class="at"> left</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> nav</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"floating"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">align</span><span class="kw">:</span><span class="at"> left</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Under the <code>contents:</code> object add a new section (if required), a string lable for your page, and a link to the <code>.qmd</code> file itself.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"RAP"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Reproducible Analytical Pipelines"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">file</span><span class="kw">:</span><span class="at"> intro-to-rap.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"RAP"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Reproducible Analytical Pipelines"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">file</span><span class="kw">:</span><span class="at"> intro-to-rap.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="publish-your-changes-to-github" class="level3">
-<h3 class="anchored" data-anchor-id="publish-your-changes-to-github">Publish your changes to GitHub</h3>
-<div class="callout-warning callout callout-style-simple callout-captioned">
+<section id="publish-your-changes-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="publish-your-changes-to-github">Publish your changes to GitHub</h2>
+<div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Render Quarto before publishing
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -394,13 +430,12 @@ Render Quarto before publishing
 </div>
 </div>
 <p>Add all changes and commit locally</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-a</span> <span class="at">-m</span> <span class="st">'Added new page to docs'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-a</span> <span class="at">-m</span> <span class="st">'Added new page to docs'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then push your changes to the remote branch</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Finally, open a Pull Request (PR) <a href="https://github.com/nhsengland/nhs-r-reporting/pulls">https://github.com/nhsengland/nhs-r-reporting/pulls</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -443,9 +478,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -510,6 +559,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -565,6 +700,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

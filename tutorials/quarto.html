@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -95,7 +66,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../tutorials/r-language.html" rel="next">
-<link href="../tutorials/github.html" rel="prev">
+<link href="../tutorials/nhs-colours.html" rel="prev">
 <link href="../assets/favicons/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -205,178 +176,199 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"><i class="bi bi-house-door" role="img">
+    <a class="nav-link active" href="../index.html" rel="" target="" aria-current="page"><i class="bi bi-house-door" role="img">
 </i> 
  <span class="menu-text">Homepage</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorials/index.html"><i class="bi bi-bookmark-check" role="img">
+    <a class="nav-link" href="../tutorials/index.html" rel="" target=""><i class="bi bi-bookmark-check" role="img">
 </i> 
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../updates.html"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../updates.html" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text">Updates</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Help</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/issues"><i class="bi bi-bug" role="img">
+    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/issues" rel="" target=""><i class="bi bi-bug" role="img">
 </i> 
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/discussions"><i class="bi bi-chat-right-text" role="img">
+    <a class="dropdown-item" href="https://github.com/nhsengland/nhs-r-reporting/discussions" rel="" target=""><i class="bi bi-chat-right-text" role="img">
 </i> 
  <span class="dropdown-text">Ask a Question</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../faq.html"><i class="bi bi-question-circle" role="img">
+    <a class="dropdown-item" href="../faq.html" rel="" target=""><i class="bi bi-question-circle" role="img">
 </i> 
  <span class="dropdown-text">FAQ</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/nhsengland/nhs-r-reporting" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity"><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
+    <a class="nav-link" href="https://future.nhs.uk/NHSERcommunity" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="NHS England R Community">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Quarto R/Markdown Tutorial</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/quarto.html">Quarto R/Markdown Tutorial</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">NHSE-R</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">NHSE-R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Homepage</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homepage</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../statement-on-tools.html" class="sidebar-item-text sidebar-link">Statement on Tools</a>
+  <a href="../statement-on-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statement on Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contribute.html" class="sidebar-item-text sidebar-link">Contribute to this site</a>
+  <a href="../contribute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contribute to this site</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">Tutorials</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/rstudio-git.html" class="sidebar-item-text sidebar-link">Git in R-Studio</a>
+  <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NHSE GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/udal.html" class="sidebar-item-text sidebar-link">National Data Platform (UDAL)</a>
+  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NHS Colour Guidlines</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  <a href="../tutorials/quarto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quarto R/Markdown Tutorial</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
+  <a href="../tutorials/r-language.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Programming Language</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/quarto.html" class="sidebar-item-text sidebar-link active">Quarto R/Markdown Tutorial</a>
+  <a href="../tutorials/rap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducible Analytical Pipelines (RAP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/r-language.html" class="sidebar-item-text sidebar-link">R Programming Language</a>
+  <a href="../tutorials/rstudio-git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git in R-Studio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/rap.html" class="sidebar-item-text sidebar-link">Reproducible Analytical Pipelines (RAP)</a>
+  <a href="../tutorials/spc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Process Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/spc.html" class="sidebar-item-text sidebar-link">Statistical Process Control</a>
+  <a href="../tutorials/udal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">National Data Platform (UDAL)</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
+  <a href="../examples/ae_attendance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A&amp;E Attendance Report</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  <a href="../faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -446,7 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Quarto R/Markdown Tutorial</h1>
+<h1 class="title">Quarto R/Markdown Tutorial</h1>
 <p class="subtitle lead">R visualisations and Markdown tables in Quarto</p>
   <div class="quarto-categories">
     <div class="quarto-category">Quarto</div>
@@ -479,12 +471,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -637,12 +629,12 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>Note that there are five types of call outs, including:</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="in">`note`</span>, <span class="in">`warning`</span>, <span class="in">`important`</span>, <span class="in">`tip`</span>, and <span class="in">`caution`</span>.</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -650,12 +642,12 @@ Note
 <p>Note that there are five types of call outs, including: <code>note</code>, <code>warning</code>, <code>important</code>, <code>tip</code>, and <code>caution</code>.</p>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip With Caption
 </div>
 </div>
@@ -663,12 +655,12 @@ Tip With Caption
 <p>This is an example of a call out with a caption.</p>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Warning With Caption
 </div>
 </div>
@@ -676,12 +668,12 @@ Warning With Caption
 <p>Warning - these call outs look seriously cool.</p>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Click To Learn About Collapse
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -922,7 +914,7 @@ Click To Learn About Collapse
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## tab 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example,</p>
-<div class="panel-tabset" data-group="language">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Provider RQX</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Provider RF4</a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
@@ -979,93 +971,93 @@ Attaching package: 'kableExtra'</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(data_for_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> period </th>
-   <th style="text-align:left;"> org_code </th>
-   <th style="text-align:left;"> type </th>
-   <th style="text-align:right;"> attendances </th>
-   <th style="text-align:right;"> breaches </th>
-   <th style="text-align:right;"> admissions </th>
-  </tr>
- </thead>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">period</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">org_code</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">type</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">attendances</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">breaches</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">admissions</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> 2019-03-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 10289 </td>
-   <td style="text-align:right;"> 90 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2019-02-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 9643 </td>
-   <td style="text-align:right;"> 87 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2019-01-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 10424 </td>
-   <td style="text-align:right;"> 77 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-12-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 9460 </td>
-   <td style="text-align:right;"> 95 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-11-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 8264 </td>
-   <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-10-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 7900 </td>
-   <td style="text-align:right;"> 14 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-09-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 7604 </td>
-   <td style="text-align:right;"> 39 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-08-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 7184 </td>
-   <td style="text-align:right;"> 73 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-07-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 5072 </td>
-   <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">2019-03-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">10289</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-02-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">9643</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-01-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">10424</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-12-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">9460</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-11-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">8264</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-10-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">7900</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-09-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">7604</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-08-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">7184</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-07-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">5072</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
 </tbody>
 </table>
+
 
 </div>
 </div>
@@ -1085,94 +1077,96 @@ Attaching package: 'kableExtra'</code></pre>
 <span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"white"</span>, </span>
 <span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">background =</span> <span class="st">"#D7261E"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> period </th>
-   <th style="text-align:left;"> org_code </th>
-   <th style="text-align:left;"> type </th>
-   <th style="text-align:right;"> attendances </th>
-   <th style="text-align:right;"> breaches </th>
-   <th style="text-align:right;"> admissions </th>
-  </tr>
- </thead>
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">period</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">org_code</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">type</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">attendances</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">breaches</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">admissions</th>
+</tr>
+</thead>
 <tbody>
-  <tr grouplength="3"><td colspan="6" style="border-bottom: 1px solid;"><strong>sub heading and indent first 3 rows</strong></td></tr>
-<tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> 2019-03-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 10289 </td>
-   <td style="text-align:right;"> 90 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> 2019-02-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 9643 </td>
-   <td style="text-align:right;"> 87 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> 2019-01-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 10424 </td>
-   <td style="text-align:right;"> 77 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;background-color: yellow !important;"> 2018-12-01 </td>
-   <td style="text-align:left;font-weight: bold;background-color: yellow !important;"> RF4 </td>
-   <td style="text-align:left;font-weight: bold;background-color: yellow !important;"> other </td>
-   <td style="text-align:right;font-weight: bold;background-color: yellow !important;"> 9460 </td>
-   <td style="text-align:right;font-weight: bold;background-color: yellow !important;"> 95 </td>
-   <td style="text-align:right;font-weight: bold;background-color: yellow !important;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-11-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 8264 </td>
-   <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-10-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 7900 </td>
-   <td style="text-align:right;"> 14 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 2018-09-01 </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> RF4 </td>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> other </td>
-   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 7604 </td>
-   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 39 </td>
-   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-08-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 7184 </td>
-   <td style="text-align:right;"> 73 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2018-07-01 </td>
-   <td style="text-align:left;"> RF4 </td>
-   <td style="text-align:left;"> other </td>
-   <td style="text-align:right;"> 5072 </td>
-   <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
+<tr class="odd" data-grouplength="3">
+<td colspan="6" style="border-bottom: 1px solid"><strong>sub heading and indent first 3 rows</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">2019-03-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">10289</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">2019-02-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">9643</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">2019-01-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">10424</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: yellow !important;">2018-12-01</td>
+<td style="text-align: left; font-weight: bold; background-color: yellow !important;">RF4</td>
+<td style="text-align: left; font-weight: bold; background-color: yellow !important;">other</td>
+<td style="text-align: right; font-weight: bold; background-color: yellow !important;">9460</td>
+<td style="text-align: right; font-weight: bold; background-color: yellow !important;">95</td>
+<td style="text-align: right; font-weight: bold; background-color: yellow !important;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-11-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">8264</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-10-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">7900</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: #D7261E !important;">2018-09-01</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: #D7261E !important;">RF4</td>
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: #D7261E !important;">other</td>
+<td style="text-align: right; font-weight: bold; color: white !important; background-color: #D7261E !important;">7604</td>
+<td style="text-align: right; font-weight: bold; color: white !important; background-color: #D7261E !important;">39</td>
+<td style="text-align: right; font-weight: bold; color: white !important; background-color: #D7261E !important;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-08-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">7184</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-07-01</td>
+<td style="text-align: left;">RF4</td>
+<td style="text-align: left;">other</td>
+<td style="text-align: right;">5072</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
 </tbody>
 </table>
+
 
 </div>
 </div>
@@ -1208,7 +1202,7 @@ Attaching package: 'kableExtra'</code></pre>
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#bapoqstlta) .gt_table {
+#bapoqstlta .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1233,7 +1227,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_heading {
+#bapoqstlta .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1245,12 +1239,12 @@ Attaching package: 'kableExtra'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_caption {
+#bapoqstlta .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#bapoqstlta) .gt_title {
+#bapoqstlta .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1262,7 +1256,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#bapoqstlta) .gt_subtitle {
+#bapoqstlta .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1274,13 +1268,13 @@ Attaching package: 'kableExtra'</code></pre>
   border-top-width: 0;
 }
 
-:where(#bapoqstlta) .gt_bottom_border {
+#bapoqstlta .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_col_headings {
+#bapoqstlta .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1295,7 +1289,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_col_heading {
+#bapoqstlta .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1315,7 +1309,7 @@ Attaching package: 'kableExtra'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#bapoqstlta) .gt_column_spanner_outer {
+#bapoqstlta .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1327,15 +1321,15 @@ Attaching package: 'kableExtra'</code></pre>
   padding-right: 4px;
 }
 
-:where(#bapoqstlta) .gt_column_spanner_outer:first-child {
+#bapoqstlta .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#bapoqstlta) .gt_column_spanner_outer:last-child {
+#bapoqstlta .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#bapoqstlta) .gt_column_spanner {
+#bapoqstlta .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1347,7 +1341,7 @@ Attaching package: 'kableExtra'</code></pre>
   width: 100%;
 }
 
-:where(#bapoqstlta) .gt_group_heading {
+#bapoqstlta .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1373,7 +1367,7 @@ Attaching package: 'kableExtra'</code></pre>
   text-align: left;
 }
 
-:where(#bapoqstlta) .gt_empty_group_heading {
+#bapoqstlta .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1388,15 +1382,15 @@ Attaching package: 'kableExtra'</code></pre>
   vertical-align: middle;
 }
 
-:where(#bapoqstlta) .gt_from_md > :first-child {
+#bapoqstlta .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#bapoqstlta) .gt_from_md > :last-child {
+#bapoqstlta .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#bapoqstlta) .gt_row {
+#bapoqstlta .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1415,7 +1409,7 @@ Attaching package: 'kableExtra'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#bapoqstlta) .gt_stub {
+#bapoqstlta .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1428,7 +1422,7 @@ Attaching package: 'kableExtra'</code></pre>
   padding-right: 5px;
 }
 
-:where(#bapoqstlta) .gt_stub_row_group {
+#bapoqstlta .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1442,11 +1436,11 @@ Attaching package: 'kableExtra'</code></pre>
   vertical-align: top;
 }
 
-:where(#bapoqstlta) .gt_row_group_first td {
+#bapoqstlta .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#bapoqstlta) .gt_summary_row {
+#bapoqstlta .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1456,16 +1450,16 @@ Attaching package: 'kableExtra'</code></pre>
   padding-right: 5px;
 }
 
-:where(#bapoqstlta) .gt_first_summary_row {
+#bapoqstlta .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_first_summary_row.thick {
+#bapoqstlta .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#bapoqstlta) .gt_last_summary_row {
+#bapoqstlta .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1475,7 +1469,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_grand_summary_row {
+#bapoqstlta .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1485,7 +1479,7 @@ Attaching package: 'kableExtra'</code></pre>
   padding-right: 5px;
 }
 
-:where(#bapoqstlta) .gt_first_grand_summary_row {
+#bapoqstlta .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1495,11 +1489,11 @@ Attaching package: 'kableExtra'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_striped {
+#bapoqstlta .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#bapoqstlta) .gt_table_body {
+#bapoqstlta .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1508,7 +1502,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_footnotes {
+#bapoqstlta .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1522,7 +1516,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_footnote {
+#bapoqstlta .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1531,7 +1525,7 @@ Attaching package: 'kableExtra'</code></pre>
   padding-right: 5px;
 }
 
-:where(#bapoqstlta) .gt_sourcenotes {
+#bapoqstlta .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1545,7 +1539,7 @@ Attaching package: 'kableExtra'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#bapoqstlta) .gt_sourcenote {
+#bapoqstlta .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1553,148 +1547,165 @@ Attaching package: 'kableExtra'</code></pre>
   padding-right: 5px;
 }
 
-:where(#bapoqstlta) .gt_left {
+#bapoqstlta .gt_left {
   text-align: left;
 }
 
-:where(#bapoqstlta) .gt_center {
+#bapoqstlta .gt_center {
   text-align: center;
 }
 
-:where(#bapoqstlta) .gt_right {
+#bapoqstlta .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#bapoqstlta) .gt_font_normal {
+#bapoqstlta .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#bapoqstlta) .gt_font_bold {
+#bapoqstlta .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#bapoqstlta) .gt_font_italic {
+#bapoqstlta .gt_font_italic {
   font-style: italic;
 }
 
-:where(#bapoqstlta) .gt_super {
+#bapoqstlta .gt_super {
   font-size: 65%;
 }
 
-:where(#bapoqstlta) .gt_footnote_marks {
+#bapoqstlta .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#bapoqstlta) .gt_asterisk {
+#bapoqstlta .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#bapoqstlta) .gt_indent_1 {
+#bapoqstlta .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#bapoqstlta) .gt_indent_2 {
+#bapoqstlta .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#bapoqstlta) .gt_indent_3 {
+#bapoqstlta .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#bapoqstlta) .gt_indent_4 {
+#bapoqstlta .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#bapoqstlta) .gt_indent_5 {
+#bapoqstlta .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="period">period</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="org_code">org_code</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="type">type</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="attendances">attendances</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="breaches">breaches</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="admissions">admissions</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="attendances">attendances</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="period" class="gt_row gt_right">2019-03-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">10289</td>
-<td headers="breaches" class="gt_row gt_right">90</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="84.96" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2019-02-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">9643</td>
-<td headers="breaches" class="gt_row gt_right">87</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="79.63" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2019-01-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">10424</td>
-<td headers="breaches" class="gt_row gt_right">77</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="86.08" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2018-12-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">9460</td>
-<td headers="breaches" class="gt_row gt_right">95</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="78.12" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2018-11-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">8264</td>
-<td headers="breaches" class="gt_row gt_right">30</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="68.24" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2018-10-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">7900</td>
-<td headers="breaches" class="gt_row gt_right">14</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="65.24" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2018-09-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">7604</td>
-<td headers="breaches" class="gt_row gt_right">39</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="62.79" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2018-08-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">7184</td>
-<td headers="breaches" class="gt_row gt_right">73</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="59.32" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-    <tr><td headers="period" class="gt_row gt_right">2018-07-01</td>
-<td headers="org_code" class="gt_row gt_center">RF4</td>
-<td headers="type" class="gt_row gt_center">other</td>
-<td headers="attendances" class="gt_row gt_right">5072</td>
-<td headers="breaches" class="gt_row gt_right">10</td>
-<td headers="admissions" class="gt_row gt_right">0</td>
-<td headers="DUPE_COLUMN_PLT" class="gt_row gt_left"><!--?xml version='1.0' encoding='UTF-8' ?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="99.21pt" height="14.17pt" viewbox="0 0 99.21 14.17"><defs>  <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs>  <clippath id="cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3">    <rect x="0.00" y="0.00" width="99.21" height="14.17"></rect>  </clippath></defs><g clip-path="url(#cpMC4wMHw5OS4yMXwwLjAwfDE0LjE3)"><rect x="4.39" y="1.77" width="41.88" height="10.63" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A020F0;"></rect><line x1="4.39" y1="14.17" x2="4.39" y2="0.0000000000000018" style="stroke-width: 2.13; stroke-linecap: butt;"></line></g></svg></td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
+<thead class="gt_col_headings">
+<tr class="header">
+<th id="period" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">period</th>
+<th id="org_code" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">org_code</th>
+<th id="type" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">type</th>
+<th id="attendances" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">attendances</th>
+<th id="breaches" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">breaches</th>
+<th id="admissions" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">admissions</th>
+<th id="attendances" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attendances</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="period">2019-03-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">10289</td>
+<td class="gt_row gt_right" headers="breaches">90</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iODQuOTYiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="period">2019-02-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">9643</td>
+<td class="gt_row gt_right" headers="breaches">87</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNzkuNjMiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="period">2019-01-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">10424</td>
+<td class="gt_row gt_right" headers="breaches">77</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iODYuMDgiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="period">2018-12-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">9460</td>
+<td class="gt_row gt_right" headers="breaches">95</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNzguMTIiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="period">2018-11-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">8264</td>
+<td class="gt_row gt_right" headers="breaches">30</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNjguMjQiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="period">2018-10-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">7900</td>
+<td class="gt_row gt_right" headers="breaches">14</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNjUuMjQiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="period">2018-09-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">7604</td>
+<td class="gt_row gt_right" headers="breaches">39</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNjIuNzkiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="period">2018-08-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">7184</td>
+<td class="gt_row gt_right" headers="breaches">73</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNTkuMzIiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="period">2018-07-01</td>
+<td class="gt_row gt_center" headers="org_code">RF4</td>
+<td class="gt_row gt_center" headers="type">other</td>
+<td class="gt_row gt_right" headers="attendances">5072</td>
+<td class="gt_row gt_right" headers="breaches">10</td>
+<td class="gt_row gt_right" headers="admissions">0</td>
+<td class="gt_row gt_left" headers="DUPE_COLUMN_PLT"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjbGFzcz0ic3ZnbGl0ZSIgd2lkdGg9Ijk5LjIxcHQiIGhlaWdodD0iMTQuMTdwdCIgdmlld2JveD0iMCAwIDk5LjIxIDE0LjE3Ij48ZGVmcz4gIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+ICAgIC5zdmdsaXRlIGxpbmUsIC5zdmdsaXRlIHBvbHlsaW5lLCAuc3ZnbGl0ZSBwb2x5Z29uLCAuc3ZnbGl0ZSBwYXRoLCAuc3ZnbGl0ZSByZWN0LCAuc3ZnbGl0ZSBjaXJjbGUgeyAgICAgIGZpbGw6IG5vbmU7ICAgICAgc3Ryb2tlOiAjMDAwMDAwOyAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOyAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMC4wMDsgICAgfSAgICAuc3ZnbGl0ZSB0ZXh0IHsgICAgICB3aGl0ZS1zcGFjZTogcHJlOyAgICB9ICA8L3N0eWxlPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBmaWxsOiBub25lOyI+PC9yZWN0PjxkZWZzPiAgPGNsaXBwYXRoIGlkPSJjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMiPiAgICA8cmVjdCB4PSIwLjAwIiB5PSIwLjAwIiB3aWR0aD0iOTkuMjEiIGhlaWdodD0iMTQuMTciPjwvcmVjdD4gIDwvY2xpcHBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjcE1DNHdNSHc1T1M0eU1Yd3dMakF3ZkRFMExqRTMpIj48cmVjdCB4PSI0LjM5IiB5PSIxLjc3IiB3aWR0aD0iNDEuODgiIGhlaWdodD0iMTAuNjMiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDEuMDc7IHN0cm9rZTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IGZpbGw6ICNBMDIwRjA7Ij48L3JlY3Q+PGxpbmUgeDE9IjQuMzkiIHkxPSIxNC4xNyIgeDI9IjQuMzkiIHkyPSIwLjAwMDAwMDAwMDAwMDAwMTgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDIuMTM7IHN0cm9rZS1saW5lY2FwOiBidXR0OyI+PC9saW5lPjwvZz48L3N2Zz4=" class="svglite img-fluid"></td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2561,17 +2572,14 @@ Attaching package: 'leaflet'</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
   A[Hard edge] --&gt; B(Round edge)
   B --&gt; C{Decision}
   C --&gt; D[Result one]
   C --&gt; E[Result two]
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
 </div>
-<p></p>
 </div>
 </div>
 </div>
@@ -2590,8 +2598,8 @@ Attaching package: 'leaflet'</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">sequenceDiagram
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
   participant Alice
   participant Bob
   Alice-&gt;&gt;Simon: Hello Simon, how is the coding going??
@@ -2603,10 +2611,7 @@ Attaching package: 'leaflet'</code></pre>
   Simon-&gt;&gt;Bob: How about you?
   Bob--&gt;&gt;Simon: Jolly good!
 </pre>
-<div id="mermaid-tooltip-2" class="mermaidTooltip">
-
 </div>
-<p></p>
 </div>
 </div>
 </div>
@@ -2629,8 +2634,8 @@ Attaching package: 'leaflet'</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<p>
-<svg width="672" height="480" viewbox="0.00 0.00 188.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 188.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <title>
 D
@@ -2665,7 +2670,7 @@ A-&gt;D
 </title>
 <path fill="none" stroke="black" stroke-width="5" d="M99.57,-78.37C110.24,-66.51 127.58,-47.25 139.59,-33.89"></path> </g> </g>
 </svg>
-</p>
+</div>
 </div>
 </div>
 </div>
@@ -2764,9 +2769,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2831,6 +2850,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -2872,8 +2977,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/github.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHSE GitHub</span>
+      <a href="../tutorials/nhs-colours.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">NHS Colour Guidlines</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -2886,6 +2991,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
