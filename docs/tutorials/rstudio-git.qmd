@@ -13,7 +13,7 @@ This will allow you to work entirely from R-Studio, applying version control to 
 
 For this guide, we are going to create a new GitHub repository. Clicking the `New` green button on [GitHub](https://github.com/) (top left) presents you with the following options:
 
-![](../assets/figures/intro-to-r-git/github-create-repo.png)
+![Creating a new GitHub repository with the 'New' button](../assets/figures/intro-to-r-git/github-create-repo.png){fig-alt="Screenshot of the 'Create a new repository' page on GitHub"}
 
 - Do not use a template unless required
 - Give your repository a name, typically lower-case with a dash `-` separating each word.
@@ -42,7 +42,7 @@ In this section we are going to clone our GitHub project into a new project we w
 1. From [GitHub](https://github.com/), select the `<> Code` button on the repo page to display the different cloning options for this project.
 2. Choose `HTTPS` and click on the copy icon (overlapped squares) on the right side of the URL.
 
-![](../assets/figures/intro-to-r-git/github-clone.png)
+![](../assets/figures/intro-to-r-git/github-clone.png){fig-alt="Screenshot of the 'Code' tab in a GitHub repository with the HTTPS cloning option"}
 
 This is the URL I just copied from the example repo:
 
@@ -55,7 +55,7 @@ Now in R-Studio, we start by creating a new project:
 3. Paste the HTTPS address in the Repository URL.
 4. Remember to tick (Open in new session) option and press Create Project.
 
-![](../assets/figures/intro-to-r-git/rstudio-git.png)
+![](../assets/figures/intro-to-r-git/rstudio-git.png){fig-alt="Screenshot of R-Studio's 'New Project' dialog with 'Version Control' and 'Git' options selected"}
 
 This will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project.
 
@@ -65,7 +65,7 @@ A new Git options menu is now available in R-Studio thanks to version control mo
 
 Once we start adding content to your project in R-Studio the changes will show up here.
 
-![](../assets/figures/intro-to-r-git/rstudio-git-menu.png)
+![](../assets/figures/intro-to-r-git/rstudio-git-menu.png){fig-alt="Screenshot of R-Studio's Git options menu for tracking project changes"}
 
 5. To select files to be saved to a Git commit, click the `Staged` option on Git tab
 6. To make a commit locally from R Studio we press the `Commit` button. Make sure to name your commits in a descriptive way.
@@ -91,14 +91,14 @@ This is required to authenticate users from R-Studio with their specific GitHub 
 3. Select `> Personal access tokens` and then the `> Tokens (classic)`.
 4. Finally, click `> Generate new token (classic)` from the top right button.
 
-![](../assets/figures/intro-to-r-git/github-token.png)
+![Navigating to the 'Generate new token' button in GitHub](../assets/figures/intro-to-r-git/github-token.png){fig-alt="Screenshot of GitHub's 'Generate new token' button in the Developer settings"}
 
 - Give your token a name ("R-studio git" for example).
 - Set expiration date for 90 days.
 - Set the scope to cover `repo` and its sub-sections.
 - Unless specifically required, do not grant access to other sections.
 
-![](../assets/figures/intro-to-r-git/access-token-scope.png)
+![Setting the access token scope for the new personal access token](../assets/figures/intro-to-r-git/access-token-scope.png){fig-alt="Screenshot of GitHub's access token scope settings for a new personal access token"}
 
 - Click on `> Generate token` button at the bottom of the page.
 
@@ -120,7 +120,7 @@ You can now, paste the token into R-Studio in lieu of a password.
 
 After all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:
 
-![](../assets/figures/intro-to-r-git/github-check.png)
+![Verifying the uploaded file in GitHub commit history](../assets/figures/intro-to-r-git/github-check.png){fig-alt="Screenshot of GitHub commit history showing the recently uploaded file"}
 
 ## Resources
 

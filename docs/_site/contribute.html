@@ -153,11 +153,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./documentation/index.html"><i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">Documentation</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./updates.html"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text">Updates</span></a>
@@ -261,7 +256,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./tutorials/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./tutorials/github.html" class="sidebar-item-text sidebar-link">NHSE GitHub</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorials/quarto.html" class="sidebar-item-text sidebar-link">Quarto R/Markdown Tutorial</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -283,37 +288,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./documentation/index.html" class="sidebar-item-text sidebar-link">Documentation</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Examples</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./documentation/dplyr-functions.html" class="sidebar-item-text sidebar-link">Format Dates</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./documentation/nhs-colours.html" class="sidebar-item-text sidebar-link">NHS Colour Guidlines</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./documentation/statistics.html" class="sidebar-item-text sidebar-link">Statistical Functions</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Examples</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./examples/ae_attendance.html" class="sidebar-item-text sidebar-link">A&amp;E Attendance Report</a>
@@ -335,15 +315,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link active" data-scroll-target="#how-to-contribute">How to contribute?</a>
-  <ul>
+  <li><a href="#clone-the-repository" id="toc-clone-the-repository" class="nav-link active" data-scroll-target="#clone-the-repository">Clone the repository</a></li>
   <li><a href="#make-a-new-branch-of-the-repository" id="toc-make-a-new-branch-of-the-repository" class="nav-link" data-scroll-target="#make-a-new-branch-of-the-repository">Make a new branch of the repository</a></li>
   <li><a href="#make-a-new-.qmd-q-markdown-file-in-the-docs-folder" id="toc-make-a-new-.qmd-q-markdown-file-in-the-docs-folder" class="nav-link" data-scroll-target="#make-a-new-.qmd-q-markdown-file-in-the-docs-folder">Make a new <code>.qmd</code> (q-markdown) file in the <code>/docs</code> folder</a></li>
+  <li><a href="#think-about-accesability" id="toc-think-about-accesability" class="nav-link" data-scroll-target="#think-about-accesability">Think about accesability</a>
+  <ul>
+  <li><a href="#adding-alt-text" id="toc-adding-alt-text" class="nav-link" data-scroll-target="#adding-alt-text">1. Adding Alt Text</a></li>
+  <li><a href="#adding-captions" id="toc-adding-captions" class="nav-link" data-scroll-target="#adding-captions">2. Adding Captions</a></li>
+  <li><a href="#combining-alt-text-and-captions" id="toc-combining-alt-text-and-captions" class="nav-link" data-scroll-target="#combining-alt-text-and-captions">3. Combining Alt Text and Captions</a></li>
+  </ul></li>
   <li><a href="#add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" id="toc-add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" class="nav-link" data-scroll-target="#add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs">Add a link to your file to the <code>_quarto.yml</code> config file in <code>/docs</code></a></li>
   <li><a href="#publish-your-changes-to-github" id="toc-publish-your-changes-to-github" class="nav-link" data-scroll-target="#publish-your-changes-to-github">Publish your changes to GitHub</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/contribute.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/docs/contribute.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -366,37 +350,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="how-to-contribute" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-contribute">How to contribute?</h2>
-<section id="make-a-new-branch-of-the-repository" class="level3">
-<h3 class="anchored" data-anchor-id="make-a-new-branch-of-the-repository">Make a new branch of the repository</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Welcome to our guide on adding a new page to this documentation site using Quarto. Quarto uses Markdown allowing you to create and maintain high-quality, reproducible documents with ease.</p>
+<p>In the following sections, we will cover the steps to create and deploy a new page into our NHS Quarto documentation site.</p>
+<section id="clone-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="clone-the-repository">Clone the repository</h2>
+<p>Open your command prompt or terminal, and navigate to the directory where you want to clone the repository.</p>
+<p>To clone the repository, use the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/nhsengland/nhs-r-reporting.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The URL can be found on the repository’s main page on GitHub.</p>
+<p>The cloning process will create a new folder named after the repository in your chosen directory. Once the cloning is complete, navigate to the newly created folder:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> nhs-r-reporting</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now you have a local copy of the repository on your computer. You can now start working on the project files and make changes.</p>
 </section>
-<section id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder" class="level3">
-<h3 class="anchored" data-anchor-id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder">Make a new <code>.qmd</code> (q-markdown) file in the <code>/docs</code> folder</h3>
-<p>To the <code>.qmd</code> file add a YAML header with a title and subtitle.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Contribute to the docs</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to add a new page to the documentations site using Quarto?"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="make-a-new-branch-of-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-new-branch-of-the-repository">Make a new branch of the repository</h2>
+<p>Creating a new branch in the repository allows you to safely work on new features or modifications without affecting the main project.</p>
+<p>Before creating a new branch, ensure that you have the latest version of the main branch by executing the following commands:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To create a new branch and switch to it immediately, run the command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>&lt;branch_name&gt;</code> with the desired name for your new branch.</p>
 </section>
-<section id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" class="level3">
-<h3 class="anchored" data-anchor-id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs">Add a link to your file to the <code>_quarto.yml</code> config file in <code>/docs</code></h3>
+<section id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-new-.qmd-q-markdown-file-in-the-docs-folder">Make a new <code>.qmd</code> (q-markdown) file in the <code>/docs</code> folder</h2>
+<p>Open the <code>.qmd</code> file add a YAML header with a title and subtitle.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Contribute to the docs</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"How to add a new page to the documentations site using Quarto?"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Below this line you can write your guide or contribution in markdown.</p>
+</section>
+<section id="think-about-accesability" class="level2">
+<h2 class="anchored" data-anchor-id="think-about-accesability">Think about accesability</h2>
+<p>If you are writing a guide, please add alt text or captions to any images for accesability. It helps people with visual impairments understand the content of the images. Here’s how you can add alt text and captions to images in a Quarto document:</p>
+<section id="adding-alt-text" class="level3">
+<h3 class="anchored" data-anchor-id="adding-alt-text">1. Adding Alt Text</h3>
+<p>Alt text is a short description of an image that assists people with visual impairments. It is displayed if the image cannot be loaded or when a screen reader is used. To add alt text to an image in Quarto, use the <code>alt</code> attribute in the image syntax:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](path/to/image.png)</span>{alt="A brief description of the image"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>path/to/image.png</code> with the path to your image file and provide a brief description of the image within the quotes following <code>alt=</code>.</p>
+</section>
+<section id="adding-captions" class="level3">
+<h3 class="anchored" data-anchor-id="adding-captions">2. Adding Captions</h3>
+<p>Captions are textual descriptions displayed below the image, providing additional context. To add a caption to an image in Quarto, use the <code>fig.cap</code> attribute in the image syntax:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](path/to/image.png)</span>{fig.cap="Caption text for the image"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>path/to/image.png</code> with the path to your image file and provide the caption text within the quotes following <code>fig.cap=</code>.</p>
+</section>
+<section id="combining-alt-text-and-captions" class="level3">
+<h3 class="anchored" data-anchor-id="combining-alt-text-and-captions">3. Combining Alt Text and Captions</h3>
+<p>You can add both alt text and captions to an image in Quarto by including both the <code>alt</code> and <code>fig.cap</code> attributes in the image syntax:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](path/to/image.png)</span>{alt="A brief description of the image" fig.cap="Caption text for the image"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>path/to/image.png</code> with the path to your image file, provide a brief description of the image within the quotes following <code>alt=</code>, and provide the caption text within the quotes following <code>fig.cap=</code>.</p>
+<p>By including alt text and captions in your Quarto documents, you’ll make your content more accessible to a wider range of users.</p>
+</section>
+</section>
+<section id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs" class="level2">
+<h2 class="anchored" data-anchor-id="add-a-link-to-your-file-to-the-_quarto.yml-config-file-in-docs">Add a link to your file to the <code>_quarto.yml</code> config file in <code>/docs</code></h2>
 <p>Open the <code>_quarto.yml</code> configuration file and find the <code>sidebar</code> config code.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> nav</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"floating"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">align</span><span class="kw">:</span><span class="at"> left</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> nav</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> </span><span class="st">"floating"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">align</span><span class="kw">:</span><span class="at"> left</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Under the <code>contents:</code> object add a new section (if required), a string lable for your page, and a link to the <code>.qmd</code> file itself.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"RAP"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Reproducible Analytical Pipelines"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">file</span><span class="kw">:</span><span class="at"> intro-to-rap.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">section</span><span class="kw">:</span><span class="at"> </span><span class="st">"RAP"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Reproducible Analytical Pipelines"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">file</span><span class="kw">:</span><span class="at"> intro-to-rap.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="publish-your-changes-to-github" class="level3">
-<h3 class="anchored" data-anchor-id="publish-your-changes-to-github">Publish your changes to GitHub</h3>
+<section id="publish-your-changes-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="publish-your-changes-to-github">Publish your changes to GitHub</h2>
 <div class="callout-warning callout callout-style-simple callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -413,14 +437,13 @@ Render Quarto before publishing
 </div>
 </div>
 </div>
-<p>Commit your changes locally</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">'Added new page to docs'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add all changes and commit locally</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-a</span> <span class="at">-m</span> <span class="st">'Added new page to docs'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then push your changes to the remote branch</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Finally, open a Pull Request (PR) <a href="https://github.com/nhsengland/nhs-r-reporting/pulls">https://github.com/nhsengland/nhs-r-reporting/pulls</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
