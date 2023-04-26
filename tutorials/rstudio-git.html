@@ -289,7 +289,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="create-a-new-github-repo" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-new-github-repo">Create a New GitHub Repo</h2>
 <p>For this guide, we are going to create a new GitHub repository. Clicking the <code>New</code> green button on <a href="https://github.com/">GitHub</a> (top left) presents you with the following options:</p>
-<p><img src="../assets/figures/intro-to-r-git/github-create-repo.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/figures/intro-to-r-git/github-create-repo.png" class="img-fluid figure-img" alt="Screenshot of the 'Create a new repository' page on GitHub"></p>
+<figcaption class="figure-caption">Creating a new GitHub repository with the ‘New’ button</figcaption>
+</figure>
+</div>
 <ul>
 <li>Do not use a template unless required</li>
 <li>Give your repository a name, typically lower-case with a dash <code>-</code> separating each word.</li>
@@ -326,7 +331,7 @@ Note
 <li>From <a href="https://github.com/">GitHub</a>, select the <code>&lt;&gt; Code</code> button on the repo page to display the different cloning options for this project.</li>
 <li>Choose <code>HTTPS</code> and click on the copy icon (overlapped squares) on the right side of the URL.</li>
 </ol>
-<p><img src="../assets/figures/intro-to-r-git/github-clone.png" class="img-fluid"></p>
+<p><img src="../assets/figures/intro-to-r-git/github-clone.png" class="img-fluid" alt="Screenshot of the 'Code' tab in a GitHub repository with the HTTPS cloning option"></p>
 <p>This is the URL I just copied from the example repo:</p>
 <ul>
 <li><a href="https://github.com/Pablo-source/climate_viz.git">https://github.com/Pablo-source/climate_viz.git</a></li>
@@ -338,14 +343,14 @@ Note
 <li>Paste the HTTPS address in the Repository URL.</li>
 <li>Remember to tick (Open in new session) option and press Create Project.</li>
 </ol>
-<p><img src="../assets/figures/intro-to-r-git/rstudio-git.png" class="img-fluid"></p>
+<p><img src="../assets/figures/intro-to-r-git/rstudio-git.png" class="img-fluid" alt="Screenshot of R-Studio's 'New Project' dialog with 'Version Control' and 'Git' options selected"></p>
 <p>This will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project.</p>
 </section>
 <section id="the-r-studio-git-menu" class="level2">
 <h2 class="anchored" data-anchor-id="the-r-studio-git-menu">The R-Studio Git Menu</h2>
 <p>A new Git options menu is now available in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on <strong>files</strong> , not folders.</p>
 <p>Once we start adding content to your project in R-Studio the changes will show up here.</p>
-<p><img src="../assets/figures/intro-to-r-git/rstudio-git-menu.png" class="img-fluid"></p>
+<p><img src="../assets/figures/intro-to-r-git/rstudio-git-menu.png" class="img-fluid" alt="Screenshot of R-Studio's Git options menu for tracking project changes"></p>
 <ol start="5" type="1">
 <li>To select files to be saved to a Git commit, click the <code>Staged</code> option on Git tab</li>
 <li>To make a commit locally from R Studio we press the <code>Commit</code> button. Make sure to name your commits in a descriptive way.</li>
@@ -376,14 +381,24 @@ IMPORTANT
 <li>Select <code>&gt; Personal access tokens</code> and then the <code>&gt; Tokens (classic)</code>.</li>
 <li>Finally, click <code>&gt; Generate new token (classic)</code> from the top right button.</li>
 </ol>
-<p><img src="../assets/figures/intro-to-r-git/github-token.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/figures/intro-to-r-git/github-token.png" class="img-fluid figure-img" alt="Screenshot of GitHub's 'Generate new token' button in the Developer settings"></p>
+<figcaption class="figure-caption">Navigating to the ‘Generate new token’ button in GitHub</figcaption>
+</figure>
+</div>
 <ul>
 <li>Give your token a name (“R-studio git” for example).</li>
 <li>Set expiration date for 90 days.</li>
 <li>Set the scope to cover <code>repo</code> and its sub-sections.</li>
 <li>Unless specifically required, do not grant access to other sections.</li>
 </ul>
-<p><img src="../assets/figures/intro-to-r-git/access-token-scope.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/figures/intro-to-r-git/access-token-scope.png" class="img-fluid figure-img" alt="Screenshot of GitHub's access token scope settings for a new personal access token"></p>
+<figcaption class="figure-caption">Setting the access token scope for the new personal access token</figcaption>
+</figure>
+</div>
 <ul>
 <li>Click on <code>&gt; Generate token</code> button at the bottom of the page.</li>
 </ul>
@@ -418,7 +433,12 @@ IMPORTANT
 <section id="published-to-github" class="level2">
 <h2 class="anchored" data-anchor-id="published-to-github">Published to GitHub</h2>
 <p>After all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:</p>
-<p><img src="../assets/figures/intro-to-r-git/github-check.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/figures/intro-to-r-git/github-check.png" class="img-fluid figure-img" alt="Screenshot of GitHub commit history showing the recently uploaded file"></p>
+<figcaption class="figure-caption">Verifying the uploaded file in GitHub commit history</figcaption>
+</figure>
+</div>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
