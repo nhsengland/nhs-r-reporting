@@ -58,9 +58,9 @@ subtitle: "How to add a new page to the documentations site using Quarto?"
 
 Below this line you can write your guide or contribution in markdown.
 
-## Think about accesability
+## Think about accessibility
 
-If you are writing a guide, please add alt text or captions to any images for accesability. It helps people with visual impairments understand the content of the images. Here's how you can add alt text and captions to images in a Quarto document:
+If you are writing a guide, please add alt text or captions to any images for accessibility. It helps people with visual impairments understand the content of the images. Here's how you can add alt text and captions to images in a Quarto document:
 
 ### 1. Adding Alt Text
 
