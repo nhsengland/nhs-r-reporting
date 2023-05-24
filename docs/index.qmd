@@ -22,7 +22,7 @@ Reproducible analytical pipelines are the gold standard for creating analytical 
 
 ## Example analytical reports
 
-Below is a selection of analytical reports that are fully open-source and RAP compliant developed using [R](https://www.r-project.org/), [Quarto](https://quarto.org/), [{targets}](https://books.ropensci.org/targets/), [plotly](https://plotly.com/r/), and open data from the [NHS-R Community](https://nhsrcommunity.com/nhs-r-community-datasets-package-released/).
+Below is an example of an analytical report that is fully open-source and RAP compliant developed using [R](https://www.r-project.org/), [Quarto](https://quarto.org/), and [plotly](https://plotly.com/r/), and open data from the [NHS-R Community](https://nhsrcommunity.com/nhs-r-community-datasets-package-released/). The NHS theme used in this report is available on the [NHS-R Community GitHub repository](https://github.com/nhs-r-community/quarto-report-nhs-theme).
 
 <a href="examples/ae_attendance.html"><img src="assets/figures/ae_attendance_img.png" width="350" /></a>
 

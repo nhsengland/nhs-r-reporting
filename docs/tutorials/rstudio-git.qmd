@@ -1,10 +1,13 @@
-﻿---
+﻿
+---
 title: Git in R-Studio
+subtitle: "Version Control for your R projects"
 author: "Pablo Leon-Rodenas"
 date: "2023-01-19"
 categories: [Git, GitHub, R-Studio]
 image: "../assets/logos/git-rstudio.png"
 ---
+
 This guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.
 
 This will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio.

@@ -191,49 +191,49 @@
   {
     "objectID": "tutorials/rstudio-git.html",
     "href": "tutorials/rstudio-git.html",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "",
     "text": "This guide will show you how to create new R-Studio projects with version control features using Git and GitHub, and how to link R-Studio with a GitHub repository.\nThis will allow you to work entirely from R-Studio, applying version control to your scripts, creating new project on GitHub and doing all standard version control actions: commits, pushes and merges, directly from R-Studio."
   },
   {
     "objectID": "tutorials/rstudio-git.html#create-a-new-github-repo",
     "href": "tutorials/rstudio-git.html#create-a-new-github-repo",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "Create a New GitHub Repo",
     "text": "Create a New GitHub Repo\nFor this guide, we are going to create a new GitHub repository. Clicking the New green button on GitHub (top left) presents you with the following options:\n\n\n\nCreating a new GitHub repository with the ‘New’ button\n\n\n\nDo not use a template unless required\nGive your repository a name, typically lower-case with a dash - separating each word.\nSet the visibility to Public (see note below)\nSelect, add a README file\nAdd a .gitignore template for R\nGive it the MIT License\nClick the Create Repository button\n\n\n\n\n\n\n\nNote\n\n\n\nWhile we encourage the sharing of code in PUBLIC repositories, please take note of NHS England’s policies on open-source work relating the official NHSE projects:\n\nNHS Open-source policy (Draft)\nOpen code checklist\nSharing Code in the Open by NHSX\n\n\n\nFollowing the steps above, I created a new public repo: https://github.com/Pablo-source/climate_viz"
   },
   {
     "objectID": "tutorials/rstudio-git.html#clone-repository-into-r-studio",
     "href": "tutorials/rstudio-git.html#clone-repository-into-r-studio",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "Clone Repository into R-Studio",
     "text": "Clone Repository into R-Studio\nIn this section we are going to clone our GitHub project into a new project we will create in R-Studio.\n\nFrom GitHub, select the <> Code button on the repo page to display the different cloning options for this project.\nChoose HTTPS and click on the copy icon (overlapped squares) on the right side of the URL.\n\n\nThis is the URL I just copied from the example repo:\n\nhttps://github.com/Pablo-source/climate_viz.git\n\nNow in R-Studio, we start by creating a new project:\n\nChoose the third option > Version Control.\nThen select the > Git option.\nPaste the HTTPS address in the Repository URL.\nRemember to tick (Open in new session) option and press Create Project.\n\n\nThis will have created a new folder on you local machine. If you navigate to it, you will see it contains all components of a GitHub Project."
   },
   {
     "objectID": "tutorials/rstudio-git.html#the-r-studio-git-menu",
     "href": "tutorials/rstudio-git.html#the-r-studio-git-menu",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "The R-Studio Git Menu",
     "text": "The R-Studio Git Menu\nA new Git options menu is now available in R-Studio thanks to version control mode. This is how R-Studio can keep track of our project and files. It is important to remember that Git and GitHub keep track of changes on files , not folders.\nOnce we start adding content to your project in R-Studio the changes will show up here.\n\n\nTo select files to be saved to a Git commit, click the Staged option on Git tab\nTo make a commit locally from R Studio we press the Commit button. Make sure to name your commits in a descriptive way.\nTo sync your local commits to GitHub (online), we then press Push.\n\nIt will now ask us for our GitHub username and password.\n\n\n\n\n\n\nIMPORTANT\n\n\n\nYou will get this error message: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.\n\n\nTherefore, we can’t use our GitHub password, but instead a personal access token. This is a security feature for using HTTPS to connect your repo to R-Studio."
   },
   {
     "objectID": "tutorials/rstudio-git.html#generate-an-github-access-token",
     "href": "tutorials/rstudio-git.html#generate-an-github-access-token",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "Generate an GitHub Access Token",
     "text": "Generate an GitHub Access Token\nThis is required to authenticate users from R-Studio with their specific GitHub repo, so code we push from R studio can be securely identified with the developer’s project repository:\n\nLog into GitHub, navigate to your profile icon, top righ and click on > Settings.\nAt the bottom of the next menu, click on > Developer settings.\nSelect > Personal access tokens and then the > Tokens (classic).\nFinally, click > Generate new token (classic) from the top right button.\n\n\n\n\nNavigating to the ‘Generate new token’ button in GitHub\n\n\n\nGive your token a name (“R-studio git” for example).\nSet expiration date for 90 days.\nSet the scope to cover repo and its sub-sections.\nUnless specifically required, do not grant access to other sections.\n\n\n\n\nSetting the access token scope for the new personal access token\n\n\n\nClick on > Generate token button at the bottom of the page.\n\n\n\n\n\n\n\nTIP\n\n\n\nMake sure to copy your personal access token now. You won’t be able to see it again!\n\n\n\n\n\n\n\n\nIMPORTANT\n\n\n\nNever share your token with anybody. That will allow other users to control any action in scope on your GitHub account.\n\n\nYou can now, paste the token into R-Studio in lieu of a password."
   },
   {
     "objectID": "tutorials/rstudio-git.html#published-to-github",
     "href": "tutorials/rstudio-git.html#published-to-github",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "Published to GitHub",
     "text": "Published to GitHub\nAfter all these steps, we have finally uploaded our modified file from R-Studio to GitHub. You can check that the file is available now on GitHub by looking at your commit history:\n\n\n\nVerifying the uploaded file in GitHub commit history"
   },
   {
     "objectID": "tutorials/rstudio-git.html#resources",
     "href": "tutorials/rstudio-git.html#resources",
-    "title": "NHSE-R",
+    "title": "Git in R-Studio",
     "section": "Resources",
     "text": "Resources\n\nNHS-D RAP Community - R-Studio/Git tutorial\nTutorial for Creating a new RStudio project with GitHub to visualize climate change. Riffamonas Project YouTube channel. https://www.youtube.com/watch?v=d5dUkO5lXds\nSupport for password authentication was removed. Please use a personal access token - RStudio Cloud. 1Littlecoder YouTube channel.\n\nBy: Pablo Leon-Rodenas <pablo.leonrodenas@nhs.net>"
   },
@@ -347,7 +347,7 @@
     "href": "index.html#example-analytical-reports",
     "title": "NHS England R Community",
     "section": "Example analytical reports",
-    "text": "Example analytical reports\nBelow is a selection of analytical reports that are fully open-source and RAP compliant developed using R, Quarto, {targets}, plotly, and open data from the NHS-R Community.\n\n\nIn development:\n\nThese interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations\n\nRegions\nICB / SICBL\nPCN / GP\nTrust / Ward etc\n\nUsing {targets} we can define dependencies in the data processing stages and process these reports automatically when new data is available.\nA standard set of reporting charts and tables can be pre-configured using plotly, adjusting the colors, fonts, annotations, and labels to match the NHS style.\nA shared library of unit-tested functions allows complex analysis to be run with every calculation fully validated and documented.\nQuality assurance can also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format."
+    "text": "Example analytical reports\nBelow is an example of an analytical report that is fully open-source and RAP compliant developed using R, Quarto, and plotly, and open data from the NHS-R Community. The NHS theme used in this report is available on the NHS-R Community GitHub repository.\n\n\nIn development:\n\nThese interactive html reports can be confiugured with parameters to create multiple versions of the same report, charts, and analyses but for different organisations\n\nRegions\nICB / SICBL\nPCN / GP\nTrust / Ward etc\n\nUsing {targets} we can define dependencies in the data processing stages and process these reports automatically when new data is available.\nA standard set of reporting charts and tables can be pre-configured using plotly, adjusting the colors, fonts, annotations, and labels to match the NHS style.\nA shared library of unit-tested functions allows complex analysis to be run with every calculation fully validated and documented.\nQuality assurance can also be built into these functions so that logging, data validation, and schema checks can be run to ensure that our data pipelines are functioning correctly, and all the data follows the correct structure and format."
   },
   {
     "objectID": "index.html#what-is-r-and-why-is-it-used-at-nhse",
@@ -635,5 +635,12 @@
     "title": "Contribute to the docs",
     "section": "Clone the repository",
     "text": "Clone the repository\nOpen your command prompt or terminal, and navigate to the directory where you want to clone the repository.\nTo clone the repository, use the following command:\ngit clone https://github.com/nhsengland/nhs-r-reporting.git\nThe URL can be found on the repository’s main page on GitHub.\nThe cloning process will create a new folder named after the repository in your chosen directory. Once the cloning is complete, navigate to the newly created folder:\ncd nhs-r-reporting\nNow you have a local copy of the repository on your computer. You can now start working on the project files and make changes."
+  },
+  {
+    "objectID": "contribute.html#think-about-accessibility",
+    "href": "contribute.html#think-about-accessibility",
+    "title": "Contribute to the docs",
+    "section": "Think about accessibility",
+    "text": "Think about accessibility\nIf you are writing a guide, please add alt text or captions to any images for accessibility. It helps people with visual impairments understand the content of the images. Here’s how you can add alt text and captions to images in a Quarto document:\n\n1. Adding Alt Text\nAlt text is a short description of an image that assists people with visual impairments. It is displayed if the image cannot be loaded or when a screen reader is used. To add alt text to an image in Quarto, use the alt attribute in the image syntax:\n![](path/to/image.png){alt=\"A brief description of the image\"}\nReplace path/to/image.png with the path to your image file and provide a brief description of the image within the quotes following alt=.\n\n\n2. Adding Captions\nCaptions are textual descriptions displayed below the image, providing additional context. To add a caption to an image in Quarto, use the fig.cap attribute in the image syntax:\n![](path/to/image.png){fig.cap=\"Caption text for the image\"}\nReplace path/to/image.png with the path to your image file and provide the caption text within the quotes following fig.cap=.\n\n\n3. Combining Alt Text and Captions\nYou can add both alt text and captions to an image in Quarto by including both the alt and fig.cap attributes in the image syntax:\n![](path/to/image.png){alt=\"A brief description of the image\" fig.cap=\"Caption text for the image\"}\nReplace path/to/image.png with the path to your image file, provide a brief description of the image within the quotes following alt=, and provide the caption text within the quotes following fig.cap=.\nBy including alt text and captions in your Quarto documents, you’ll make your content more accessible to a wider range of users."
   }
 ]
