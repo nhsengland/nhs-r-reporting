@@ -1,0 +1,24 @@
+To create the maps in R using ggplot2 we need two set of files: 
+
+1. Shapefile containing polygons and geographical boundaries
+- In this particular example, we are using the Clinical Commisioning Groups as of April 2021
+- File: Clinical_Commissioning_Groups_April_2021.zip
+
+- The Office for National Statistics provides a free and open access to several geographic products. There is a specific section for `Health boundaries` 
+on their `Open Geography Portal` website: <https://geoportal.statistics.gov.uk/>. 
+
+
+We donwload the zipped file and extract the following files in the /data folder:
+CCG_APR_2021_EN_BGC.cpg
+CCG_APR_2021_EN_BGC.dbf
+CCG_APR_2021_EN_BGC.prj
+CCG_APR_2021_EN_BGC.shp
+CCG_APR_2021_EN_BGC.shx
+
+The R Script will use the .shp file mainly, but we need the other set of files to plot the map
+
+2. Health indicator. Continuous numeric indicator to be plotted in the map
+In this map we chooose to plot this specific indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis
+- File: CCG_1.17_I01968_D.xlsx
+- Website: https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022 
+- Download indicators file: url = "https://files.digital.nhs.uk/48/4DB2CA/CCG_OIS_MAR_2022_Excels_Files.zip",
