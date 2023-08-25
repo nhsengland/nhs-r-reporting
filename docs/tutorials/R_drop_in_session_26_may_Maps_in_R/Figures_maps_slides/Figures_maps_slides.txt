@@ -1,0 +1,12 @@
+List of Figures included in the "maps in R 26 May 2023.qmd" Quarto presentation:
+
+02 Health boundaries.png
+05 Load ccg indicators.png
+05 Unzip Shapefile ENG size.jpg
+05 Unzip Shapefile ENG.PNG
+05 Unzip Shapefile.png
+06 Unzip Shapefile.png
+CCG Boundaries April 2021_coral.jpeg
+CCG outcomes indicator set.png
+Health boundaries details.png
+Health boundaries details02.png
