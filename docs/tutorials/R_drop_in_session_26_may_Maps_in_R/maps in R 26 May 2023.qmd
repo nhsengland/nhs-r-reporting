@@ -64,16 +64,7 @@ library(ggplot2)
 library(readxl)
 library(janitor)
 
-CCGdata <- function() {
-              if(!dir.exists("data")){dir.create("data")}
-                      # Download master.zip file 
-                      download.file(
-                        url = "https://files.digital.nhs.uk/48/4DB2CA/CCG_OIS_MAR_2022_Excels_Files.zip",
-                        destfile = "data/CCGoutcomes.zip")
-                      unzip(zipfile = "data/CCGoutcomes.zip",
-                            exdir = "data",junkpaths = T)}
 
-CCGdata()
 ```
 
 
