@@ -1,8 +1,10 @@
 on:
   push:
-    branches: main
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
 
 name: Render and Publish
 
@@ -11,20 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-    - name: Set up R
-      uses: r-lib/actions/setup-r@v1
-      with:
-        r-version: 4.1.0
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: 4.1.0
     
-    - name: Install required R packages
-      run: |
-        install.packages(c("rmarkdown", "quarto"))
-      shell: Rscript {0}
+      - name: Install required R packages
+        run: |
+          install.packages(c("rmarkdown", "quarto"))
+        shell: Rscript {0}
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
