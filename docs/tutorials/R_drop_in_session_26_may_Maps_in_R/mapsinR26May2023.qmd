@@ -6,25 +6,7 @@ date: "2023-10-06"
 categories: [NHS England]
 ---
 
-```{r fig-NHSRplotthedots-pakages}
-#| include: False
-library(NHSRplotthedots)
-library(NHSRdatasets)
-library(tidyverse)
-```
-
-```{r fig-NHSRplotthedots}
-#| label: Example SPC Chart
-#| warning: False
-
-df <- ae_attendances %>% 
-  filter(org_code == "RQM", type == 1, period < as.Date("2018-04-01"))
-
-df %>%
-  ptd_spc(value_field = breaches, date_field = period, improvement_direction = "decrease")
-```
-
-```r
+```{r, echo=TRUE}
 # List of required packages
 required_packages <- c("here", "sf", "ggplot2", "readxl", "dplyr", "janitor")
 
@@ -82,7 +64,7 @@ From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shape
 
 Load unzipped files into R using `Open Geography Portal` 
 
-```r
+```{r, echo=TRUE}
 # Define a function to download and cache the CCG data
 download_CCG_data <- function() {
   data_dir <- here::here("data") # Use here::here() for consistent path resolution
@@ -128,7 +110,7 @@ Check unzipped file contents. We shuold obtain a collection of boundaries files 
 
 Now we can plot using  `ggplot()` and `geom_sf()`function the CCG map for England
 
-```r
+```{r, echo=TRUE}
 # Function to load CCG boundaries data
 load_CCG_boundaries <- function() {
   # Load CCG boundaries shapefile
@@ -176,7 +158,7 @@ Now we `combine` ONS `shapefiles` with CCG Outcomes `Indicators` data ready to b
 
 We will plot this indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis.
 
-```r
+```{r, echo=TRUE}
 library(dplyr)
 # Function to load and preprocess cancer data
 load_and_preprocess_cancer_data <- function() {
@@ -211,7 +193,7 @@ cancer_new_sel <- cancer_data_analysis()
 
 This is the final step prior to plotting the map. We `merge` shapefile with `indicator` files. 
 
-```r
+```{r, echo=TRUE}
 # Rename columns in cancer_new_sel
 cancer_MAP_rename <- cancer_new_sel %>%
   dplyr::select(
@@ -234,7 +216,7 @@ mapdata_coord <- sf::st_transform(mapdata, crs = 4326)
 
 Finally we can add Title and labs to the map in ggplot we have just created
 
-```r
+```{r, echo=TRUE}
 # Plot map combining shapefile and CCG indicator
 cancer_map_blues <- mapdata_coord %>% 
   ggplot2::ggplot(ggplot2::aes(fill = indicator_value)) +
