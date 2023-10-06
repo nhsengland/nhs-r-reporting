@@ -19,12 +19,255 @@ required_packages <- c("here",
 
 # Check if required packages are not installed, then install and load them
 for (package in required_packages) {
-  if (!requireNamespace(package, quietly = TRUE)) {
     install.packages(package)
-    if (!requireNamespace(package, quietly = TRUE)) {
-      stop(paste("Failed to install and load", package, "package."))
-    }
-  }
 }
 ```
 
+## Intro {background="#43464B"}
+
+These slides were presented in the NHSE-R drop in session on Friday 26th May 2023.
+
+In R we can plot geospatial data using several methods, today I will focus on static maps using `ggplot2` and `osm` packages. Drawing maps usually imply these steps:
+
+-   Getting shapefiles to draw a map
+-   Obtaining metadata to plot on the map 
+-   In R we load the multypoligon objects using `geom_sf()` and `coord_sf()`
+-   Then we can take advantage of ggplot2 framework to overlay one map on top of another
+
+An introduction to plotting maps in R using ggplot2 can be found on this online book: <https://ggplot2-book.org/maps.html>.
+
+
+
+## 1. NHS Health boundaries{auto-animate="true" background="#43464B"}
+
+The Office for National Statistics provides a free and open access to several geographic products. There is a specific section for `Health boundaries` on their `Open Geography Portal` website: <https://geoportal.statistics.gov.uk/>. 
+
+From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shapefile** zipped file.
+
+::: columns
+::: {.column width="40%"}
+
+![Health Boundaries](Figures_maps_slides/02 Health boundaries.png)
+:::
+
+::: {.column width="60%"}
+
+![Health Boundaries details](Figures_maps_slides/05 Unzip Shapefile.png)
+:::
+:::
+
+
+## 2. Unzip CCG boundaries into R {background="#43464B"}
+
+Load unzipped files into R using `Open Geography Portal` 
+
+```{r echo=TRUE}
+# Define a function to download and cache the CCG data
+download_CCG_data <- function() {
+  data_dir <- here::here("data") # Use here::here() for consistent path resolution
+  
+  # Check if the data directory exists, create it if not
+  if (!dir.exists(data_dir)) {
+    dir.create(data_dir, recursive = TRUE)
+  }
+  
+  zip_file <- file.path(data_dir, "CCGoutcomes.zip")
+  
+  # Check if the file already exists, if not, download and unzip it
+  if (!file.exists(zip_file)) {
+    download.file(
+      url = "https://files.digital.nhs.uk/48/4DB2CA/CCG_OIS_MAR_2022_Excels_Files.zip",
+      destfile = zip_file
+    )
+    unzip(zip_file, exdir = data_dir, junkpaths = TRUE)
+  }
+}
+
+# Call the function to download and cache the CCG data
+download_CCG_data()
+```
+
+## 3. Check shapefiles content {background="#43464B"}
+
+Check unzipped file contents. We shuold obtain a collection of boundaries files including the .shp file for CCG map.
+
+
+::: columns
+::: {.column width="40%"}
+
+![Health Boundaries](Figures_maps_slides/06 Unzip Shapefile.png)
+:::
+
+::: {.column width="60%"}
+
+:::
+:::
+
+## 4.Load CCG Shapefile and check map {background="#43464B"}
+
+Now we can plot using  `ggplot()` and `geom_sf()`function the CCG map for England
+
+```{r load shapefile, echo=TRUE}
+# Function to load CCG boundaries data
+load_CCG_boundaries <- function() {
+  # Load CCG boundaries shapefile
+  shapefile_path <- "data/Clinical_Commissioning_Groups_April_2021/CCG_APR_2021_EN_BGC.shp"
+  
+  # Read the shapefile using sf::st_read()
+  CCG_boundaries <- sf::st_read(shapefile_path)
+  return(CCG_boundaries)
+}
+
+# Function to create CCG map
+create_CCG_map <- function(CCG_boundaries) {
+  # Create ggplot map
+  CCG_map <- ggplot2::ggplot(data = CCG_boundaries) +
+    ggplot2::geom_sf(size = 0.5, color = "black", fill = "coral") +
+    ggplot2::ggtitle("CCG Boundaries plot. April 2021") +
+    ggplot2::coord_sf()
+  
+  return(CCG_map)
+}
+
+CCG_boundaries <- load_CCG_boundaries()
+CCG_map <- create_CCG_map(CCG_boundaries)
+print(CCG_map)
+```
+
+## 5. Obtain NHS Indicators {background="#43464B"}
+
+For this presentation I will download `CCG Outcomes Indicator` set for March 2022 from Digital website: 
+https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022
+
+The Office for National Statistics provides a free and open access to several geographic produts. There is a specific section for Health boundaries on their website: 
+
+![Health Boundaries](Figures_maps_slides/CCG outcomes indicator set.png)
+
+## 6. Download CCG Outcomes Indicators {background="#43464B"}
+
+After loading the shapefile we `download` the `indicators` to be plotted in the map 
+
+![CCG Indicators](Figures_maps_slides/05 Load ccg indicators.png)
+
+## 7. Data wrangling {background="#43464B"}
+
+Now we `combine` ONS `shapefiles` with CCG Outcomes `Indicators` data ready to be plotted in the map. Details:
+<https://github.com/Pablo-source/Maps-in-R/blob/main/08%20CCG%20Outcomes%20Indicators%20Set%20march%202022.R>
+
+We will plot this indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis.
+
+```{r import_indicator_from_excel, echo=TRUE}
+library(dplyr)
+# Function to load and preprocess cancer data
+load_and_preprocess_cancer_data <- function() {
+  # Load cancer data from Excel file
+  cancer_data <- readxl::read_excel(here::here("data", "CCG_1.17_I01968_D.xlsx"), sheet = 3, skip = 13) 
+  
+  # Clean column names, select necessary columns, and filter rows
+  cleaned_cancer_data <- cancer_data %>%
+    janitor::clean_names() %>%
+    dplyr::select(reporting_period, breakdown, ons_code, level, level_description, indicator_value) %>%
+    dplyr::filter(level_description != "England")
+  
+  return(cleaned_cancer_data)
+}
+
+# Main function for data wrangling
+cancer_data_analysis <- function() {
+  # Load and preprocess cancer data
+  cancer_data <- load_and_preprocess_cancer_data()
+  
+  # Additional processing or analysis can be performed here
+  
+  # Print the resulting dataframe
+  print(cancer_data)
+}
+
+# Call the main function for data analysis
+cancer_new_sel <- cancer_data_analysis()
+```
+
+## 8. Merge shapefile and Outcome Indicators {background="#43464B"} 
+
+This is the final step prior to plotting the map. We `merge` shapefile with `indicator` files. 
+
+```{r merge_ccg_indicator ,echo=TRUE}
+# Rename columns in cancer_new_sel
+cancer_MAP_rename <- cancer_new_sel %>%
+  dplyr::select(
+    reporting_period,
+    breakdown,
+    CCG21CD = ons_code,
+    level,
+    level_description,
+    indicator_value
+  )
+
+# Merge shapefile and metric data using left_join from dplyr
+mapdata <- dplyr::left_join(CCG_boundaries, cancer_MAP_rename, by = "CCG21CD")
+
+# Apply projection (EPSG:4326) to merged data to plot the map
+mapdata_coord <- sf::st_transform(mapdata, crs = 4326)
+```
+
+## 9. Plot map in ggplot2 {background="#43464B"}
+
+Finally we can add Title and labs to the map in ggplot we have just created
+
+```{r draw map, echo=TRUE}
+# Plot map combining shapefile and CCG indicator
+cancer_map_blues <- mapdata_coord %>% 
+  ggplot2::ggplot(ggplot2::aes(fill = indicator_value)) +
+  ggplot2::geom_sf() +
+  ggplot2::labs(
+    title = "CCG OIS Indicator 1.17 - Record of Stage of Cancer at Diagnosis",
+    subtitle = "Percentage of New Cases of Cancer for Which a Valid Stage is Recorded \n at the Time of Diagnosis (95% CI)",
+    caption = "Data source: NHS Digital National Disease Registration Service (NDRS)"
+  ) +
+  ggplot2::theme_minimal() +
+  ggplot2::scale_fill_viridis_c(name = "Indicator Value")
+
+# Print the map
+print(cancer_map_blues)
+```
+
+
+## 10. Open street maps using OSM package {background="#43464B"}
+
+The second part of this presentation will cover how to build city maps in R using `osmdata` package in R. This package allows us to download and use data from the `OpenStreetMap (OSM)`
+
+Package details: <https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html>
+OpenStreepMap. OSM is a global open access mapping project, which is free and open under the ODbL licence. OpenStreetMap contributors 2017: <https://www.openstreetmap.org/#map=6/54.910/-3.432>
+
+
+Follow all the details for this second map from my website: <https://pablo-source.github.io/City_maps.html>
+
+
+
+## Online resources to build maps in R {background="#43464B"}
+
+This presentation only covers a handful of options, please check this repo for facets and grid options
+
+- Maps-in-R> GitHub repo: <https://github.com/Pablo-source/Maps-in-R>
+- Examples and Shapefiles:<https://github.com/Pablo-source/Maps-in-R/tree/main>
+- OSM-maps> GitHub repo: <https://github.com/Pablo-source/Maps-in-R/tree/main/City_maps>
+- CCG Outcomes Indicato Set - March 2022: <https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022>
+- Map projections using the “sf” package in R: <https://cran.r-project.org/web/packages/oce/vignettes/D_map_projections.html>
+- R Spatial Workshop Notes: <https://spatialanalysis.github.io/workshop-notes/spatial-clustering.html>
+- NHS-R  NHS Colour Guidelines: <https://nhsengland.github.io/nhs-r-reporting/tutorials/nhs-colours.html>
+
+
+
+
+## Shapefiles {background="#43464B"}
+
+- The Open Geography portal from the Office for National Statistics (ONS): 
+<https://geoportal.statistics.gov.uk/>
+- The London Datastore:Shapefiles and plenty of social indicators to plot (OA,LSOA,MSOA,Wards)
+<https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london>
+
+Online books about building maps in R
+- Geocomputation with R: <https://bookdown.org/robinlovelace/geocompr/spatial-class.html>
+- Chapter 16. Geospatial – Bigbook of r: <https://www.bigbookofr.com/geospatial.html>
+
+- Any questions? pablo.leonrodenas@nhs.net, <https://github.com/Pablo-source>
