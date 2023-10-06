@@ -9,6 +9,7 @@
   {
     "listing": "/tutorials/index.html",
     "items": [
+      "/tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html",
       "/tutorials/quarto.html",
       "/tutorials/udal.html",
       "/tutorials/rap.html",
