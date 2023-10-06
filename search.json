@@ -396,7 +396,14 @@
     "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/maps in R 26 May 2023.html#intro",
     "title": "Maps in R using ggplot2 and OSM packages",
     "section": "Intro",
-    "text": "Intro\nThese slides were presented in the NHSE-R drop in session on Friday 26th May 2023.\nIn R we can plot geospatial data using several methods, today I will focus on static maps using ggplot2 and osm packages. Drawing maps usually imply these steps:\n\nGetting shapefiles to draw a map\nObtaining metadata to plot on the map\nIn R we load the multypoligon objects using geom_sf() and coord_sf()\nThen we can take advantage of ggplot2 framework to overlay one map on top of another\n\nAn introduction to plotting maps in R using ggplot2 can be found on this online book: https://ggplot2-book.org/maps.html.\n\n\n\nhttps://github.com/Pablo-source"
+    "text": "Intro\nThese slides were presented in the NHSE-R drop in session on Friday 26th May 2023.\nIn R we can plot geospatial data using several methods, today I will focus on static maps using ggplot2 and osm packages. Drawing maps usually imply these steps:\n\nGetting shapefiles to draw a map\nObtaining metadata to plot on the map\nIn R we load the multypoligon objects using geom_sf() and coord_sf()\nThen we can take advantage of ggplot2 framework to overlay one map on top of another\n\nAn introduction to plotting maps in R using ggplot2 can be found on this online book: https://ggplot2-book.org/maps.html."
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/maps in R 26 May 2023.html#nhs-health-boundaries",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/maps in R 26 May 2023.html#nhs-health-boundaries",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "1. NHS Health boundaries",
+    "text": "1. NHS Health boundaries\nThe Office for National Statistics provides a free and open access to several geographic products. There is a specific section for Health boundaries on their Open Geography Portal website: https://geoportal.statistics.gov.uk/.\nFrom Clinical Commissioning Groups section download 2021 Boundaries shapefile zipped file.\n\n\n\n\n\nHealth Boundaries\n\n\n\n\n\n\nHealth Boundaries details\n\n\n\n\n\n\n\nhttps://github.com/Pablo-source"
   },
   {
     "objectID": "index.html",
