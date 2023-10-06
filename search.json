@@ -389,21 +389,7 @@
     "href": "tutorials/index.html",
     "title": "Tutorials",
     "section": "",
-    "text": "Maps in R using ggplot2 and OSM packages\n\n\n\nPablo Leon |pablo.leonrodenas@nhs.net\n\n\nInvalid Date\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto R/Markdown Tutorial\n\n\n\nQuarto\n\n\nR\n\n\nMarkdown\n\n\n\n\nSimon Wellesley-Miller\n\n\nFeb 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNational Data Platform (UDAL)\n\n\n\nSQL\n\n\nR\n\n\nNHS England\n\n\n\n\nSimon Wellesley-Miller\n\n\nFeb 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproducible Analytical Pipelines (RAP)\n\n\n\nRAP\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNHSE GitHub\n\n\n\nGit\n\n\nGitHub\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nJan 22, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGit in R-Studio\n\n\n\nGit\n\n\nGitHub\n\n\nR-Studio\n\n\n\n\nPablo Leon-Rodenas\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Process Control\n\n\n\nNHS-R\n\n\nSPC\n\n\n\n\nCraig Robert Shenton\n\n\nJan 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Programming Language\n\n\n\nR\n\n\nNHS-R\n\n\n\n\nCraig Robert Shenton\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNHS Colour Guidlines\n\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nNov 21, 2022\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#intro",
-    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#intro",
-    "title": "Maps in R using ggplot2 and OSM packages",
-    "section": "Intro",
-    "text": "Intro\nThese slides were presented in the NHSE-R drop in session on Friday 26th May 2023.\nIn R we can plot geospatial data using several methods, today I will focus on static maps using ggplot2 and osm packages. Drawing maps usually imply these steps:\n\nGetting shapefiles to draw a map\nObtaining metadata to plot on the map\nIn R we load the multypoligon objects using geom_sf() and coord_sf()\nThen we can take advantage of ggplot2 framework to overlay one map on top of another\n\nAn introduction to plotting maps in R using ggplot2 can be found on this online book: https://ggplot2-book.org/maps.html."
-  },
-  {
-    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#nhs-health-boundaries",
-    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#nhs-health-boundaries",
-    "title": "Maps in R using ggplot2 and OSM packages",
-    "section": "1. NHS Health boundaries",
-    "text": "1. NHS Health boundaries\nThe Office for National Statistics provides a free and open access to several geographic products. There is a specific section for Health boundaries on their Open Geography Portal website: https://geoportal.statistics.gov.uk/.\nFrom Clinical Commissioning Groups section download 2021 Boundaries shapefile zipped file.\n\n\n\n\n\nHealth Boundaries\n\n\n\n\n\n\nHealth Boundaries details\n\n\n\n\n\n\n\nhttps://github.com/Pablo-source"
+    "text": "Maps in R using ggplot2 and OSM packages\n\n\n\nNHS England\n\n\n\n\nPablo Leon\n\n\nOct 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto R/Markdown Tutorial\n\n\n\nQuarto\n\n\nR\n\n\nMarkdown\n\n\n\n\nSimon Wellesley-Miller\n\n\nFeb 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNational Data Platform (UDAL)\n\n\n\nSQL\n\n\nR\n\n\nNHS England\n\n\n\n\nSimon Wellesley-Miller\n\n\nFeb 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproducible Analytical Pipelines (RAP)\n\n\n\nRAP\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNHSE GitHub\n\n\n\nGit\n\n\nGitHub\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nJan 22, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGit in R-Studio\n\n\n\nGit\n\n\nGitHub\n\n\nR-Studio\n\n\n\n\nPablo Leon-Rodenas\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Process Control\n\n\n\nNHS-R\n\n\nSPC\n\n\n\n\nCraig Robert Shenton\n\n\nJan 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Programming Language\n\n\n\nR\n\n\nNHS-R\n\n\n\n\nCraig Robert Shenton\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNHS Colour Guidlines\n\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nNov 21, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
