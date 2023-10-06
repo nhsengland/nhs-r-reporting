@@ -6,24 +6,24 @@ date: "2023-10-06"
 categories: [NHS England]
 ---
 
-```{r}
+```{r load-libs}
 # List of required packages
-required_packages <- c("here", "sf", "ggplot2", "readxl", "dplyr", "janitor")
+# required_packages <- c("here", "sf", "ggplot2", "readxl", "dplyr", "janitor")
 
-# Check if required packages are not installed, then install and load them
-for (package in required_packages) {
-  if (!requireNamespace(package, quietly = TRUE)) {
-    install.packages(package)
-  }
-}
+# # Check if required packages are not installed, then install and load them
+# for (package in required_packages) {
+#   if (!requireNamespace(package, quietly = TRUE)) {
+#     install.packages(package)
+#   }
+# }
 
 # Load the required packages
 library(here)
-library(sf)
+#library(sf)
 library(ggplot2)
 library(readxl)
 library(dplyr)
-library(janitor)
+#library(janitor)
 ```
 
 ## Intro {background="#43464B"}
