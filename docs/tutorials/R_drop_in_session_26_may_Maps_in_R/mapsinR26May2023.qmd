@@ -6,7 +6,7 @@ date: "2023-10-06"
 categories: [NHS England]
 ---
 
-```{r}
+```r
 # List of required packages
 required_packages <- c("here", "sf", "ggplot2", "readxl", "dplyr", "janitor")
 
@@ -18,12 +18,12 @@ for (package in required_packages) {
 }
 
 # Load the required packages
-#library(here)
-#library(sf)
-#library(ggplot2)
-#library(readxl)
-#library(dplyr)
-#library(janitor)
+library(here)
+library(sf)
+library(ggplot2)
+library(readxl)
+library(dplyr)
+library(janitor)
 ```
 
 ## Intro {background="#43464B"}
@@ -110,7 +110,7 @@ Check unzipped file contents. We shuold obtain a collection of boundaries files 
 
 Now we can plot using  `ggplot()` and `geom_sf()`function the CCG map for England
 
-```{r load shapefile, echo=TRUE}
+```r
 # Function to load CCG boundaries data
 load_CCG_boundaries <- function() {
   # Load CCG boundaries shapefile
@@ -159,7 +159,7 @@ Now we `combine` ONS `shapefiles` with CCG Outcomes `Indicators` data ready to b
 
 We will plot this indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis.
 
-```{r import_indicator_from_excel, echo=TRUE}
+```r
 library(dplyr)
 # Function to load and preprocess cancer data
 load_and_preprocess_cancer_data <- function() {
@@ -194,7 +194,7 @@ cancer_new_sel <- cancer_data_analysis()
 
 This is the final step prior to plotting the map. We `merge` shapefile with `indicator` files. 
 
-```{r merge_ccg_indicator ,echo=TRUE}
+```r
 # Rename columns in cancer_new_sel
 cancer_MAP_rename <- cancer_new_sel %>%
   dplyr::select(
@@ -217,7 +217,7 @@ mapdata_coord <- sf::st_transform(mapdata, crs = 4326)
 
 Finally we can add Title and labs to the map in ggplot we have just created
 
-```{r draw map, echo=TRUE}
+```r
 # Plot map combining shapefile and CCG indicator
 cancer_map_blues <- mapdata_coord %>% 
   ggplot2::ggplot(ggplot2::aes(fill = indicator_value)) +
