@@ -1,0 +1,1 @@
+This folder includes all cartographic files and shapefiles required to plot the map in R using ggplot2

@@ -1,0 +1,13 @@
+Quarto slides presented on the 26th of May 2023
+
+Topic: Creating maps in R using {ggplot2} and {osm} packages. 
+
+This tutorial will cover the following steps to draw maps using R: 
+
+- Get Shapefiles from 
+- Obtain medatadata to plot maps
+- Load Shapefile into R using geom_sf() and coord_sf() functions
+- Build maps using ggplot2 framework 
+
+An introduction to plotting maps in R using ggplot2 can be found on this online book:
+https://ggplot2-book.org/maps.html.
