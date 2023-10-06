@@ -14,8 +14,7 @@ required_packages <- c("here",
                        "ggplot2",
                        "readxl",
                        "dplyr",
-                       "janitor",
-                       "rmarkdown"
+                       "janitor"
                        )
 
 # Check if required packages are not installed, then install and load them
