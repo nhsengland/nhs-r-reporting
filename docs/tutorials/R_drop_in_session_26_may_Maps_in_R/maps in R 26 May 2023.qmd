@@ -56,7 +56,7 @@ From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shape
 
 Load unzipped files into R using `Open Geography Portal` 
 
-```{r echo=TRUE}
+```{r}
 library(sf)
 library(here)
 library(dplyr)
@@ -69,21 +69,10 @@ library(janitor)
 
 
 
-## 3. Check shapefiles content {background="#43464B"}
-
-Check unzipped file contents. We shuold obtain a collection of boundaries files including the .shp file for CCG map.
 
 
-::: columns
-::: {.column width="40%"}
-
-![Health Boundaries](Figures_maps_slides/06 Unzip Shapefile.png)
 :::
 
-::: {.column width="60%"}
-
-:::
-:::
 
 
 
