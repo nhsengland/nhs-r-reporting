@@ -392,6 +392,104 @@
     "text": "Maps in R using ggplot2 and OSM packages\n\n\n\nNHS England\n\n\n\n\nPablo Leon\n\n\nOct 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto R/Markdown Tutorial\n\n\n\nQuarto\n\n\nR\n\n\nMarkdown\n\n\n\n\nSimon Wellesley-Miller\n\n\nFeb 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNational Data Platform (UDAL)\n\n\n\nSQL\n\n\nR\n\n\nNHS England\n\n\n\n\nSimon Wellesley-Miller\n\n\nFeb 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproducible Analytical Pipelines (RAP)\n\n\n\nRAP\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nJan 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNHSE GitHub\n\n\n\nGit\n\n\nGitHub\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nJan 22, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGit in R-Studio\n\n\n\nGit\n\n\nGitHub\n\n\nR-Studio\n\n\n\n\nPablo Leon-Rodenas\n\n\nJan 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Process Control\n\n\n\nNHS-R\n\n\nSPC\n\n\n\n\nCraig Robert Shenton\n\n\nJan 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Programming Language\n\n\n\nR\n\n\nNHS-R\n\n\n\n\nCraig Robert Shenton\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNHS Colour Guidlines\n\n\n\nNHS England\n\n\n\n\nCraig Robert Shenton\n\n\nNov 21, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "",
+    "text": "# List of required packages\nrequired_packages &lt;- c(\"here\", \"sf\", \"ggplot2\", \"readxl\", \"dplyr\", \"janitor\")\n\n# Check if required packages are not installed, then install and load them\nfor (package in required_packages) {\n  if (!requireNamespace(package, quietly = TRUE)) {\n    install.packages(package)\n  }\n}\n\n# Load the required packages\nlibrary(here)\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(janitor)"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#intro",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#intro",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "Intro",
+    "text": "Intro\nThese slides were presented in the NHSE-R drop in session on Friday 26th May 2023.\nIn R we can plot geospatial data using several methods, today I will focus on static maps using ggplot2 and osm packages. Drawing maps usually imply these steps:\n\nGetting shapefiles to draw a map\nObtaining metadata to plot on the map\nIn R we load the multypoligon objects using geom_sf() and coord_sf()\nThen we can take advantage of ggplot2 framework to overlay one map on top of another\n\nAn introduction to plotting maps in R using ggplot2 can be found on this online book: https://ggplot2-book.org/maps.html."
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#nhs-health-boundaries",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#nhs-health-boundaries",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "1. NHS Health boundaries",
+    "text": "1. NHS Health boundaries\nThe Office for National Statistics provides a free and open access to several geographic products. There is a specific section for Health boundaries on their Open Geography Portal website: https://geoportal.statistics.gov.uk/.\nFrom Clinical Commissioning Groups section download 2021 Boundaries shapefile zipped file.\n\n\n\n\n\nHealth Boundaries\n\n\n\n\n\n\nHealth Boundaries details"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#unzip-ccg-boundaries-into-r",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#unzip-ccg-boundaries-into-r",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "2. Unzip CCG boundaries into R",
+    "text": "2. Unzip CCG boundaries into R\nLoad unzipped files into R using Open Geography Portal\n# Define a function to download and cache the CCG data\ndownload_CCG_data &lt;- function() {\n  data_dir &lt;- here::here(\"data\") # Use here::here() for consistent path resolution\n  \n  # Check if the data directory exists, create it if not\n  if (!dir.exists(data_dir)) {\n    dir.create(data_dir, recursive = TRUE)\n  }\n  \n  zip_file &lt;- file.path(data_dir, \"CCGoutcomes.zip\")\n  \n  # Check if the file already exists, if not, download and unzip it\n  if (!file.exists(zip_file)) {\n    download.file(\n      url = \"https://files.digital.nhs.uk/48/4DB2CA/CCG_OIS_MAR_2022_Excels_Files.zip\",\n      destfile = zip_file\n    )\n    unzip(zip_file, exdir = data_dir, junkpaths = TRUE)\n  }\n}\n\n# Call the function to download and cache the CCG data\ndownload_CCG_data()"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#check-shapefiles-content",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#check-shapefiles-content",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "3. Check shapefiles content",
+    "text": "3. Check shapefiles content\nCheck unzipped file contents. We shuold obtain a collection of boundaries files including the .shp file for CCG map.\n\n\n\n\n\nHealth Boundaries"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#load-ccg-shapefile-and-check-map",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#load-ccg-shapefile-and-check-map",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "4.Load CCG Shapefile and check map",
+    "text": "4.Load CCG Shapefile and check map\nNow we can plot using ggplot() and geom_sf()function the CCG map for England\n# Function to load CCG boundaries data\nload_CCG_boundaries &lt;- function() {\n  # Load CCG boundaries shapefile\n  shapefile_path &lt;- \"data/Clinical_Commissioning_Groups_April_2021/CCG_APR_2021_EN_BGC.shp\"\n  \n  # Read the shapefile using sf::st_read()\n  CCG_boundaries &lt;- sf::st_read(shapefile_path)\n  return(CCG_boundaries)\n}\n\n# Function to create CCG map\ncreate_CCG_map &lt;- function(CCG_boundaries) {\n  # Create ggplot map\n  CCG_map &lt;- ggplot2::ggplot(data = CCG_boundaries) +\n    ggplot2::geom_sf(size = 0.5, color = \"black\", fill = \"coral\") +\n    ggplot2::ggtitle(\"CCG Boundaries plot. April 2021\") +\n    ggplot2::coord_sf()\n  \n  return(CCG_map)\n}\n\nCCG_boundaries &lt;- load_CCG_boundaries()\nCCG_map &lt;- create_CCG_map(CCG_boundaries)\nprint(CCG_map)"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#obtain-nhs-indicators",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#obtain-nhs-indicators",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "5. Obtain NHS Indicators",
+    "text": "5. Obtain NHS Indicators\nFor this presentation I will download CCG Outcomes Indicator set for March 2022 from Digital website: https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022\nThe Office for National Statistics provides a free and open access to several geographic produts. There is a specific section for Health boundaries on their website:\n\n\n\nHealth Boundaries"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#download-ccg-outcomes-indicators",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#download-ccg-outcomes-indicators",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "6. Download CCG Outcomes Indicators",
+    "text": "6. Download CCG Outcomes Indicators\nAfter loading the shapefile we download the indicators to be plotted in the map\n\n\n\nCCG Indicators"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#data-wrangling",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#data-wrangling",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "7. Data wrangling",
+    "text": "7. Data wrangling\nNow we combine ONS shapefiles with CCG Outcomes Indicators data ready to be plotted in the map.\nWe will plot this indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis.\nlibrary(dplyr)\n# Function to load and preprocess cancer data\nload_and_preprocess_cancer_data &lt;- function() {\n  # Load cancer data from Excel file\n  cancer_data &lt;- readxl::read_excel(here::here(\"data\", \"CCG_1.17_I01968_D.xlsx\"), sheet = 3, skip = 13) \n  \n  # Clean column names, select necessary columns, and filter rows\n  cleaned_cancer_data &lt;- cancer_data %&gt;%\n    janitor::clean_names() %&gt;%\n    dplyr::select(reporting_period, breakdown, ons_code, level, level_description, indicator_value) %&gt;%\n    dplyr::filter(level_description != \"England\")\n  \n  return(cleaned_cancer_data)\n}\n\n# Main function for data wrangling\ncancer_data_analysis &lt;- function() {\n  # Load and preprocess cancer data\n  cancer_data &lt;- load_and_preprocess_cancer_data()\n  \n  # Additional processing or analysis can be performed here\n  \n  # Print the resulting dataframe\n  print(cancer_data)\n}\n\n# Call the main function for data analysis\ncancer_new_sel &lt;- cancer_data_analysis()"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#merge-shapefile-and-outcome-indicators",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#merge-shapefile-and-outcome-indicators",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "8. Merge shapefile and Outcome Indicators",
+    "text": "8. Merge shapefile and Outcome Indicators\nThis is the final step prior to plotting the map. We merge shapefile with indicator files.\n# Rename columns in cancer_new_sel\ncancer_MAP_rename &lt;- cancer_new_sel %&gt;%\n  dplyr::select(\n    reporting_period,\n    breakdown,\n    CCG21CD = ons_code,\n    level,\n    level_description,\n    indicator_value\n  )\n\n# Merge shapefile and metric data using left_join from dplyr\nmapdata &lt;- dplyr::left_join(CCG_boundaries, cancer_MAP_rename, by = \"CCG21CD\")\n\n# Apply projection (EPSG:4326) to merged data to plot the map\nmapdata_coord &lt;- sf::st_transform(mapdata, crs = 4326)"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#plot-map-in-ggplot2",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#plot-map-in-ggplot2",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "9. Plot map in ggplot2",
+    "text": "9. Plot map in ggplot2\nFinally we can add Title and labs to the map in ggplot we have just created\n# Plot map combining shapefile and CCG indicator\ncancer_map_blues &lt;- mapdata_coord %&gt;% \n  ggplot2::ggplot(ggplot2::aes(fill = indicator_value)) +\n  ggplot2::geom_sf() +\n  ggplot2::labs(\n    title = \"CCG OIS Indicator 1.17 - Record of Stage of Cancer at Diagnosis\",\n    subtitle = \"Percentage of New Cases of Cancer for Which a Valid Stage is Recorded \\n at the Time of Diagnosis (95% CI)\",\n    caption = \"Data source: NHS Digital National Disease Registration Service (NDRS)\"\n  ) +\n  ggplot2::theme_minimal() +\n  ggplot2::scale_fill_viridis_c(name = \"Indicator Value\")\n\n# Print the map\nprint(cancer_map_blues)"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#open-street-maps-using-osm-package",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#open-street-maps-using-osm-package",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "10. Open street maps using OSM package",
+    "text": "10. Open street maps using OSM package\nThe second part of this presentation will cover how to build city maps in R using osmdata package in R. This package allows us to download and use data from the OpenStreetMap (OSM)\nPackage details: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html OpenStreepMap. OSM is a global open access mapping project, which is free and open under the ODbL licence. OpenStreetMap contributors 2017: https://www.openstreetmap.org/#map=6/54.910/-3.432\nFollow all the details for this second map from my website: https://pablo-source.github.io/City_maps.html"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#online-resources-to-build-maps-in-r",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#online-resources-to-build-maps-in-r",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "Online resources to build maps in R",
+    "text": "Online resources to build maps in R\nThis presentation only covers a handful of options, please check this repo for facets and grid options\n\nMaps-in-R&gt; GitHub repo: https://github.com/Pablo-source/Maps-in-R\nExamples and Shapefiles:https://github.com/Pablo-source/Maps-in-R/tree/main\nOSM-maps&gt; GitHub repo: https://github.com/Pablo-source/Maps-in-R/tree/main/City_maps\nCCG Outcomes Indicato Set - March 2022: https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022\nMap projections using the “sf” package in R: https://cran.r-project.org/web/packages/oce/vignettes/D_map_projections.html\nR Spatial Workshop Notes: https://spatialanalysis.github.io/workshop-notes/spatial-clustering.html\nNHS-R NHS Colour Guidelines: https://nhsengland.github.io/nhs-r-reporting/tutorials/nhs-colours.html"
+  },
+  {
+    "objectID": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#shapefiles",
+    "href": "tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.html#shapefiles",
+    "title": "Maps in R using ggplot2 and OSM packages",
+    "section": "Shapefiles",
+    "text": "Shapefiles\n\nThe Open Geography portal from the Office for National Statistics (ONS): https://geoportal.statistics.gov.uk/\nThe London Datastore:Shapefiles and plenty of social indicators to plot (OA,LSOA,MSOA,Wards) https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london\n\nOnline books about building maps in R - Geocomputation with R: https://bookdown.org/robinlovelace/geocompr/spatial-class.html - Chapter 16. Geospatial – Bigbook of r: https://www.bigbookofr.com/geospatial.html\n\nAny questions? pablo.leonrodenas@nhs.net, https://github.com/Pablo-source"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "NHS England R Community",

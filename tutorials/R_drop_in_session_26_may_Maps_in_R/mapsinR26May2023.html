@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -66,7 +100,10 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../assets/style/styles.css">
 <meta property="og:title" content="NHSE-R - Maps in R using ggplot2 and OSM packages">
 <meta property="og:description" content="NHSE R drop in session.">
+<meta property="og:image" content="https://nhsengland.github.io/nhs-r-reporting/tutorials/R_drop_in_session_26_may_Maps_in_R/Figures_maps_slides/02 Health boundaries.png">
 <meta property="og:site-name" content="NHSE-R">
+<meta property="og:image:height" content="428">
+<meta property="og:image:width" content="693">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -270,7 +307,25 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#nhs-health-boundaries" id="toc-nhs-health-boundaries" class="nav-link" data-scroll-target="#nhs-health-boundaries">1. NHS Health boundaries</a></li>
+  <li><a href="#unzip-ccg-boundaries-into-r" id="toc-unzip-ccg-boundaries-into-r" class="nav-link" data-scroll-target="#unzip-ccg-boundaries-into-r">2. Unzip CCG boundaries into R</a></li>
+  <li><a href="#check-shapefiles-content" id="toc-check-shapefiles-content" class="nav-link" data-scroll-target="#check-shapefiles-content">3. Check shapefiles content</a></li>
+  <li><a href="#load-ccg-shapefile-and-check-map" id="toc-load-ccg-shapefile-and-check-map" class="nav-link" data-scroll-target="#load-ccg-shapefile-and-check-map">4.Load CCG Shapefile and check map</a></li>
+  <li><a href="#obtain-nhs-indicators" id="toc-obtain-nhs-indicators" class="nav-link" data-scroll-target="#obtain-nhs-indicators">5. Obtain NHS Indicators</a></li>
+  <li><a href="#download-ccg-outcomes-indicators" id="toc-download-ccg-outcomes-indicators" class="nav-link" data-scroll-target="#download-ccg-outcomes-indicators">6. Download CCG Outcomes Indicators</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">7. Data wrangling</a></li>
+  <li><a href="#merge-shapefile-and-outcome-indicators" id="toc-merge-shapefile-and-outcome-indicators" class="nav-link" data-scroll-target="#merge-shapefile-and-outcome-indicators">8. Merge shapefile and Outcome Indicators</a></li>
+  <li><a href="#plot-map-in-ggplot2" id="toc-plot-map-in-ggplot2" class="nav-link" data-scroll-target="#plot-map-in-ggplot2">9. Plot map in ggplot2</a></li>
+  <li><a href="#open-street-maps-using-osm-package" id="toc-open-street-maps-using-osm-package" class="nav-link" data-scroll-target="#open-street-maps-using-osm-package">10. Open street maps using OSM package</a></li>
+  <li><a href="#online-resources-to-build-maps-in-r" id="toc-online-resources-to-build-maps-in-r" class="nav-link" data-scroll-target="#online-resources-to-build-maps-in-r">Online resources to build maps in R</a></li>
+  <li><a href="#shapefiles" id="toc-shapefiles" class="nav-link" data-scroll-target="#shapefiles">Shapefiles</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/docs/tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -308,8 +363,252 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>required_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"here"</span>, <span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"readxl"</span>, <span class="st">"dplyr"</span>, <span class="st">"janitor"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if required packages are not installed, then install and load them</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (package <span class="cf">in</span> required_packages) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(package, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(package)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the required packages</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="intro" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="intro">Intro</h2>
+<p>These slides were presented in the NHSE-R drop in session on Friday 26th May 2023.</p>
+<p>In R we can plot geospatial data using several methods, today I will focus on static maps using <code>ggplot2</code> and <code>osm</code> packages. Drawing maps usually imply these steps:</p>
+<ul>
+<li>Getting shapefiles to draw a map</li>
+<li>Obtaining metadata to plot on the map</li>
+<li>In R we load the multypoligon objects using <code>geom_sf()</code> and <code>coord_sf()</code></li>
+<li>Then we can take advantage of ggplot2 framework to overlay one map on top of another</li>
+</ul>
+<p>An introduction to plotting maps in R using ggplot2 can be found on this online book: <a href="https://ggplot2-book.org/maps.html" class="uri">https://ggplot2-book.org/maps.html</a>.</p>
+</section>
+<section id="nhs-health-boundaries" class="level2" data-auto-animate="true" data-background="#43464B">
+<h2 data-auto-animate="true" data-background="#43464B" class="anchored" data-anchor-id="nhs-health-boundaries">1. NHS Health boundaries</h2>
+<p>The Office for National Statistics provides a free and open access to several geographic products. There is a specific section for <code>Health boundaries</code> on their <code>Open Geography Portal</code> website: <a href="https://geoportal.statistics.gov.uk/" class="uri">https://geoportal.statistics.gov.uk/</a>.</p>
+<p>From <code>Clinical Commissioning Groups</code> section download <code>2021 Boundaries</code> <strong>shapefile</strong> zipped file.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures_maps_slides/02 Health boundaries.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Health Boundaries</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures_maps_slides/05 Unzip Shapefile.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Health Boundaries details</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="unzip-ccg-boundaries-into-r" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="unzip-ccg-boundaries-into-r">2. Unzip CCG boundaries into R</h2>
+<p>Load unzipped files into R using <code>Open Geography Portal</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to download and cache the CCG data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>download_CCG_data <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  data_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>) <span class="co"># Use here::here() for consistent path resolution</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check if the data directory exists, create it if not</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(data_dir)) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(data_dir, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  zip_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(data_dir, <span class="st">"CCGoutcomes.zip"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check if the file already exists, if not, download and unzip it</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(zip_file)) {</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">download.file</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">url =</span> <span class="st">"https://files.digital.nhs.uk/48/4DB2CA/CCG_OIS_MAR_2022_Excels_Files.zip"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">destfile =</span> zip_file</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unzip</span>(zip_file, <span class="at">exdir =</span> data_dir, <span class="at">junkpaths =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function to download and cache the CCG data</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">download_CCG_data</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-shapefiles-content" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="check-shapefiles-content">3. Check shapefiles content</h2>
+<p>Check unzipped file contents. We shuold obtain a collection of boundaries files including the .shp file for CCG map.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures_maps_slides/06 Unzip Shapefile.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Health Boundaries</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+
+</div>
+</div>
+</section>
+<section id="load-ccg-shapefile-and-check-map" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="load-ccg-shapefile-and-check-map">4.Load CCG Shapefile and check map</h2>
+<p>Now we can plot using <code>ggplot()</code> and <code>geom_sf()</code>function the CCG map for England</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to load CCG boundaries data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>load_CCG_boundaries <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load CCG boundaries shapefile</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  shapefile_path <span class="ot">&lt;-</span> <span class="st">"data/Clinical_Commissioning_Groups_April_2021/CCG_APR_2021_EN_BGC.shp"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Read the shapefile using sf::st_read()</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  CCG_boundaries <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_read</span>(shapefile_path)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(CCG_boundaries)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create CCG map</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>create_CCG_map <span class="ot">&lt;-</span> <span class="cf">function</span>(CCG_boundaries) {</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create ggplot map</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  CCG_map <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> CCG_boundaries) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"coral"</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">ggtitle</span>(<span class="st">"CCG Boundaries plot. April 2021"</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(CCG_map)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>CCG_boundaries <span class="ot">&lt;-</span> <span class="fu">load_CCG_boundaries</span>()</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>CCG_map <span class="ot">&lt;-</span> <span class="fu">create_CCG_map</span>(CCG_boundaries)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(CCG_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="obtain-nhs-indicators" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="obtain-nhs-indicators">5. Obtain NHS Indicators</h2>
+<p>For this presentation I will download <code>CCG Outcomes Indicator</code> set for March 2022 from Digital website: https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022</p>
+<p>The Office for National Statistics provides a free and open access to several geographic produts. There is a specific section for Health boundaries on their website:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures_maps_slides/CCG outcomes indicator set.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Health Boundaries</figcaption>
+</figure>
+</div>
+</section>
+<section id="download-ccg-outcomes-indicators" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="download-ccg-outcomes-indicators">6. Download CCG Outcomes Indicators</h2>
+<p>After loading the shapefile we <code>download</code> the <code>indicators</code> to be plotted in the map</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures_maps_slides/05 Load ccg indicators.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">CCG Indicators</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-wrangling" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="data-wrangling">7. Data wrangling</h2>
+<p>Now we <code>combine</code> ONS <code>shapefiles</code> with CCG Outcomes <code>Indicators</code> data ready to be plotted in the map.</p>
+<p>We will plot this indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to load and preprocess cancer data</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>load_and_preprocess_cancer_data <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load cancer data from Excel file</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  cancer_data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"CCG_1.17_I01968_D.xlsx"</span>), <span class="at">sheet =</span> <span class="dv">3</span>, <span class="at">skip =</span> <span class="dv">13</span>) </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Clean column names, select necessary columns, and filter rows</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  cleaned_cancer_data <span class="ot">&lt;-</span> cancer_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(reporting_period, breakdown, ons_code, level, level_description, indicator_value) <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(level_description <span class="sc">!=</span> <span class="st">"England"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(cleaned_cancer_data)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Main function for data wrangling</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>cancer_data_analysis <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load and preprocess cancer data</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  cancer_data <span class="ot">&lt;-</span> <span class="fu">load_and_preprocess_cancer_data</span>()</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Additional processing or analysis can be performed here</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Print the resulting dataframe</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(cancer_data)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the main function for data analysis</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>cancer_new_sel <span class="ot">&lt;-</span> <span class="fu">cancer_data_analysis</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="merge-shapefile-and-outcome-indicators" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="merge-shapefile-and-outcome-indicators">8. Merge shapefile and Outcome Indicators</h2>
+<p>This is the final step prior to plotting the map. We <code>merge</code> shapefile with <code>indicator</code> files.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename columns in cancer_new_sel</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cancer_MAP_rename <span class="ot">&lt;-</span> cancer_new_sel <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    reporting_period,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    breakdown,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">CCG21CD =</span> ons_code,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    level,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    level_description,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    indicator_value</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge shapefile and metric data using left_join from dplyr</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>mapdata <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">left_join</span>(CCG_boundaries, cancer_MAP_rename, <span class="at">by =</span> <span class="st">"CCG21CD"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply projection (EPSG:4326) to merged data to plot the map</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>mapdata_coord <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_transform</span>(mapdata, <span class="at">crs =</span> <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="plot-map-in-ggplot2" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="plot-map-in-ggplot2">9. Plot map in ggplot2</h2>
+<p>Finally we can add Title and labs to the map in ggplot we have just created</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot map combining shapefile and CCG indicator</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cancer_map_blues <span class="ot">&lt;-</span> mapdata_coord <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">fill =</span> indicator_value)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"CCG OIS Indicator 1.17 - Record of Stage of Cancer at Diagnosis"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Percentage of New Cases of Cancer for Which a Valid Stage is Recorded </span><span class="sc">\n</span><span class="st"> at the Time of Diagnosis (95% CI)"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data source: NHS Digital National Disease Registration Service (NDRS)"</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"Indicator Value"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the map</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cancer_map_blues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="open-street-maps-using-osm-package" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="open-street-maps-using-osm-package">10. Open street maps using OSM package</h2>
+<p>The second part of this presentation will cover how to build city maps in R using <code>osmdata</code> package in R. This package allows us to download and use data from the <code>OpenStreetMap (OSM)</code></p>
+<p>Package details: <a href="https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html" class="uri">https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html</a> OpenStreepMap. OSM is a global open access mapping project, which is free and open under the ODbL licence. OpenStreetMap contributors 2017: <a href="https://www.openstreetmap.org/#map=6/54.910/-3.432" class="uri">https://www.openstreetmap.org/#map=6/54.910/-3.432</a></p>
+<p>Follow all the details for this second map from my website: <a href="https://pablo-source.github.io/City_maps.html" class="uri">https://pablo-source.github.io/City_maps.html</a></p>
+</section>
+<section id="online-resources-to-build-maps-in-r" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="online-resources-to-build-maps-in-r">Online resources to build maps in R</h2>
+<p>This presentation only covers a handful of options, please check this repo for facets and grid options</p>
+<ul>
+<li>Maps-in-R&gt; GitHub repo: <a href="https://github.com/Pablo-source/Maps-in-R" class="uri">https://github.com/Pablo-source/Maps-in-R</a></li>
+<li>Examples and Shapefiles:<a href="https://github.com/Pablo-source/Maps-in-R/tree/main" class="uri">https://github.com/Pablo-source/Maps-in-R/tree/main</a></li>
+<li>OSM-maps&gt; GitHub repo: <a href="https://github.com/Pablo-source/Maps-in-R/tree/main/City_maps" class="uri">https://github.com/Pablo-source/Maps-in-R/tree/main/City_maps</a></li>
+<li>CCG Outcomes Indicato Set - March 2022: <a href="https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022" class="uri">https://digital.nhs.uk/data-and-information/publications/statistical/ccg-outcomes-indicator-set/march-2022</a></li>
+<li>Map projections using the “sf” package in R: <a href="https://cran.r-project.org/web/packages/oce/vignettes/D_map_projections.html" class="uri">https://cran.r-project.org/web/packages/oce/vignettes/D_map_projections.html</a></li>
+<li>R Spatial Workshop Notes: <a href="https://spatialanalysis.github.io/workshop-notes/spatial-clustering.html" class="uri">https://spatialanalysis.github.io/workshop-notes/spatial-clustering.html</a></li>
+<li>NHS-R NHS Colour Guidelines: <a href="https://nhsengland.github.io/nhs-r-reporting/tutorials/nhs-colours.html" class="uri">https://nhsengland.github.io/nhs-r-reporting/tutorials/nhs-colours.html</a></li>
+</ul>
+</section>
+<section id="shapefiles" class="level2" data-background="#43464B">
+<h2 data-background="#43464B" class="anchored" data-anchor-id="shapefiles">Shapefiles</h2>
+<ul>
+<li>The Open Geography portal from the Office for National Statistics (ONS): <a href="https://geoportal.statistics.gov.uk/" class="uri">https://geoportal.statistics.gov.uk/</a></li>
+<li>The London Datastore:Shapefiles and plenty of social indicators to plot (OA,LSOA,MSOA,Wards) <a href="https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london" class="uri">https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london</a></li>
+</ul>
+<p>Online books about building maps in R - Geocomputation with R: <a href="https://bookdown.org/robinlovelace/geocompr/spatial-class.html" class="uri">https://bookdown.org/robinlovelace/geocompr/spatial-class.html</a> - Chapter 16. Geospatial – Bigbook of r: <a href="https://www.bigbookofr.com/geospatial.html" class="uri">https://www.bigbookofr.com/geospatial.html</a></p>
+<ul>
+<li>Any questions? pablo.leonrodenas@nhs.net, <a href="https://github.com/Pablo-source" class="uri">https://github.com/Pablo-source</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script type="text/javascript">
@@ -563,7 +862,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nhsengland/nhs-r-reporting/edit/main/docs/tutorials/R_drop_in_session_26_may_Maps_in_R/mapsinR26May2023.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/nhsengland/nhs-r-reporting/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
