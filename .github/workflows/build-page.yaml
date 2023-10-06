@@ -24,7 +24,7 @@ jobs:
           r-version: 4.1.0
     
       - name: Install required R packages
-        R -e "install.packages(c('rmarkdown', 'quarto'))"
+        run: R -e "install.packages(c('rmarkdown', 'quarto'))"
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
