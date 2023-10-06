@@ -49,3 +49,30 @@ From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shape
 ![Health Boundaries details](Figures_maps_slides/05 Unzip Shapefile.png)
 :::
 :::
+
+
+## 2. Unzip CCG boundaries into R {background="#43464B"}
+
+Load unzipped files into R using `Open Geography Portal` 
+
+```{r echo=TRUE}
+library(sf)
+library(here)
+library(dplyr)
+library(ggplot2)
+library(readxl)
+library(janitor)
+
+CCGdata <- function() {
+              if(!dir.exists("data")){dir.create("data")}
+                      # Download master.zip file 
+                      download.file(
+                        url = "https://files.digital.nhs.uk/48/4DB2CA/CCG_OIS_MAR_2022_Excels_Files.zip",
+                        destfile = "data/CCGoutcomes.zip")
+                      unzip(zipfile = "data/CCGoutcomes.zip",
+                            exdir = "data",junkpaths = T)}
+
+CCGdata()
+```
+
+
