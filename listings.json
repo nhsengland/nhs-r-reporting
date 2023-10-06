@@ -1,7 +1,15 @@
 [
   {
+    "listing": "/updates.html",
+    "items": [
+      "/posts/r-udal.html",
+      "/posts/r-studio-git.html"
+    ]
+  },
+  {
     "listing": "/tutorials/index.html",
     "items": [
+      "/tutorials/R_drop_in_session_26_may_Maps_in_R/maps in R 26 May 2023.html",
       "/tutorials/quarto.html",
       "/tutorials/udal.html",
       "/tutorials/rap.html",
@@ -10,13 +18,6 @@
       "/tutorials/spc.html",
       "/tutorials/r-language.html",
       "/tutorials/nhs-colours.html"
-    ]
-  },
-  {
-    "listing": "/updates.html",
-    "items": [
-      "/posts/r-udal.html",
-      "/posts/r-studio-git.html"
     ]
   }
 ]
