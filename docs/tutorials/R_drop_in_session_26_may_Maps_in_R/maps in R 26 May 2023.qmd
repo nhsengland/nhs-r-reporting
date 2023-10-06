@@ -49,13 +49,3 @@ From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shape
 ![Health Boundaries details](Figures_maps_slides/05 Unzip Shapefile.png)
 :::
 :::
-
-
-
-## 2. Unzip CCG boundaries into R {background="#43464B"}
-
-Load unzipped files into R using `Open Geography Portal` 
-
-```{r}
-
-```
