@@ -7,15 +7,7 @@ categories: [NHS England]
 ---
 
 ```{r}
-# List of required packages
-required_packages <- c("rmarkdown", "here", "sf", "ggplot2", "readxl", "dplyr", "janitor")
 
-# Check if required packages are not installed, then install and load them
-for (package in required_packages) {
-  if (!requireNamespace(package, quietly = TRUE)) {
-    install.packages(package)
-  }
-}
 
 # Load the required packages
 library(here)
