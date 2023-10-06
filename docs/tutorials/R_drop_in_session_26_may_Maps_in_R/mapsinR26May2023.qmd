@@ -64,7 +64,7 @@ From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shape
 
 Load unzipped files into R using `Open Geography Portal` 
 
-```{r echo=TRUE}
+```r
 # Define a function to download and cache the CCG data
 download_CCG_data <- function() {
   data_dir <- here::here("data") # Use here::here() for consistent path resolution
@@ -154,8 +154,7 @@ After loading the shapefile we `download` the `indicators` to be plotted in the 
 
 ## 7. Data wrangling {background="#43464B"}
 
-Now we `combine` ONS `shapefiles` with CCG Outcomes `Indicators` data ready to be plotted in the map. Details:
-<https://github.com/Pablo-source/Maps-in-R/blob/main/08%20CCG%20Outcomes%20Indicators%20Set%20march%202022.R>
+Now we `combine` ONS `shapefiles` with CCG Outcomes `Indicators` data ready to be plotted in the map.
 
 We will plot this indicator: 1.17 - Percentage of new cases of cancer for which a valid stage is recorded at the time of diagnosis.
 
