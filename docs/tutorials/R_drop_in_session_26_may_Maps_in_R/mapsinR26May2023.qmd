@@ -6,7 +6,7 @@ date: "2023-10-06"
 categories: [NHS England]
 ---
 
-```r
+```{r}
 # List of required packages
 required_packages <- c("here", "sf", "ggplot2", "readxl", "dplyr", "janitor")
 
