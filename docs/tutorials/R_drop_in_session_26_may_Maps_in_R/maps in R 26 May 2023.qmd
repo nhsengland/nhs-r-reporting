@@ -30,3 +30,22 @@ In R we can plot geospatial data using several methods, today I will focus on st
 
 An introduction to plotting maps in R using ggplot2 can be found on this online book: <https://ggplot2-book.org/maps.html>.
 
+
+
+## 1. NHS Health boundaries{auto-animate="true" background="#43464B"}
+
+The Office for National Statistics provides a free and open access to several geographic products. There is a specific section for `Health boundaries` on their `Open Geography Portal` website: <https://geoportal.statistics.gov.uk/>. 
+
+From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shapefile** zipped file.
+
+::: columns
+::: {.column width="40%"}
+
+![Health Boundaries](Figures_maps_slides/02 Health boundaries.png)
+:::
+
+::: {.column width="60%"}
+
+![Health Boundaries details](Figures_maps_slides/05 Unzip Shapefile.png)
+:::
+:::
