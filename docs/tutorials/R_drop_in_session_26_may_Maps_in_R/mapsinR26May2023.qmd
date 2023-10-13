@@ -55,8 +55,6 @@ From `Clinical Commissioning Groups` section download  `2021 Boundaries` **shape
 
 Load unzipped files into R using `Open Geography Portal` 
 
-```{r echo=TRUE}
-library(sf)
-```
+
 
 
