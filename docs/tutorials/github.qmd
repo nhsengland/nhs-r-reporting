@@ -8,9 +8,9 @@ image: "../assets/logos/GitHub-logo.png"
 ---
 
 - Official NHS England GitHub Organisation: [github.com/nhsengland](https://github.com/nhsengland)
-- To request membership email: [github@england.nhs.uk](mailto:github@england.nhs.uk)
+- To request membership email: [github@england.nhs.uk](mailto:github@england.nhs.uk) & [jonathanpearson@nhs.net](mailto:jonathanpearson@nhs.net)
 - You can also request to join a team or set one up for your department.
-- You can use your personal GitHub account if you also do open-source work.
+- You can use your personal GitHub account if you also do open-source work or setup a organisational one (put "-nhs" after your name).
 
 ::: {.callout-note}
 ## Note
@@ -20,7 +20,7 @@ Two Factor Authorisation must be switched on for all members.
 
 ::: {.callout-warning}
 ## Warning
-Currently private repos are set to viable for all members. This org level setting is under review.
+Private repos are not visable for all members. To allow others to see private repos you need to add the everyone team with read permissions on the specific repo.
 
 :::
 
