@@ -9,8 +9,8 @@ image: "../assets/logos/GitHub-logo.png"
 
 - Official NHS England GitHub Organisation: [github.com/nhsengland](https://github.com/nhsengland)
 - To request membership email: [github@england.nhs.uk](mailto:github@england.nhs.uk) & [jonathanpearson@nhs.net](mailto:jonathanpearson@nhs.net)
-- You can also request to join a team or set one up for your department.
-- You can use your personal GitHub account if you also do open-source work or setup a organisational one (put "-nhs" after your name).
+- You can also request to join a team or set one up for your department, with the option to create a child team within it. When requesting the setup of a new team and/or its child team(s), please specify to administrators which handles should be designated as maintainers.
+- You can use your personal GitHub account if you also do open-source work or setup a organisational one (indicating "nhs" in your username).
 
 ::: {.callout-note}
 ## Note
@@ -23,6 +23,23 @@ Two Factor Authorisation must be switched on for all members.
 Private repos are not visable for all members. To allow others to see private repos you need to add the everyone team with read permissions on the specific repo.
 
 :::
+
+::: {.callout-info}
+## Moving GitHub Repositories to NHSE Organisation
+1. Ensure you're a member of the NHSE GitHub Organisation. If not, follow the instructions provided above to request access.
+2. Navigate to the settings of your repository and find the "Transfer" option in the Danger Zone.
+3. Select "NHS England" as the destination for your repository transfer.
+4. Notify the organisation administrators about your transfer. Provide the following details:
+   - Name of the repository
+   - Repository visibility status (private/public)
+   - The team(s) to assign repository and their respective permission levels: Read, Triage, Write, Maintain, Admin
+   - Indicate whether any handles need extra permissions for the transferred repository; otherwise, all team members have equal access levels
+   - Any external collaborators' handles, if needed.
+5. Ensure that the collaborators of the repository are notified to continue their contribution in the transferred repository.
+
+
+:::
+
 
 ## GitHub Desktop
 
