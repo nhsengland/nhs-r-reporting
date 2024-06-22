@@ -9,8 +9,8 @@ image: "../assets/logos/GitHub-logo.png"
 
 - Official NHS England GitHub Organisation: [github.com/nhsengland](https://github.com/nhsengland)
 - To request membership email: [github@england.nhs.uk](mailto:github@england.nhs.uk) & [jonathanpearson@nhs.net](mailto:jonathanpearson@nhs.net)
-- You can also request to join a team or set one up for your department.
-- You can use your personal GitHub account if you also do open-source work or setup a organisational one (put "-nhs" after your name).
+- You can also request to join a team or set one up for your department, with the option to create a child team within it. When requesting the setup of a new team and/or its child team(s), please specify to administrators which handles should be designated as maintainers.
+- You can use your personal GitHub account if you also do open-source work or setup a organisational one (indicating "nhs" in your username).
 
 ::: {.callout-note}
 ## Note
