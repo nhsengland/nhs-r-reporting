@@ -7,10 +7,10 @@ on:
 name: Render and Publish
 
 jobs:
-  build-deploy:
+  build-deploy
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
