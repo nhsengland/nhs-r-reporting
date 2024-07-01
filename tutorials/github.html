@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -320,7 +320,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link active" data-scroll-target="#github-desktop">GitHub Desktop</a></li>
+  <li><a href="#moving-github-repositories-to-nhse-organisation" id="toc-moving-github-repositories-to-nhse-organisation" class="nav-link active" data-scroll-target="#moving-github-repositories-to-nhse-organisation">Moving GitHub Repositories to NHSE Organisation</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop">GitHub Desktop</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a>
   <ul>
@@ -374,8 +375,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Official NHS England GitHub Organisation: <a href="https://github.com/nhsengland">github.com/nhsengland</a></li>
 <li>To request membership email: <a href="mailto:github@england.nhs.uk">github@england.nhs.uk</a> &amp; <a href="mailto:jonathanpearson@nhs.net">jonathanpearson@nhs.net</a></li>
-<li>You can also request to join a team or set one up for your department.</li>
-<li>You can use your personal GitHub account if you also do open-source work or setup a organisational one (put “-nhs” after your name).</li>
+<li>You can also request to join a team or set one up for your department, with the option to create a child team within it. When requesting the setup of a new team and/or its child team(s), please specify to administrators which handles should be designated as maintainers.</li>
+<li>You can use your personal GitHub account if you also do open-source work or setup a organisational one (put “nhs” in your username).</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -403,6 +404,23 @@ Warning
 <p>Private repos are not visable for all members. To allow others to see private repos you need to add the everyone team with read permissions on the specific repo.</p>
 </div>
 </div>
+<section id="moving-github-repositories-to-nhse-organisation" class="level2 callout-info">
+<h2 class="anchored" data-anchor-id="moving-github-repositories-to-nhse-organisation">Moving GitHub Repositories to NHSE Organisation</h2>
+<ol type="1">
+<li>Ensure you’re a member of the NHSE GitHub Organisation. If not, follow the instructions provided above to request access.</li>
+<li>Navigate to the settings of your repository and find the “Transfer” option in the Danger Zone.</li>
+<li>Select “NHS England” as the destination for your repository transfer.</li>
+<li>Notify the organisation administrators about your transfer. Provide the following details:
+<ul>
+<li>Name of the repository</li>
+<li>Repository visibility status (private/public)</li>
+<li>The team(s) to assign repository and their respective permission levels: Read, Triage, Write, Maintain, Admin</li>
+<li>Indicate whether any handles need extra permissions for the transferred repository; otherwise, all team members have equal access levels</li>
+<li>Any external collaborators’ handles, if needed.</li>
+</ul></li>
+<li>Ensure that the collaborators of the repository are notified to continue their contribution in the transferred repository.</li>
+</ol>
+</section>
 <section id="github-desktop" class="level2">
 <h2 class="anchored" data-anchor-id="github-desktop">GitHub Desktop</h2>
 <p>Note that the <a href="https://desktop.github.com/">GitHub desktop app</a> is available on Modern Desktop (see <code>Company Portal &gt; Apps</code>) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier.</p>

@@ -28,7 +28,19 @@
     "href": "tutorials/github.html",
     "title": "NHSE GitHub",
     "section": "",
-    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk & jonathanpearson@nhs.net\nYou can also request to join a team or set one up for your department.\nYou can use your personal GitHub account if you also do open-source work or setup a organisational one (put “-nhs” after your name).",
+    "text": "Official NHS England GitHub Organisation: github.com/nhsengland\nTo request membership email: github@england.nhs.uk & jonathanpearson@nhs.net\nYou can also request to join a team or set one up for your department, with the option to create a child team within it. When requesting the setup of a new team and/or its child team(s), please specify to administrators which handles should be designated as maintainers.\nYou can use your personal GitHub account if you also do open-source work or setup a organisational one (put “nhs” in your username).",
+    "crumbs": [
+      "Homepage",
+      "Tutorials",
+      "NHSE GitHub"
+    ]
+  },
+  {
+    "objectID": "tutorials/github.html#moving-github-repositories-to-nhse-organisation",
+    "href": "tutorials/github.html#moving-github-repositories-to-nhse-organisation",
+    "title": "NHSE GitHub",
+    "section": "Moving GitHub Repositories to NHSE Organisation",
+    "text": "Moving GitHub Repositories to NHSE Organisation\n\nEnsure you’re a member of the NHSE GitHub Organisation. If not, follow the instructions provided above to request access.\nNavigate to the settings of your repository and find the “Transfer” option in the Danger Zone.\nSelect “NHS England” as the destination for your repository transfer.\nNotify the organisation administrators about your transfer. Provide the following details:\n\nName of the repository\nRepository visibility status (private/public)\nThe team(s) to assign repository and their respective permission levels: Read, Triage, Write, Maintain, Admin\nIndicate whether any handles need extra permissions for the transferred repository; otherwise, all team members have equal access levels\nAny external collaborators’ handles, if needed.\n\nEnsure that the collaborators of the repository are notified to continue their contribution in the transferred repository.",
     "crumbs": [
       "Homepage",
       "Tutorials",
