@@ -1,8 +1,8 @@
 ---
 title: NHSE GitHub
 subtitle: "Version Control & Project Management"
-author: "Craig Robert Shenton"
-date: "2023-01-22"
+author: "Craig Robert Shenton / updated by: Chaeyoon Kim"
+date: "2024-07-01"
 categories: [Git, GitHub, NHS England]
 image: "../assets/logos/GitHub-logo.png"
 ---
@@ -24,7 +24,7 @@ Private repos are not visable for all members. To allow others to see private re
 
 :::
 
-::: {.callout-info}
+::: {.callout-tip}
 ## Moving GitHub Repositories to NHSE Organisation
 1. Ensure you're a member of the NHSE GitHub Organisation. If not, follow the instructions provided above to request access.
 2. Navigate to the settings of your repository and find the "Transfer" option in the Danger Zone.
@@ -45,7 +45,7 @@ Private repos are not visable for all members. To allow others to see private re
 
 Note that the [GitHub desktop app](https://desktop.github.com/) is available on Modern Desktop (see `Company Portal > Apps`) and can be installed on UDAL VMs. The tool greatly improves the Git experience and makes managing multiple software projects much easier.
 
-![](../assets/figures/github-desktop.png)
+![GitHub Desktop screenshot](../assets/figures/github-desktop.png)
 
 ## Resources
 
@@ -62,7 +62,7 @@ Publish a Quarto website project to your GitHub pages using GitHub actions.
 
 ### Add the GitHub Actions workflow to your project
 
-Copy [quarto-publish.yml](https://github.com/craig-shenton/nhs-r-reporting/blob/main/_assets/actions/quarto-publish-example.yml) to the folder `.github/workflows/quarto-publish.yml`.
+Copy [quarto-publish.yml](https://github.com/nhsengland/nhs-r-reporting/blob/main/.github/workflows/quarto-publish-example.yaml) to the folder `.github/workflows/quarto-publish-example.yaml`.
 
 ```yaml
 on:
@@ -73,22 +73,29 @@ on:
 
 name: Render and Publish
 
+# you need these permissions to publish to GitHub pages
+permissions: 
+    contents: write
+    pages: write
+
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Publish to GitHub Pages (and render)
+      - name: Publish to Github Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: docs/_site
+          tinytex: true 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ::: {.callout-note}
@@ -111,12 +118,16 @@ Do *not* edit the `GITHUB_TOKEN` to add a personal secret to this file. This fil
    
 ### Configure the repository before publishing
 
-Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once.
+Quarto needs to configure the repository for publishing through GitHub Actions. To do this, run `quarto publish gh-pages` locally once. Make sure you're running the command from within the working directory of your Quarto project in RStudio. You can verify the working directory by checking the top left corner of the R console window. If necessary, use the setwd() function in R or find the menu `Session > Set Working Directory > Choose Directory` to change the working directory to your project location.
+
+You can also use the *Render* button, or check the *Render on Save* option on the editor toolbar:
+
+![RStudio editor toolbar](../assets/figures/rstudio-editor-toolbar.png)
 
 ### Commit and push the workflow
 
 Now, add and commit the workflow file you have just created, and push the result to GitHub. This should trigger a new action from GitHub that will automatically render and publish your website through GitHub pages.
 
 ::: {.callout-note}
-Note that GitHub Pages uses a `gh-pages` branch in your repository, which will be automatically created if one doesn't exist.
+Note that GitHub Pages uses a `gh-pages` branch in your repository, which will be automatically created if one doesn't exist. Read more: [Publishing - GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
 :::
